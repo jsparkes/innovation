@@ -1,0 +1,11 @@
+' Use this file to define the starting game state.
+' After a card name you can add a keyword to specify where that card should be.
+' Keywords are 'topcard', 'hand', 'score', and 'tuck' to put cards in those zones, respectivelty.
+' Follow the keyword with a number to identify which player gets the card (1-4).
+' Ex: "Bicycle: hand3" would put Bicycle into player 3's hand.
+'     "Calendar: topcard1" would put Calendar into play as a top card for player 1.
+' Cards put in these zones will still be in the age decks as normal.
+' To remove a line, either delete it or put an apostrophe in front.
+
+'Bicycle: hand3
+'Calendar: topcard1
