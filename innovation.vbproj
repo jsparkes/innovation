@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <MyType>WindowsForms</MyType>
@@ -17,6 +17,9 @@
     <RootNamespace>Innovation</RootNamespace>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <OutputPath>.\bin\</OutputPath>
@@ -26,8 +29,9 @@
     <DefineTrace>True</DefineTrace>
     <DefineConstants>Win32=True</DefineConstants>
     <PlatformTarget>x86</PlatformTarget>
-    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <DebugType>full</DebugType>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>.\bin\</OutputPath>
@@ -37,8 +41,9 @@
     <DefineTrace>True</DefineTrace>
     <DefineConstants>Win32=True</DefineConstants>
     <PlatformTarget>x86</PlatformTarget>
-    <NoWarn>42016,42017,42018,42019,42032</NoWarn>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355</NoWarn>
     <DebugType>none</DebugType>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic.Compatibility">
