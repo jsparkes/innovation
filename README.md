@@ -180,11 +180,11 @@ This work is licensed under a
 <!-- CONTACT -->
 ## Contacts
 
-Jeff Sparkes- [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Jeff Sparkes- [@jeff_sparkes](https://twitter.com/jeff_sparkes) - jsparkes@gmail.com
 
 Frank Kannemann - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://github.com/jsparkes/innovation](https://github.com/jsparkes/innovation)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -193,6 +193,7 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
+* Original VB6 implementation by Jeff Till
 * []()
 * []()
 * []()
