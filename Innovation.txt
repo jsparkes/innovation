@@ -69,8 +69,7 @@ achievement."
 66	7	Green	Bicycle	Crown	Crown	Clock	x	Bicycle	Crown	"You may exchange all the cards in your hand with all the cards in your score pile. If you exchange one, you must exchange them all."		
 67	7	Red	Combustion	Crown	Crown	Factory	x	Automobile	Crown	I demand you transfer two cards from your score pile to my score pile!		
 68	7	Green	Electricity	Lightbulb	Factory	x	Factory	Lightning bolt	Factory	"Return all your top cards without a [Factory], then draw an 8 for each card you returned."		
-69	7	Blue	Evolution	Lightbulb	Lightbulb	Lightbulb	x	"Puddle with two organisms, or an amoeba"	Lightbulb	"You may choose to either draw and score an 8 and then return a card from your score pile,
-or draw a card of value one higher than the highest card in your score pile."		
+69	7	Blue	Evolution	Lightbulb	Lightbulb	Lightbulb	x	"Puddle with two organisms, or an amoeba"	Lightbulb	"You may choose to either draw and score an 8 and then return a card from your score pile, or draw a card of value one higher than the highest card in your score pile."		
 70	7	Red	Explosives	x	Factory	Factory	Factory	Grenade	Factory	"I demand you transfer your three highest cards from your hand to my hand! If you do, and then have no cards in hand, draw a 7!"		
 71	7	Purple	Lighting	x	Leaf	Clock	Leaf	Glowing street lamp	Leaf	"You may tuck up to three cards from your hand. If you do, draw and score a 7 for every different value of card you tucked."		
 72	7	Blue	Publications	x	Lightbulb	Clock	Lightbulb	Signed book	Lightbulb	You may rearrange the order of one color of cards on your board.	You may splay your yellow or blue cards up.	
