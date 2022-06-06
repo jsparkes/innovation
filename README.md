@@ -26,7 +26,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/jsparkes/innovation">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -35,14 +35,12 @@
   <p align="center">
     The goal of the project is to update the Program "Innovation AI" written by xyz to use current coding tools.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/jsparkes/innovation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/jsparkes/innovation/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/jsparkes/innovation/issues">Request Feature</a>
   </p>
 </div>
 
@@ -81,16 +79,15 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
+This is a Windows application that implements a bot/ai to play the card game Innovation. For information about [Innovation](https://boardgamegeek.com/boardgame/63888/innovation) or to buy a copy for use IRL [buynow](https://asmadigames.com/buy-games.php)
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 ### Built With
 
-* [Visual Studio 2022](https://getbootstrap.com)
-* [Visual Basic](https://jquery.com)
+* [Visual Studio 2022](https://en.wikipedia.org/wiki/Microsoft_Visual_Studio)
+* [Visual Basic](https://en.wikipedia.org/wiki/Visual_Basic_.NET)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -110,7 +107,8 @@ This code has been tested under Windows 10/11. No Linux testing has been done.
 
 ### Installation
 
-Download a copy of the pre-built Windows 10/11 binary
+A copy of the pre-built Windows binary with additional supporting files is in the directory original. Either clone this project
+ or just grab the zip file.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -135,7 +133,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/jsparkes/innovation/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -162,6 +160,9 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
+The original code was released as "This implementation is free, and open-source."
+The revised version has been converted to this license.
+
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
@@ -182,7 +183,7 @@ This work is licensed under a
 
 Jeff Sparkes- [@jeff_sparkes](https://twitter.com/jeff_sparkes) - jsparkes@gmail.com
 
-Frank Kannemann - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Frank Kannemann - frankk74@gmail.com
 
 Project Link: [https://github.com/jsparkes/innovation](https://github.com/jsparkes/innovation)
 
@@ -194,9 +195,10 @@ Project Link: [https://github.com/jsparkes/innovation](https://github.com/jspark
 ## Acknowledgments
 
 * Original VB6 implementation by Jeff Till
-* []()
-* []()
-* []()
+** Originally discussed on [BGG](https://boardgamegeek.com/thread/896090/innovation-computer-game-windows/page/1)
+** Original Windows 7ish Released on this [site](https://www.slightlymagic.net/forum/viewforum.php?f=108)
+* [Awesome README Tempate](https://github.com/othneildrew/Best-README-Template)
+* [grip for testing READMEs](https://github.com/joeyespo/grip)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -204,16 +206,16 @@ Project Link: [https://github.com/jsparkes/innovation](https://github.com/jspark
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/jsparkes/innovation.svg?style=for-the-badge
+[contributors-url]: https://github.com/jsparkes/innovation/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jsparkes/innovation.svg?style=for-the-badge
+[forks-url]: https://github.com/jsparkes/innovation/network/members
+[stars-shield]: https://img.shields.io/github/stars/jsparkes/innovation.svg?style=for-the-badge
+[stars-url]: https://github.com/jsparkes/innovation/stargazers
+[issues-shield]: https://img.shields.io/github/issues/jsparkes/innovation.svg?style=for-the-badge
+[issues-url]: https://github.com/jsparkes/innovation/issues
+[license-shield]: https://img.shields.io/github/license/jsparkes/innovation.svg?style=for-the-badge
+[license-url]: https://github.com/jsparkes/innovation/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot0.png
