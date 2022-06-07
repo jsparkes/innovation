@@ -6276,194 +6276,118 @@ Friend Class Main_Renamed
 		icon_lookup(5) = "Factory"
 		icon_lookup(6) = "Clock"
 
-		Dim fileData, lineData As Object
-		Dim word As String
-		Dim i, line_index, word_index, j As Object
-		Dim k As Short
+        Dim fileData, lineData As String
+        Dim word As String
+        Dim i, line_index, word_index, j As Short
+        Dim k As Short
+        Dim filename As String = ".\Innovation.txt" ' Holds all the card data
 
-		FileOpen(1, My.Application.Info.DirectoryPath & "\Innovation.txt", OpenMode.Binary)
-		'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		fileData = InputString(1, LOF(1))
-		FileClose(1)
+        If System.IO.File.Exists(filename) = False Then
+            'MessageBox.Show("Exiting Fatal Error. Missing data file: " & filename)
+            MsgBox("Exiting Fatal Error. Missing data file: " & filename, vbCritical)
+            End
+        End If
 
-		' Skip the first 2 lines
-		'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		line_index = InStr(fileData, Chr(13))
-		'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		fileData = Mid(fileData, line_index + 1)
-		'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		line_index = InStr(fileData, Chr(13))
-		'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		fileData = Mid(fileData, line_index + 1)
-		'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		line_index = InStr(fileData, Chr(13))
-		'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		i = 0
+        FileOpen(1, My.Application.Info.DirectoryPath & filename, OpenMode.Binary)
+        fileData = InputString(1, LOF(1))
+        FileClose(1)
+        line_index = InStr(fileData, Chr(13))
+        fileData = Mid(fileData, line_index + 1)
+        line_index = InStr(fileData, Chr(13))
+        fileData = Mid(fileData, line_index + 1)
+        line_index = InStr(fileData, Chr(13))
+        i = 0
 
-		'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		While (line_index > 0)
-			'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lineData = Mid(fileData, 1, line_index)
+        While (line_index > 0)
+            lineData = Mid(fileData, 1, line_index)
 
-			' Skip the 1st column
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word_index = InStr(lineData, Chr(9))
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lineData = Mid(lineData, word_index + 1)
+            ' Skip the 1st column
+            word_index = InStr(lineData, Chr(9))
+            lineData = Mid(lineData, word_index + 1)
 
-			' Load age
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word_index = InStr(lineData, Chr(9))
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word = Mid(lineData, 1, word_index)
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lineData = Mid(lineData, word_index + 1)
-			'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			age(i) = Int(CDbl(word))
+            ' Load age
+            word_index = InStr(lineData, Chr(9))
+            word = Mid(lineData, 1, word_index)
+            lineData = Mid(lineData, word_index + 1)
+            age(i) = Int(CDbl(word))
 
-			' Load color
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word_index = InStr(lineData, Chr(9))
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word = Mid(lineData, 1, word_index - 1)
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lineData = Mid(lineData, word_index + 1)
-			For j = 0 To 4
-				'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				If color_lookup(j) = word Then
-					'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					color(i) = j
-				End If
-			Next
-			' MsgBox(color_lookup(color(i)))
+            ' Load color
+            word_index = InStr(lineData, Chr(9))
+            word = Mid(lineData, 1, word_index - 1)
+            lineData = Mid(lineData, word_index + 1)
+            For j = 0 To 4
+                If color_lookup(j) = word Then
+                    color(i) = j
+                End If
+            Next
+            'MsgBox(color_lookup(color(i)))
+            ' FK Not worth adding as a debug option
 
-			' Load title
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word_index = InStr(lineData, Chr(9))
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word = Mid(lineData, 1, word_index - 1)
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lineData = Mid(lineData, word_index + 1)
-			'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			title(i) = RTrim(word)
+            ' Load title
+            word_index = InStr(lineData, Chr(9))
+            word = Mid(lineData, 1, word_index - 1)
+            lineData = Mid(lineData, word_index + 1)
+            title(i) = RTrim(word)
 
-			' Load icons
-			For k = 0 To 3
-				'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				word_index = InStr(lineData, Chr(9))
-				'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				word = Mid(lineData, 1, word_index - 1)
-				'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				lineData = Mid(lineData, word_index + 1)
-				For j = 0 To 6
-					'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					If icon_lookup(j) = word Then
-						'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-						icons(i, k) = j
-					End If
-				Next
+            ' Load icons
+            For k = 0 To 3
+                word_index = InStr(lineData, Chr(9))
+                word = Mid(lineData, 1, word_index - 1)
+                lineData = Mid(lineData, word_index + 1)
+                For j = 0 To 6
+                    If icon_lookup(j) = word Then
+                        icons(i, k) = j
+                    End If
+                Next
 			Next
 
-			' Load dogma icon
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word_index = InStr(lineData, Chr(9))
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lineData = Mid(lineData, word_index + 1)
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word_index = InStr(lineData, Chr(9))
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			word = Mid(lineData, 1, word_index - 1)
-			'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			lineData = Mid(lineData, word_index + 1)
-			For j = 0 To 6
-				'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				If icon_lookup(j) = word Then
-					'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					dogma_icon(i) = j
-				End If
-			Next
+            ' Load dogma icon
+            word_index = InStr(lineData, Chr(9))
+            lineData = Mid(lineData, word_index + 1)
+            word_index = InStr(lineData, Chr(9))
+            word = Mid(lineData, 1, word_index - 1)
+            lineData = Mid(lineData, word_index + 1)
+            For j = 0 To 6
+                If icon_lookup(j) = word Then
+                    dogma_icon(i) = j
+                End If
+            Next
 
 			' Load dogma conditions
 			For k = 0 To 2
-				'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				word_index = InStr(lineData, Chr(9))
-				'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				If word_index < 1 Then word_index = InStr(lineData, Chr(13))
-				'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				word = Mid(lineData, 1, word_index - 1)
-				'UPGRADE_WARNING: Couldn't resolve default property of object word_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				'UPGRADE_WARNING: Couldn't resolve default property of object lineData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				lineData = Mid(lineData, word_index + 1)
-				If Mid(word, 1, 1) = Chr(34) Then word = Mid(word, 2)
+                word_index = InStr(lineData, Chr(9))
+                If word_index < 1 Then word_index = InStr(lineData, Chr(13))
+                word = Mid(lineData, 1, word_index - 1)
+                lineData = Mid(lineData, word_index + 1)
+                If Mid(word, 1, 1) = Chr(34) Then word = Mid(word, 2)
 				If VB.Right(word, 1) = Chr(34) Then word = Mid(word, 1, Len(word) - 1)
-				'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				dogma(i, k) = word
-				If Mid(word, 1, 8) = "I demand" Then
-					'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-					is_demand(i, k) = 1
-				End If
-				' MsgBox(word)
-			Next
+                dogma(i, k) = word
+                If Mid(word, 1, 8) = "I demand" Then
+                    is_demand(i, k) = 1
+                End If
+                'MsgBox(word)
+                ' FK Not worth adding as a debug option
+            Next
 
-			' Go to the next line
-			'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			fileData = Mid(fileData, line_index + 1)
-			'UPGRADE_WARNING: Couldn't resolve default property of object fileData. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object line_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			line_index = InStr(fileData, Chr(13))
-			'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			i = i + 1
-		End While
+            ' Go to the next line
+            fileData = Mid(fileData, line_index + 1)
+            line_index = InStr(fileData, Chr(13))
+            i = i + 1
+        End While
 
-		'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-		num_cards = i
-		' MsgBox (Str(i) + " cards loaded")
+        num_cards = i
+        'MsgBox(Str(i) + " cards loaded")
+        'When functioning 105 are loaded
 
-		cmbCards.Items.Clear()
+        cmbCards.Items.Clear()
 		For i = 0 To num_cards - 1
-			'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			cmbCards.Items.Add((title(i)))
-		Next i
+            cmbCards.Items.Add((title(i)))
+        Next i
 
 		cmbCheatLevel.Items.Clear()
 		For i = 0 To 5
-			'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			cmbCheatLevel.Items.Add((20 * i & "%"))
-		Next i
+            cmbCheatLevel.Items.Add((20 * i & "%"))
+        Next i
 		cmbCheatLevel.SelectedIndex = 5
 	End Sub
 
