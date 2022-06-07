@@ -73,16 +73,15 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This is a Windows application that implements a bot/ai to play the card game Innovation. For information about [Innovation](https://boardgamegeek.com/boardgame/63888/innovation) or to buy a copy for use IRL [buynow](https://asmadigames.com/buy-games.php)
+This is a Windows application that implements a bot/ai to play the card game Innovation. For information about [Innovation](https://boardgamegeek.com/boardgame/63888/innovation) or to buy a copy for use IRL [buynow](https://asmadigames.com/buy-games.php).
+The Rules can be downloaded from the puiblisher's web site or [BGG](https://boardgamegeek.com/file/download_redirect/a61f827ce4f5cbbe406b61adb27621a00abd1b73db09defd/InnoV3rules_spreads.pdf)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
@@ -90,8 +89,6 @@ This is a Windows application that implements a bot/ai to play the card game Inn
 * [Visual Basic](https://en.wikipedia.org/wiki/Visual_Basic_.NET)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -113,18 +110,6 @@ A copy of the pre-built Windows binary with additional supporting files is in th
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
@@ -136,8 +121,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 See the [open issues](https://github.com/jsparkes/innovation/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- CONTRIBUTING -->
 ## Contributing
