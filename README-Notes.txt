@@ -2,6 +2,16 @@ README-NOTES.txt
 
 Trying to record some notes on the project/code/game
 
+Build Notes:
+
+- Needs Visual Basic Power pak: http://go.microsoft.com/fwlink/?LinkID=145727&clcid=0x804
+Severity	Code	Description	Project	File	Line	Suppression State
+Error	BC30002	Type 'Microsoft.VisualBasic.PowerPacks.LineShape' is not defined.	innovation	\innovation\main.Designer.vb	228	Active
+
+- and of course that doesn't work needs version 3.0
+https://stackoverflow.com/questions/67288928/are-there-alternatives-to-the-microsoft-visual-basic-power-packs
+
+- Tried to add an icon file and that didn't work....
 Running environment notes:
 
 The apps needs
