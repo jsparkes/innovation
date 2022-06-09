@@ -3054,13 +3054,13 @@
         '
         Me._lblBoardTitle_3.BackColor = System.Drawing.Color.Transparent
         Me._lblBoardTitle_3.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_3.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_3, CType(3, Short))
         Me._lblBoardTitle_3.Location = New System.Drawing.Point(848, 200)
         Me._lblBoardTitle_3.Name = "_lblBoardTitle_3"
         Me._lblBoardTitle_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_3.Size = New System.Drawing.Size(137, 25)
+        Me._lblBoardTitle_3.Size = New System.Drawing.Size(105, 25)
         Me._lblBoardTitle_3.TabIndex = 33
         Me._lblBoardTitle_3.Text = "Quantum Theory"
         '
@@ -3156,13 +3156,13 @@
         '
         Me._lblBoardTitle_2.BackColor = System.Drawing.Color.Transparent
         Me._lblBoardTitle_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_2, CType(2, Short))
         Me._lblBoardTitle_2.Location = New System.Drawing.Point(664, 200)
         Me._lblBoardTitle_2.Name = "_lblBoardTitle_2"
         Me._lblBoardTitle_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_2.Size = New System.Drawing.Size(137, 25)
+        Me._lblBoardTitle_2.Size = New System.Drawing.Size(105, 25)
         Me._lblBoardTitle_2.TabIndex = 30
         Me._lblBoardTitle_2.Text = "Quantum Theory"
         '
@@ -3254,17 +3254,17 @@
         Me._imgIconSmall_7.TabIndex = 210
         Me._imgIconSmall_7.TabStop = False
         '
-        '_lblBoardTitle_1
+        '_lbl105
         '
         Me._lblBoardTitle_1.BackColor = System.Drawing.Color.Transparent
         Me._lblBoardTitle_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_1, CType(1, Short))
         Me._lblBoardTitle_1.Location = New System.Drawing.Point(480, 200)
         Me._lblBoardTitle_1.Name = "_lblBoardTitle_1"
         Me._lblBoardTitle_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_1.Size = New System.Drawing.Size(137, 25)
+        Me._lblBoardTitle_1.Size = New System.Drawing.Size(105, 25)
         Me._lblBoardTitle_1.TabIndex = 27
         Me._lblBoardTitle_1.Text = "Quantum Theory"
         '
@@ -3352,13 +3352,13 @@
         '
         Me._lblBoardTitle_0.BackColor = System.Drawing.Color.Transparent
         Me._lblBoardTitle_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_0.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_0.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_0, CType(0, Short))
         Me._lblBoardTitle_0.Location = New System.Drawing.Point(296, 200)
         Me._lblBoardTitle_0.Name = "_lblBoardTitle_0"
         Me._lblBoardTitle_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_0.Size = New System.Drawing.Size(137, 25)
+        Me._lblBoardTitle_0.Size = New System.Drawing.Size(105, 25)
         Me._lblBoardTitle_0.TabIndex = 22
         Me._lblBoardTitle_0.Text = "Quantum Theory"
         '
@@ -3855,13 +3855,13 @@
         '
         Me._lblBoardTitle_4.BackColor = System.Drawing.Color.Transparent
         Me._lblBoardTitle_4.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_4.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_4, CType(4, Short))
         Me._lblBoardTitle_4.Location = New System.Drawing.Point(1032, 200)
         Me._lblBoardTitle_4.Name = "_lblBoardTitle_4"
         Me._lblBoardTitle_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_4.Size = New System.Drawing.Size(137, 25)
+        Me._lblBoardTitle_4.Size = New System.Drawing.Size(105, 25)
         Me._lblBoardTitle_4.TabIndex = 36
         Me._lblBoardTitle_4.Text = "Quantum Theory"
         '
