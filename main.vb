@@ -3,6 +3,7 @@ Option Explicit On
 Imports VB = Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.PowerPacks
 'UPGRADE_NOTE: Main was upgraded to Main_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
+
 Friend Class Main_Renamed
 	Inherits System.Windows.Forms.Form
 	Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
@@ -6276,118 +6277,118 @@ Friend Class Main_Renamed
 		icon_lookup(5) = "Factory"
 		icon_lookup(6) = "Clock"
 
-        Dim fileData, lineData As String
-        Dim word As String
-        Dim i, line_index, word_index, j As Short
-        Dim k As Short
-        Dim filename As String = ".\Innovation.txt" ' Holds all the card data
+		Dim fileData, lineData As String
+		Dim word As String
+		Dim i, line_index, word_index, j As Short
+		Dim k As Short
+		Dim filename As String = ".\Innovation.txt" ' Holds all the card data
 
-        If System.IO.File.Exists(filename) = False Then
-            'MessageBox.Show("Exiting Fatal Error. Missing data file: " & filename)
-            MsgBox("Exiting Fatal Error. Missing data file: " & filename, vbCritical)
-            End
-        End If
+		If System.IO.File.Exists(filename) = False Then
+			'MessageBox.Show("Exiting Fatal Error. Missing data file: " & filename)
+			MsgBox("Exiting Fatal Error. Missing data file: " & filename, vbCritical)
+			End
+		End If
 
-        FileOpen(1, My.Application.Info.DirectoryPath & filename, OpenMode.Binary)
-        fileData = InputString(1, LOF(1))
-        FileClose(1)
-        line_index = InStr(fileData, Chr(13))
-        fileData = Mid(fileData, line_index + 1)
-        line_index = InStr(fileData, Chr(13))
-        fileData = Mid(fileData, line_index + 1)
-        line_index = InStr(fileData, Chr(13))
-        i = 0
+		FileOpen(1, My.Application.Info.DirectoryPath & filename, OpenMode.Binary)
+		fileData = InputString(1, LOF(1))
+		FileClose(1)
+		line_index = InStr(fileData, Chr(13))
+		fileData = Mid(fileData, line_index + 1)
+		line_index = InStr(fileData, Chr(13))
+		fileData = Mid(fileData, line_index + 1)
+		line_index = InStr(fileData, Chr(13))
+		i = 0
 
-        While (line_index > 0)
-            lineData = Mid(fileData, 1, line_index)
+		While (line_index > 0)
+			lineData = Mid(fileData, 1, line_index)
 
-            ' Skip the 1st column
-            word_index = InStr(lineData, Chr(9))
-            lineData = Mid(lineData, word_index + 1)
+			' Skip the 1st column
+			word_index = InStr(lineData, Chr(9))
+			lineData = Mid(lineData, word_index + 1)
 
-            ' Load age
-            word_index = InStr(lineData, Chr(9))
-            word = Mid(lineData, 1, word_index)
-            lineData = Mid(lineData, word_index + 1)
-            age(i) = Int(CDbl(word))
+			' Load age
+			word_index = InStr(lineData, Chr(9))
+			word = Mid(lineData, 1, word_index)
+			lineData = Mid(lineData, word_index + 1)
+			age(i) = Int(CDbl(word))
 
-            ' Load color
-            word_index = InStr(lineData, Chr(9))
-            word = Mid(lineData, 1, word_index - 1)
-            lineData = Mid(lineData, word_index + 1)
-            For j = 0 To 4
-                If color_lookup(j) = word Then
-                    color(i) = j
-                End If
-            Next
-            'MsgBox(color_lookup(color(i)))
-            ' FK Not worth adding as a debug option
+			' Load color
+			word_index = InStr(lineData, Chr(9))
+			word = Mid(lineData, 1, word_index - 1)
+			lineData = Mid(lineData, word_index + 1)
+			For j = 0 To 4
+				If color_lookup(j) = word Then
+					color(i) = j
+				End If
+			Next
+			'MsgBox(color_lookup(color(i)))
+			' FK Not worth adding as a debug option
 
-            ' Load title
-            word_index = InStr(lineData, Chr(9))
-            word = Mid(lineData, 1, word_index - 1)
-            lineData = Mid(lineData, word_index + 1)
-            title(i) = RTrim(word)
+			' Load title
+			word_index = InStr(lineData, Chr(9))
+			word = Mid(lineData, 1, word_index - 1)
+			lineData = Mid(lineData, word_index + 1)
+			title(i) = RTrim(word)
 
-            ' Load icons
-            For k = 0 To 3
-                word_index = InStr(lineData, Chr(9))
-                word = Mid(lineData, 1, word_index - 1)
-                lineData = Mid(lineData, word_index + 1)
-                For j = 0 To 6
-                    If icon_lookup(j) = word Then
-                        icons(i, k) = j
-                    End If
-                Next
+			' Load icons
+			For k = 0 To 3
+				word_index = InStr(lineData, Chr(9))
+				word = Mid(lineData, 1, word_index - 1)
+				lineData = Mid(lineData, word_index + 1)
+				For j = 0 To 6
+					If icon_lookup(j) = word Then
+						icons(i, k) = j
+					End If
+				Next
 			Next
 
-            ' Load dogma icon
-            word_index = InStr(lineData, Chr(9))
-            lineData = Mid(lineData, word_index + 1)
-            word_index = InStr(lineData, Chr(9))
-            word = Mid(lineData, 1, word_index - 1)
-            lineData = Mid(lineData, word_index + 1)
-            For j = 0 To 6
-                If icon_lookup(j) = word Then
-                    dogma_icon(i) = j
-                End If
-            Next
+			' Load dogma icon
+			word_index = InStr(lineData, Chr(9))
+			lineData = Mid(lineData, word_index + 1)
+			word_index = InStr(lineData, Chr(9))
+			word = Mid(lineData, 1, word_index - 1)
+			lineData = Mid(lineData, word_index + 1)
+			For j = 0 To 6
+				If icon_lookup(j) = word Then
+					dogma_icon(i) = j
+				End If
+			Next
 
 			' Load dogma conditions
 			For k = 0 To 2
-                word_index = InStr(lineData, Chr(9))
-                If word_index < 1 Then word_index = InStr(lineData, Chr(13))
-                word = Mid(lineData, 1, word_index - 1)
-                lineData = Mid(lineData, word_index + 1)
-                If Mid(word, 1, 1) = Chr(34) Then word = Mid(word, 2)
+				word_index = InStr(lineData, Chr(9))
+				If word_index < 1 Then word_index = InStr(lineData, Chr(13))
+				word = Mid(lineData, 1, word_index - 1)
+				lineData = Mid(lineData, word_index + 1)
+				If Mid(word, 1, 1) = Chr(34) Then word = Mid(word, 2)
 				If VB.Right(word, 1) = Chr(34) Then word = Mid(word, 1, Len(word) - 1)
-                dogma(i, k) = word
-                If Mid(word, 1, 8) = "I demand" Then
-                    is_demand(i, k) = 1
-                End If
-                'MsgBox(word)
-                ' FK Not worth adding as a debug option
-            Next
+				dogma(i, k) = word
+				If Mid(word, 1, 8) = "I demand" Then
+					is_demand(i, k) = 1
+				End If
+				'MsgBox(word)
+				' FK Not worth adding as a debug option
+			Next
 
-            ' Go to the next line
-            fileData = Mid(fileData, line_index + 1)
-            line_index = InStr(fileData, Chr(13))
-            i = i + 1
-        End While
+			' Go to the next line
+			fileData = Mid(fileData, line_index + 1)
+			line_index = InStr(fileData, Chr(13))
+			i = i + 1
+		End While
 
-        num_cards = i
-        'MsgBox(Str(i) + " cards loaded")
-        'When functioning 105 are loaded
+		num_cards = i
+		'MsgBox(Str(i) + " cards loaded")
+		'When functioning 105 are loaded
 
-        cmbCards.Items.Clear()
+		cmbCards.Items.Clear()
 		For i = 0 To num_cards - 1
-            cmbCards.Items.Add((title(i)))
-        Next i
+			cmbCards.Items.Add((title(i)))
+		Next i
 
 		cmbCheatLevel.Items.Clear()
 		For i = 0 To 5
-            cmbCheatLevel.Items.Add((20 * i & "%"))
-        Next i
+			cmbCheatLevel.Items.Add((20 * i & "%"))
+		Next i
 		cmbCheatLevel.SelectedIndex = 5
 	End Sub
 
@@ -8314,27 +8315,27 @@ Friend Class Main_Renamed
 		Call process_board_click(index)
 	End Sub
 
-    Private Sub Main_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        Dim KeyCode As Short = eventArgs.KeyCode
-        Dim Shift As Short = eventArgs.KeyData \ &H10000
-        If KeyCode = System.Windows.Forms.Keys.R Then
-            Call load_game()
-            Call ready_for_action()
+	Private Sub Main_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+		Dim KeyCode As Short = eventArgs.KeyCode
+		Dim Shift As Short = eventArgs.KeyData \ &H10000
+		If KeyCode = System.Windows.Forms.Keys.R Then
+			Call load_game()
+			Call ready_for_action()
 
-            ' Clear some random buttons
-            cmd2Players.Visible = False
-            cmd3Players.Visible = False
-            cmd4Players.Visible = False
-            cmbCheatLevel.Visible = False
-            lblCheatLevel.Visible = False
-            lblOtherApps.Visible = False
-            imgLarge.SendToBack()
-            Line1.BringToFront()
-        ElseIf KeyCode = System.Windows.Forms.Keys.N Then
-            phase = "new_game"
-            Call start_new_game()
-        ElseIf KeyCode = System.Windows.Forms.Keys.C Then
-            Call cmdNext_Click(cmdNext, New System.EventArgs())
-        End If
-    End Sub
+			' Clear some random buttons
+			cmd2Players.Visible = False
+			cmd3Players.Visible = False
+			cmd4Players.Visible = False
+			cmbCheatLevel.Visible = False
+			lblCheatLevel.Visible = False
+			lblOtherApps.Visible = False
+			imgLarge.SendToBack()
+			Line1.BringToFront()
+		ElseIf KeyCode = System.Windows.Forms.Keys.N Then
+			phase = "new_game"
+			Call start_new_game()
+		ElseIf KeyCode = System.Windows.Forms.Keys.C Then
+			Call cmdNext_Click(cmdNext, New System.EventArgs())
+		End If
+	End Sub
 End Class
