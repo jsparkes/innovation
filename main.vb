@@ -6491,6 +6491,8 @@ Friend Class Main_Renamed
 		If ai_mode <> 0 Or silent = 1 Then Exit Sub
 		txtLog.Text = txtLog.Text & str_Renamed & Chr(13) & Chr(10)
 		txtLog.SelectionStart = Len(txtLog.Text)
+		txtLog.Select(txtLog.TextLength - 1, 1) 'select the last chr in the textbox
+		txtLog.ScrollToCaret() 'scroll to the selected position
 	End Sub
 
 	'UPGRADE_NOTE: str was upgraded to str_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
