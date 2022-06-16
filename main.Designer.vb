@@ -612,6 +612,7 @@
         Me.lblScoreTitle = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblVP = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblViewCard = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         CType(Me.Image1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3322,7 +3323,7 @@
         '
         '_lblDogma_0
         '
-        Me._lblDogma_0.BackColor = System.Drawing.Color.Transparent
+        Me._lblDogma_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblDogma_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblDogma_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3412,6 +3413,7 @@
         '
         '_imgBoard_0
         '
+        Me._imgBoard_0.BackColor = System.Drawing.Color.Gold
         Me._imgBoard_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoard_0.Image = CType(resources.GetObject("_imgBoard_0.Image"), System.Drawing.Image)
         Me.imgBoard.SetIndex(Me._imgBoard_0, CType(0, Short))
@@ -3881,7 +3883,7 @@
         '
         '_lblDogma_4
         '
-        Me._lblDogma_4.BackColor = System.Drawing.Color.Transparent
+        Me._lblDogma_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblDogma_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblDogma_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_4.ForeColor = System.Drawing.SystemColors.ControlText
@@ -4280,12 +4282,22 @@
         'lblScoreTitle
         '
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 18
+        Me.ListBox1.Location = New System.Drawing.Point(727, 0)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(257, 4)
+        Me.ListBox1.TabIndex = 253
+        '
         'Main_Renamed
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1185, 667)
+        Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.cmbCheatLevel)
         Me.Controls.Add(Me.cmdScore)
         Me.Controls.Add(Me.cmbCards)
@@ -4665,5 +4677,7 @@
         Me.PerformLayout()
 
     End Sub
+
+    Friend WithEvents ListBox1 As ListBox
 #End Region
 End Class
