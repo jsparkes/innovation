@@ -1302,7 +1302,7 @@
         Me.txtLog.AcceptsReturn = True
         Me.txtLog.BackColor = System.Drawing.SystemColors.Window
         Me.txtLog.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtLog.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLog.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLog.ForeColor = System.Drawing.SystemColors.WindowText
         Me.txtLog.Location = New System.Drawing.Point(824, 8)
         Me.txtLog.MaxLength = 0
@@ -3254,7 +3254,7 @@
         Me._imgIconSmall_7.TabIndex = 210
         Me._imgIconSmall_7.TabStop = False
         '
-        '_lbl105
+        '_lblBoardTitle_1
         '
         Me._lblBoardTitle_1.BackColor = System.Drawing.Color.Transparent
         Me._lblBoardTitle_1.Cursor = System.Windows.Forms.Cursors.Default
