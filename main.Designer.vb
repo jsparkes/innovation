@@ -3082,7 +3082,7 @@
         '
         Me._lblDogma_3.BackColor = System.Drawing.Color.Transparent
         Me._lblDogma_3.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_3.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_3, CType(3, Short))
         Me._lblDogma_3.Location = New System.Drawing.Point(848, 224)
@@ -3184,7 +3184,7 @@
         '
         Me._lblDogma_2.BackColor = System.Drawing.Color.Transparent
         Me._lblDogma_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_2.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_2, CType(2, Short))
         Me._lblDogma_2.Location = New System.Drawing.Point(664, 224)
@@ -3286,7 +3286,7 @@
         '
         Me._lblDogma_1.BackColor = System.Drawing.Color.Transparent
         Me._lblDogma_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_1.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_1, CType(1, Short))
         Me._lblDogma_1.Location = New System.Drawing.Point(480, 224)
@@ -3324,7 +3324,7 @@
         '
         Me._lblDogma_0.BackColor = System.Drawing.Color.Transparent
         Me._lblDogma_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_0.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_0, CType(0, Short))
         Me._lblDogma_0.Location = New System.Drawing.Point(296, 224)
@@ -3477,7 +3477,7 @@
         '
         Me.lblDogmaSymbol.BackColor = System.Drawing.Color.Transparent
         Me.lblDogmaSymbol.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblDogmaSymbol.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDogmaSymbol.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDogmaSymbol.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogmaSymbol.Location = New System.Drawing.Point(40, 32)
         Me.lblDogmaSymbol.Name = "lblDogmaSymbol"
@@ -3883,7 +3883,7 @@
         '
         Me._lblDogma_4.BackColor = System.Drawing.Color.Transparent
         Me._lblDogma_4.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_4.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_4, CType(4, Short))
         Me._lblDogma_4.Location = New System.Drawing.Point(1032, 224)
@@ -4542,6 +4542,7 @@
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Location = New System.Drawing.Point(8, 29)
         Me.MaximizeBox = False
