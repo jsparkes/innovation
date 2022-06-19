@@ -2,6 +2,7 @@ Option Strict Off
 Option Explicit On
 Imports VB = Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.PowerPacks
+Imports System.Collections.Generic
 'UPGRADE_NOTE: Main was upgraded to Main_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
 
 Friend Class Main_Renamed
@@ -25,6 +26,16 @@ Friend Class Main_Renamed
 	Dim icon_images(10) As System.Drawing.Image
 	Dim achievement_images(5) As System.Drawing.Image
 	Dim title_image As System.Drawing.Image
+
+    'Background colors
+    Dim background_colors = New Dictionary(Of String, Color) From {
+        {"Yellow", System.Drawing.Color.FromArgb(227, 224, 145)},
+        {"Red", System.Drawing.Color.FromArgb(216, 146, 144)},
+        {"Purple", System.Drawing.Color.FromArgb(161, 171, 180)},
+        {"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
+        {"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
+    }
+
 
 	Private Sub set_debug_values()
 		Dim i As Short
@@ -6002,6 +6013,7 @@ Friend Class Main_Renamed
 			Call set_icon_image(imgHandIcon(j), hand(0, j), dogma_icon(hand(0, j)))
 			'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Call set_color_image(imgHandColor(j), hand(0, j), color(hand(0, j)))
+            lblHand(j).BackColor = background_colors(color_lookup(color(hand(0, j))))
 			imgHandIcon(j).Visible = True
 			imgHandColor(j).Visible = True
 		Next j
@@ -6026,6 +6038,7 @@ Friend Class Main_Renamed
 			Call set_icon_image(imgScoreIcon(j), score_pile(0, j), dogma_icon(score_pile(0, j)))
 			'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Call set_color_image(imgScoreColor(j), score_pile(0, j), color(score_pile(0, j)))
+            lblScoreTitle(j).BackColor = background_colors(color_lookup(color(score_pile(0, j))))
 			imgScoreIcon(j).Visible = True
 			imgScoreColor(j).Visible = True
 		Next j
@@ -6511,24 +6524,18 @@ Friend Class Main_Renamed
 	Private Sub load_picture(ByRef id As Object)
 		Dim i As Short
 		' MsgBox "Loading " & id
-		'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 		If lblRules.Tag <> id Then
-			'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			lblRules.Tag = id
-			'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			lblRules.Text = dogma(id, 0) & vbNewLine
-			'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            lblRules.BackColor = background_colors(color_lookup(color(id)))
+            lblLarge.BackColor = background_colors(color_lookup(color(id)))
+            lblDogmaSymbol.BackColor = background_colors(color_lookup(color(id)))
 			If Len(dogma(id, 1)) > 1 Then lblRules.Text = "1) " & lblRules.Text & "2) " & dogma(id, 1)
-			'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			If Len(dogma(id, 2)) > 1 Then lblRules.Text = lblRules.Text & vbNewLine & "3) " & dogma(id, 2)
-			'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			lblLarge.Text = title(id) & " - Age " & age(id)
-			'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Call set_icon_image(imgDogmaSymbol, id, dogma_icon(id))
-			'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Call set_color_image(imgLarge, id, color(id))
 			For i = 0 To 3
-				'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 				Call set_icon_image(imgLargeIcon(i), id, icons(id, i))
 			Next i
 			imgLarge.SendToBack()
