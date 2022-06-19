@@ -6505,10 +6505,10 @@ Friend Class Main_Renamed
 		txtLog.Text = txtLog.Text & str_Renamed & Chr(13) & Chr(10)
 		txtLog.SelectionStart = Len(txtLog.Text)
 		txtLog.Select(txtLog.TextLength - 1, 1) 'select the last chr in the textbox
-        txtLog.ScrollToCaret() 'scroll to the selected position
-        'Stupidly inefficient for now
-        My.Computer.FileSystem.WriteAllText("log.txt", txtLog.Text, False)
-    End Sub
+		txtLog.ScrollToCaret() 'scroll to the selected position
+		'Stupidly inefficient for now
+		My.Computer.FileSystem.WriteAllText("log.txt", txtLog.Text, False)
+	End Sub
 
 	'UPGRADE_NOTE: str was upgraded to str_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
 	Public Sub append(ByVal player As Short, ByVal str_Renamed As String)
@@ -8331,10 +8331,10 @@ Friend Class Main_Renamed
 		Dim Shift As Short = eventArgs.KeyData \ &H10000
 		If KeyCode = System.Windows.Forms.Keys.R Then
 			Call load_game()
-			Call ready_for_action()
+            Call ready_for_action()
 
-			' Clear some random buttons
-			cmd2Players.Visible = False
+            ' Clear some random buttons
+            cmd2Players.Visible = False
 			cmd3Players.Visible = False
 			cmd4Players.Visible = False
 			cmbCheatLevel.Visible = False
