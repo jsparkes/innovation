@@ -2317,7 +2317,7 @@
         '
         '_lblScoreTitle_1
         '
-        Me._lblScoreTitle_1.BackColor = System.Drawing.Color.Transparent
+        Me._lblScoreTitle_1.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me._lblScoreTitle_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblScoreTitle_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScoreTitle_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2343,7 +2343,7 @@
         '
         '_lblScoreTitle_0
         '
-        Me._lblScoreTitle_0.BackColor = System.Drawing.Color.Transparent
+        Me._lblScoreTitle_0.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me._lblScoreTitle_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblScoreTitle_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScoreTitle_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3454,7 +3454,7 @@
         '
         'lblRules
         '
-        Me.lblRules.BackColor = System.Drawing.SystemColors.HighlightText
+        Me.lblRules.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me.lblRules.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblRules.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRules.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3467,6 +3467,7 @@
         '
         'imgDogmaSymbol
         '
+        Me.imgDogmaSymbol.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me.imgDogmaSymbol.Cursor = System.Windows.Forms.Cursors.Default
         Me.imgDogmaSymbol.Image = CType(resources.GetObject("imgDogmaSymbol.Image"), System.Drawing.Image)
         Me.imgDogmaSymbol.Location = New System.Drawing.Point(152, 32)
@@ -3478,7 +3479,7 @@
         '
         'lblDogmaSymbol
         '
-        Me.lblDogmaSymbol.BackColor = System.Drawing.Color.Transparent
+        Me.lblDogmaSymbol.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me.lblDogmaSymbol.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblDogmaSymbol.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDogmaSymbol.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3493,8 +3494,9 @@
         '
         Me.lblLarge.BackColor = System.Drawing.Color.Transparent
         Me.lblLarge.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblLarge.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLarge.Font = New System.Drawing.Font("Arial", 12.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLarge.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblLarge.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me.lblLarge.Location = New System.Drawing.Point(40, 8)
         Me.lblLarge.Name = "lblLarge"
         Me.lblLarge.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -4104,7 +4106,7 @@
         '
         '_lblHand_0
         '
-        Me._lblHand_0.BackColor = System.Drawing.Color.Transparent
+        Me._lblHand_0.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me._lblHand_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblHand_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblHand_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -4154,7 +4156,7 @@
         '
         '_lblHand_1
         '
-        Me._lblHand_1.BackColor = System.Drawing.Color.Transparent
+        Me._lblHand_1.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me._lblHand_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblHand_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblHand_1.ForeColor = System.Drawing.SystemColors.ControlText
