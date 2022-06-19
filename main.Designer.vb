@@ -2422,7 +2422,7 @@
         '
         '_lblOppBoard_14
         '
-        Me._lblOppBoard_14.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_14.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblOppBoard_14.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_14.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_14.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2448,7 +2448,7 @@
         '
         '_lblOppBoard_13
         '
-        Me._lblOppBoard_13.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_13.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblOppBoard_13.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_13.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_13.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2474,7 +2474,7 @@
         '
         '_lblOppBoard_12
         '
-        Me._lblOppBoard_12.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_12.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblOppBoard_12.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_12.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_12.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2500,7 +2500,7 @@
         '
         '_lblOppBoard_11
         '
-        Me._lblOppBoard_11.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(144, Byte), Integer))
         Me._lblOppBoard_11.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_11.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_11.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2526,7 +2526,7 @@
         '
         '_lblOppBoard_10
         '
-        Me._lblOppBoard_10.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._lblOppBoard_10.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_10.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_10.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2594,7 +2594,7 @@
         '
         '_lblOppBoard_9
         '
-        Me._lblOppBoard_9.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_9.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblOppBoard_9.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_9.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_9.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2620,7 +2620,7 @@
         '
         '_lblOppBoard_8
         '
-        Me._lblOppBoard_8.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_8.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblOppBoard_8.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_8.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_8.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2646,7 +2646,7 @@
         '
         '_lblOppBoard_7
         '
-        Me._lblOppBoard_7.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_7.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblOppBoard_7.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_7.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_7.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2672,7 +2672,7 @@
         '
         '_lblOppBoard_6
         '
-        Me._lblOppBoard_6.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_6.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(144, Byte), Integer))
         Me._lblOppBoard_6.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_6.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_6.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2698,7 +2698,7 @@
         '
         '_lblOppBoard_5
         '
-        Me._lblOppBoard_5.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_5.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._lblOppBoard_5.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_5.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_5.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2766,7 +2766,7 @@
         '
         '_lblOppBoard_4
         '
-        Me._lblOppBoard_4.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblOppBoard_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_4.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2792,7 +2792,7 @@
         '
         '_lblOppBoard_3
         '
-        Me._lblOppBoard_3.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblOppBoard_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_3.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2818,7 +2818,7 @@
         '
         '_lblOppBoard_2
         '
-        Me._lblOppBoard_2.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblOppBoard_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_2.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2844,7 +2844,7 @@
         '
         '_lblOppBoard_1
         '
-        Me._lblOppBoard_1.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(144, Byte), Integer))
         Me._lblOppBoard_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2870,7 +2870,7 @@
         '
         '_lblOppBoard_0
         '
-        Me._lblOppBoard_0.BackColor = System.Drawing.Color.Transparent
+        Me._lblOppBoard_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._lblOppBoard_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3053,7 +3053,7 @@
         '
         '_lblBoardTitle_3
         '
-        Me._lblBoardTitle_3.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardTitle_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblBoardTitle_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardTitle_3.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_3.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3067,7 +3067,7 @@
         '
         '_lblBoardAge_3
         '
-        Me._lblBoardAge_3.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardAge_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblBoardAge_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardAge_3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_3.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3081,7 +3081,7 @@
         '
         '_lblDogma_3
         '
-        Me._lblDogma_3.BackColor = System.Drawing.Color.Transparent
+        Me._lblDogma_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblDogma_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblDogma_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_3.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3155,7 +3155,7 @@
         '
         '_lblBoardTitle_2
         '
-        Me._lblBoardTitle_2.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardTitle_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblBoardTitle_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardTitle_2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_2.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3169,7 +3169,7 @@
         '
         '_lblBoardAge_2
         '
-        Me._lblBoardAge_2.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardAge_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblBoardAge_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardAge_2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_2.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3183,7 +3183,7 @@
         '
         '_lblDogma_2
         '
-        Me._lblDogma_2.BackColor = System.Drawing.Color.Transparent
+        Me._lblDogma_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblDogma_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblDogma_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_2.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3257,7 +3257,7 @@
         '
         '_lblBoardTitle_1
         '
-        Me._lblBoardTitle_1.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardTitle_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(144, Byte), Integer))
         Me._lblBoardTitle_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardTitle_1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3271,7 +3271,7 @@
         '
         '_lblBoardAge_1
         '
-        Me._lblBoardAge_1.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardAge_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(144, Byte), Integer))
         Me._lblBoardAge_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardAge_1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3285,7 +3285,7 @@
         '
         '_lblDogma_1
         '
-        Me._lblDogma_1.BackColor = System.Drawing.Color.Transparent
+        Me._lblDogma_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(144, Byte), Integer))
         Me._lblDogma_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblDogma_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3323,7 +3323,7 @@
         '
         '_lblDogma_0
         '
-        Me._lblDogma_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
+        Me._lblDogma_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._lblDogma_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblDogma_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3337,7 +3337,7 @@
         '
         '_lblBoardAge_0
         '
-        Me._lblBoardAge_0.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardAge_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._lblBoardAge_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardAge_0.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3351,7 +3351,7 @@
         '
         '_lblBoardTitle_0
         '
-        Me._lblBoardTitle_0.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardTitle_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._lblBoardTitle_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardTitle_0.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3365,6 +3365,7 @@
         '
         '_imgIconSmall_3
         '
+        Me._imgIconSmall_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._imgIconSmall_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_3.Image = CType(resources.GetObject("_imgIconSmall_3.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_3, CType(3, Short))
@@ -3807,6 +3808,7 @@
         '
         '_imgIconSmall_16
         '
+        Me._imgIconSmall_16.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._imgIconSmall_16.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_16.Image = CType(resources.GetObject("_imgIconSmall_16.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_16, CType(16, Short))
@@ -3855,7 +3857,7 @@
         '
         '_lblBoardTitle_4
         '
-        Me._lblBoardTitle_4.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardTitle_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblBoardTitle_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardTitle_4.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_4.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3869,7 +3871,7 @@
         '
         '_lblBoardAge_4
         '
-        Me._lblBoardAge_4.BackColor = System.Drawing.Color.Transparent
+        Me._lblBoardAge_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblBoardAge_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardAge_4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_4.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3897,6 +3899,7 @@
         '
         '_imgBoardDogma_4
         '
+        Me._imgBoardDogma_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._imgBoardDogma_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoardDogma_4.Image = CType(resources.GetObject("_imgBoardDogma_4.Image"), System.Drawing.Image)
         Me.imgBoardDogma.SetIndex(Me._imgBoardDogma_4, CType(4, Short))
