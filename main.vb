@@ -27,14 +27,14 @@ Friend Class Main_Renamed
 	Dim achievement_images(5) As System.Drawing.Image
 	Dim title_image As System.Drawing.Image
 
-    'Background colors
-    Dim background_colors = New Dictionary(Of String, Color) From {
-        {"Yellow", System.Drawing.Color.FromArgb(227, 224, 145)},
-        {"Red", System.Drawing.Color.FromArgb(216, 146, 144)},
-        {"Purple", System.Drawing.Color.FromArgb(161, 171, 180)},
-        {"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
-        {"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
-    }
+	'Background colors
+	Dim background_colors = New Dictionary(Of String, Color) From {
+		{"Yellow", System.Drawing.Color.FromArgb(227, 224, 145)},
+		{"Red", System.Drawing.Color.FromArgb(216, 146, 144)},
+		{"Purple", System.Drawing.Color.FromArgb(161, 171, 180)},
+		{"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
+		{"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
+	}
 
 
 	Private Sub set_debug_values()
@@ -6013,7 +6013,7 @@ Friend Class Main_Renamed
 			Call set_icon_image(imgHandIcon(j), hand(0, j), dogma_icon(hand(0, j)))
 			'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Call set_color_image(imgHandColor(j), hand(0, j), color(hand(0, j)))
-            lblHand(j).BackColor = background_colors(color_lookup(color(hand(0, j))))
+			lblHand(j).BackColor = background_colors(color_lookup(color(hand(0, j))))
 			imgHandIcon(j).Visible = True
 			imgHandColor(j).Visible = True
 		Next j
@@ -6038,7 +6038,7 @@ Friend Class Main_Renamed
 			Call set_icon_image(imgScoreIcon(j), score_pile(0, j), dogma_icon(score_pile(0, j)))
 			'UPGRADE_WARNING: Couldn't resolve default property of object j. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 			Call set_color_image(imgScoreColor(j), score_pile(0, j), color(score_pile(0, j)))
-            lblScoreTitle(j).BackColor = background_colors(color_lookup(color(score_pile(0, j))))
+			lblScoreTitle(j).BackColor = background_colors(color_lookup(color(score_pile(0, j))))
 			imgScoreIcon(j).Visible = True
 			imgScoreColor(j).Visible = True
 		Next j
@@ -6527,9 +6527,9 @@ Friend Class Main_Renamed
 		If lblRules.Tag <> id Then
 			lblRules.Tag = id
 			lblRules.Text = dogma(id, 0) & vbNewLine
-            lblRules.BackColor = background_colors(color_lookup(color(id)))
-            lblLarge.BackColor = background_colors(color_lookup(color(id)))
-            lblDogmaSymbol.BackColor = background_colors(color_lookup(color(id)))
+			lblRules.BackColor = background_colors(color_lookup(color(id)))
+			lblLarge.BackColor = background_colors(color_lookup(color(id)))
+			lblDogmaSymbol.BackColor = background_colors(color_lookup(color(id)))
 			If Len(dogma(id, 1)) > 1 Then lblRules.Text = "1) " & lblRules.Text & "2) " & dogma(id, 1)
 			If Len(dogma(id, 2)) > 1 Then lblRules.Text = lblRules.Text & vbNewLine & "3) " & dogma(id, 2)
 			lblLarge.Text = title(id) & " - Age " & age(id)
@@ -8331,10 +8331,10 @@ Friend Class Main_Renamed
 		Dim Shift As Short = eventArgs.KeyData \ &H10000
 		If KeyCode = System.Windows.Forms.Keys.R Then
 			Call load_game()
-            Call ready_for_action()
+			Call ready_for_action()
 
-            ' Clear some random buttons
-            cmd2Players.Visible = False
+			' Clear some random buttons
+			cmd2Players.Visible = False
 			cmd3Players.Visible = False
 			cmd4Players.Visible = False
 			cmbCheatLevel.Visible = False
