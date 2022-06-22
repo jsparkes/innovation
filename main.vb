@@ -128,14 +128,15 @@ Friend Class Main_Renamed
 		get_id_by_name = -1
 	End Function
 
-	'UPGRADE_WARNING: Event cmbCards.SelectedIndexChanged may fire when form is initialized. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="88B12AE1-6DE0-48A0-86F1-60C0686C026A"'
 	Private Sub cmbCards_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmbCards.SelectedIndexChanged
-		Dim i As Short
-		For i = 0 To num_cards - 1
-			If VB6.GetItemString(cmbCards, cmbCards.SelectedIndex) = title(i) Then
-				Call load_picture(i)
-			End If
-		Next i
+        Dim i As Short
+        Dim txt As String
+        txt = cmbCards.SelectedItem.ToString()
+        For i = 0 To num_cards - 1
+            If txt = title(i) Then
+                Call load_picture(i)
+            End If
+        Next i
 	End Sub
 
 	Public Sub cmdCancel_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancel.Click
