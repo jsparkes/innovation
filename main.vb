@@ -129,14 +129,14 @@ Friend Class Main_Renamed
 	End Function
 
 	Private Sub cmbCards_SelectedIndexChanged(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmbCards.SelectedIndexChanged
-        Dim i As Short
-        Dim txt As String
-        txt = cmbCards.SelectedItem.ToString()
-        For i = 0 To num_cards - 1
-            If txt = title(i) Then
-                Call load_picture(i)
-            End If
-        Next i
+		Dim i As Short
+		Dim txt As String
+		txt = cmbCards.SelectedItem.ToString()
+		For i = 0 To num_cards - 1
+			If txt = title(i) Then
+				Call load_picture(i)
+			End If
+		Next i
 	End Sub
 
 	Public Sub cmdCancel_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdCancel.Click
@@ -8132,15 +8132,13 @@ Friend Class Main_Renamed
 
 	' Functions for mouseover
 	Public Sub imgMouseMove(ByRef img As Object, ByRef Button As Short, ByRef Shift As Short, ByRef X As Single, ByRef Y As Single)
-		With img
-			'UPGRADE_WARNING: Couldn't resolve default property of object img.Height. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			'UPGRADE_WARNING: Couldn't resolve default property of object img.Width. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-			If Not ((X < 0) Or (Y < 0) Or (X > .Width) Or (Y > .Height)) Then
-				'UPGRADE_WARNING: Couldn't resolve default property of object img.Tag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-				load_picture(img.Tag)
-			End If
-		End With
-	End Sub
+        With img
+            'This range check fails on VB.net
+            'If Not ((X < 0) Or (Y < 0) Or (X > .Width) Or (Y > .Height)) Then
+            load_picture(img.Tag)
+            'End If
+        End With
+    End Sub
 
 	Private Sub imgHandColor_MouseMove(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.MouseEventArgs) Handles imgHandColor.MouseMove
 		Dim Button As Short = eventArgs.Button \ &H100000
