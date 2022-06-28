@@ -33,7 +33,7 @@
 <h3 align="center">Innovation Card Game AI</h3>
 
   <p align="center">
-    The goal of the project is to update the Program "Innovation AI" written by xyz to use current coding tools.
+    The goal of the project is to update the Program "Innovation AI" written by Jeff Till (2014) to be available on more recent platforms.
     <br />
     <a href="https://github.com/jsparkes/innovation"><strong>Explore the docs »</strong></a>
     <br />
