@@ -836,7 +836,7 @@
         Me.cmbCheatLevel.Location = New System.Drawing.Point(504, 96)
         Me.cmbCheatLevel.Name = "cmbCheatLevel"
         Me.cmbCheatLevel.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbCheatLevel.Size = New System.Drawing.Size(176, 26)
+        Me.cmbCheatLevel.Size = New System.Drawing.Size(176, 22)
         Me.cmbCheatLevel.TabIndex = 170
         '
         'cmdScore
@@ -863,7 +863,7 @@
         Me.cmbCards.Location = New System.Drawing.Point(80, 166)
         Me.cmbCards.Name = "cmbCards"
         Me.cmbCards.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbCards.Size = New System.Drawing.Size(176, 26)
+        Me.cmbCards.Size = New System.Drawing.Size(176, 22)
         Me.cmbCards.Sorted = True
         Me.cmbCards.TabIndex = 168
         '
@@ -2317,7 +2317,7 @@
         '
         '_lblScoreTitle_1
         '
-        Me._lblScoreTitle_1.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
+        Me._lblScoreTitle_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblScoreTitle_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblScoreTitle_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScoreTitle_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2343,7 +2343,7 @@
         '
         '_lblScoreTitle_0
         '
-        Me._lblScoreTitle_0.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
+        Me._lblScoreTitle_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblScoreTitle_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblScoreTitle_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScoreTitle_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2474,7 +2474,7 @@
         '
         '_lblOppBoard_12
         '
-        Me._lblOppBoard_12.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me._lblOppBoard_12.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblOppBoard_12.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_12.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_12.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2646,7 +2646,7 @@
         '
         '_lblOppBoard_7
         '
-        Me._lblOppBoard_7.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me._lblOppBoard_7.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblOppBoard_7.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_7.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_7.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2818,7 +2818,7 @@
         '
         '_lblOppBoard_2
         '
-        Me._lblOppBoard_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me._lblOppBoard_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblOppBoard_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblOppBoard_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_2.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3155,7 +3155,7 @@
         '
         '_lblBoardTitle_2
         '
-        Me._lblBoardTitle_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me._lblBoardTitle_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblBoardTitle_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardTitle_2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardTitle_2.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3169,7 +3169,7 @@
         '
         '_lblBoardAge_2
         '
-        Me._lblBoardAge_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me._lblBoardAge_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblBoardAge_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblBoardAge_2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_2.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3183,7 +3183,7 @@
         '
         '_lblDogma_2
         '
-        Me._lblDogma_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me._lblDogma_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblDogma_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblDogma_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblDogma_2.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3454,7 +3454,7 @@
         '
         'lblRules
         '
-        Me.lblRules.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
+        Me.lblRules.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.lblRules.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblRules.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRules.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3467,7 +3467,7 @@
         '
         'imgDogmaSymbol
         '
-        Me.imgDogmaSymbol.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
+        Me.imgDogmaSymbol.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.imgDogmaSymbol.Cursor = System.Windows.Forms.Cursors.Default
         Me.imgDogmaSymbol.Image = CType(resources.GetObject("imgDogmaSymbol.Image"), System.Drawing.Image)
         Me.imgDogmaSymbol.Location = New System.Drawing.Point(152, 32)
@@ -3479,7 +3479,7 @@
         '
         'lblDogmaSymbol
         '
-        Me.lblDogmaSymbol.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
+        Me.lblDogmaSymbol.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.lblDogmaSymbol.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblDogmaSymbol.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDogmaSymbol.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3492,11 +3492,10 @@
         '
         'lblLarge
         '
-        Me.lblLarge.BackColor = System.Drawing.Color.Transparent
+        Me.lblLarge.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.lblLarge.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblLarge.Font = New System.Drawing.Font("Arial", 12.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLarge.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblLarge.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
         Me.lblLarge.Location = New System.Drawing.Point(40, 8)
         Me.lblLarge.Name = "lblLarge"
         Me.lblLarge.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -4106,7 +4105,7 @@
         '
         '_lblHand_0
         '
-        Me._lblHand_0.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
+        Me._lblHand_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblHand_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblHand_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblHand_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -4156,7 +4155,7 @@
         '
         '_lblHand_1
         '
-        Me._lblHand_1.BackColor = System.Drawing.Color.FromArgb(132, 173, 217)
+        Me._lblHand_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblHand_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblHand_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblHand_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -4290,7 +4289,7 @@
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 18
+        Me.ListBox1.ItemHeight = 14
         Me.ListBox1.Location = New System.Drawing.Point(727, 0)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(257, 4)
@@ -4298,7 +4297,7 @@
         '
         'Main_Renamed
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1185, 667)

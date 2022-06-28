@@ -27,17 +27,17 @@ Friend Class Main_Renamed
 	Dim achievement_images(5) As System.Drawing.Image
 	Dim title_image As System.Drawing.Image
 
-	'Background colors
-	Dim background_colors = New Dictionary(Of String, Color) From {
-		{"Yellow", System.Drawing.Color.FromArgb(227, 224, 145)},
-		{"Red", System.Drawing.Color.FromArgb(216, 146, 144)},
-		{"Purple", System.Drawing.Color.FromArgb(161, 171, 180)},
-		{"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
-		{"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
-	}
+    'Background colors
+    Dim background_colors = New Dictionary(Of String, Color) From {
+        {"Yellow", System.Drawing.Color.FromArgb(227, 224, 145)},
+        {"Red", System.Drawing.Color.FromArgb(216, 146, 144)},
+        {"Purple", System.Drawing.Color.FromArgb(161, 117, 180)},
+        {"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
+        {"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
+    }
 
 
-	Private Sub set_debug_values()
+    Private Sub set_debug_values()
 		Dim i As Short
 		Dim card_name As String
 		card_name = "Sanitation"
