@@ -91,14 +91,8 @@ The Rules can be downloaded from the publisher's web site or [BGG](https://board
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
 
 This code has been tested under Windows 10/11. No Linux testing has been done.
 
