@@ -81,6 +81,8 @@
 This is a Windows application that implements a bot/ai to play the card game Innovation. For information about [Innovation](https://boardgamegeek.com/boardgame/63888/innovation) or to buy a copy for use IRL [buynow](https://asmadigames.com/buy-games.php).
 The Rules can be downloaded from the publisher's web site or [BGG](https://boardgamegeek.com/file/download_redirect/a61f827ce4f5cbbe406b61adb27621a00abd1b73db09defd/InnoV3rules_spreads.pdf)
 
+This vB version has inspired the F# version https://github.com/jsparkes/InnovationFS
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
@@ -91,14 +93,8 @@ The Rules can be downloaded from the publisher's web site or [BGG](https://board
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
 
 This code has been tested under Windows 10/11. No Linux testing has been done.
 
