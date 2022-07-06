@@ -121,10 +121,10 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="Line10.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 187, 256, 0</value>
+    <value>-1, 191, 256, 0</value>
   </metadata>
   <metadata name="Line10.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 187</value>
+    <value>-1, 191</value>
   </metadata>
   <metadata name="Line10.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 0</value>
@@ -139,13 +139,13 @@
     <value>0, 160</value>
   </metadata>
   <metadata name="Line1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 160, 0, 512</value>
+    <value>253, 162, 5, 599</value>
   </metadata>
   <metadata name="Line1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 160</value>
+    <value>253, 162</value>
   </metadata>
   <metadata name="Line1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 512</value>
+    <value>5, 599</value>
   </metadata>
   <metadata name="Line8.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>688, 336, 0, 176</value>
@@ -157,31 +157,31 @@
     <value>0, 176</value>
   </metadata>
   <metadata name="Line7.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 512, 928, 0</value>
+    <value>256, 512, 1125, 0</value>
   </metadata>
   <metadata name="Line7.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 512</value>
   </metadata>
   <metadata name="Line7.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>928, 0</value>
+    <value>1125, 0</value>
   </metadata>
   <metadata name="Line6.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 336, 928, 0</value>
+    <value>256, 336, 1128, 0</value>
   </metadata>
   <metadata name="Line6.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 336</value>
   </metadata>
   <metadata name="Line6.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>928, 0</value>
+    <value>1128, 0</value>
   </metadata>
   <metadata name="Line5.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 160, 1184, 0</value>
+    <value>0, 160, 1383, 0</value>
   </metadata>
   <metadata name="Line5.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 160</value>
   </metadata>
   <metadata name="Line5.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1184, 0</value>
+    <value>1383, 0</value>
   </metadata>
   <metadata name="Line4.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 160, 256, 0</value>
@@ -193,28 +193,28 @@
     <value>256, 0</value>
   </metadata>
   <metadata name="Line3.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 344, 256, 0</value>
+    <value>-1, 397, 256, 0</value>
   </metadata>
   <metadata name="Line3.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 344</value>
+    <value>-1, 397</value>
   </metadata>
   <metadata name="Line3.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 0</value>
   </metadata>
   <metadata name="Line2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 504, 256, 0</value>
+    <value>-1, 605, 256, 0</value>
   </metadata>
   <metadata name="Line2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 504</value>
+    <value>-1, 605</value>
   </metadata>
   <metadata name="Line2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 0</value>
   </metadata>
   <metadata name="Line10.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 187, 256, 0</value>
+    <value>-1, 191, 256, 0</value>
   </metadata>
   <metadata name="Line10.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 187</value>
+    <value>-1, 191</value>
   </metadata>
   <metadata name="Line10.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 0</value>
@@ -229,13 +229,13 @@
     <value>0, 160</value>
   </metadata>
   <metadata name="Line1.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 160, 0, 512</value>
+    <value>253, 162, 5, 599</value>
   </metadata>
   <metadata name="Line1.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 160</value>
+    <value>253, 162</value>
   </metadata>
   <metadata name="Line1.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 512</value>
+    <value>5, 599</value>
   </metadata>
   <metadata name="Line8.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>688, 336, 0, 176</value>
@@ -247,31 +247,31 @@
     <value>0, 176</value>
   </metadata>
   <metadata name="Line7.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 512, 928, 0</value>
+    <value>256, 512, 1125, 0</value>
   </metadata>
   <metadata name="Line7.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 512</value>
   </metadata>
   <metadata name="Line7.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>928, 0</value>
+    <value>1125, 0</value>
   </metadata>
   <metadata name="Line6.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>256, 336, 928, 0</value>
+    <value>256, 336, 1128, 0</value>
   </metadata>
   <metadata name="Line6.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 336</value>
   </metadata>
   <metadata name="Line6.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>928, 0</value>
+    <value>1128, 0</value>
   </metadata>
   <metadata name="Line5.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 160, 1184, 0</value>
+    <value>0, 160, 1383, 0</value>
   </metadata>
   <metadata name="Line5.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 160</value>
   </metadata>
   <metadata name="Line5.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1184, 0</value>
+    <value>1383, 0</value>
   </metadata>
   <metadata name="Line4.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 160, 256, 0</value>
@@ -283,22 +283,25 @@
     <value>256, 0</value>
   </metadata>
   <metadata name="Line3.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 344, 256, 0</value>
+    <value>-1, 397, 256, 0</value>
   </metadata>
   <metadata name="Line3.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 344</value>
+    <value>-1, 397</value>
   </metadata>
   <metadata name="Line3.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 0</value>
   </metadata>
   <metadata name="Line2.Bounds" type="System.Drawing.Rectangle, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 504, 256, 0</value>
+    <value>-1, 605, 256, 0</value>
   </metadata>
   <metadata name="Line2.Location" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 504</value>
+    <value>-1, 605</value>
   </metadata>
   <metadata name="Line2.Size" type="System.Drawing.Size, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>256, 0</value>
+  </metadata>
+  <metadata name="cmdOddball.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>193, 17</value>
   </metadata>
   <metadata name="cmdOddball.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>193, 17</value>
@@ -832,6 +835,9 @@
         KihOBMl9+/YdPnw4tcDhzIuBTL3yyivs3o0bN8YWp/l84vjrr/8BkUWyIRZE3ucAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="lblOppBoard.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>2465, 17</value>
+  </metadata>
   <data name="_imgOppBoard_12.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAIAAAC3LO29AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -3956,9 +3962,6 @@
   <metadata name="lblAchievement.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1585, 17</value>
   </metadata>
-  <metadata name="lblAchievement.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1585, 17</value>
-  </metadata>
   <data name="_imgBoard_3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABIAAAAKICAIAAACHSRZaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -6577,6 +6580,9 @@
   <metadata name="imgScoreIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1465, 17</value>
   </metadata>
+  <metadata name="lblAchievement.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1585, 17</value>
+  </metadata>
   <metadata name="lblAgeCards.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1721, 17</value>
   </metadata>
@@ -6597,9 +6603,6 @@
   </metadata>
   <metadata name="lblIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>2385, 17</value>
-  </metadata>
-  <metadata name="lblOppBoard.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>2465, 17</value>
   </metadata>
   <metadata name="lblOppDetail.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>2577, 17</value>

@@ -24,20 +24,20 @@ Friend Class Main_Renamed
 	'Images
 	Dim color_images(10) As System.Drawing.Image
 	Dim icon_images(10) As System.Drawing.Image
-    Dim achievement_images(15) As System.Drawing.Image
-    Dim title_image As System.Drawing.Image
+	Dim achievement_images(15) As System.Drawing.Image
+	Dim title_image As System.Drawing.Image
 
-    'Background colors
-    Dim background_colors = New Dictionary(Of String, Color) From {
-        {"Yellow", System.Drawing.Color.FromArgb(227, 224, 145)},
-        {"Red", System.Drawing.Color.FromArgb(216, 146, 144)},
-        {"Purple", System.Drawing.Color.FromArgb(161, 117, 180)},
-        {"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
-        {"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
-    }
+	'Background colors
+	Dim background_colors = New Dictionary(Of String, Color) From {
+		{"Yellow", System.Drawing.Color.FromArgb(227, 224, 145)},
+		{"Red", System.Drawing.Color.FromArgb(216, 146, 144)},
+		{"Purple", System.Drawing.Color.FromArgb(161, 117, 180)},
+		{"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
+		{"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
+	}
 
 
-    Private Sub set_debug_values()
+	Private Sub set_debug_values()
 		Dim i As Short
 		Dim card_name As String
 		card_name = "Sanitation"
@@ -6410,25 +6410,25 @@ Friend Class Main_Renamed
 		title_image = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/title.jpg")
 
 
-        achievement_images(0) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve1.jpg")
-        achievement_images(1) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve2.jpg")
-        achievement_images(2) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve3.jpg")
-        achievement_images(3) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve4.jpg")
-        achievement_images(4) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve5.jpg")
-        achievement_images(5) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve6.jpg")
-        achievement_images(6) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve7.jpg")
-        achievement_images(7) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve8.jpg")
-        achievement_images(8) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve9.jpg")
-        'although there is an age 10 there isn't an achievement
-        'achievement_images(9) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve10.jpg")
-        achievement_images(9) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/monumentachievement.jpg")
-        achievement_images(10) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/empireachievement.jpg")
-        achievement_images(11) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/wonderachievement.jpg")
-        achievement_images(12) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/worldachievement.jpg")
-        achievement_images(13) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/universeachievement.jpg")
+		achievement_images(0) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve1.jpg")
+		achievement_images(1) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve2.jpg")
+		achievement_images(2) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve3.jpg")
+		achievement_images(3) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve4.jpg")
+		achievement_images(4) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve5.jpg")
+		achievement_images(5) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve6.jpg")
+		achievement_images(6) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve7.jpg")
+		achievement_images(7) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve8.jpg")
+		achievement_images(8) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve9.jpg")
+		'although there is an age 10 there isn't an achievement
+		'achievement_images(9) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve10.jpg")
+		achievement_images(9) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/monumentachievement.jpg")
+		achievement_images(10) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/empireachievement.jpg")
+		achievement_images(11) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/wonderachievement.jpg")
+		achievement_images(12) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/worldachievement.jpg")
+		achievement_images(13) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/universeachievement.jpg")
 
-        ' load all the image resources
-        Dim i, j As Object
+		' load all the image resources
+		Dim i, j As Object
 		Dim column_offset As Short
 		For i = 0 To 4
 			' MsgBox App.Path & "/images/" & color_lookup(i) & ".jpg"
@@ -8142,15 +8142,15 @@ Friend Class Main_Renamed
 
 
 
-    ' Functions for mouseover
-    Public Sub imgMouseMove(ByRef img As Object, ByRef Button As Short, ByRef Shift As Short, ByRef X As Single, ByRef Y As Single)
-        With img
-            'This range check fails on VB.net
-            'If Not ((X < 0) Or (Y < 0) Or (X > .Width) Or (Y > .Height)) Then
-            load_picture(img.Tag)
-            'End If
-        End With
-    End Sub
+	' Functions for mouseover
+	Public Sub imgMouseMove(ByRef img As Object, ByRef Button As Short, ByRef Shift As Short, ByRef X As Single, ByRef Y As Single)
+		With img
+			'This range check fails on VB.net
+			'If Not ((X < 0) Or (Y < 0) Or (X > .Width) Or (Y > .Height)) Then
+			load_picture(img.Tag)
+			'End If
+		End With
+	End Sub
 
 	Private Sub imgHandColor_MouseMove(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.MouseEventArgs) Handles imgHandColor.MouseMove
 		Dim Button As Short = eventArgs.Button \ &H100000
@@ -8298,15 +8298,15 @@ Friend Class Main_Renamed
 		Dim Shift As Short = System.Windows.Forms.Control.ModifierKeys \ &H10000
 		Dim X As Single = VB6.PixelsToTwipsX(eventArgs.X)
 		Dim Y As Single = VB6.PixelsToTwipsY(eventArgs.Y)
-        Dim index As Short = lblAchievement.GetIndex(eventSender)
-        ' FK mod to add achievements 0-9
-        ' If index > 8 Then
-        'MsgBox "loading " & Index
-        'imgLarge.Image = achievement_images(index - 9)
-        imgLarge.Image = achievement_images(index)
-        imgLarge.BringToFront()
-        'End If
-    End Sub
+		Dim index As Short = lblAchievement.GetIndex(eventSender)
+		' FK mod to add achievements 0-9
+		' If index > 8 Then
+		'MsgBox "loading " & Index
+		'imgLarge.Image = achievement_images(index - 9)
+		imgLarge.Image = achievement_images(index)
+		imgLarge.BringToFront()
+		'End If
+	End Sub
 
 
 	Private Sub imgBoard_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgBoard.Click
@@ -8339,35 +8339,39 @@ Friend Class Main_Renamed
 		Call process_board_click(index)
 	End Sub
 
-    Private Sub lblGoals_Click(sender As Object, e As EventArgs) Handles lblGoals.Click
+	Private Sub lblGoals_Click(sender As Object, e As EventArgs) Handles lblGoals.Click
 
-    End Sub
+	End Sub
 
-    Private Sub _lblAchievement_0_Click(sender As Object, e As EventArgs) Handles _lblAchievement_0.Click
+	Private Sub _lblAchievement_0_Click(sender As Object, e As EventArgs) Handles _lblAchievement_0.Click
 
-    End Sub
+	End Sub
 
-    Private Sub Main_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        Dim KeyCode As Short = eventArgs.KeyCode
-        Dim Shift As Short = eventArgs.KeyData \ &H10000
-        If KeyCode = System.Windows.Forms.Keys.R Then
-            Call load_game()
-            Call ready_for_action()
+	Private Sub _lblBoardTitle_1_Click(sender As Object, e As EventArgs) Handles _lblBoardTitle_1.Click
 
-            ' Clear some random buttons
-            cmd2Players.Visible = False
-            cmd3Players.Visible = False
-            cmd4Players.Visible = False
-            cmbCheatLevel.Visible = False
-            lblCheatLevel.Visible = False
-            lblOtherApps.Visible = False
-            imgLarge.SendToBack()
-            Line1.BringToFront()
-        ElseIf KeyCode = System.Windows.Forms.Keys.N Then
-            phase = "new_game"
-            Call start_new_game()
-        ElseIf KeyCode = System.Windows.Forms.Keys.C Then
-            Call cmdNext_Click(cmdNext, New System.EventArgs())
-        End If
-    End Sub
+	End Sub
+
+	Private Sub Main_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+		Dim KeyCode As Short = eventArgs.KeyCode
+		Dim Shift As Short = eventArgs.KeyData \ &H10000
+		If KeyCode = System.Windows.Forms.Keys.R Then
+			Call load_game()
+			Call ready_for_action()
+
+			' Clear some random buttons
+			cmd2Players.Visible = False
+			cmd3Players.Visible = False
+			cmd4Players.Visible = False
+			cmbCheatLevel.Visible = False
+			lblCheatLevel.Visible = False
+			lblOtherApps.Visible = False
+			imgLarge.SendToBack()
+			Line1.BringToFront()
+		ElseIf KeyCode = System.Windows.Forms.Keys.N Then
+			phase = "new_game"
+			Call start_new_game()
+		ElseIf KeyCode = System.Windows.Forms.Keys.C Then
+			Call cmdNext_Click(cmdNext, New System.EventArgs())
+		End If
+	End Sub
 End Class

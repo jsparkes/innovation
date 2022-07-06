@@ -1,320 +1,320 @@
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> Partial Class Main_Renamed
 #Region "Windows Form Designer generated code "
-	<System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
-		MyBase.New()
-		'This call is required by the Windows Form Designer.
-		InitializeComponent()
-	End Sub
-	'Form overrides dispose to clean up the component list.
-	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
-		If Disposing Then
-			If Not components Is Nothing Then
-				components.Dispose()
-			End If
-		End If
-		MyBase.Dispose(Disposing)
-	End Sub
-	'Required by the Windows Form Designer
-	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents cmbCheatLevel As System.Windows.Forms.ComboBox
-	Public WithEvents cmdScore As System.Windows.Forms.Button
-	Public WithEvents cmbCards As System.Windows.Forms.ComboBox
-	Public WithEvents _cmdOddball_9 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_8 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_7 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_6 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_5 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_4 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_3 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_2 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_1 As System.Windows.Forms.Button
-	Public WithEvents _cmdOddball_0 As System.Windows.Forms.Button
-	Public WithEvents cmdDraw As System.Windows.Forms.Button
-	Public WithEvents cmdOther As System.Windows.Forms.Button
-	Public WithEvents cmdYes As System.Windows.Forms.Button
-	Public WithEvents cmdNext As System.Windows.Forms.Button
-	Public WithEvents cmdCancel As System.Windows.Forms.Button
-	Public WithEvents cmd4Players As System.Windows.Forms.Button
-	Public WithEvents cmd3Players As System.Windows.Forms.Button
-	Public WithEvents cmd2Players As System.Windows.Forms.Button
-	Public WithEvents _cmdStack_4 As System.Windows.Forms.Button
-	Public WithEvents _cmdDogma_4 As System.Windows.Forms.Button
-	Public WithEvents _cmdStack_3 As System.Windows.Forms.Button
-	Public WithEvents _cmdDogma_3 As System.Windows.Forms.Button
-	Public WithEvents _cmdStack_2 As System.Windows.Forms.Button
-	Public WithEvents _cmdDogma_2 As System.Windows.Forms.Button
-	Public WithEvents _cmdStack_1 As System.Windows.Forms.Button
-	Public WithEvents _cmdDogma_1 As System.Windows.Forms.Button
-	Public WithEvents _cmdStack_0 As System.Windows.Forms.Button
-	Public WithEvents _cmdDogma_0 As System.Windows.Forms.Button
-	Public WithEvents txtLog As System.Windows.Forms.TextBox
-	Public WithEvents lblCheatLevel As System.Windows.Forms.Label
-	Public WithEvents _lblViewCard_4 As System.Windows.Forms.Label
-	Public WithEvents Line10 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents Line9 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents Label2 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_0 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_1 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_2 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_3 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_4 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_5 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_6 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_7 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_8 As System.Windows.Forms.Label
-	Public WithEvents _lblAgeCards_9 As System.Windows.Forms.Label
-	Public WithEvents _lblPlayer_0 As System.Windows.Forms.Label
-	Public WithEvents Image1 As System.Windows.Forms.PictureBox
-	Public WithEvents Image2 As System.Windows.Forms.PictureBox
-	Public WithEvents Image3 As System.Windows.Forms.PictureBox
-	Public WithEvents Image4 As System.Windows.Forms.PictureBox
-	Public WithEvents Image5 As System.Windows.Forms.PictureBox
-	Public WithEvents Image6 As System.Windows.Forms.PictureBox
-	Public WithEvents Label1 As System.Windows.Forms.Label
-	Public WithEvents _lblPlayer_1 As System.Windows.Forms.Label
-	Public WithEvents _lblPlayer_2 As System.Windows.Forms.Label
-	Public WithEvents _lblPlayer_3 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_0 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_4 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_8 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_12 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_16 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_20 As System.Windows.Forms.Label
-	Public WithEvents _lblVP_0 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_1 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_5 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_9 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_13 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_17 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_21 As System.Windows.Forms.Label
-	Public WithEvents _lblVP_1 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_2 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_6 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_10 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_14 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_18 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_22 As System.Windows.Forms.Label
-	Public WithEvents _lblVP_2 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_3 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_7 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_11 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_15 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_19 As System.Windows.Forms.Label
-	Public WithEvents _lblIcon_23 As System.Windows.Forms.Label
-	Public WithEvents _lblVP_3 As System.Windows.Forms.Label
-	Public WithEvents _lblScore_0 As System.Windows.Forms.Label
-	Public WithEvents _lblScore_1 As System.Windows.Forms.Label
-	Public WithEvents _lblScore_2 As System.Windows.Forms.Label
-	Public WithEvents _lblScore_3 As System.Windows.Forms.Label
-	Public WithEvents Label8 As System.Windows.Forms.Label
-	Public WithEvents Line1 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents lblOtherApps As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_14 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_13 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_12 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_11 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_10 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_9 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_8 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_7 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_6 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_5 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_4 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_3 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_2 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_1 As System.Windows.Forms.Label
-	Public WithEvents _lblOppDetail_0 As System.Windows.Forms.Label
-	Public WithEvents _lblScoreTitle_1 As System.Windows.Forms.Label
-	Public WithEvents _imgScoreIcon_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblScoreTitle_0 As System.Windows.Forms.Label
-	Public WithEvents _imgScoreIcon_0 As System.Windows.Forms.PictureBox
-	Public WithEvents Line8 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents lblScorePile As System.Windows.Forms.Label
-	Public WithEvents _imgHandIcon_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppScore_2 As System.Windows.Forms.Label
-	Public WithEvents _lblOppHand_2 As System.Windows.Forms.Label
-	Public WithEvents _lblOppBoard_14 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_14 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_13 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_13 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_12 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_12 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_11 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_11 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_10 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_10 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblPlayerDetail_2 As System.Windows.Forms.Label
-	Public WithEvents _lblOppScore_1 As System.Windows.Forms.Label
-	Public WithEvents _lblOppHand_1 As System.Windows.Forms.Label
-	Public WithEvents _lblOppBoard_9 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_9 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_8 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_8 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_7 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_7 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_6 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_6 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_5 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_5 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblPlayerDetail_1 As System.Windows.Forms.Label
-	Public WithEvents Line7 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents _lblOppScore_0 As System.Windows.Forms.Label
-	Public WithEvents _lblOppHand_0 As System.Windows.Forms.Label
-	Public WithEvents _lblOppBoard_4 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_4 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_3 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_3 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_2 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_2 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_1 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblOppBoard_0 As System.Windows.Forms.Label
-	Public WithEvents _imgOppBoard_0 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblPlayerDetail_0 As System.Windows.Forms.Label
-	Public WithEvents _imgHandIcon_0 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblBoardDetails_4 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardDetails_3 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardDetails_2 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardDetails_1 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardDetails_0 As System.Windows.Forms.Label
-	Public WithEvents Label6 As System.Windows.Forms.Label
-	Public WithEvents Line6 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents _imgIconSmall_12 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_13 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_14 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_15 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblBoardTitle_3 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardAge_3 As System.Windows.Forms.Label
-	Public WithEvents _lblDogma_3 As System.Windows.Forms.Label
-	Public WithEvents _imgBoardDogma_3 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_8 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_9 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_10 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_11 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblBoardTitle_2 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardAge_2 As System.Windows.Forms.Label
-	Public WithEvents _lblDogma_2 As System.Windows.Forms.Label
-	Public WithEvents _imgBoardDogma_2 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_4 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_5 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_6 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_7 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblBoardTitle_1 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardAge_1 As System.Windows.Forms.Label
-	Public WithEvents _lblDogma_1 As System.Windows.Forms.Label
-	Public WithEvents _imgBoardDogma_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgBoardDogma_0 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblDogma_0 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardAge_0 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardTitle_0 As System.Windows.Forms.Label
-	Public WithEvents _imgIconSmall_3 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_2 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_0 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgBoard_0 As System.Windows.Forms.PictureBox
-	Public WithEvents lblActionsRemaining As System.Windows.Forms.Label
-	Public WithEvents lblPrompt As System.Windows.Forms.Label
-	Public WithEvents lblRules As System.Windows.Forms.Label
-	Public WithEvents imgDogmaSymbol As System.Windows.Forms.PictureBox
-	Public WithEvents lblDogmaSymbol As System.Windows.Forms.Label
-	Public WithEvents lblLarge As System.Windows.Forms.Label
-	Public WithEvents _imgLargeIcon_3 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgLargeIcon_2 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgLargeIcon_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgLargeIcon_0 As System.Windows.Forms.PictureBox
-	Public WithEvents Line5 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents imgLarge As System.Windows.Forms.PictureBox
-	Public WithEvents Line4 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents Line3 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents Line2 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents _lblAchievement_13 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_12 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_11 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_10 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_9 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_8 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_7 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_6 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_5 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_4 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_3 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_2 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_1 As System.Windows.Forms.Label
-	Public WithEvents _lblAchievement_0 As System.Windows.Forms.Label
-	Public WithEvents lblGoals As System.Windows.Forms.Label
-	Public WithEvents _imgBoard_3 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgBoard_2 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgBoard_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_16 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_17 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_18 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgIconSmall_19 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblBoardTitle_4 As System.Windows.Forms.Label
-	Public WithEvents _lblBoardAge_4 As System.Windows.Forms.Label
-	Public WithEvents _lblDogma_4 As System.Windows.Forms.Label
-	Public WithEvents _imgBoardDogma_4 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgBoard_4 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_0 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_2 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_3 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_4 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_5 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_6 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_7 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_8 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_9 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_10 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_11 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_12 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_13 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgOppBoardColor_14 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblHand_0 As System.Windows.Forms.Label
-	Public WithEvents _imgHandColor_0 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgScoreColor_0 As System.Windows.Forms.PictureBox
-	Public WithEvents _imgScoreColor_1 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblHand_1 As System.Windows.Forms.Label
-	Public WithEvents _imgHandColor_1 As System.Windows.Forms.PictureBox
-	Public WithEvents Label9 As System.Windows.Forms.Label
-	Public WithEvents lblHighestTop As System.Windows.Forms.Label
-	Public WithEvents Label4 As System.Windows.Forms.Label
-	Public WithEvents cmdDogma As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-	Public WithEvents cmdOddball As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-	Public WithEvents cmdStack As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-	Public WithEvents imgBoard As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgBoardDogma As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgHandColor As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgHandIcon As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgIconSmall As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgLargeIcon As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgOppBoard As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgOppBoardColor As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgScoreColor As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgScoreIcon As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents lblAchievement As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblAgeCards As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblBoardAge As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblBoardDetails As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblBoardTitle As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblDogma As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblHand As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblIcon As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblOppBoard As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblOppDetail As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblOppHand As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblOppScore As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblPlayer As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblPlayerDetail As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblScore As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblScoreTitle As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblVP As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents lblViewCard As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	'NOTE: The following procedure is required by the Windows Form Designer
-	'It can be modified using the Windows Form Designer.
-	'Do not modify it using the code editor.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+    <System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
+        MyBase.New()
+        'This call is required by the Windows Form Designer.
+        InitializeComponent()
+    End Sub
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
+        If Disposing Then
+            If Not components Is Nothing Then
+                components.Dispose()
+            End If
+        End If
+        MyBase.Dispose(Disposing)
+    End Sub
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+    Public ToolTip1 As System.Windows.Forms.ToolTip
+    Public WithEvents cmbCheatLevel As System.Windows.Forms.ComboBox
+    Public WithEvents cmdScore As System.Windows.Forms.Button
+    Public WithEvents cmbCards As System.Windows.Forms.ComboBox
+    Public WithEvents _cmdOddball_9 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_8 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_7 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_6 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_5 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_4 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_3 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_2 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_1 As System.Windows.Forms.Button
+    Public WithEvents _cmdOddball_0 As System.Windows.Forms.Button
+    Public WithEvents cmdDraw As System.Windows.Forms.Button
+    Public WithEvents cmdOther As System.Windows.Forms.Button
+    Public WithEvents cmdYes As System.Windows.Forms.Button
+    Public WithEvents cmdNext As System.Windows.Forms.Button
+    Public WithEvents cmdCancel As System.Windows.Forms.Button
+    Public WithEvents cmd4Players As System.Windows.Forms.Button
+    Public WithEvents cmd3Players As System.Windows.Forms.Button
+    Public WithEvents cmd2Players As System.Windows.Forms.Button
+    Public WithEvents _cmdStack_4 As System.Windows.Forms.Button
+    Public WithEvents _cmdDogma_4 As System.Windows.Forms.Button
+    Public WithEvents _cmdStack_3 As System.Windows.Forms.Button
+    Public WithEvents _cmdDogma_3 As System.Windows.Forms.Button
+    Public WithEvents _cmdStack_2 As System.Windows.Forms.Button
+    Public WithEvents _cmdDogma_2 As System.Windows.Forms.Button
+    Public WithEvents _cmdStack_1 As System.Windows.Forms.Button
+    Public WithEvents _cmdDogma_1 As System.Windows.Forms.Button
+    Public WithEvents _cmdStack_0 As System.Windows.Forms.Button
+    Public WithEvents _cmdDogma_0 As System.Windows.Forms.Button
+    Public WithEvents txtLog As System.Windows.Forms.TextBox
+    Public WithEvents lblCheatLevel As System.Windows.Forms.Label
+    Public WithEvents _lblViewCard_4 As System.Windows.Forms.Label
+    Public WithEvents Line10 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents Line9 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents Label2 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_0 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_1 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_2 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_3 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_4 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_5 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_6 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_7 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_8 As System.Windows.Forms.Label
+    Public WithEvents _lblAgeCards_9 As System.Windows.Forms.Label
+    Public WithEvents _lblPlayer_0 As System.Windows.Forms.Label
+    Public WithEvents Image1 As System.Windows.Forms.PictureBox
+    Public WithEvents Image2 As System.Windows.Forms.PictureBox
+    Public WithEvents Image3 As System.Windows.Forms.PictureBox
+    Public WithEvents Image4 As System.Windows.Forms.PictureBox
+    Public WithEvents Image5 As System.Windows.Forms.PictureBox
+    Public WithEvents Image6 As System.Windows.Forms.PictureBox
+    Public WithEvents Label1 As System.Windows.Forms.Label
+    Public WithEvents _lblPlayer_1 As System.Windows.Forms.Label
+    Public WithEvents _lblPlayer_2 As System.Windows.Forms.Label
+    Public WithEvents _lblPlayer_3 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_0 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_4 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_8 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_12 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_16 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_20 As System.Windows.Forms.Label
+    Public WithEvents _lblVP_0 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_1 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_5 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_9 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_13 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_17 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_21 As System.Windows.Forms.Label
+    Public WithEvents _lblVP_1 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_2 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_6 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_10 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_14 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_18 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_22 As System.Windows.Forms.Label
+    Public WithEvents _lblVP_2 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_3 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_7 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_11 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_15 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_19 As System.Windows.Forms.Label
+    Public WithEvents _lblIcon_23 As System.Windows.Forms.Label
+    Public WithEvents _lblVP_3 As System.Windows.Forms.Label
+    Public WithEvents _lblScore_0 As System.Windows.Forms.Label
+    Public WithEvents _lblScore_1 As System.Windows.Forms.Label
+    Public WithEvents _lblScore_2 As System.Windows.Forms.Label
+    Public WithEvents _lblScore_3 As System.Windows.Forms.Label
+    Public WithEvents Label8 As System.Windows.Forms.Label
+    Public WithEvents Line1 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents lblOtherApps As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_14 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_13 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_12 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_11 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_10 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_9 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_8 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_7 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_6 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_5 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_4 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_3 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_2 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_1 As System.Windows.Forms.Label
+    Public WithEvents _lblOppDetail_0 As System.Windows.Forms.Label
+    Public WithEvents _lblScoreTitle_1 As System.Windows.Forms.Label
+    Public WithEvents _imgScoreIcon_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblScoreTitle_0 As System.Windows.Forms.Label
+    Public WithEvents _imgScoreIcon_0 As System.Windows.Forms.PictureBox
+    Public WithEvents Line8 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents lblScorePile As System.Windows.Forms.Label
+    Public WithEvents _imgHandIcon_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppScore_2 As System.Windows.Forms.Label
+    Public WithEvents _lblOppHand_2 As System.Windows.Forms.Label
+    Public WithEvents _lblOppBoard_14 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_14 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_13 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_13 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_12 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_12 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_11 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_11 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_10 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_10 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblPlayerDetail_2 As System.Windows.Forms.Label
+    Public WithEvents _lblOppScore_1 As System.Windows.Forms.Label
+    Public WithEvents _lblOppHand_1 As System.Windows.Forms.Label
+    Public WithEvents _lblOppBoard_9 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_9 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_8 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_8 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_7 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_7 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_6 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_6 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_5 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_5 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblPlayerDetail_1 As System.Windows.Forms.Label
+    Public WithEvents Line7 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents _lblOppScore_0 As System.Windows.Forms.Label
+    Public WithEvents _lblOppHand_0 As System.Windows.Forms.Label
+    Public WithEvents _lblOppBoard_4 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_4 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_3 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_3 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_2 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_2 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_1 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblOppBoard_0 As System.Windows.Forms.Label
+    Public WithEvents _imgOppBoard_0 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblPlayerDetail_0 As System.Windows.Forms.Label
+    Public WithEvents _imgHandIcon_0 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblBoardDetails_4 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardDetails_3 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardDetails_2 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardDetails_1 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardDetails_0 As System.Windows.Forms.Label
+    Public WithEvents Label6 As System.Windows.Forms.Label
+    Public WithEvents Line6 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents _imgIconSmall_12 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_13 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_14 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_15 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblBoardTitle_3 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardAge_3 As System.Windows.Forms.Label
+    Public WithEvents _lblDogma_3 As System.Windows.Forms.Label
+    Public WithEvents _imgBoardDogma_3 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_8 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_9 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_10 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_11 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblBoardTitle_2 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardAge_2 As System.Windows.Forms.Label
+    Public WithEvents _lblDogma_2 As System.Windows.Forms.Label
+    Public WithEvents _imgBoardDogma_2 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_4 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_5 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_6 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_7 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblBoardTitle_1 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardAge_1 As System.Windows.Forms.Label
+    Public WithEvents _lblDogma_1 As System.Windows.Forms.Label
+    Public WithEvents _imgBoardDogma_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgBoardDogma_0 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblDogma_0 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardAge_0 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardTitle_0 As System.Windows.Forms.Label
+    Public WithEvents _imgIconSmall_3 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_2 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_0 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgBoard_0 As System.Windows.Forms.PictureBox
+    Public WithEvents lblActionsRemaining As System.Windows.Forms.Label
+    Public WithEvents lblPrompt As System.Windows.Forms.Label
+    Public WithEvents lblRules As System.Windows.Forms.Label
+    Public WithEvents imgDogmaSymbol As System.Windows.Forms.PictureBox
+    Public WithEvents lblDogmaSymbol As System.Windows.Forms.Label
+    Public WithEvents lblLarge As System.Windows.Forms.Label
+    Public WithEvents _imgLargeIcon_3 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgLargeIcon_2 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgLargeIcon_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgLargeIcon_0 As System.Windows.Forms.PictureBox
+    Public WithEvents Line5 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents imgLarge As System.Windows.Forms.PictureBox
+    Public WithEvents Line4 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents Line3 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents Line2 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents _lblAchievement_13 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_12 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_11 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_10 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_9 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_8 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_7 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_6 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_5 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_4 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_3 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_2 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_1 As System.Windows.Forms.Label
+    Public WithEvents _lblAchievement_0 As System.Windows.Forms.Label
+    Public WithEvents lblGoals As System.Windows.Forms.Label
+    Public WithEvents _imgBoard_3 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgBoard_2 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgBoard_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_16 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_17 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_18 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgIconSmall_19 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblBoardTitle_4 As System.Windows.Forms.Label
+    Public WithEvents _lblBoardAge_4 As System.Windows.Forms.Label
+    Public WithEvents _lblDogma_4 As System.Windows.Forms.Label
+    Public WithEvents _imgBoardDogma_4 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgBoard_4 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_0 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_2 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_3 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_4 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_5 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_6 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_7 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_8 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_9 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_10 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_11 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_12 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_13 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgOppBoardColor_14 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblHand_0 As System.Windows.Forms.Label
+    Public WithEvents _imgHandColor_0 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgScoreColor_0 As System.Windows.Forms.PictureBox
+    Public WithEvents _imgScoreColor_1 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblHand_1 As System.Windows.Forms.Label
+    Public WithEvents _imgHandColor_1 As System.Windows.Forms.PictureBox
+    Public WithEvents Label9 As System.Windows.Forms.Label
+    Public WithEvents lblHighestTop As System.Windows.Forms.Label
+    Public WithEvents Label4 As System.Windows.Forms.Label
+    Public WithEvents cmdDogma As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
+    Public WithEvents cmdOddball As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
+    Public WithEvents cmdStack As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
+    Public WithEvents imgBoard As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgBoardDogma As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgHandColor As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgHandIcon As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgIconSmall As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgLargeIcon As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgOppBoard As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgOppBoardColor As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgScoreColor As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgScoreIcon As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents lblAchievement As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblAgeCards As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblBoardAge As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblBoardDetails As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblBoardTitle As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblDogma As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblHand As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblIcon As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblOppBoard As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblOppDetail As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblOppHand As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblOppScore As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblPlayer As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblPlayerDetail As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblScore As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblScoreTitle As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblVP As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents lblViewCard As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main_Renamed))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -612,7 +612,6 @@
         Me.lblScoreTitle = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblVP = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
         Me.lblViewCard = New Microsoft.VisualBasic.Compatibility.VB6.LabelArray(Me.components)
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         CType(Me.Image1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -732,7 +731,7 @@
         Me.ShapeContainer1.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer1.Name = "ShapeContainer1"
         Me.ShapeContainer1.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.Line10, Me.Line9, Me.Line1, Me.Line8, Me.Line7, Me.Line6, Me.Line5, Me.Line4, Me.Line3, Me.Line2})
-        Me.ShapeContainer1.Size = New System.Drawing.Size(1185, 667)
+        Me.ShapeContainer1.Size = New System.Drawing.Size(1380, 757)
         Me.ShapeContainer1.TabIndex = 252
         Me.ShapeContainer1.TabStop = False
         '
@@ -740,10 +739,10 @@
         '
         Me.Line10.BorderColor = System.Drawing.SystemColors.WindowText
         Me.Line10.Name = "Line10"
-        Me.Line10.X1 = 256
-        Me.Line10.X2 = 0
-        Me.Line10.Y1 = 187
-        Me.Line10.Y2 = 187
+        Me.Line10.X1 = 255
+        Me.Line10.X2 = -1
+        Me.Line10.Y1 = 191
+        Me.Line10.Y2 = 191
         '
         'Line9
         '
@@ -758,10 +757,10 @@
         '
         Me.Line1.BorderColor = System.Drawing.SystemColors.WindowText
         Me.Line1.Name = "Line1"
-        Me.Line1.X1 = 256
-        Me.Line1.X2 = 256
-        Me.Line1.Y1 = 672
-        Me.Line1.Y2 = 160
+        Me.Line1.X1 = 253
+        Me.Line1.X2 = 258
+        Me.Line1.Y1 = 761
+        Me.Line1.Y2 = 162
         '
         'Line8
         '
@@ -777,7 +776,7 @@
         Me.Line7.BorderColor = System.Drawing.SystemColors.WindowText
         Me.Line7.Name = "Line7"
         Me.Line7.X1 = 256
-        Me.Line7.X2 = 1184
+        Me.Line7.X2 = 1381
         Me.Line7.Y1 = 512
         Me.Line7.Y2 = 512
         '
@@ -786,7 +785,7 @@
         Me.Line6.BorderColor = System.Drawing.SystemColors.WindowText
         Me.Line6.Name = "Line6"
         Me.Line6.X1 = 256
-        Me.Line6.X2 = 1184
+        Me.Line6.X2 = 1384
         Me.Line6.Y1 = 336
         Me.Line6.Y2 = 336
         '
@@ -795,7 +794,7 @@
         Me.Line5.BorderColor = System.Drawing.SystemColors.WindowText
         Me.Line5.Name = "Line5"
         Me.Line5.X1 = 0
-        Me.Line5.X2 = 1184
+        Me.Line5.X2 = 1383
         Me.Line5.Y1 = 160
         Me.Line5.Y2 = 160
         '
@@ -812,19 +811,19 @@
         '
         Me.Line3.BorderColor = System.Drawing.SystemColors.WindowText
         Me.Line3.Name = "Line3"
-        Me.Line3.X1 = 256
-        Me.Line3.X2 = 0
-        Me.Line3.Y1 = 344
-        Me.Line3.Y2 = 344
+        Me.Line3.X1 = 255
+        Me.Line3.X2 = -1
+        Me.Line3.Y1 = 397
+        Me.Line3.Y2 = 397
         '
         'Line2
         '
         Me.Line2.BorderColor = System.Drawing.SystemColors.WindowText
         Me.Line2.Name = "Line2"
-        Me.Line2.X1 = 256
-        Me.Line2.X2 = 0
-        Me.Line2.Y1 = 504
-        Me.Line2.Y2 = 504
+        Me.Line2.X1 = 255
+        Me.Line2.X2 = -1
+        Me.Line2.Y1 = 605
+        Me.Line2.Y2 = 605
         '
         'cmbCheatLevel
         '
@@ -874,7 +873,7 @@
         Me._cmdOddball_9.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdOddball_9.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdOddball.SetIndex(Me._cmdOddball_9, CType(9, Short))
-        Me._cmdOddball_9.Location = New System.Drawing.Point(720, 128)
+        Me._cmdOddball_9.Location = New System.Drawing.Point(833, 127)
         Me._cmdOddball_9.Name = "_cmdOddball_9"
         Me._cmdOddball_9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdOddball_9.Size = New System.Drawing.Size(73, 25)
@@ -890,7 +889,7 @@
         Me._cmdOddball_8.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdOddball_8.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdOddball.SetIndex(Me._cmdOddball_8, CType(8, Short))
-        Me._cmdOddball_8.Location = New System.Drawing.Point(624, 128)
+        Me._cmdOddball_8.Location = New System.Drawing.Point(703, 127)
         Me._cmdOddball_8.Name = "_cmdOddball_8"
         Me._cmdOddball_8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdOddball_8.Size = New System.Drawing.Size(73, 25)
@@ -954,7 +953,7 @@
         Me._cmdOddball_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdOddball_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdOddball.SetIndex(Me._cmdOddball_4, CType(4, Short))
-        Me._cmdOddball_4.Location = New System.Drawing.Point(720, 96)
+        Me._cmdOddball_4.Location = New System.Drawing.Point(833, 90)
         Me._cmdOddball_4.Name = "_cmdOddball_4"
         Me._cmdOddball_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdOddball_4.Size = New System.Drawing.Size(73, 25)
@@ -1002,7 +1001,7 @@
         Me._cmdOddball_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdOddball_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdOddball.SetIndex(Me._cmdOddball_1, CType(1, Short))
-        Me._cmdOddball_1.Location = New System.Drawing.Point(688, 48)
+        Me._cmdOddball_1.Location = New System.Drawing.Point(719, 51)
         Me._cmdOddball_1.Name = "_cmdOddball_1"
         Me._cmdOddball_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdOddball_1.Size = New System.Drawing.Size(73, 25)
@@ -1033,7 +1032,7 @@
         Me.cmdDraw.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdDraw.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdDraw.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdDraw.Location = New System.Drawing.Point(496, 120)
+        Me.cmdDraw.Location = New System.Drawing.Point(584, 123)
         Me.cmdDraw.Name = "cmdDraw"
         Me.cmdDraw.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdDraw.Size = New System.Drawing.Size(89, 33)
@@ -1062,7 +1061,7 @@
         Me.cmdYes.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdYes.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdYes.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdYes.Location = New System.Drawing.Point(384, 128)
+        Me.cmdYes.Location = New System.Drawing.Point(544, 128)
         Me.cmdYes.Name = "cmdYes"
         Me.cmdYes.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdYes.Size = New System.Drawing.Size(89, 25)
@@ -1077,7 +1076,7 @@
         Me.cmdNext.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmdNext.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdNext.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmdNext.Location = New System.Drawing.Point(720, 128)
+        Me.cmdNext.Location = New System.Drawing.Point(576, 120)
         Me.cmdNext.Name = "cmdNext"
         Me.cmdNext.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmdNext.Size = New System.Drawing.Size(89, 25)
@@ -1107,7 +1106,7 @@
         Me.cmd4Players.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmd4Players.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmd4Players.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmd4Players.Location = New System.Drawing.Point(584, 72)
+        Me.cmd4Players.Location = New System.Drawing.Point(703, 72)
         Me.cmd4Players.Name = "cmd4Players"
         Me.cmd4Players.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmd4Players.Size = New System.Drawing.Size(81, 17)
@@ -1121,7 +1120,7 @@
         Me.cmd3Players.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmd3Players.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmd3Players.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmd3Players.Location = New System.Drawing.Point(480, 72)
+        Me.cmd3Players.Location = New System.Drawing.Point(552, 72)
         Me.cmd3Players.Name = "cmd3Players"
         Me.cmd3Players.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmd3Players.Size = New System.Drawing.Size(81, 17)
@@ -1135,7 +1134,7 @@
         Me.cmd2Players.Cursor = System.Windows.Forms.Cursors.Default
         Me.cmd2Players.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmd2Players.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.cmd2Players.Location = New System.Drawing.Point(368, 72)
+        Me.cmd2Players.Location = New System.Drawing.Point(415, 72)
         Me.cmd2Players.Name = "cmd2Players"
         Me.cmd2Players.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.cmd2Players.Size = New System.Drawing.Size(81, 17)
@@ -1150,7 +1149,7 @@
         Me._cmdStack_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdStack_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdStack.SetIndex(Me._cmdStack_4, CType(4, Short))
-        Me._cmdStack_4.Location = New System.Drawing.Point(1104, 312)
+        Me._cmdStack_4.Location = New System.Drawing.Point(1249, 310)
         Me._cmdStack_4.Name = "_cmdStack_4"
         Me._cmdStack_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdStack_4.Size = New System.Drawing.Size(65, 17)
@@ -1165,7 +1164,7 @@
         Me._cmdDogma_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdDogma_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdDogma.SetIndex(Me._cmdDogma_4, CType(4, Short))
-        Me._cmdDogma_4.Location = New System.Drawing.Point(1000, 312)
+        Me._cmdDogma_4.Location = New System.Drawing.Point(1144, 310)
         Me._cmdDogma_4.Name = "_cmdDogma_4"
         Me._cmdDogma_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdDogma_4.Size = New System.Drawing.Size(89, 17)
@@ -1181,7 +1180,7 @@
         Me._cmdStack_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdStack_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdStack.SetIndex(Me._cmdStack_3, CType(3, Short))
-        Me._cmdStack_3.Location = New System.Drawing.Point(920, 312)
+        Me._cmdStack_3.Location = New System.Drawing.Point(1032, 308)
         Me._cmdStack_3.Name = "_cmdStack_3"
         Me._cmdStack_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdStack_3.Size = New System.Drawing.Size(65, 17)
@@ -1196,7 +1195,7 @@
         Me._cmdDogma_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdDogma_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdDogma.SetIndex(Me._cmdDogma_3, CType(3, Short))
-        Me._cmdDogma_3.Location = New System.Drawing.Point(816, 312)
+        Me._cmdDogma_3.Location = New System.Drawing.Point(928, 308)
         Me._cmdDogma_3.Name = "_cmdDogma_3"
         Me._cmdDogma_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdDogma_3.Size = New System.Drawing.Size(89, 17)
@@ -1212,7 +1211,7 @@
         Me._cmdStack_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdStack_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdStack.SetIndex(Me._cmdStack_2, CType(2, Short))
-        Me._cmdStack_2.Location = New System.Drawing.Point(736, 312)
+        Me._cmdStack_2.Location = New System.Drawing.Point(824, 312)
         Me._cmdStack_2.Name = "_cmdStack_2"
         Me._cmdStack_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdStack_2.Size = New System.Drawing.Size(65, 17)
@@ -1227,7 +1226,7 @@
         Me._cmdDogma_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdDogma_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdDogma.SetIndex(Me._cmdDogma_2, CType(2, Short))
-        Me._cmdDogma_2.Location = New System.Drawing.Point(632, 312)
+        Me._cmdDogma_2.Location = New System.Drawing.Point(719, 312)
         Me._cmdDogma_2.Name = "_cmdDogma_2"
         Me._cmdDogma_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdDogma_2.Size = New System.Drawing.Size(89, 17)
@@ -1243,7 +1242,7 @@
         Me._cmdStack_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdStack_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdStack.SetIndex(Me._cmdStack_1, CType(1, Short))
-        Me._cmdStack_1.Location = New System.Drawing.Point(552, 312)
+        Me._cmdStack_1.Location = New System.Drawing.Point(600, 312)
         Me._cmdStack_1.Name = "_cmdStack_1"
         Me._cmdStack_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdStack_1.Size = New System.Drawing.Size(65, 17)
@@ -1258,7 +1257,7 @@
         Me._cmdDogma_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._cmdDogma_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.cmdDogma.SetIndex(Me._cmdDogma_1, CType(1, Short))
-        Me._cmdDogma_1.Location = New System.Drawing.Point(448, 312)
+        Me._cmdDogma_1.Location = New System.Drawing.Point(496, 312)
         Me._cmdDogma_1.Name = "_cmdDogma_1"
         Me._cmdDogma_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._cmdDogma_1.Size = New System.Drawing.Size(89, 17)
@@ -1303,15 +1302,15 @@
         Me.txtLog.AcceptsReturn = True
         Me.txtLog.BackColor = System.Drawing.SystemColors.Window
         Me.txtLog.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtLog.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtLog.Font = New System.Drawing.Font("Arial", 10.5!)
         Me.txtLog.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtLog.Location = New System.Drawing.Point(824, 8)
+        Me.txtLog.Location = New System.Drawing.Point(1004, 9)
         Me.txtLog.MaxLength = 0
         Me.txtLog.Multiline = True
         Me.txtLog.Name = "txtLog"
         Me.txtLog.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtLog.Size = New System.Drawing.Size(345, 145)
+        Me.txtLog.Size = New System.Drawing.Size(367, 145)
         Me.txtLog.TabIndex = 20
         Me.txtLog.Text = "Text1"
         '
@@ -1335,7 +1334,7 @@
         Me._lblViewCard_4.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblViewCard_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblViewCard.SetIndex(Me._lblViewCard_4, CType(4, Short))
-        Me._lblViewCard_4.Location = New System.Drawing.Point(8, 168)
+        Me._lblViewCard_4.Location = New System.Drawing.Point(4, 168)
         Me._lblViewCard_4.Name = "_lblViewCard_4"
         Me._lblViewCard_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblViewCard_4.Size = New System.Drawing.Size(113, 17)
@@ -1348,7 +1347,7 @@
         Me.Label2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label2.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(16, 512)
+        Me.Label2.Location = New System.Drawing.Point(33, 640)
         Me.Label2.Name = "Label2"
         Me.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label2.Size = New System.Drawing.Size(217, 17)
@@ -1362,7 +1361,7 @@
         Me._lblAgeCards_0.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_0, CType(0, Short))
-        Me._lblAgeCards_0.Location = New System.Drawing.Point(0, 536)
+        Me._lblAgeCards_0.Location = New System.Drawing.Point(-1, 671)
         Me._lblAgeCards_0.Name = "_lblAgeCards_0"
         Me._lblAgeCards_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_0.Size = New System.Drawing.Size(41, 25)
@@ -1376,7 +1375,7 @@
         Me._lblAgeCards_1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_1, CType(1, Short))
-        Me._lblAgeCards_1.Location = New System.Drawing.Point(56, 536)
+        Me._lblAgeCards_1.Location = New System.Drawing.Point(52, 671)
         Me._lblAgeCards_1.Name = "_lblAgeCards_1"
         Me._lblAgeCards_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_1.Size = New System.Drawing.Size(41, 25)
@@ -1390,7 +1389,7 @@
         Me._lblAgeCards_2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_2, CType(2, Short))
-        Me._lblAgeCards_2.Location = New System.Drawing.Point(112, 536)
+        Me._lblAgeCards_2.Location = New System.Drawing.Point(113, 673)
         Me._lblAgeCards_2.Name = "_lblAgeCards_2"
         Me._lblAgeCards_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_2.Size = New System.Drawing.Size(41, 25)
@@ -1404,7 +1403,7 @@
         Me._lblAgeCards_3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_3, CType(3, Short))
-        Me._lblAgeCards_3.Location = New System.Drawing.Point(160, 536)
+        Me._lblAgeCards_3.Location = New System.Drawing.Point(163, 673)
         Me._lblAgeCards_3.Name = "_lblAgeCards_3"
         Me._lblAgeCards_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_3.Size = New System.Drawing.Size(41, 25)
@@ -1418,7 +1417,7 @@
         Me._lblAgeCards_4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_4, CType(4, Short))
-        Me._lblAgeCards_4.Location = New System.Drawing.Point(216, 536)
+        Me._lblAgeCards_4.Location = New System.Drawing.Point(217, 675)
         Me._lblAgeCards_4.Name = "_lblAgeCards_4"
         Me._lblAgeCards_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_4.Size = New System.Drawing.Size(33, 25)
@@ -1432,7 +1431,7 @@
         Me._lblAgeCards_5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_5, CType(5, Short))
-        Me._lblAgeCards_5.Location = New System.Drawing.Point(0, 560)
+        Me._lblAgeCards_5.Location = New System.Drawing.Point(0, 709)
         Me._lblAgeCards_5.Name = "_lblAgeCards_5"
         Me._lblAgeCards_5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_5.Size = New System.Drawing.Size(41, 25)
@@ -1446,7 +1445,7 @@
         Me._lblAgeCards_6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_6.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_6, CType(6, Short))
-        Me._lblAgeCards_6.Location = New System.Drawing.Point(56, 560)
+        Me._lblAgeCards_6.Location = New System.Drawing.Point(56, 709)
         Me._lblAgeCards_6.Name = "_lblAgeCards_6"
         Me._lblAgeCards_6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_6.Size = New System.Drawing.Size(41, 25)
@@ -1460,7 +1459,7 @@
         Me._lblAgeCards_7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_7.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_7, CType(7, Short))
-        Me._lblAgeCards_7.Location = New System.Drawing.Point(112, 560)
+        Me._lblAgeCards_7.Location = New System.Drawing.Point(115, 709)
         Me._lblAgeCards_7.Name = "_lblAgeCards_7"
         Me._lblAgeCards_7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_7.Size = New System.Drawing.Size(41, 25)
@@ -1474,7 +1473,7 @@
         Me._lblAgeCards_8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_8.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_8, CType(8, Short))
-        Me._lblAgeCards_8.Location = New System.Drawing.Point(160, 560)
+        Me._lblAgeCards_8.Location = New System.Drawing.Point(163, 709)
         Me._lblAgeCards_8.Name = "_lblAgeCards_8"
         Me._lblAgeCards_8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_8.Size = New System.Drawing.Size(41, 25)
@@ -1488,7 +1487,7 @@
         Me._lblAgeCards_9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAgeCards_9.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAgeCards.SetIndex(Me._lblAgeCards_9, CType(9, Short))
-        Me._lblAgeCards_9.Location = New System.Drawing.Point(208, 560)
+        Me._lblAgeCards_9.Location = New System.Drawing.Point(212, 709)
         Me._lblAgeCards_9.Name = "_lblAgeCards_9"
         Me._lblAgeCards_9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAgeCards_9.Size = New System.Drawing.Size(41, 25)
@@ -1502,7 +1501,7 @@
         Me._lblPlayer_0.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblPlayer_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPlayer.SetIndex(Me._lblPlayer_0, CType(0, Short))
-        Me._lblPlayer_0.Location = New System.Drawing.Point(8, 224)
+        Me._lblPlayer_0.Location = New System.Drawing.Point(8, 236)
         Me._lblPlayer_0.Name = "_lblPlayer_0"
         Me._lblPlayer_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblPlayer_0.Size = New System.Drawing.Size(57, 17)
@@ -1513,7 +1512,7 @@
         '
         Me.Image1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Image1.Image = CType(resources.GetObject("Image1.Image"), System.Drawing.Image)
-        Me.Image1.Location = New System.Drawing.Point(96, 192)
+        Me.Image1.Location = New System.Drawing.Point(96, 204)
         Me.Image1.Name = "Image1"
         Me.Image1.Size = New System.Drawing.Size(20, 20)
         Me.Image1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1524,7 +1523,7 @@
         '
         Me.Image2.Cursor = System.Windows.Forms.Cursors.Default
         Me.Image2.Image = CType(resources.GetObject("Image2.Image"), System.Drawing.Image)
-        Me.Image2.Location = New System.Drawing.Point(192, 192)
+        Me.Image2.Location = New System.Drawing.Point(192, 204)
         Me.Image2.Name = "Image2"
         Me.Image2.Size = New System.Drawing.Size(20, 20)
         Me.Image2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1535,7 +1534,7 @@
         '
         Me.Image3.Cursor = System.Windows.Forms.Cursors.Default
         Me.Image3.Image = CType(resources.GetObject("Image3.Image"), System.Drawing.Image)
-        Me.Image3.Location = New System.Drawing.Point(168, 192)
+        Me.Image3.Location = New System.Drawing.Point(168, 204)
         Me.Image3.Name = "Image3"
         Me.Image3.Size = New System.Drawing.Size(20, 20)
         Me.Image3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1546,7 +1545,7 @@
         '
         Me.Image4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Image4.Image = CType(resources.GetObject("Image4.Image"), System.Drawing.Image)
-        Me.Image4.Location = New System.Drawing.Point(144, 192)
+        Me.Image4.Location = New System.Drawing.Point(144, 204)
         Me.Image4.Name = "Image4"
         Me.Image4.Size = New System.Drawing.Size(20, 20)
         Me.Image4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1557,7 +1556,7 @@
         '
         Me.Image5.Cursor = System.Windows.Forms.Cursors.Default
         Me.Image5.Image = CType(resources.GetObject("Image5.Image"), System.Drawing.Image)
-        Me.Image5.Location = New System.Drawing.Point(120, 192)
+        Me.Image5.Location = New System.Drawing.Point(120, 204)
         Me.Image5.Name = "Image5"
         Me.Image5.Size = New System.Drawing.Size(20, 20)
         Me.Image5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1568,7 +1567,7 @@
         '
         Me.Image6.Cursor = System.Windows.Forms.Cursors.Default
         Me.Image6.Image = CType(resources.GetObject("Image6.Image"), System.Drawing.Image)
-        Me.Image6.Location = New System.Drawing.Point(72, 192)
+        Me.Image6.Location = New System.Drawing.Point(70, 204)
         Me.Image6.Name = "Image6"
         Me.Image6.Size = New System.Drawing.Size(20, 20)
         Me.Image6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1581,7 +1580,7 @@
         Me.Label1.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label1.Location = New System.Drawing.Point(218, 192)
+        Me.Label1.Location = New System.Drawing.Point(218, 205)
         Me.Label1.Name = "Label1"
         Me.Label1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label1.Size = New System.Drawing.Size(17, 17)
@@ -1595,7 +1594,7 @@
         Me._lblPlayer_1.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblPlayer_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPlayer.SetIndex(Me._lblPlayer_1, CType(1, Short))
-        Me._lblPlayer_1.Location = New System.Drawing.Point(8, 256)
+        Me._lblPlayer_1.Location = New System.Drawing.Point(8, 273)
         Me._lblPlayer_1.Name = "_lblPlayer_1"
         Me._lblPlayer_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblPlayer_1.Size = New System.Drawing.Size(57, 17)
@@ -1609,7 +1608,7 @@
         Me._lblPlayer_2.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblPlayer_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPlayer.SetIndex(Me._lblPlayer_2, CType(2, Short))
-        Me._lblPlayer_2.Location = New System.Drawing.Point(8, 288)
+        Me._lblPlayer_2.Location = New System.Drawing.Point(8, 318)
         Me._lblPlayer_2.Name = "_lblPlayer_2"
         Me._lblPlayer_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblPlayer_2.Size = New System.Drawing.Size(57, 17)
@@ -1623,7 +1622,7 @@
         Me._lblPlayer_3.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblPlayer_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPlayer.SetIndex(Me._lblPlayer_3, CType(3, Short))
-        Me._lblPlayer_3.Location = New System.Drawing.Point(8, 320)
+        Me._lblPlayer_3.Location = New System.Drawing.Point(8, 352)
         Me._lblPlayer_3.Name = "_lblPlayer_3"
         Me._lblPlayer_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblPlayer_3.Size = New System.Drawing.Size(57, 17)
@@ -1637,7 +1636,7 @@
         Me._lblIcon_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_0, CType(0, Short))
-        Me._lblIcon_0.Location = New System.Drawing.Point(75, 224)
+        Me._lblIcon_0.Location = New System.Drawing.Point(75, 236)
         Me._lblIcon_0.Name = "_lblIcon_0"
         Me._lblIcon_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_0.Size = New System.Drawing.Size(17, 17)
@@ -1651,7 +1650,7 @@
         Me._lblIcon_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_4, CType(4, Short))
-        Me._lblIcon_4.Location = New System.Drawing.Point(99, 224)
+        Me._lblIcon_4.Location = New System.Drawing.Point(99, 238)
         Me._lblIcon_4.Name = "_lblIcon_4"
         Me._lblIcon_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_4.Size = New System.Drawing.Size(17, 17)
@@ -1665,7 +1664,7 @@
         Me._lblIcon_8.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_8.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_8, CType(8, Short))
-        Me._lblIcon_8.Location = New System.Drawing.Point(123, 224)
+        Me._lblIcon_8.Location = New System.Drawing.Point(123, 238)
         Me._lblIcon_8.Name = "_lblIcon_8"
         Me._lblIcon_8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_8.Size = New System.Drawing.Size(17, 17)
@@ -1679,7 +1678,7 @@
         Me._lblIcon_12.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_12.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_12, CType(12, Short))
-        Me._lblIcon_12.Location = New System.Drawing.Point(147, 224)
+        Me._lblIcon_12.Location = New System.Drawing.Point(147, 236)
         Me._lblIcon_12.Name = "_lblIcon_12"
         Me._lblIcon_12.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_12.Size = New System.Drawing.Size(17, 17)
@@ -1693,7 +1692,7 @@
         Me._lblIcon_16.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_16.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_16, CType(16, Short))
-        Me._lblIcon_16.Location = New System.Drawing.Point(171, 224)
+        Me._lblIcon_16.Location = New System.Drawing.Point(170, 236)
         Me._lblIcon_16.Name = "_lblIcon_16"
         Me._lblIcon_16.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_16.Size = New System.Drawing.Size(17, 17)
@@ -1707,7 +1706,7 @@
         Me._lblIcon_20.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_20.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_20, CType(20, Short))
-        Me._lblIcon_20.Location = New System.Drawing.Point(195, 224)
+        Me._lblIcon_20.Location = New System.Drawing.Point(193, 236)
         Me._lblIcon_20.Name = "_lblIcon_20"
         Me._lblIcon_20.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_20.Size = New System.Drawing.Size(17, 17)
@@ -1721,7 +1720,7 @@
         Me._lblVP_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblVP_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblVP.SetIndex(Me._lblVP_0, CType(0, Short))
-        Me._lblVP_0.Location = New System.Drawing.Point(219, 224)
+        Me._lblVP_0.Location = New System.Drawing.Point(218, 238)
         Me._lblVP_0.Name = "_lblVP_0"
         Me._lblVP_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblVP_0.Size = New System.Drawing.Size(17, 17)
@@ -1735,7 +1734,7 @@
         Me._lblIcon_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.lblIcon.SetIndex(Me._lblIcon_1, CType(1, Short))
-        Me._lblIcon_1.Location = New System.Drawing.Point(75, 256)
+        Me._lblIcon_1.Location = New System.Drawing.Point(75, 273)
         Me._lblIcon_1.Name = "_lblIcon_1"
         Me._lblIcon_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_1.Size = New System.Drawing.Size(17, 17)
@@ -1749,7 +1748,7 @@
         Me._lblIcon_5.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_5, CType(5, Short))
-        Me._lblIcon_5.Location = New System.Drawing.Point(99, 256)
+        Me._lblIcon_5.Location = New System.Drawing.Point(98, 274)
         Me._lblIcon_5.Name = "_lblIcon_5"
         Me._lblIcon_5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_5.Size = New System.Drawing.Size(17, 17)
@@ -1763,7 +1762,7 @@
         Me._lblIcon_9.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_9.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_9, CType(9, Short))
-        Me._lblIcon_9.Location = New System.Drawing.Point(123, 256)
+        Me._lblIcon_9.Location = New System.Drawing.Point(123, 273)
         Me._lblIcon_9.Name = "_lblIcon_9"
         Me._lblIcon_9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_9.Size = New System.Drawing.Size(17, 17)
@@ -1777,7 +1776,7 @@
         Me._lblIcon_13.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_13.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_13, CType(13, Short))
-        Me._lblIcon_13.Location = New System.Drawing.Point(147, 256)
+        Me._lblIcon_13.Location = New System.Drawing.Point(146, 273)
         Me._lblIcon_13.Name = "_lblIcon_13"
         Me._lblIcon_13.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_13.Size = New System.Drawing.Size(17, 17)
@@ -1791,7 +1790,7 @@
         Me._lblIcon_17.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_17.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_17, CType(17, Short))
-        Me._lblIcon_17.Location = New System.Drawing.Point(171, 256)
+        Me._lblIcon_17.Location = New System.Drawing.Point(172, 273)
         Me._lblIcon_17.Name = "_lblIcon_17"
         Me._lblIcon_17.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_17.Size = New System.Drawing.Size(17, 17)
@@ -1805,7 +1804,7 @@
         Me._lblIcon_21.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_21.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_21, CType(21, Short))
-        Me._lblIcon_21.Location = New System.Drawing.Point(195, 256)
+        Me._lblIcon_21.Location = New System.Drawing.Point(194, 273)
         Me._lblIcon_21.Name = "_lblIcon_21"
         Me._lblIcon_21.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_21.Size = New System.Drawing.Size(17, 17)
@@ -1819,7 +1818,7 @@
         Me._lblVP_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblVP_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblVP.SetIndex(Me._lblVP_1, CType(1, Short))
-        Me._lblVP_1.Location = New System.Drawing.Point(219, 256)
+        Me._lblVP_1.Location = New System.Drawing.Point(218, 273)
         Me._lblVP_1.Name = "_lblVP_1"
         Me._lblVP_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblVP_1.Size = New System.Drawing.Size(17, 17)
@@ -1833,7 +1832,7 @@
         Me._lblIcon_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_2, CType(2, Short))
-        Me._lblIcon_2.Location = New System.Drawing.Point(75, 288)
+        Me._lblIcon_2.Location = New System.Drawing.Point(76, 320)
         Me._lblIcon_2.Name = "_lblIcon_2"
         Me._lblIcon_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_2.Size = New System.Drawing.Size(17, 17)
@@ -1847,7 +1846,7 @@
         Me._lblIcon_6.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_6.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_6, CType(6, Short))
-        Me._lblIcon_6.Location = New System.Drawing.Point(99, 288)
+        Me._lblIcon_6.Location = New System.Drawing.Point(99, 320)
         Me._lblIcon_6.Name = "_lblIcon_6"
         Me._lblIcon_6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_6.Size = New System.Drawing.Size(17, 17)
@@ -1861,7 +1860,7 @@
         Me._lblIcon_10.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_10.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_10, CType(10, Short))
-        Me._lblIcon_10.Location = New System.Drawing.Point(123, 288)
+        Me._lblIcon_10.Location = New System.Drawing.Point(122, 320)
         Me._lblIcon_10.Name = "_lblIcon_10"
         Me._lblIcon_10.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_10.Size = New System.Drawing.Size(17, 17)
@@ -1875,7 +1874,7 @@
         Me._lblIcon_14.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_14.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_14, CType(14, Short))
-        Me._lblIcon_14.Location = New System.Drawing.Point(147, 288)
+        Me._lblIcon_14.Location = New System.Drawing.Point(147, 320)
         Me._lblIcon_14.Name = "_lblIcon_14"
         Me._lblIcon_14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_14.Size = New System.Drawing.Size(17, 17)
@@ -1889,7 +1888,7 @@
         Me._lblIcon_18.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_18.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_18, CType(18, Short))
-        Me._lblIcon_18.Location = New System.Drawing.Point(171, 288)
+        Me._lblIcon_18.Location = New System.Drawing.Point(170, 320)
         Me._lblIcon_18.Name = "_lblIcon_18"
         Me._lblIcon_18.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_18.Size = New System.Drawing.Size(17, 17)
@@ -1903,7 +1902,7 @@
         Me._lblIcon_22.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_22.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_22, CType(22, Short))
-        Me._lblIcon_22.Location = New System.Drawing.Point(195, 288)
+        Me._lblIcon_22.Location = New System.Drawing.Point(195, 320)
         Me._lblIcon_22.Name = "_lblIcon_22"
         Me._lblIcon_22.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_22.Size = New System.Drawing.Size(17, 17)
@@ -1917,7 +1916,7 @@
         Me._lblVP_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblVP_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblVP.SetIndex(Me._lblVP_2, CType(2, Short))
-        Me._lblVP_2.Location = New System.Drawing.Point(219, 288)
+        Me._lblVP_2.Location = New System.Drawing.Point(219, 320)
         Me._lblVP_2.Name = "_lblVP_2"
         Me._lblVP_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblVP_2.Size = New System.Drawing.Size(17, 17)
@@ -1931,7 +1930,7 @@
         Me._lblIcon_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_3, CType(3, Short))
-        Me._lblIcon_3.Location = New System.Drawing.Point(75, 320)
+        Me._lblIcon_3.Location = New System.Drawing.Point(75, 352)
         Me._lblIcon_3.Name = "_lblIcon_3"
         Me._lblIcon_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_3.Size = New System.Drawing.Size(17, 17)
@@ -1945,7 +1944,7 @@
         Me._lblIcon_7.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_7.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_7, CType(7, Short))
-        Me._lblIcon_7.Location = New System.Drawing.Point(99, 320)
+        Me._lblIcon_7.Location = New System.Drawing.Point(99, 352)
         Me._lblIcon_7.Name = "_lblIcon_7"
         Me._lblIcon_7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_7.Size = New System.Drawing.Size(17, 17)
@@ -1959,7 +1958,7 @@
         Me._lblIcon_11.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_11.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_11, CType(11, Short))
-        Me._lblIcon_11.Location = New System.Drawing.Point(123, 320)
+        Me._lblIcon_11.Location = New System.Drawing.Point(120, 352)
         Me._lblIcon_11.Name = "_lblIcon_11"
         Me._lblIcon_11.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_11.Size = New System.Drawing.Size(17, 17)
@@ -1973,7 +1972,7 @@
         Me._lblIcon_15.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_15.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_15, CType(15, Short))
-        Me._lblIcon_15.Location = New System.Drawing.Point(147, 320)
+        Me._lblIcon_15.Location = New System.Drawing.Point(143, 352)
         Me._lblIcon_15.Name = "_lblIcon_15"
         Me._lblIcon_15.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_15.Size = New System.Drawing.Size(17, 17)
@@ -1987,7 +1986,7 @@
         Me._lblIcon_19.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_19.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_19, CType(19, Short))
-        Me._lblIcon_19.Location = New System.Drawing.Point(171, 320)
+        Me._lblIcon_19.Location = New System.Drawing.Point(171, 352)
         Me._lblIcon_19.Name = "_lblIcon_19"
         Me._lblIcon_19.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_19.Size = New System.Drawing.Size(17, 17)
@@ -2001,7 +2000,7 @@
         Me._lblIcon_23.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblIcon_23.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIcon.SetIndex(Me._lblIcon_23, CType(23, Short))
-        Me._lblIcon_23.Location = New System.Drawing.Point(195, 320)
+        Me._lblIcon_23.Location = New System.Drawing.Point(194, 352)
         Me._lblIcon_23.Name = "_lblIcon_23"
         Me._lblIcon_23.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblIcon_23.Size = New System.Drawing.Size(17, 17)
@@ -2015,7 +2014,7 @@
         Me._lblVP_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblVP_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblVP.SetIndex(Me._lblVP_3, CType(3, Short))
-        Me._lblVP_3.Location = New System.Drawing.Point(219, 320)
+        Me._lblVP_3.Location = New System.Drawing.Point(218, 352)
         Me._lblVP_3.Name = "_lblVP_3"
         Me._lblVP_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblVP_3.Size = New System.Drawing.Size(17, 17)
@@ -2029,7 +2028,7 @@
         Me._lblScore_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScore_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblScore.SetIndex(Me._lblScore_0, CType(0, Short))
-        Me._lblScore_0.Location = New System.Drawing.Point(240, 224)
+        Me._lblScore_0.Location = New System.Drawing.Point(240, 236)
         Me._lblScore_0.Name = "_lblScore_0"
         Me._lblScore_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblScore_0.Size = New System.Drawing.Size(16, 17)
@@ -2043,7 +2042,7 @@
         Me._lblScore_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScore_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblScore.SetIndex(Me._lblScore_1, CType(1, Short))
-        Me._lblScore_1.Location = New System.Drawing.Point(240, 256)
+        Me._lblScore_1.Location = New System.Drawing.Point(239, 275)
         Me._lblScore_1.Name = "_lblScore_1"
         Me._lblScore_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblScore_1.Size = New System.Drawing.Size(16, 17)
@@ -2057,7 +2056,7 @@
         Me._lblScore_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScore_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblScore.SetIndex(Me._lblScore_2, CType(2, Short))
-        Me._lblScore_2.Location = New System.Drawing.Point(240, 288)
+        Me._lblScore_2.Location = New System.Drawing.Point(239, 320)
         Me._lblScore_2.Name = "_lblScore_2"
         Me._lblScore_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblScore_2.Size = New System.Drawing.Size(16, 17)
@@ -2071,7 +2070,7 @@
         Me._lblScore_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScore_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblScore.SetIndex(Me._lblScore_3, CType(3, Short))
-        Me._lblScore_3.Location = New System.Drawing.Point(240, 320)
+        Me._lblScore_3.Location = New System.Drawing.Point(240, 352)
         Me._lblScore_3.Name = "_lblScore_3"
         Me._lblScore_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblScore_3.Size = New System.Drawing.Size(16, 17)
@@ -2084,7 +2083,7 @@
         Me.Label8.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label8.Location = New System.Drawing.Point(240, 192)
+        Me.Label8.Location = New System.Drawing.Point(238, 205)
         Me.Label8.Name = "Label8"
         Me.Label8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label8.Size = New System.Drawing.Size(16, 17)
@@ -2112,7 +2111,7 @@
         Me._lblOppDetail_14.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_14.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_14, CType(14, Short))
-        Me._lblOppDetail_14.Location = New System.Drawing.Point(816, 616)
+        Me._lblOppDetail_14.Location = New System.Drawing.Point(817, 689)
         Me._lblOppDetail_14.Name = "_lblOppDetail_14"
         Me._lblOppDetail_14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_14.Size = New System.Drawing.Size(105, 16)
@@ -2126,7 +2125,7 @@
         Me._lblOppDetail_13.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_13.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_13, CType(13, Short))
-        Me._lblOppDetail_13.Location = New System.Drawing.Point(696, 616)
+        Me._lblOppDetail_13.Location = New System.Drawing.Point(693, 689)
         Me._lblOppDetail_13.Name = "_lblOppDetail_13"
         Me._lblOppDetail_13.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_13.Size = New System.Drawing.Size(105, 16)
@@ -2140,7 +2139,7 @@
         Me._lblOppDetail_12.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_12.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_12, CType(12, Short))
-        Me._lblOppDetail_12.Location = New System.Drawing.Point(576, 616)
+        Me._lblOppDetail_12.Location = New System.Drawing.Point(573, 689)
         Me._lblOppDetail_12.Name = "_lblOppDetail_12"
         Me._lblOppDetail_12.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_12.Size = New System.Drawing.Size(105, 16)
@@ -2154,7 +2153,7 @@
         Me._lblOppDetail_11.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_11.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_11, CType(11, Short))
-        Me._lblOppDetail_11.Location = New System.Drawing.Point(456, 616)
+        Me._lblOppDetail_11.Location = New System.Drawing.Point(453, 689)
         Me._lblOppDetail_11.Name = "_lblOppDetail_11"
         Me._lblOppDetail_11.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_11.Size = New System.Drawing.Size(105, 16)
@@ -2168,7 +2167,7 @@
         Me._lblOppDetail_10.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_10.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_10, CType(10, Short))
-        Me._lblOppDetail_10.Location = New System.Drawing.Point(336, 616)
+        Me._lblOppDetail_10.Location = New System.Drawing.Point(328, 689)
         Me._lblOppDetail_10.Name = "_lblOppDetail_10"
         Me._lblOppDetail_10.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_10.Size = New System.Drawing.Size(105, 16)
@@ -2182,7 +2181,7 @@
         Me._lblOppDetail_9.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_9.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_9, CType(9, Short))
-        Me._lblOppDetail_9.Location = New System.Drawing.Point(816, 584)
+        Me._lblOppDetail_9.Location = New System.Drawing.Point(817, 625)
         Me._lblOppDetail_9.Name = "_lblOppDetail_9"
         Me._lblOppDetail_9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_9.Size = New System.Drawing.Size(105, 16)
@@ -2196,7 +2195,7 @@
         Me._lblOppDetail_8.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_8.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_8, CType(8, Short))
-        Me._lblOppDetail_8.Location = New System.Drawing.Point(696, 584)
+        Me._lblOppDetail_8.Location = New System.Drawing.Point(696, 625)
         Me._lblOppDetail_8.Name = "_lblOppDetail_8"
         Me._lblOppDetail_8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_8.Size = New System.Drawing.Size(105, 16)
@@ -2210,7 +2209,7 @@
         Me._lblOppDetail_7.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_7.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_7, CType(7, Short))
-        Me._lblOppDetail_7.Location = New System.Drawing.Point(576, 584)
+        Me._lblOppDetail_7.Location = New System.Drawing.Point(575, 625)
         Me._lblOppDetail_7.Name = "_lblOppDetail_7"
         Me._lblOppDetail_7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_7.Size = New System.Drawing.Size(105, 16)
@@ -2224,7 +2223,7 @@
         Me._lblOppDetail_6.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_6.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_6, CType(6, Short))
-        Me._lblOppDetail_6.Location = New System.Drawing.Point(456, 584)
+        Me._lblOppDetail_6.Location = New System.Drawing.Point(453, 625)
         Me._lblOppDetail_6.Name = "_lblOppDetail_6"
         Me._lblOppDetail_6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_6.Size = New System.Drawing.Size(105, 16)
@@ -2238,7 +2237,7 @@
         Me._lblOppDetail_5.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_5, CType(5, Short))
-        Me._lblOppDetail_5.Location = New System.Drawing.Point(336, 584)
+        Me._lblOppDetail_5.Location = New System.Drawing.Point(333, 625)
         Me._lblOppDetail_5.Name = "_lblOppDetail_5"
         Me._lblOppDetail_5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_5.Size = New System.Drawing.Size(105, 16)
@@ -2252,7 +2251,7 @@
         Me._lblOppDetail_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_4, CType(4, Short))
-        Me._lblOppDetail_4.Location = New System.Drawing.Point(816, 552)
+        Me._lblOppDetail_4.Location = New System.Drawing.Point(816, 568)
         Me._lblOppDetail_4.Name = "_lblOppDetail_4"
         Me._lblOppDetail_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_4.Size = New System.Drawing.Size(105, 16)
@@ -2266,7 +2265,7 @@
         Me._lblOppDetail_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_3, CType(3, Short))
-        Me._lblOppDetail_3.Location = New System.Drawing.Point(696, 552)
+        Me._lblOppDetail_3.Location = New System.Drawing.Point(693, 569)
         Me._lblOppDetail_3.Name = "_lblOppDetail_3"
         Me._lblOppDetail_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_3.Size = New System.Drawing.Size(105, 16)
@@ -2280,7 +2279,7 @@
         Me._lblOppDetail_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_2, CType(2, Short))
-        Me._lblOppDetail_2.Location = New System.Drawing.Point(576, 552)
+        Me._lblOppDetail_2.Location = New System.Drawing.Point(575, 568)
         Me._lblOppDetail_2.Name = "_lblOppDetail_2"
         Me._lblOppDetail_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_2.Size = New System.Drawing.Size(105, 16)
@@ -2294,7 +2293,7 @@
         Me._lblOppDetail_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_1, CType(1, Short))
-        Me._lblOppDetail_1.Location = New System.Drawing.Point(456, 552)
+        Me._lblOppDetail_1.Location = New System.Drawing.Point(453, 569)
         Me._lblOppDetail_1.Name = "_lblOppDetail_1"
         Me._lblOppDetail_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_1.Size = New System.Drawing.Size(105, 16)
@@ -2308,7 +2307,7 @@
         Me._lblOppDetail_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppDetail_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppDetail.SetIndex(Me._lblOppDetail_0, CType(0, Short))
-        Me._lblOppDetail_0.Location = New System.Drawing.Point(336, 554)
+        Me._lblOppDetail_0.Location = New System.Drawing.Point(328, 569)
         Me._lblOppDetail_0.Name = "_lblOppDetail_0"
         Me._lblOppDetail_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppDetail_0.Size = New System.Drawing.Size(105, 16)
@@ -2317,7 +2316,7 @@
         '
         '_lblScoreTitle_1
         '
-        Me._lblScoreTitle_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me._lblScoreTitle_1.BackColor = System.Drawing.Color.Transparent
         Me._lblScoreTitle_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblScoreTitle_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScoreTitle_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2343,7 +2342,7 @@
         '
         '_lblScoreTitle_0
         '
-        Me._lblScoreTitle_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me._lblScoreTitle_0.BackColor = System.Drawing.Color.Transparent
         Me._lblScoreTitle_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblScoreTitle_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScoreTitle_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -2399,7 +2398,7 @@
         Me._lblOppScore_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppScore_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppScore.SetIndex(Me._lblOppScore_2, CType(2, Short))
-        Me._lblOppScore_2.Location = New System.Drawing.Point(1064, 600)
+        Me._lblOppScore_2.Location = New System.Drawing.Point(949, 673)
         Me._lblOppScore_2.Name = "_lblOppScore_2"
         Me._lblOppScore_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppScore_2.Size = New System.Drawing.Size(121, 41)
@@ -2413,7 +2412,7 @@
         Me._lblOppHand_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppHand_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppHand.SetIndex(Me._lblOppHand_2, CType(2, Short))
-        Me._lblOppHand_2.Location = New System.Drawing.Point(944, 600)
+        Me._lblOppHand_2.Location = New System.Drawing.Point(949, 658)
         Me._lblOppHand_2.Name = "_lblOppHand_2"
         Me._lblOppHand_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppHand_2.Size = New System.Drawing.Size(121, 25)
@@ -2427,7 +2426,7 @@
         Me._lblOppBoard_14.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_14.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_14, CType(14, Short))
-        Me._lblOppBoard_14.Location = New System.Drawing.Point(817, 600)
+        Me._lblOppBoard_14.Location = New System.Drawing.Point(820, 656)
         Me._lblOppBoard_14.Name = "_lblOppBoard_14"
         Me._lblOppBoard_14.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_14.Size = New System.Drawing.Size(89, 17)
@@ -2439,7 +2438,7 @@
         Me._imgOppBoard_14.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_14.Image = CType(resources.GetObject("_imgOppBoard_14.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_14, CType(14, Short))
-        Me._imgOppBoard_14.Location = New System.Drawing.Point(912, 600)
+        Me._imgOppBoard_14.Location = New System.Drawing.Point(915, 656)
         Me._imgOppBoard_14.Name = "_imgOppBoard_14"
         Me._imgOppBoard_14.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2453,7 +2452,7 @@
         Me._lblOppBoard_13.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_13.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_13, CType(13, Short))
-        Me._lblOppBoard_13.Location = New System.Drawing.Point(697, 600)
+        Me._lblOppBoard_13.Location = New System.Drawing.Point(699, 656)
         Me._lblOppBoard_13.Name = "_lblOppBoard_13"
         Me._lblOppBoard_13.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_13.Size = New System.Drawing.Size(89, 17)
@@ -2465,7 +2464,7 @@
         Me._imgOppBoard_13.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_13.Image = CType(resources.GetObject("_imgOppBoard_13.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_13, CType(13, Short))
-        Me._imgOppBoard_13.Location = New System.Drawing.Point(792, 600)
+        Me._imgOppBoard_13.Location = New System.Drawing.Point(792, 656)
         Me._imgOppBoard_13.Name = "_imgOppBoard_13"
         Me._imgOppBoard_13.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2479,7 +2478,7 @@
         Me._lblOppBoard_12.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_12.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_12, CType(12, Short))
-        Me._lblOppBoard_12.Location = New System.Drawing.Point(577, 600)
+        Me._lblOppBoard_12.Location = New System.Drawing.Point(577, 656)
         Me._lblOppBoard_12.Name = "_lblOppBoard_12"
         Me._lblOppBoard_12.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_12.Size = New System.Drawing.Size(89, 17)
@@ -2491,7 +2490,7 @@
         Me._imgOppBoard_12.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_12.Image = CType(resources.GetObject("_imgOppBoard_12.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_12, CType(12, Short))
-        Me._imgOppBoard_12.Location = New System.Drawing.Point(672, 600)
+        Me._imgOppBoard_12.Location = New System.Drawing.Point(676, 656)
         Me._imgOppBoard_12.Name = "_imgOppBoard_12"
         Me._imgOppBoard_12.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2505,7 +2504,7 @@
         Me._lblOppBoard_11.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_11.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_11, CType(11, Short))
-        Me._lblOppBoard_11.Location = New System.Drawing.Point(457, 600)
+        Me._lblOppBoard_11.Location = New System.Drawing.Point(457, 656)
         Me._lblOppBoard_11.Name = "_lblOppBoard_11"
         Me._lblOppBoard_11.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_11.Size = New System.Drawing.Size(89, 17)
@@ -2517,7 +2516,7 @@
         Me._imgOppBoard_11.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_11.Image = CType(resources.GetObject("_imgOppBoard_11.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_11, CType(11, Short))
-        Me._imgOppBoard_11.Location = New System.Drawing.Point(552, 600)
+        Me._imgOppBoard_11.Location = New System.Drawing.Point(552, 656)
         Me._imgOppBoard_11.Name = "_imgOppBoard_11"
         Me._imgOppBoard_11.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2531,7 +2530,7 @@
         Me._lblOppBoard_10.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_10.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_10, CType(10, Short))
-        Me._lblOppBoard_10.Location = New System.Drawing.Point(337, 600)
+        Me._lblOppBoard_10.Location = New System.Drawing.Point(332, 658)
         Me._lblOppBoard_10.Name = "_lblOppBoard_10"
         Me._lblOppBoard_10.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_10.Size = New System.Drawing.Size(89, 17)
@@ -2543,7 +2542,7 @@
         Me._imgOppBoard_10.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_10.Image = CType(resources.GetObject("_imgOppBoard_10.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_10, CType(10, Short))
-        Me._imgOppBoard_10.Location = New System.Drawing.Point(432, 600)
+        Me._imgOppBoard_10.Location = New System.Drawing.Point(431, 658)
         Me._imgOppBoard_10.Name = "_imgOppBoard_10"
         Me._imgOppBoard_10.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2557,7 +2556,7 @@
         Me._lblPlayerDetail_2.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblPlayerDetail_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPlayerDetail.SetIndex(Me._lblPlayerDetail_2, CType(2, Short))
-        Me._lblPlayerDetail_2.Location = New System.Drawing.Point(264, 600)
+        Me._lblPlayerDetail_2.Location = New System.Drawing.Point(264, 656)
         Me._lblPlayerDetail_2.Name = "_lblPlayerDetail_2"
         Me._lblPlayerDetail_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblPlayerDetail_2.Size = New System.Drawing.Size(57, 17)
@@ -2571,7 +2570,7 @@
         Me._lblOppScore_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppScore_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppScore.SetIndex(Me._lblOppScore_1, CType(1, Short))
-        Me._lblOppScore_1.Location = New System.Drawing.Point(1064, 568)
+        Me._lblOppScore_1.Location = New System.Drawing.Point(1069, 603)
         Me._lblOppScore_1.Name = "_lblOppScore_1"
         Me._lblOppScore_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppScore_1.Size = New System.Drawing.Size(121, 33)
@@ -2585,7 +2584,7 @@
         Me._lblOppHand_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppHand_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppHand.SetIndex(Me._lblOppHand_1, CType(1, Short))
-        Me._lblOppHand_1.Location = New System.Drawing.Point(944, 568)
+        Me._lblOppHand_1.Location = New System.Drawing.Point(944, 603)
         Me._lblOppHand_1.Name = "_lblOppHand_1"
         Me._lblOppHand_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppHand_1.Size = New System.Drawing.Size(121, 33)
@@ -2599,7 +2598,7 @@
         Me._lblOppBoard_9.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_9.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_9, CType(9, Short))
-        Me._lblOppBoard_9.Location = New System.Drawing.Point(817, 568)
+        Me._lblOppBoard_9.Location = New System.Drawing.Point(820, 600)
         Me._lblOppBoard_9.Name = "_lblOppBoard_9"
         Me._lblOppBoard_9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_9.Size = New System.Drawing.Size(89, 17)
@@ -2611,7 +2610,7 @@
         Me._imgOppBoard_9.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_9.Image = CType(resources.GetObject("_imgOppBoard_9.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_9, CType(9, Short))
-        Me._imgOppBoard_9.Location = New System.Drawing.Point(912, 568)
+        Me._imgOppBoard_9.Location = New System.Drawing.Point(916, 600)
         Me._imgOppBoard_9.Name = "_imgOppBoard_9"
         Me._imgOppBoard_9.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2625,7 +2624,7 @@
         Me._lblOppBoard_8.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_8.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_8, CType(8, Short))
-        Me._lblOppBoard_8.Location = New System.Drawing.Point(697, 568)
+        Me._lblOppBoard_8.Location = New System.Drawing.Point(699, 600)
         Me._lblOppBoard_8.Name = "_lblOppBoard_8"
         Me._lblOppBoard_8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_8.Size = New System.Drawing.Size(89, 17)
@@ -2637,7 +2636,7 @@
         Me._imgOppBoard_8.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_8.Image = CType(resources.GetObject("_imgOppBoard_8.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_8, CType(8, Short))
-        Me._imgOppBoard_8.Location = New System.Drawing.Point(792, 568)
+        Me._imgOppBoard_8.Location = New System.Drawing.Point(792, 600)
         Me._imgOppBoard_8.Name = "_imgOppBoard_8"
         Me._imgOppBoard_8.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2651,7 +2650,7 @@
         Me._lblOppBoard_7.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_7.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_7, CType(7, Short))
-        Me._lblOppBoard_7.Location = New System.Drawing.Point(577, 568)
+        Me._lblOppBoard_7.Location = New System.Drawing.Point(581, 600)
         Me._lblOppBoard_7.Name = "_lblOppBoard_7"
         Me._lblOppBoard_7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_7.Size = New System.Drawing.Size(89, 17)
@@ -2663,7 +2662,7 @@
         Me._imgOppBoard_7.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_7.Image = CType(resources.GetObject("_imgOppBoard_7.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_7, CType(7, Short))
-        Me._imgOppBoard_7.Location = New System.Drawing.Point(672, 568)
+        Me._imgOppBoard_7.Location = New System.Drawing.Point(676, 600)
         Me._imgOppBoard_7.Name = "_imgOppBoard_7"
         Me._imgOppBoard_7.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2677,7 +2676,7 @@
         Me._lblOppBoard_6.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_6.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_6, CType(6, Short))
-        Me._lblOppBoard_6.Location = New System.Drawing.Point(457, 568)
+        Me._lblOppBoard_6.Location = New System.Drawing.Point(457, 600)
         Me._lblOppBoard_6.Name = "_lblOppBoard_6"
         Me._lblOppBoard_6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_6.Size = New System.Drawing.Size(89, 17)
@@ -2689,7 +2688,7 @@
         Me._imgOppBoard_6.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_6.Image = CType(resources.GetObject("_imgOppBoard_6.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_6, CType(6, Short))
-        Me._imgOppBoard_6.Location = New System.Drawing.Point(552, 568)
+        Me._imgOppBoard_6.Location = New System.Drawing.Point(552, 600)
         Me._imgOppBoard_6.Name = "_imgOppBoard_6"
         Me._imgOppBoard_6.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2703,7 +2702,7 @@
         Me._lblOppBoard_5.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_5, CType(5, Short))
-        Me._lblOppBoard_5.Location = New System.Drawing.Point(337, 568)
+        Me._lblOppBoard_5.Location = New System.Drawing.Point(332, 600)
         Me._lblOppBoard_5.Name = "_lblOppBoard_5"
         Me._lblOppBoard_5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_5.Size = New System.Drawing.Size(89, 17)
@@ -2715,7 +2714,7 @@
         Me._imgOppBoard_5.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_5.Image = CType(resources.GetObject("_imgOppBoard_5.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_5, CType(5, Short))
-        Me._imgOppBoard_5.Location = New System.Drawing.Point(432, 568)
+        Me._imgOppBoard_5.Location = New System.Drawing.Point(431, 600)
         Me._imgOppBoard_5.Name = "_imgOppBoard_5"
         Me._imgOppBoard_5.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2729,7 +2728,7 @@
         Me._lblPlayerDetail_1.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblPlayerDetail_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPlayerDetail.SetIndex(Me._lblPlayerDetail_1, CType(1, Short))
-        Me._lblPlayerDetail_1.Location = New System.Drawing.Point(264, 568)
+        Me._lblPlayerDetail_1.Location = New System.Drawing.Point(264, 600)
         Me._lblPlayerDetail_1.Name = "_lblPlayerDetail_1"
         Me._lblPlayerDetail_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblPlayerDetail_1.Size = New System.Drawing.Size(57, 17)
@@ -2743,7 +2742,7 @@
         Me._lblOppScore_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppScore_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppScore.SetIndex(Me._lblOppScore_0, CType(0, Short))
-        Me._lblOppScore_0.Location = New System.Drawing.Point(1064, 536)
+        Me._lblOppScore_0.Location = New System.Drawing.Point(1071, 546)
         Me._lblOppScore_0.Name = "_lblOppScore_0"
         Me._lblOppScore_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppScore_0.Size = New System.Drawing.Size(121, 33)
@@ -2757,7 +2756,7 @@
         Me._lblOppHand_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppHand_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppHand.SetIndex(Me._lblOppHand_0, CType(0, Short))
-        Me._lblOppHand_0.Location = New System.Drawing.Point(944, 536)
+        Me._lblOppHand_0.Location = New System.Drawing.Point(944, 546)
         Me._lblOppHand_0.Name = "_lblOppHand_0"
         Me._lblOppHand_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppHand_0.Size = New System.Drawing.Size(121, 33)
@@ -2771,7 +2770,7 @@
         Me._lblOppBoard_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_4, CType(4, Short))
-        Me._lblOppBoard_4.Location = New System.Drawing.Point(817, 536)
+        Me._lblOppBoard_4.Location = New System.Drawing.Point(817, 544)
         Me._lblOppBoard_4.Name = "_lblOppBoard_4"
         Me._lblOppBoard_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_4.Size = New System.Drawing.Size(89, 17)
@@ -2783,7 +2782,7 @@
         Me._imgOppBoard_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_4.Image = CType(resources.GetObject("_imgOppBoard_4.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_4, CType(4, Short))
-        Me._imgOppBoard_4.Location = New System.Drawing.Point(912, 536)
+        Me._imgOppBoard_4.Location = New System.Drawing.Point(913, 544)
         Me._imgOppBoard_4.Name = "_imgOppBoard_4"
         Me._imgOppBoard_4.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2797,7 +2796,7 @@
         Me._lblOppBoard_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_3, CType(3, Short))
-        Me._lblOppBoard_3.Location = New System.Drawing.Point(697, 536)
+        Me._lblOppBoard_3.Location = New System.Drawing.Point(697, 544)
         Me._lblOppBoard_3.Name = "_lblOppBoard_3"
         Me._lblOppBoard_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_3.Size = New System.Drawing.Size(89, 17)
@@ -2809,7 +2808,7 @@
         Me._imgOppBoard_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_3.Image = CType(resources.GetObject("_imgOppBoard_3.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_3, CType(3, Short))
-        Me._imgOppBoard_3.Location = New System.Drawing.Point(792, 536)
+        Me._imgOppBoard_3.Location = New System.Drawing.Point(792, 544)
         Me._imgOppBoard_3.Name = "_imgOppBoard_3"
         Me._imgOppBoard_3.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2823,7 +2822,7 @@
         Me._lblOppBoard_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_2, CType(2, Short))
-        Me._lblOppBoard_2.Location = New System.Drawing.Point(577, 536)
+        Me._lblOppBoard_2.Location = New System.Drawing.Point(577, 544)
         Me._lblOppBoard_2.Name = "_lblOppBoard_2"
         Me._lblOppBoard_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_2.Size = New System.Drawing.Size(89, 17)
@@ -2835,7 +2834,7 @@
         Me._imgOppBoard_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_2.Image = CType(resources.GetObject("_imgOppBoard_2.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_2, CType(2, Short))
-        Me._imgOppBoard_2.Location = New System.Drawing.Point(672, 536)
+        Me._imgOppBoard_2.Location = New System.Drawing.Point(672, 544)
         Me._imgOppBoard_2.Name = "_imgOppBoard_2"
         Me._imgOppBoard_2.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2849,7 +2848,7 @@
         Me._lblOppBoard_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_1, CType(1, Short))
-        Me._lblOppBoard_1.Location = New System.Drawing.Point(457, 536)
+        Me._lblOppBoard_1.Location = New System.Drawing.Point(455, 544)
         Me._lblOppBoard_1.Name = "_lblOppBoard_1"
         Me._lblOppBoard_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_1.Size = New System.Drawing.Size(89, 17)
@@ -2861,7 +2860,7 @@
         Me._imgOppBoard_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_1.Image = CType(resources.GetObject("_imgOppBoard_1.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_1, CType(1, Short))
-        Me._imgOppBoard_1.Location = New System.Drawing.Point(552, 536)
+        Me._imgOppBoard_1.Location = New System.Drawing.Point(552, 544)
         Me._imgOppBoard_1.Name = "_imgOppBoard_1"
         Me._imgOppBoard_1.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2875,7 +2874,7 @@
         Me._lblOppBoard_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblOppBoard_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblOppBoard.SetIndex(Me._lblOppBoard_0, CType(0, Short))
-        Me._lblOppBoard_0.Location = New System.Drawing.Point(337, 536)
+        Me._lblOppBoard_0.Location = New System.Drawing.Point(337, 544)
         Me._lblOppBoard_0.Name = "_lblOppBoard_0"
         Me._lblOppBoard_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblOppBoard_0.Size = New System.Drawing.Size(89, 17)
@@ -2887,7 +2886,7 @@
         Me._imgOppBoard_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoard_0.Image = CType(resources.GetObject("_imgOppBoard_0.Image"), System.Drawing.Image)
         Me.imgOppBoard.SetIndex(Me._imgOppBoard_0, CType(0, Short))
-        Me._imgOppBoard_0.Location = New System.Drawing.Point(432, 536)
+        Me._imgOppBoard_0.Location = New System.Drawing.Point(432, 544)
         Me._imgOppBoard_0.Name = "_imgOppBoard_0"
         Me._imgOppBoard_0.Size = New System.Drawing.Size(17, 17)
         Me._imgOppBoard_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -2901,7 +2900,7 @@
         Me._lblPlayerDetail_0.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblPlayerDetail_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPlayerDetail.SetIndex(Me._lblPlayerDetail_0, CType(0, Short))
-        Me._lblPlayerDetail_0.Location = New System.Drawing.Point(264, 536)
+        Me._lblPlayerDetail_0.Location = New System.Drawing.Point(264, 544)
         Me._lblPlayerDetail_0.Name = "_lblPlayerDetail_0"
         Me._lblPlayerDetail_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblPlayerDetail_0.Size = New System.Drawing.Size(57, 17)
@@ -2927,7 +2926,7 @@
         Me._lblBoardDetails_4.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardDetails_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardDetails.SetIndex(Me._lblBoardDetails_4, CType(4, Short))
-        Me._lblBoardDetails_4.Location = New System.Drawing.Point(1000, 288)
+        Me._lblBoardDetails_4.Location = New System.Drawing.Point(1145, 290)
         Me._lblBoardDetails_4.Name = "_lblBoardDetails_4"
         Me._lblBoardDetails_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblBoardDetails_4.Size = New System.Drawing.Size(169, 17)
@@ -2941,7 +2940,7 @@
         Me._lblBoardDetails_3.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardDetails_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardDetails.SetIndex(Me._lblBoardDetails_3, CType(3, Short))
-        Me._lblBoardDetails_3.Location = New System.Drawing.Point(816, 288)
+        Me._lblBoardDetails_3.Location = New System.Drawing.Point(928, 288)
         Me._lblBoardDetails_3.Name = "_lblBoardDetails_3"
         Me._lblBoardDetails_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblBoardDetails_3.Size = New System.Drawing.Size(169, 17)
@@ -2955,7 +2954,7 @@
         Me._lblBoardDetails_2.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardDetails_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardDetails.SetIndex(Me._lblBoardDetails_2, CType(2, Short))
-        Me._lblBoardDetails_2.Location = New System.Drawing.Point(632, 288)
+        Me._lblBoardDetails_2.Location = New System.Drawing.Point(720, 292)
         Me._lblBoardDetails_2.Name = "_lblBoardDetails_2"
         Me._lblBoardDetails_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblBoardDetails_2.Size = New System.Drawing.Size(169, 17)
@@ -2969,7 +2968,7 @@
         Me._lblBoardDetails_1.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardDetails_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardDetails.SetIndex(Me._lblBoardDetails_1, CType(1, Short))
-        Me._lblBoardDetails_1.Location = New System.Drawing.Point(448, 288)
+        Me._lblBoardDetails_1.Location = New System.Drawing.Point(496, 292)
         Me._lblBoardDetails_1.Name = "_lblBoardDetails_1"
         Me._lblBoardDetails_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblBoardDetails_1.Size = New System.Drawing.Size(169, 17)
@@ -3008,7 +3007,7 @@
         Me._imgIconSmall_12.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_12.Image = CType(resources.GetObject("_imgIconSmall_12.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_12, CType(12, Short))
-        Me._imgIconSmall_12.Location = New System.Drawing.Point(817, 193)
+        Me._imgIconSmall_12.Location = New System.Drawing.Point(929, 194)
         Me._imgIconSmall_12.Name = "_imgIconSmall_12"
         Me._imgIconSmall_12.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3020,7 +3019,7 @@
         Me._imgIconSmall_13.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_13.Image = CType(resources.GetObject("_imgIconSmall_13.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_13, CType(13, Short))
-        Me._imgIconSmall_13.Location = New System.Drawing.Point(817, 261)
+        Me._imgIconSmall_13.Location = New System.Drawing.Point(928, 263)
         Me._imgIconSmall_13.Name = "_imgIconSmall_13"
         Me._imgIconSmall_13.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3032,7 +3031,7 @@
         Me._imgIconSmall_14.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_14.Image = CType(resources.GetObject("_imgIconSmall_14.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_14, CType(14, Short))
-        Me._imgIconSmall_14.Location = New System.Drawing.Point(888, 261)
+        Me._imgIconSmall_14.Location = New System.Drawing.Point(1004, 261)
         Me._imgIconSmall_14.Name = "_imgIconSmall_14"
         Me._imgIconSmall_14.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3044,7 +3043,7 @@
         Me._imgIconSmall_15.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_15.Image = CType(resources.GetObject("_imgIconSmall_15.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_15, CType(15, Short))
-        Me._imgIconSmall_15.Location = New System.Drawing.Point(960, 261)
+        Me._imgIconSmall_15.Location = New System.Drawing.Point(1072, 263)
         Me._imgIconSmall_15.Name = "_imgIconSmall_15"
         Me._imgIconSmall_15.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3055,13 +3054,13 @@
         '
         Me._lblBoardTitle_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblBoardTitle_3.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_3.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_3.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me._lblBoardTitle_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_3, CType(3, Short))
-        Me._lblBoardTitle_3.Location = New System.Drawing.Point(848, 200)
+        Me._lblBoardTitle_3.Location = New System.Drawing.Point(960, 199)
         Me._lblBoardTitle_3.Name = "_lblBoardTitle_3"
         Me._lblBoardTitle_3.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_3.Size = New System.Drawing.Size(105, 25)
+        Me._lblBoardTitle_3.Size = New System.Drawing.Size(122, 25)
         Me._lblBoardTitle_3.TabIndex = 33
         Me._lblBoardTitle_3.Text = "Quantum Theory"
         '
@@ -3072,7 +3071,7 @@
         Me._lblBoardAge_3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardAge.SetIndex(Me._lblBoardAge_3, CType(3, Short))
-        Me._lblBoardAge_3.Location = New System.Drawing.Point(824, 224)
+        Me._lblBoardAge_3.Location = New System.Drawing.Point(936, 224)
         Me._lblBoardAge_3.Name = "_lblBoardAge_3"
         Me._lblBoardAge_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblBoardAge_3.Size = New System.Drawing.Size(17, 25)
@@ -3083,10 +3082,10 @@
         '
         Me._lblDogma_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me._lblDogma_3.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_3.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_3.Font = New System.Drawing.Font("Arial", 8.5!)
         Me._lblDogma_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_3, CType(3, Short))
-        Me._lblDogma_3.Location = New System.Drawing.Point(848, 224)
+        Me._lblDogma_3.Location = New System.Drawing.Point(960, 224)
         Me._lblDogma_3.Name = "_lblDogma_3"
         Me._lblDogma_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblDogma_3.Size = New System.Drawing.Size(105, 25)
@@ -3098,7 +3097,7 @@
         Me._imgBoardDogma_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoardDogma_3.Image = CType(resources.GetObject("_imgBoardDogma_3.Image"), System.Drawing.Image)
         Me.imgBoardDogma.SetIndex(Me._imgBoardDogma_3, CType(3, Short))
-        Me._imgBoardDogma_3.Location = New System.Drawing.Point(952, 224)
+        Me._imgBoardDogma_3.Location = New System.Drawing.Point(1065, 223)
         Me._imgBoardDogma_3.Name = "_imgBoardDogma_3"
         Me._imgBoardDogma_3.Size = New System.Drawing.Size(17, 17)
         Me._imgBoardDogma_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3110,7 +3109,7 @@
         Me._imgIconSmall_8.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_8.Image = CType(resources.GetObject("_imgIconSmall_8.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_8, CType(8, Short))
-        Me._imgIconSmall_8.Location = New System.Drawing.Point(633, 193)
+        Me._imgIconSmall_8.Location = New System.Drawing.Point(720, 194)
         Me._imgIconSmall_8.Name = "_imgIconSmall_8"
         Me._imgIconSmall_8.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3122,7 +3121,7 @@
         Me._imgIconSmall_9.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_9.Image = CType(resources.GetObject("_imgIconSmall_9.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_9, CType(9, Short))
-        Me._imgIconSmall_9.Location = New System.Drawing.Point(633, 261)
+        Me._imgIconSmall_9.Location = New System.Drawing.Point(720, 263)
         Me._imgIconSmall_9.Name = "_imgIconSmall_9"
         Me._imgIconSmall_9.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3134,7 +3133,7 @@
         Me._imgIconSmall_10.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_10.Image = CType(resources.GetObject("_imgIconSmall_10.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_10, CType(10, Short))
-        Me._imgIconSmall_10.Location = New System.Drawing.Point(704, 261)
+        Me._imgIconSmall_10.Location = New System.Drawing.Point(801, 262)
         Me._imgIconSmall_10.Name = "_imgIconSmall_10"
         Me._imgIconSmall_10.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3146,7 +3145,7 @@
         Me._imgIconSmall_11.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_11.Image = CType(resources.GetObject("_imgIconSmall_11.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_11, CType(11, Short))
-        Me._imgIconSmall_11.Location = New System.Drawing.Point(776, 261)
+        Me._imgIconSmall_11.Location = New System.Drawing.Point(864, 263)
         Me._imgIconSmall_11.Name = "_imgIconSmall_11"
         Me._imgIconSmall_11.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3157,13 +3156,13 @@
         '
         Me._lblBoardTitle_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblBoardTitle_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me._lblBoardTitle_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_2, CType(2, Short))
-        Me._lblBoardTitle_2.Location = New System.Drawing.Point(664, 200)
+        Me._lblBoardTitle_2.Location = New System.Drawing.Point(752, 201)
         Me._lblBoardTitle_2.Name = "_lblBoardTitle_2"
         Me._lblBoardTitle_2.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_2.Size = New System.Drawing.Size(105, 25)
+        Me._lblBoardTitle_2.Size = New System.Drawing.Size(122, 25)
         Me._lblBoardTitle_2.TabIndex = 30
         Me._lblBoardTitle_2.Text = "Quantum Theory"
         '
@@ -3174,7 +3173,7 @@
         Me._lblBoardAge_2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardAge.SetIndex(Me._lblBoardAge_2, CType(2, Short))
-        Me._lblBoardAge_2.Location = New System.Drawing.Point(640, 224)
+        Me._lblBoardAge_2.Location = New System.Drawing.Point(728, 225)
         Me._lblBoardAge_2.Name = "_lblBoardAge_2"
         Me._lblBoardAge_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblBoardAge_2.Size = New System.Drawing.Size(17, 25)
@@ -3185,10 +3184,10 @@
         '
         Me._lblDogma_2.BackColor = System.Drawing.Color.FromArgb(CType(CType(161, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(180, Byte), Integer))
         Me._lblDogma_2.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_2.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_2.Font = New System.Drawing.Font("Arial", 8.5!)
         Me._lblDogma_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_2, CType(2, Short))
-        Me._lblDogma_2.Location = New System.Drawing.Point(664, 224)
+        Me._lblDogma_2.Location = New System.Drawing.Point(752, 226)
         Me._lblDogma_2.Name = "_lblDogma_2"
         Me._lblDogma_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblDogma_2.Size = New System.Drawing.Size(105, 25)
@@ -3200,7 +3199,7 @@
         Me._imgBoardDogma_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoardDogma_2.Image = CType(resources.GetObject("_imgBoardDogma_2.Image"), System.Drawing.Image)
         Me.imgBoardDogma.SetIndex(Me._imgBoardDogma_2, CType(2, Short))
-        Me._imgBoardDogma_2.Location = New System.Drawing.Point(768, 224)
+        Me._imgBoardDogma_2.Location = New System.Drawing.Point(857, 225)
         Me._imgBoardDogma_2.Name = "_imgBoardDogma_2"
         Me._imgBoardDogma_2.Size = New System.Drawing.Size(17, 17)
         Me._imgBoardDogma_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3212,7 +3211,7 @@
         Me._imgIconSmall_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_4.Image = CType(resources.GetObject("_imgIconSmall_4.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_4, CType(4, Short))
-        Me._imgIconSmall_4.Location = New System.Drawing.Point(449, 193)
+        Me._imgIconSmall_4.Location = New System.Drawing.Point(496, 194)
         Me._imgIconSmall_4.Name = "_imgIconSmall_4"
         Me._imgIconSmall_4.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3224,7 +3223,7 @@
         Me._imgIconSmall_5.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_5.Image = CType(resources.GetObject("_imgIconSmall_5.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_5, CType(5, Short))
-        Me._imgIconSmall_5.Location = New System.Drawing.Point(449, 261)
+        Me._imgIconSmall_5.Location = New System.Drawing.Point(497, 263)
         Me._imgIconSmall_5.Name = "_imgIconSmall_5"
         Me._imgIconSmall_5.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3236,7 +3235,7 @@
         Me._imgIconSmall_6.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_6.Image = CType(resources.GetObject("_imgIconSmall_6.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_6, CType(6, Short))
-        Me._imgIconSmall_6.Location = New System.Drawing.Point(520, 261)
+        Me._imgIconSmall_6.Location = New System.Drawing.Point(576, 263)
         Me._imgIconSmall_6.Name = "_imgIconSmall_6"
         Me._imgIconSmall_6.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3248,7 +3247,7 @@
         Me._imgIconSmall_7.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_7.Image = CType(resources.GetObject("_imgIconSmall_7.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_7, CType(7, Short))
-        Me._imgIconSmall_7.Location = New System.Drawing.Point(592, 261)
+        Me._imgIconSmall_7.Location = New System.Drawing.Point(641, 262)
         Me._imgIconSmall_7.Name = "_imgIconSmall_7"
         Me._imgIconSmall_7.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3259,13 +3258,13 @@
         '
         Me._lblBoardTitle_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(144, Byte), Integer))
         Me._lblBoardTitle_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me._lblBoardTitle_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_1, CType(1, Short))
-        Me._lblBoardTitle_1.Location = New System.Drawing.Point(480, 200)
+        Me._lblBoardTitle_1.Location = New System.Drawing.Point(527, 199)
         Me._lblBoardTitle_1.Name = "_lblBoardTitle_1"
         Me._lblBoardTitle_1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_1.Size = New System.Drawing.Size(105, 25)
+        Me._lblBoardTitle_1.Size = New System.Drawing.Size(122, 25)
         Me._lblBoardTitle_1.TabIndex = 27
         Me._lblBoardTitle_1.Text = "Quantum Theory"
         '
@@ -3276,7 +3275,7 @@
         Me._lblBoardAge_1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardAge.SetIndex(Me._lblBoardAge_1, CType(1, Short))
-        Me._lblBoardAge_1.Location = New System.Drawing.Point(456, 224)
+        Me._lblBoardAge_1.Location = New System.Drawing.Point(500, 225)
         Me._lblBoardAge_1.Name = "_lblBoardAge_1"
         Me._lblBoardAge_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblBoardAge_1.Size = New System.Drawing.Size(17, 25)
@@ -3287,10 +3286,10 @@
         '
         Me._lblDogma_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(216, Byte), Integer), CType(CType(146, Byte), Integer), CType(CType(144, Byte), Integer))
         Me._lblDogma_1.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_1.Font = New System.Drawing.Font("Arial", 8.5!)
         Me._lblDogma_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_1, CType(1, Short))
-        Me._lblDogma_1.Location = New System.Drawing.Point(480, 224)
+        Me._lblDogma_1.Location = New System.Drawing.Point(527, 224)
         Me._lblDogma_1.Name = "_lblDogma_1"
         Me._lblDogma_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblDogma_1.Size = New System.Drawing.Size(105, 25)
@@ -3302,7 +3301,7 @@
         Me._imgBoardDogma_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoardDogma_1.Image = CType(resources.GetObject("_imgBoardDogma_1.Image"), System.Drawing.Image)
         Me.imgBoardDogma.SetIndex(Me._imgBoardDogma_1, CType(1, Short))
-        Me._imgBoardDogma_1.Location = New System.Drawing.Point(584, 224)
+        Me._imgBoardDogma_1.Location = New System.Drawing.Point(632, 224)
         Me._imgBoardDogma_1.Name = "_imgBoardDogma_1"
         Me._imgBoardDogma_1.Size = New System.Drawing.Size(17, 17)
         Me._imgBoardDogma_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3325,7 +3324,7 @@
         '
         Me._lblDogma_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._lblDogma_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_0.Font = New System.Drawing.Font("Arial", 8.5!)
         Me._lblDogma_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_0, CType(0, Short))
         Me._lblDogma_0.Location = New System.Drawing.Point(296, 224)
@@ -3353,19 +3352,18 @@
         '
         Me._lblBoardTitle_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._lblBoardTitle_0.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_0.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_0.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me._lblBoardTitle_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_0, CType(0, Short))
         Me._lblBoardTitle_0.Location = New System.Drawing.Point(296, 200)
         Me._lblBoardTitle_0.Name = "_lblBoardTitle_0"
         Me._lblBoardTitle_0.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_0.Size = New System.Drawing.Size(105, 25)
+        Me._lblBoardTitle_0.Size = New System.Drawing.Size(121, 25)
         Me._lblBoardTitle_0.TabIndex = 22
         Me._lblBoardTitle_0.Text = "Quantum Theory"
         '
         '_imgIconSmall_3
         '
-        Me._imgIconSmall_3.BackColor = System.Drawing.Color.FromArgb(CType(CType(227, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(145, Byte), Integer))
         Me._imgIconSmall_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_3.Image = CType(resources.GetObject("_imgIconSmall_3.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_3, CType(3, Short))
@@ -3414,7 +3412,6 @@
         '
         '_imgBoard_0
         '
-        Me._imgBoard_0.BackColor = System.Drawing.Color.Gold
         Me._imgBoard_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoard_0.Image = CType(resources.GetObject("_imgBoard_0.Image"), System.Drawing.Image)
         Me.imgBoard.SetIndex(Me._imgBoard_0, CType(0, Short))
@@ -3431,7 +3428,7 @@
         Me.lblActionsRemaining.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblActionsRemaining.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblActionsRemaining.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblActionsRemaining.Location = New System.Drawing.Point(320, 136)
+        Me.lblActionsRemaining.Location = New System.Drawing.Point(405, 135)
         Me.lblActionsRemaining.Name = "lblActionsRemaining"
         Me.lblActionsRemaining.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.lblActionsRemaining.Size = New System.Drawing.Size(153, 17)
@@ -3444,7 +3441,7 @@
         Me.lblPrompt.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblPrompt.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPrompt.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPrompt.Location = New System.Drawing.Point(320, 8)
+        Me.lblPrompt.Location = New System.Drawing.Point(405, 8)
         Me.lblPrompt.Name = "lblPrompt"
         Me.lblPrompt.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.lblPrompt.Size = New System.Drawing.Size(449, 89)
@@ -3454,7 +3451,7 @@
         '
         'lblRules
         '
-        Me.lblRules.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.lblRules.BackColor = System.Drawing.SystemColors.HighlightText
         Me.lblRules.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblRules.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblRules.ForeColor = System.Drawing.SystemColors.ControlText
@@ -3467,7 +3464,6 @@
         '
         'imgDogmaSymbol
         '
-        Me.imgDogmaSymbol.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.imgDogmaSymbol.Cursor = System.Windows.Forms.Cursors.Default
         Me.imgDogmaSymbol.Image = CType(resources.GetObject("imgDogmaSymbol.Image"), System.Drawing.Image)
         Me.imgDogmaSymbol.Location = New System.Drawing.Point(152, 32)
@@ -3479,9 +3475,9 @@
         '
         'lblDogmaSymbol
         '
-        Me.lblDogmaSymbol.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.lblDogmaSymbol.BackColor = System.Drawing.Color.Transparent
         Me.lblDogmaSymbol.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblDogmaSymbol.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDogmaSymbol.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDogmaSymbol.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogmaSymbol.Location = New System.Drawing.Point(40, 32)
         Me.lblDogmaSymbol.Name = "lblDogmaSymbol"
@@ -3492,9 +3488,9 @@
         '
         'lblLarge
         '
-        Me.lblLarge.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me.lblLarge.BackColor = System.Drawing.Color.Transparent
         Me.lblLarge.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblLarge.Font = New System.Drawing.Font("Arial", 12.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLarge.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblLarge.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblLarge.Location = New System.Drawing.Point(40, 8)
         Me.lblLarge.Name = "lblLarge"
@@ -3569,7 +3565,7 @@
         Me._lblAchievement_13.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_13.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_13, CType(13, Short))
-        Me._lblAchievement_13.Location = New System.Drawing.Point(16, 472)
+        Me._lblAchievement_13.Location = New System.Drawing.Point(52, 560)
         Me._lblAchievement_13.Name = "_lblAchievement_13"
         Me._lblAchievement_13.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_13.Size = New System.Drawing.Size(105, 25)
@@ -3583,7 +3579,7 @@
         Me._lblAchievement_12.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_12.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_12, CType(12, Short))
-        Me._lblAchievement_12.Location = New System.Drawing.Point(120, 440)
+        Me._lblAchievement_12.Location = New System.Drawing.Point(136, 530)
         Me._lblAchievement_12.Name = "_lblAchievement_12"
         Me._lblAchievement_12.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_12.Size = New System.Drawing.Size(105, 25)
@@ -3597,7 +3593,7 @@
         Me._lblAchievement_11.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_11.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_11, CType(11, Short))
-        Me._lblAchievement_11.Location = New System.Drawing.Point(16, 440)
+        Me._lblAchievement_11.Location = New System.Drawing.Point(15, 530)
         Me._lblAchievement_11.Name = "_lblAchievement_11"
         Me._lblAchievement_11.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_11.Size = New System.Drawing.Size(105, 25)
@@ -3611,7 +3607,7 @@
         Me._lblAchievement_10.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_10.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_10, CType(10, Short))
-        Me._lblAchievement_10.Location = New System.Drawing.Point(120, 408)
+        Me._lblAchievement_10.Location = New System.Drawing.Point(128, 488)
         Me._lblAchievement_10.Name = "_lblAchievement_10"
         Me._lblAchievement_10.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_10.Size = New System.Drawing.Size(105, 25)
@@ -3625,7 +3621,7 @@
         Me._lblAchievement_9.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_9.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_9, CType(9, Short))
-        Me._lblAchievement_9.Location = New System.Drawing.Point(16, 408)
+        Me._lblAchievement_9.Location = New System.Drawing.Point(15, 488)
         Me._lblAchievement_9.Name = "_lblAchievement_9"
         Me._lblAchievement_9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_9.Size = New System.Drawing.Size(105, 25)
@@ -3639,7 +3635,7 @@
         Me._lblAchievement_8.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_8.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_8, CType(8, Short))
-        Me._lblAchievement_8.Location = New System.Drawing.Point(208, 376)
+        Me._lblAchievement_8.Location = New System.Drawing.Point(206, 446)
         Me._lblAchievement_8.Name = "_lblAchievement_8"
         Me._lblAchievement_8.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_8.Size = New System.Drawing.Size(17, 25)
@@ -3653,7 +3649,7 @@
         Me._lblAchievement_7.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_7.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_7, CType(7, Short))
-        Me._lblAchievement_7.Location = New System.Drawing.Point(184, 376)
+        Me._lblAchievement_7.Location = New System.Drawing.Point(183, 446)
         Me._lblAchievement_7.Name = "_lblAchievement_7"
         Me._lblAchievement_7.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_7.Size = New System.Drawing.Size(17, 25)
@@ -3667,7 +3663,7 @@
         Me._lblAchievement_6.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_6.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_6, CType(6, Short))
-        Me._lblAchievement_6.Location = New System.Drawing.Point(160, 376)
+        Me._lblAchievement_6.Location = New System.Drawing.Point(160, 446)
         Me._lblAchievement_6.Name = "_lblAchievement_6"
         Me._lblAchievement_6.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_6.Size = New System.Drawing.Size(17, 25)
@@ -3681,7 +3677,7 @@
         Me._lblAchievement_5.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_5.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_5, CType(5, Short))
-        Me._lblAchievement_5.Location = New System.Drawing.Point(136, 376)
+        Me._lblAchievement_5.Location = New System.Drawing.Point(137, 446)
         Me._lblAchievement_5.Name = "_lblAchievement_5"
         Me._lblAchievement_5.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_5.Size = New System.Drawing.Size(17, 25)
@@ -3695,7 +3691,7 @@
         Me._lblAchievement_4.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_4, CType(4, Short))
-        Me._lblAchievement_4.Location = New System.Drawing.Point(112, 376)
+        Me._lblAchievement_4.Location = New System.Drawing.Point(114, 446)
         Me._lblAchievement_4.Name = "_lblAchievement_4"
         Me._lblAchievement_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_4.Size = New System.Drawing.Size(17, 25)
@@ -3709,7 +3705,7 @@
         Me._lblAchievement_3.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_3.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_3, CType(3, Short))
-        Me._lblAchievement_3.Location = New System.Drawing.Point(88, 376)
+        Me._lblAchievement_3.Location = New System.Drawing.Point(91, 446)
         Me._lblAchievement_3.Name = "_lblAchievement_3"
         Me._lblAchievement_3.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_3.Size = New System.Drawing.Size(17, 25)
@@ -3723,7 +3719,7 @@
         Me._lblAchievement_2.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_2.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_2, CType(2, Short))
-        Me._lblAchievement_2.Location = New System.Drawing.Point(64, 376)
+        Me._lblAchievement_2.Location = New System.Drawing.Point(68, 446)
         Me._lblAchievement_2.Name = "_lblAchievement_2"
         Me._lblAchievement_2.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_2.Size = New System.Drawing.Size(17, 25)
@@ -3737,7 +3733,7 @@
         Me._lblAchievement_1.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_1, CType(1, Short))
-        Me._lblAchievement_1.Location = New System.Drawing.Point(40, 376)
+        Me._lblAchievement_1.Location = New System.Drawing.Point(39, 446)
         Me._lblAchievement_1.Name = "_lblAchievement_1"
         Me._lblAchievement_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_1.Size = New System.Drawing.Size(17, 25)
@@ -3751,7 +3747,7 @@
         Me._lblAchievement_0.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblAchievement_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblAchievement.SetIndex(Me._lblAchievement_0, CType(0, Short))
-        Me._lblAchievement_0.Location = New System.Drawing.Point(16, 376)
+        Me._lblAchievement_0.Location = New System.Drawing.Point(15, 446)
         Me._lblAchievement_0.Name = "_lblAchievement_0"
         Me._lblAchievement_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblAchievement_0.Size = New System.Drawing.Size(17, 25)
@@ -3764,7 +3760,7 @@
         Me.lblGoals.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblGoals.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblGoals.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblGoals.Location = New System.Drawing.Point(16, 352)
+        Me.lblGoals.Location = New System.Drawing.Point(19, 415)
         Me.lblGoals.Name = "lblGoals"
         Me.lblGoals.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.lblGoals.Size = New System.Drawing.Size(217, 17)
@@ -3776,7 +3772,7 @@
         Me._imgBoard_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoard_3.Image = CType(resources.GetObject("_imgBoard_3.Image"), System.Drawing.Image)
         Me.imgBoard.SetIndex(Me._imgBoard_3, CType(3, Short))
-        Me._imgBoard_3.Location = New System.Drawing.Point(816, 192)
+        Me._imgBoard_3.Location = New System.Drawing.Point(928, 193)
         Me._imgBoard_3.Name = "_imgBoard_3"
         Me._imgBoard_3.Size = New System.Drawing.Size(169, 95)
         Me._imgBoard_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3788,7 +3784,7 @@
         Me._imgBoard_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoard_2.Image = CType(resources.GetObject("_imgBoard_2.Image"), System.Drawing.Image)
         Me.imgBoard.SetIndex(Me._imgBoard_2, CType(2, Short))
-        Me._imgBoard_2.Location = New System.Drawing.Point(632, 192)
+        Me._imgBoard_2.Location = New System.Drawing.Point(720, 193)
         Me._imgBoard_2.Name = "_imgBoard_2"
         Me._imgBoard_2.Size = New System.Drawing.Size(169, 95)
         Me._imgBoard_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3800,7 +3796,7 @@
         Me._imgBoard_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoard_1.Image = CType(resources.GetObject("_imgBoard_1.Image"), System.Drawing.Image)
         Me.imgBoard.SetIndex(Me._imgBoard_1, CType(1, Short))
-        Me._imgBoard_1.Location = New System.Drawing.Point(448, 192)
+        Me._imgBoard_1.Location = New System.Drawing.Point(496, 193)
         Me._imgBoard_1.Name = "_imgBoard_1"
         Me._imgBoard_1.Size = New System.Drawing.Size(169, 95)
         Me._imgBoard_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3809,11 +3805,10 @@
         '
         '_imgIconSmall_16
         '
-        Me._imgIconSmall_16.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._imgIconSmall_16.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_16.Image = CType(resources.GetObject("_imgIconSmall_16.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_16, CType(16, Short))
-        Me._imgIconSmall_16.Location = New System.Drawing.Point(1001, 193)
+        Me._imgIconSmall_16.Location = New System.Drawing.Point(1144, 193)
         Me._imgIconSmall_16.Name = "_imgIconSmall_16"
         Me._imgIconSmall_16.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3825,7 +3820,7 @@
         Me._imgIconSmall_17.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_17.Image = CType(resources.GetObject("_imgIconSmall_17.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_17, CType(17, Short))
-        Me._imgIconSmall_17.Location = New System.Drawing.Point(1001, 261)
+        Me._imgIconSmall_17.Location = New System.Drawing.Point(1144, 263)
         Me._imgIconSmall_17.Name = "_imgIconSmall_17"
         Me._imgIconSmall_17.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3837,7 +3832,7 @@
         Me._imgIconSmall_18.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_18.Image = CType(resources.GetObject("_imgIconSmall_18.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_18, CType(18, Short))
-        Me._imgIconSmall_18.Location = New System.Drawing.Point(1072, 261)
+        Me._imgIconSmall_18.Location = New System.Drawing.Point(1229, 263)
         Me._imgIconSmall_18.Name = "_imgIconSmall_18"
         Me._imgIconSmall_18.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3849,7 +3844,7 @@
         Me._imgIconSmall_19.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgIconSmall_19.Image = CType(resources.GetObject("_imgIconSmall_19.Image"), System.Drawing.Image)
         Me.imgIconSmall.SetIndex(Me._imgIconSmall_19, CType(19, Short))
-        Me._imgIconSmall_19.Location = New System.Drawing.Point(1144, 261)
+        Me._imgIconSmall_19.Location = New System.Drawing.Point(1288, 262)
         Me._imgIconSmall_19.Name = "_imgIconSmall_19"
         Me._imgIconSmall_19.Size = New System.Drawing.Size(25, 25)
         Me._imgIconSmall_19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3860,13 +3855,13 @@
         '
         Me._lblBoardTitle_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblBoardTitle_4.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblBoardTitle_4.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblBoardTitle_4.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Bold)
         Me._lblBoardTitle_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardTitle.SetIndex(Me._lblBoardTitle_4, CType(4, Short))
-        Me._lblBoardTitle_4.Location = New System.Drawing.Point(1032, 200)
+        Me._lblBoardTitle_4.Location = New System.Drawing.Point(1177, 200)
         Me._lblBoardTitle_4.Name = "_lblBoardTitle_4"
         Me._lblBoardTitle_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblBoardTitle_4.Size = New System.Drawing.Size(105, 25)
+        Me._lblBoardTitle_4.Size = New System.Drawing.Size(122, 25)
         Me._lblBoardTitle_4.TabIndex = 36
         Me._lblBoardTitle_4.Text = "Quantum Theory"
         '
@@ -3877,7 +3872,7 @@
         Me._lblBoardAge_4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblBoardAge_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblBoardAge.SetIndex(Me._lblBoardAge_4, CType(4, Short))
-        Me._lblBoardAge_4.Location = New System.Drawing.Point(1008, 224)
+        Me._lblBoardAge_4.Location = New System.Drawing.Point(1152, 224)
         Me._lblBoardAge_4.Name = "_lblBoardAge_4"
         Me._lblBoardAge_4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblBoardAge_4.Size = New System.Drawing.Size(17, 25)
@@ -3888,23 +3883,22 @@
         '
         Me._lblDogma_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._lblDogma_4.Cursor = System.Windows.Forms.Cursors.Default
-        Me._lblDogma_4.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me._lblDogma_4.Font = New System.Drawing.Font("Arial", 8.5!)
         Me._lblDogma_4.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDogma.SetIndex(Me._lblDogma_4, CType(4, Short))
-        Me._lblDogma_4.Location = New System.Drawing.Point(1032, 224)
+        Me._lblDogma_4.Location = New System.Drawing.Point(1177, 225)
         Me._lblDogma_4.Name = "_lblDogma_4"
         Me._lblDogma_4.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me._lblDogma_4.Size = New System.Drawing.Size(105, 25)
+        Me._lblDogma_4.Size = New System.Drawing.Size(105, 24)
         Me._lblDogma_4.TabIndex = 34
         Me._lblDogma_4.Text = "Dogma Symbol:"
         '
         '_imgBoardDogma_4
         '
-        Me._imgBoardDogma_4.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(126, Byte), Integer))
         Me._imgBoardDogma_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoardDogma_4.Image = CType(resources.GetObject("_imgBoardDogma_4.Image"), System.Drawing.Image)
         Me.imgBoardDogma.SetIndex(Me._imgBoardDogma_4, CType(4, Short))
-        Me._imgBoardDogma_4.Location = New System.Drawing.Point(1136, 224)
+        Me._imgBoardDogma_4.Location = New System.Drawing.Point(1282, 224)
         Me._imgBoardDogma_4.Name = "_imgBoardDogma_4"
         Me._imgBoardDogma_4.Size = New System.Drawing.Size(17, 17)
         Me._imgBoardDogma_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3916,7 +3910,7 @@
         Me._imgBoard_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgBoard_4.Image = CType(resources.GetObject("_imgBoard_4.Image"), System.Drawing.Image)
         Me.imgBoard.SetIndex(Me._imgBoard_4, CType(4, Short))
-        Me._imgBoard_4.Location = New System.Drawing.Point(1000, 192)
+        Me._imgBoard_4.Location = New System.Drawing.Point(1144, 193)
         Me._imgBoard_4.Name = "_imgBoard_4"
         Me._imgBoard_4.Size = New System.Drawing.Size(169, 95)
         Me._imgBoard_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3928,7 +3922,7 @@
         Me._imgOppBoardColor_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_0.Image = CType(resources.GetObject("_imgOppBoardColor_0.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_0, CType(0, Short))
-        Me._imgOppBoardColor_0.Location = New System.Drawing.Point(336, 536)
+        Me._imgOppBoardColor_0.Location = New System.Drawing.Point(336, 544)
         Me._imgOppBoardColor_0.Name = "_imgOppBoardColor_0"
         Me._imgOppBoardColor_0.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3940,7 +3934,7 @@
         Me._imgOppBoardColor_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_1.Image = CType(resources.GetObject("_imgOppBoardColor_1.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_1, CType(1, Short))
-        Me._imgOppBoardColor_1.Location = New System.Drawing.Point(456, 536)
+        Me._imgOppBoardColor_1.Location = New System.Drawing.Point(456, 544)
         Me._imgOppBoardColor_1.Name = "_imgOppBoardColor_1"
         Me._imgOppBoardColor_1.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3952,7 +3946,7 @@
         Me._imgOppBoardColor_2.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_2.Image = CType(resources.GetObject("_imgOppBoardColor_2.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_2, CType(2, Short))
-        Me._imgOppBoardColor_2.Location = New System.Drawing.Point(576, 536)
+        Me._imgOppBoardColor_2.Location = New System.Drawing.Point(576, 544)
         Me._imgOppBoardColor_2.Name = "_imgOppBoardColor_2"
         Me._imgOppBoardColor_2.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3964,7 +3958,7 @@
         Me._imgOppBoardColor_3.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_3.Image = CType(resources.GetObject("_imgOppBoardColor_3.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_3, CType(3, Short))
-        Me._imgOppBoardColor_3.Location = New System.Drawing.Point(696, 536)
+        Me._imgOppBoardColor_3.Location = New System.Drawing.Point(695, 544)
         Me._imgOppBoardColor_3.Name = "_imgOppBoardColor_3"
         Me._imgOppBoardColor_3.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3976,7 +3970,7 @@
         Me._imgOppBoardColor_4.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_4.Image = CType(resources.GetObject("_imgOppBoardColor_4.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_4, CType(4, Short))
-        Me._imgOppBoardColor_4.Location = New System.Drawing.Point(816, 536)
+        Me._imgOppBoardColor_4.Location = New System.Drawing.Point(817, 544)
         Me._imgOppBoardColor_4.Name = "_imgOppBoardColor_4"
         Me._imgOppBoardColor_4.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -3988,7 +3982,7 @@
         Me._imgOppBoardColor_5.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_5.Image = CType(resources.GetObject("_imgOppBoardColor_5.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_5, CType(5, Short))
-        Me._imgOppBoardColor_5.Location = New System.Drawing.Point(336, 568)
+        Me._imgOppBoardColor_5.Location = New System.Drawing.Point(335, 600)
         Me._imgOppBoardColor_5.Name = "_imgOppBoardColor_5"
         Me._imgOppBoardColor_5.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4000,7 +3994,7 @@
         Me._imgOppBoardColor_6.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_6.Image = CType(resources.GetObject("_imgOppBoardColor_6.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_6, CType(6, Short))
-        Me._imgOppBoardColor_6.Location = New System.Drawing.Point(456, 568)
+        Me._imgOppBoardColor_6.Location = New System.Drawing.Point(457, 600)
         Me._imgOppBoardColor_6.Name = "_imgOppBoardColor_6"
         Me._imgOppBoardColor_6.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4012,7 +4006,7 @@
         Me._imgOppBoardColor_7.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_7.Image = CType(resources.GetObject("_imgOppBoardColor_7.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_7, CType(7, Short))
-        Me._imgOppBoardColor_7.Location = New System.Drawing.Point(576, 568)
+        Me._imgOppBoardColor_7.Location = New System.Drawing.Point(580, 600)
         Me._imgOppBoardColor_7.Name = "_imgOppBoardColor_7"
         Me._imgOppBoardColor_7.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4024,7 +4018,7 @@
         Me._imgOppBoardColor_8.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_8.Image = CType(resources.GetObject("_imgOppBoardColor_8.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_8, CType(8, Short))
-        Me._imgOppBoardColor_8.Location = New System.Drawing.Point(696, 568)
+        Me._imgOppBoardColor_8.Location = New System.Drawing.Point(696, 600)
         Me._imgOppBoardColor_8.Name = "_imgOppBoardColor_8"
         Me._imgOppBoardColor_8.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4036,7 +4030,7 @@
         Me._imgOppBoardColor_9.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_9.Image = CType(resources.GetObject("_imgOppBoardColor_9.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_9, CType(9, Short))
-        Me._imgOppBoardColor_9.Location = New System.Drawing.Point(816, 568)
+        Me._imgOppBoardColor_9.Location = New System.Drawing.Point(820, 600)
         Me._imgOppBoardColor_9.Name = "_imgOppBoardColor_9"
         Me._imgOppBoardColor_9.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4048,7 +4042,7 @@
         Me._imgOppBoardColor_10.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_10.Image = CType(resources.GetObject("_imgOppBoardColor_10.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_10, CType(10, Short))
-        Me._imgOppBoardColor_10.Location = New System.Drawing.Point(336, 600)
+        Me._imgOppBoardColor_10.Location = New System.Drawing.Point(335, 658)
         Me._imgOppBoardColor_10.Name = "_imgOppBoardColor_10"
         Me._imgOppBoardColor_10.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4060,7 +4054,7 @@
         Me._imgOppBoardColor_11.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_11.Image = CType(resources.GetObject("_imgOppBoardColor_11.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_11, CType(11, Short))
-        Me._imgOppBoardColor_11.Location = New System.Drawing.Point(456, 600)
+        Me._imgOppBoardColor_11.Location = New System.Drawing.Point(456, 656)
         Me._imgOppBoardColor_11.Name = "_imgOppBoardColor_11"
         Me._imgOppBoardColor_11.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4072,7 +4066,7 @@
         Me._imgOppBoardColor_12.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_12.Image = CType(resources.GetObject("_imgOppBoardColor_12.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_12, CType(12, Short))
-        Me._imgOppBoardColor_12.Location = New System.Drawing.Point(576, 600)
+        Me._imgOppBoardColor_12.Location = New System.Drawing.Point(580, 656)
         Me._imgOppBoardColor_12.Name = "_imgOppBoardColor_12"
         Me._imgOppBoardColor_12.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4084,7 +4078,7 @@
         Me._imgOppBoardColor_13.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_13.Image = CType(resources.GetObject("_imgOppBoardColor_13.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_13, CType(13, Short))
-        Me._imgOppBoardColor_13.Location = New System.Drawing.Point(696, 600)
+        Me._imgOppBoardColor_13.Location = New System.Drawing.Point(696, 656)
         Me._imgOppBoardColor_13.Name = "_imgOppBoardColor_13"
         Me._imgOppBoardColor_13.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4096,7 +4090,7 @@
         Me._imgOppBoardColor_14.Cursor = System.Windows.Forms.Cursors.Default
         Me._imgOppBoardColor_14.Image = CType(resources.GetObject("_imgOppBoardColor_14.Image"), System.Drawing.Image)
         Me.imgOppBoardColor.SetIndex(Me._imgOppBoardColor_14, CType(14, Short))
-        Me._imgOppBoardColor_14.Location = New System.Drawing.Point(816, 600)
+        Me._imgOppBoardColor_14.Location = New System.Drawing.Point(819, 656)
         Me._imgOppBoardColor_14.Name = "_imgOppBoardColor_14"
         Me._imgOppBoardColor_14.Size = New System.Drawing.Size(113, 17)
         Me._imgOppBoardColor_14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -4105,7 +4099,7 @@
         '
         '_lblHand_0
         '
-        Me._lblHand_0.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me._lblHand_0.BackColor = System.Drawing.Color.Transparent
         Me._lblHand_0.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblHand_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblHand_0.ForeColor = System.Drawing.SystemColors.ControlText
@@ -4155,7 +4149,7 @@
         '
         '_lblHand_1
         '
-        Me._lblHand_1.BackColor = System.Drawing.Color.FromArgb(CType(CType(132, Byte), Integer), CType(CType(173, Byte), Integer), CType(CType(217, Byte), Integer))
+        Me._lblHand_1.BackColor = System.Drawing.Color.Transparent
         Me._lblHand_1.Cursor = System.Windows.Forms.Cursors.Default
         Me._lblHand_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblHand_1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -4185,7 +4179,7 @@
         Me.Label9.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label9.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label9.Location = New System.Drawing.Point(264, 512)
+        Me.Label9.Location = New System.Drawing.Point(264, 519)
         Me.Label9.Name = "Label9"
         Me.Label9.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label9.Size = New System.Drawing.Size(913, 17)
@@ -4200,7 +4194,7 @@
         Me.lblHighestTop.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblHighestTop.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblHighestTop.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblHighestTop.Location = New System.Drawing.Point(528, 168)
+        Me.lblHighestTop.Location = New System.Drawing.Point(889, 167)
         Me.lblHighestTop.Name = "lblHighestTop"
         Me.lblHighestTop.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.lblHighestTop.Size = New System.Drawing.Size(17, 17)
@@ -4213,7 +4207,7 @@
         Me.Label4.Cursor = System.Windows.Forms.Cursors.Default
         Me.Label4.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(264, 168)
+        Me.Label4.Location = New System.Drawing.Point(597, 167)
         Me.Label4.Name = "Label4"
         Me.Label4.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.Label4.Size = New System.Drawing.Size(257, 17)
@@ -4286,22 +4280,13 @@
         'lblScoreTitle
         '
         '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 14
-        Me.ListBox1.Location = New System.Drawing.Point(727, 0)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(257, 4)
-        Me.ListBox1.TabIndex = 253
-        '
         'Main_Renamed
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(1185, 667)
-        Me.Controls.Add(Me.ListBox1)
+        Me.ClientSize = New System.Drawing.Size(1380, 757)
         Me.Controls.Add(Me.cmbCheatLevel)
         Me.Controls.Add(Me.cmdScore)
         Me.Controls.Add(Me.cmbCards)
@@ -4557,15 +4542,14 @@
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.KeyPreview = True
         Me.Location = New System.Drawing.Point(8, 29)
         Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "Main_Renamed"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.Text = "Innovation AI"
+        Me.Text = "Innovation AI 2022"
         CType(Me.Image1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Image2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Image3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4681,7 +4665,5 @@
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ListBox1 As ListBox
 #End Region
 End Class
