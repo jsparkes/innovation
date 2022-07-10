@@ -100,6 +100,8 @@ This code has been tested under Windows 10/11. No Linux testing has been done.
 
 ### Installation
 
+Newest version is in  [publish/WinINNOVATION-setup.zip](https://github.com/jsparkes/innovation/blob/master/publish/WinINNOVATION-setup.zip)
+
 A copy of the pre-built Windows binary with additional supporting files is in the directory original. Either clone this project
  or just grab the zip file.
 
@@ -176,6 +178,7 @@ Project Link: [https://github.com/jsparkes/innovation](https://github.com/jspark
 ** Original Windows 7ish Released on this [site](https://www.slightlymagic.net/forum/viewforum.php?f=108)
 * [Awesome README Tempate](https://github.com/othneildrew/Best-README-Template)
 * [grip for testing READMEs](https://github.com/joeyespo/grip)
+* [About box](https://www.codeproject.com/Articles/7390/About-The-About-Box)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
