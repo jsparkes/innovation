@@ -10,12 +10,12 @@ Imports System.Runtime.InteropServices
 ' TODO: Review the values of the assembly attributes
 
 
-<Assembly: AssemblyTitle("")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("")>
-<Assembly: AssemblyCopyright("")>
-<Assembly: AssemblyTrademark("")>
+<Assembly: AssemblyTitle("WinInnovationAI")>
+<Assembly: AssemblyDescription("Play a card game of Innovation against AI opponent(s).")>
+<Assembly: AssemblyCompany("Original Game by Asamadi Games")>
+<Assembly: AssemblyProduct("Windows Innvoation Gme AI")>
+<Assembly: AssemblyCopyright("Game 2017, Software CC4.0 NA")>
+' <Assembly: AssemblyTrademark("")>
 <Assembly: AssemblyCulture("")>
 
 ' Version information for an assembly consists of the following four values:
