@@ -69,16 +69,19 @@
     <ApplicationIcon>images\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2CDDB913D2E811FA885FEBF3149B67B755B01FB1</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>4FE29EE1C2664B4B4D499BB3E9A0136F86A2FB29</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>innovation_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>innovation_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualBasic.Compatibility">
@@ -153,6 +156,7 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="innovation_1_TemporaryKey.pfx" />
     <None Include="innovation_TemporaryKey.pfx" />
     <None Include="_UpgradeReport.htm">
       <SubType>Preview</SubType>
