@@ -4,7 +4,7 @@
   <description asmv2:iconFile="images\icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Innovation" version="1.0.8229.705" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="Innovation" version="1.0.8229.1890" language="neutral" processorArchitecture="x86" />
     <commandLine file="Innovation.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Innovation.exe" size="1219584">
-      <assemblyIdentity name="Innovation" version="1.0.8229.705" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Innovation.exe" size="1220096">
+      <assemblyIdentity name="Innovation" version="1.0.8229.1890" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CAPp5i4UeJ5DLHe1McA75j19AVOiAgGGdYtuvYfsUk8=</dsig:DigestValue>
+        <dsig:DigestValue>1xwhEYfK1dTmWGOcRsrsFOgJI+LbCubbkMlSEojpGEk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -25,10 +25,11 @@ Friend Class Main_Renamed
 
     ' FK Code Readbility additions should these be const instead I think const
     ' https://www.dotnetheaven.com/article/vb.net-const-and-read-only-member
-    ReadOnly AGECOUNT As Short = 9 ' FK Ages are 1-10 IRL, code uses 0-9
-    ReadOnly ICONCOUNT As Short = 6 ' FK Icons are 1-6 IRL Leaf. Castle, Lightbulb, Crown, Factory ,Clock, Code has an extra placeholder X
-    ReadOnly COLORCOUNT As Short = 4 ' FK Colors are 5 Yellow, Red, Purple, Blue, Green
-    ReadOnly MAXPLAYERS As Short = 3 ' FK 4 players max
+    ' was using readonly but switched to const
+    Const AGECOUNT As Short = 9 ' FK Ages are 1-10 IRL, code uses 0-9
+    Const ICONCOUNT As Short = 6 ' FK Icons are 1-6 IRL Leaf. Castle, Lightbulb, Crown, Factory ,Clock, Code has an extra placeholder X
+    Const COLORCOUNT As Short = 4 ' FK Colors are 5 Yellow, Red, Purple, Blue, Green
+    Const MAXPLAYERS As Short = 3 ' FK 4 players max
 
     'Images
     Dim color_images(10) As System.Drawing.Image

@@ -28,33 +28,15 @@ In load_picture()
 In load_picture()
 In load_picture()
 In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
 In meld_from_hand() -----------------------------
 In update_display() -----------------------------
 In meld_from_hand() -----------------------------
-Player 1 melds Mysticism.
+Player 1 melds Metalworking.
 In update_display() -----------------------------
 In meld_from_hand() -----------------------------
 In update_display() -----------------------------
 In meld_from_hand() -----------------------------
-Player 2 melds Agriculture.
+Player 2 melds Clothing.
 In update_display() -----------------------------
 Player 2 is the starting player.
 In process_handclick() ----------
@@ -62,13 +44,60 @@ In play_game() -----------------------------
 In update_display() -----------------------------
 In perform_AI_action() -----------------------------
 In make_ai_move() ++++++
-Player 2 drew a 1.
+In make_ai_move() AI doing DOGMA is the id ----
+Player 2 activates the first effect of Clothing.
+In activate_card() -----------------------------
+In meld_from_hand() -----------------------------
 In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 2 melds Mysticism.
+In update_display() -----------------------------
+Player 2 activates the second effect of Clothing.
+In activate_card() -----------------------------
+Player 2 drew and scored a 1.
+Player 2 drew and scored a 1.
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
 In play_game() -----------------------------
 In update_display() -----------------------------
 In play_game?() -----------------------------
 In save_game() ++++++
-In copy_game_state() ++++++
+In copy_game_state() Backup hands, boards etc ----
 In ready_for_action() ++++++
 In load_picture()
 In load_picture()
@@ -85,79 +114,199 @@ In load_picture()
 In load_picture()
 In load_picture()
 In load_picture()
-Player 1 activates the first effect of Mysticism.
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 1 melds Sailing.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In ready_for_action() ++++++
+Player 1 activates the first effect of Sailing.
+In activate_card() -----------------------------
+Player 1 drew and melded Archery.
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In make_ai_move() ++++++
+Player 2 drew a 1.
+In update_display() -----------------------------
+In make_ai_move() AI doing DRAW ----
+In load_picture()
+In play_game() -----------------------------
+In update_display() -----------------------------
+In perform_AI_action() -----------------------------
+In make_ai_move() ++++++
+In make_ai_move() AI doing DOGMA is the id ----
+Player 2 activates the first effect of Clothing.
+In activate_card() -----------------------------
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 2 melds Agriculture.
+In update_display() -----------------------------
+Player 2 activates the second effect of Clothing.
+In activate_card() -----------------------------
+Player 2 drew and scored a 1.
+Player 2 drew and scored a 1.
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In save_game() ++++++
+In copy_game_state() Backup hands, boards etc ----
+In ready_for_action() ++++++
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+Player 1 drew a 1.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In ready_for_action() ++++++
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 1 melds Masonry.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In make_ai_move() ++++++
+In make_ai_move() AI doing DOGMA is the id ----
+Player 2 activates the first effect of Clothing.
+In activate_card() -----------------------------
+Player 2 activates the second effect of Clothing.
+In activate_card() -----------------------------
+Player 2 drew and scored a 1.
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In play_game() -----------------------------
+In update_display() -----------------------------
+In perform_AI_action() -----------------------------
+In make_ai_move() ++++++
+Player 2 has claimed the -1- achievement.
+In update_display() -----------------------------
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In save_game() ++++++
+In copy_game_state() Backup hands, boards etc ----
+In ready_for_action() ++++++
+Player 1 drew a 1.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In ready_for_action() ++++++
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 1 melds Code of Laws.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In make_ai_move() ++++++
+In make_ai_move() AI doing DOGMA is the id ----
+Player 2 activates the first effect of Mysticism.
 In activate_card() -----------------------------
 Player 1 drew a 1.
 In update_display() -----------------------------
 In meld_from_hand() -----------------------------
 In update_display() -----------------------------
 In meld_from_hand() -----------------------------
-Player 1 melds Code of Laws.
+Player 1 melds Oars.
 In update_display() -----------------------------
-Player 1 drew a 1.
+Player 1 drew a 2.
 In update_display() -----------------------------
-In play_game() -----------------------------
+In activate_card() -----------------------------
+Player 2 drew a 2.
 In update_display() -----------------------------
-In ready_for_action() ++++++
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
-In load_picture()
 In meld_from_hand() -----------------------------
 In update_display() -----------------------------
 In meld_from_hand() -----------------------------
-Player 1 melds Writing.
+Player 2 melds Monotheism.
 In update_display() -----------------------------
-In play_game() -----------------------------
+Player 2 drew a 2.
 In update_display() -----------------------------
-In play_game?() -----------------------------
-In make_ai_move() ++++++
-In make_ai_move() choices(1) is which card to play from hand
-In meld_from_hand() -----------------------------
+Dogma effect was shared.
+Player 2 drew a 2.
 In update_display() -----------------------------
-In meld_from_hand() -----------------------------
-Player 2 melds Clothing.
-In update_display() -----------------------------
-In make_ai_move() melded
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
 In load_picture()
 In load_picture()
 In load_picture()
@@ -172,16 +321,90 @@ In play_game() -----------------------------
 In update_display() -----------------------------
 In perform_AI_action() -----------------------------
 In make_ai_move() ++++++
-In make_ai_move() is the id of the dogma to activate
+In make_ai_move() AI doing DOGMA is the id ----
 Player 2 activates the first effect of Clothing.
 In activate_card() -----------------------------
 In meld_from_hand() -----------------------------
 In update_display() -----------------------------
 In meld_from_hand() -----------------------------
-Player 2 melds City States.
+Player 2 melds Mathematics.
 In update_display() -----------------------------
 Player 2 activates the second effect of Clothing.
 In activate_card() -----------------------------
-Player 2 drew and scored a 1.
-Player 2 drew and scored a 1.
+Player 2 drew and scored a 2.
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In save_game() ++++++
+In copy_game_state() Backup hands, boards etc ----
+In ready_for_action() ++++++
 In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+Player 1 activates the first effect of Oars.
+In activate_card() -----------------------------
+Player 1 activates the second effect of Oars.
+In activate_card() -----------------------------
+Player 1 drew a 2.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In ready_for_action() ++++++
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+Player 1 activates the first effect of Sailing.
+In activate_card() -----------------------------
+Player 1 drew and melded Currency.
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In make_ai_move() ++++++
+In make_ai_move() AI doing DOGMA is the id ----
+Player 2 activates the first effect of Agriculture.
+In activate_card() -----------------------------
+In update_display() -----------------------------
+Player 2 returned a 2.
+Player 2 drew and scored a 3.
+In load_picture()
+In play_game() -----------------------------
+In update_display() -----------------------------
+In perform_AI_action() -----------------------------
+In make_ai_move() ++++++
+Player 2 has claimed the -2- achievement.
+In update_display() -----------------------------
+In update_display() -----------------------------
