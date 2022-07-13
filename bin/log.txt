@@ -1,0 +1,187 @@
+﻿In update_display() -----------------------------
+Player 1 drew a 1.
+In update_display() -----------------------------
+Player 1 drew a 1.
+In update_display() -----------------------------
+Player 2 drew a 1.
+In update_display() -----------------------------
+Player 2 drew a 1.
+In update_display() -----------------------------
+In load_picture()
+In update_display() -----------------------------
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 1 melds Mysticism.
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 2 melds Agriculture.
+In update_display() -----------------------------
+Player 2 is the starting player.
+In process_handclick() ----------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In perform_AI_action() -----------------------------
+In make_ai_move() ++++++
+Player 2 drew a 1.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In save_game() ++++++
+In copy_game_state() ++++++
+In ready_for_action() ++++++
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+Player 1 activates the first effect of Mysticism.
+In activate_card() -----------------------------
+Player 1 drew a 1.
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 1 melds Code of Laws.
+In update_display() -----------------------------
+Player 1 drew a 1.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In ready_for_action() ++++++
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 1 melds Writing.
+In update_display() -----------------------------
+In play_game() -----------------------------
+In update_display() -----------------------------
+In play_game?() -----------------------------
+In make_ai_move() ++++++
+In make_ai_move() choices(1) is which card to play from hand
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 2 melds Clothing.
+In update_display() -----------------------------
+In make_ai_move() melded
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In load_picture()
+In play_game() -----------------------------
+In update_display() -----------------------------
+In perform_AI_action() -----------------------------
+In make_ai_move() ++++++
+In make_ai_move() is the id of the dogma to activate
+Player 2 activates the first effect of Clothing.
+In activate_card() -----------------------------
+In meld_from_hand() -----------------------------
+In update_display() -----------------------------
+In meld_from_hand() -----------------------------
+Player 2 melds City States.
+In update_display() -----------------------------
+Player 2 activates the second effect of Clothing.
+In activate_card() -----------------------------
+Player 2 drew and scored a 1.
+Player 2 drew and scored a 1.
+In load_picture()

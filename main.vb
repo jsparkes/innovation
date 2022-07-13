@@ -23,7 +23,8 @@ Friend Class Main_Renamed
     Dim fake_hand(4, 100) As Short
     Dim ai_cheat_level As Short
 
-    ' FK Code Readbility additions
+    ' FK Code Readbility additions should these be const instead I think const
+    ' https://www.dotnetheaven.com/article/vb.net-const-and-read-only-member
     ReadOnly AGECOUNT As Short = 9 ' FK Ages are 1-10 IRL, code uses 0-9
     ReadOnly ICONCOUNT As Short = 6 ' FK Icons are 1-6 IRL Leaf. Castle, Lightbulb, Crown, Factory ,Clock, Code has an extra placeholder X
     ReadOnly COLORCOUNT As Short = 4 ' FK Colors are 5 Yellow, Red, Purple, Blue, Green
@@ -629,6 +630,9 @@ Friend Class Main_Renamed
     End Sub
 
     Private Sub ready_for_action()
+#If VERBOSE Then
+        Call append_simple("In ready_for_action() ++++++")
+#End If
         Dim i As Short
 
         phase = "waiting for action"
@@ -644,7 +648,7 @@ Friend Class Main_Renamed
         cmdDraw.Text = "Draw a " & find_next_draw(0)
         cmdNext.Visible = False
 
-        For i = 0 To 4
+        For i = 0 To COLORCOUNT
             'UPGRADE_WARNING: Couldn't resolve default property of object size3(board, 0, i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If size3(board, 0, i) > 0 Then cmdDogma(i).Visible = True
         Next i
@@ -882,11 +886,14 @@ Friend Class Main_Renamed
     End Sub
 
     Private Sub fake_data(ByVal player As Short)
+#If VERBOSE Then
+        Call append_simple("In fake_data() ++++++")
+#End If
         Dim j, i, r As Object
         Dim yes As Short
 
         ' Fake the decks
-        For i = 0 To 9
+        For i = 0 To AGECOUNT
             'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call copy_array2(deck, fake_deck, i)
             'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -6104,7 +6111,7 @@ Friend Class Main_Renamed
     Private Sub load_picture(ByRef id As Object)
 
 #If VERBOSE Then
-        Call append_simple("In load_picture() -----------------------------")
+        Call append_simple("In load_picture()")
 #End If
         Dim i As Short
         ' MsgBox "Loading " & id
