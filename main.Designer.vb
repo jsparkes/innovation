@@ -2041,7 +2041,7 @@
         Me._lblScore_0.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScore_0.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblScore.SetIndex(Me._lblScore_0, CType(0, Short))
-        Me._lblScore_0.Location = New System.Drawing.Point(240, 236)
+        Me._lblScore_0.Location = New System.Drawing.Point(240, 237)
         Me._lblScore_0.Name = "_lblScore_0"
         Me._lblScore_0.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblScore_0.Size = New System.Drawing.Size(16, 17)
@@ -2055,7 +2055,7 @@
         Me._lblScore_1.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me._lblScore_1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblScore.SetIndex(Me._lblScore_1, CType(1, Short))
-        Me._lblScore_1.Location = New System.Drawing.Point(239, 272)
+        Me._lblScore_1.Location = New System.Drawing.Point(239, 273)
         Me._lblScore_1.Name = "_lblScore_1"
         Me._lblScore_1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me._lblScore_1.Size = New System.Drawing.Size(16, 17)
@@ -4325,13 +4325,13 @@
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "Rules"
         '
         'AboutToolStripMenuItem1
         '
         Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
-        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem1.Text = "About"
         '
         'Main_Renamed

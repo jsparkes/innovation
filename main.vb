@@ -6,6 +6,7 @@ Imports System.Collections.Generic
 'UPGRADE_NOTE: Main was upgraded to Main_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
 
 #Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+#Const VERBOSE2 = False ' For too 2 much info tmi
 
 Friend Class Main_Renamed
     Inherits System.Windows.Forms.Form
@@ -23,7 +24,7 @@ Friend Class Main_Renamed
     Dim fake_hand(4, 100) As Short
     Dim ai_cheat_level As Short
 
-    ' FK Code Readbility additions should these be const instead I think const
+    ' FK Consts added for code readbility
     ' https://www.dotnetheaven.com/article/vb.net-const-and-read-only-member
     ' was using readonly but switched to const
     Const AGECOUNT As Short = 9 ' FK Ages are 1-10 IRL, code uses 0-9
@@ -5290,6 +5291,9 @@ Friend Class Main_Renamed
     End Sub
 
     Private Sub score(ByVal player As Short, ByVal id As Short)
+#If VERBOSE Then ' too much info
+        Call append_simple("score() -----------------------------")
+#End If
         Call append(player, "scored a " & age(id))
         Call Push2(score_pile, player, id)
         Call update_display()
@@ -5303,6 +5307,9 @@ Friend Class Main_Renamed
     End Sub
 
     Private Function draw_num(ByVal player As Short, ByVal num As Short) As Object
+#If VERBOSE Then ' too much info
+        Call append_simple("draw_num() -----------------------------")
+#End If
         Dim picked As Object
         Dim i As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object picked. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -5350,6 +5357,9 @@ Friend Class Main_Renamed
     End Function
 
     Public Sub set_icon_image(ByRef image As Object, ByRef id As Object, ByRef icon_id As Object)
+#If VERBOSE2 Then ' too much info
+        Call append_simple("In set_icon_image() -----------------------------")
+#End If
         If ai_mode <> 0 Then Exit Sub
         'UPGRADE_WARNING: Couldn't resolve default property of object image.Tag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If image.Tag <> id Then
@@ -5396,6 +5406,9 @@ Friend Class Main_Renamed
     End Function
 
     Public Sub update_scores()
+#If VERBOSE2 Then ' too much info
+        Call append_simple("In update_scores() -----------------------------")
+#End If
         Dim i, j As Short
         For i = 0 To 3 ' player
             'UPGRADE_WARNING: Couldn't resolve default property of object scores(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -5411,6 +5424,9 @@ Friend Class Main_Renamed
     End Sub
 
     Public Sub update_icon_total()
+#If VERBOSE2 Then ' too much info
+        Call append_simple("In update_icon_total() -----------------------------")
+#End If
 
         Dim l, j, i, k, m, board_id As Short
 
@@ -5418,7 +5434,7 @@ Friend Class Main_Renamed
         For i = 0 To 3 ' player
             For j = 1 To 6 ' icon type
                 icon_total(i, j) = 0
-                For k = 0 To 4 ' top cards
+                For k = 0 To COLORCOUNT ' top cards
                     board_id = board(i, k, 0)
                     If board_id > -1 Then
                         For l = 0 To 3 ' icons on a card
@@ -5452,7 +5468,7 @@ Friend Class Main_Renamed
                     achievements_scored(12) = 1
                     vps(player) = vps(player) + 1
                     alert(("Player " & player + 1 & " claimed the 'World' achievement."))
-                    Call append(player, "claimed the 'World' achievement")
+                    Call append(player, "claimed the ##### 'World' achievement #####")
                     Call update_icon_total()
                     Call end_game_points()
                     Exit Sub
@@ -5476,7 +5492,7 @@ Friend Class Main_Renamed
                     achievements_scored(10) = 1
                     vps(player) = vps(player) + 1
                     alert(("Player " & player + 1 & " claimed the 'Empire' achievement."))
-                    Call append(player, "claimed the 'Empire' achievement")
+                    Call append(player, "claimed the ##### 'Empire' achievement ####")
                     Call update_icon_total()
                     Call end_game_points()
                     Exit Sub
@@ -5487,6 +5503,9 @@ Friend Class Main_Renamed
     End Sub
 
     Private Sub check_for_achievements()
+#If VERBOSE Then ' too much info
+        Call append_simple("In check_for_achievements() -----------------------------")
+#End If
         Dim player, wonder_ok As Object
         Dim universe_ok, i, j As Short
 
@@ -5500,7 +5519,7 @@ Friend Class Main_Renamed
                 'UPGRADE_WARNING: Mod has a new behavior. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="9B7D5ADD-D8FE-4819-A36C-6DEDAF088CC7"'
                 'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 player = i Mod num_players
-                For j = 0 To 4
+                For j = 0 To COLORCOUNT
                     'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     'UPGRADE_WARNING: Couldn't resolve default property of object size3(board, player, j). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If size3(board, player, j) = 0 Then
@@ -5525,7 +5544,7 @@ Friend Class Main_Renamed
                     'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     alert(("Player " & player + 1 & " claimed the 'Universe' achievement."))
                     'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    Call append(player, "claimed the 'Universe' achievement")
+                    Call append(player, "claimed the #### 'Universe' achievement ####")
                     Call end_game_points()
                     Call check_for_achievements()
                     Exit Sub
@@ -5539,7 +5558,7 @@ Friend Class Main_Renamed
                     'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     alert(("Player " & player + 1 & " claimed the 'Wonder' achievement."))
                     'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    Call append(player, "claimed the 'Wonder' achievement")
+                    Call append(player, "claimed the #### 'Wonder' achievement ####")
                     Call end_game_points()
                     Call check_for_achievements()
                     Exit Sub
@@ -5561,7 +5580,7 @@ Friend Class Main_Renamed
     End Sub
 
     Public Sub update_display()
-#If VERBOSE Then
+#If VERBOSE2 Then ' too much info
         Call append_simple("In update_display() -----------------------------")
 #End If
         Call update_scores()
@@ -5830,7 +5849,7 @@ Friend Class Main_Renamed
 
         ' Update Opponent's Board
         For i = 0 To num_players - 2
-            For j = 0 To 4
+            For j = 0 To COLORCOUNT
                 'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 id = board(i + 1, j, 0)
                 which = 5 * i + j
@@ -5924,7 +5943,7 @@ Friend Class Main_Renamed
             word_index = InStr(lineData, Chr(9))
             word = Mid(lineData, 1, word_index - 1)
             lineData = Mid(lineData, word_index + 1)
-            For j = 0 To 4
+            For j = 0 To COLORCOUNT
                 If color_lookup(j) = word Then
                     color(i) = j
                 End If
@@ -5987,7 +6006,7 @@ Friend Class Main_Renamed
         num_cards = i
         'MsgBox(Str(i) + " cards loaded")
 #If VERBOSE Then
-        Call append_simple("In initial_card_data() 105 cards loaded -------") 'This isnt echoping... ???
+        Call append_simple("In initial_card_data() 105 cards loaded -------") 'This isnt echoing... ???
 #End If
         'When functioning 105 are loaded
 
@@ -6005,7 +6024,7 @@ Friend Class Main_Renamed
 
     Private Sub initialize_images()
 #If VERBOSE Then
-        Call append_simple("In initialize_images() -----------------------------")
+        Call append_simple("In initialize_images() -----------------------------") 'This isnt echoing... ???
 #End If
         title_image = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/title.jpg")
         achievement_images(0) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve1.jpg")
@@ -6111,7 +6130,7 @@ Friend Class Main_Renamed
 
     Private Sub load_picture(ByRef id As Object)
 
-#If VERBOSE Then
+#If VERBOSE2 Then ' Too verbose
         Call append_simple("In load_picture()")
 #End If
         Dim i As Short
@@ -6682,6 +6701,9 @@ Friend Class Main_Renamed
 
     ' Click on a card in hand
     Private Sub process_hand_click(ByRef index As Short)
+#If VERBOSE Then
+        Call append_simple("In process_hand_click() ++++++")
+#End If
         Dim player, card, valid As Object
         Dim found As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -6699,7 +6721,9 @@ Friend Class Main_Renamed
             min_player = 0
             'UPGRADE_WARNING: Couldn't resolve default property of object break_dogma_loop. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             break_dogma_loop = 0
-
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() Initial Meld ++++++")
+#End If
             Call meld_from_hand(0, index)
 
             ' All AI players will meld a card also
@@ -6726,7 +6750,13 @@ Friend Class Main_Renamed
             actions_remaining = actions_remaining - 1
             Call play_game()
 
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 1 ++++++")
+#End If
+
+
         ElseIf phase = "agriculture" Then
+
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call return_from_hand(player, index)
             'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -6877,7 +6907,9 @@ Friend Class Main_Renamed
                 If active_player <> player Then dogma_copied = 1
                 Call resume_dogma()
             End If
-
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 2 ++++++")
+#End If
             ' Age 2
         ElseIf phase = "currency" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -6934,6 +6966,9 @@ Friend Class Main_Renamed
             End If
 
             ' Age 3
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 3 ++++++")
+#End If
         ElseIf phase = "alchemy1" Or phase = "physics" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call return_from_hand(player, index)
@@ -6989,6 +7024,9 @@ Friend Class Main_Renamed
             End If
 
             ' Age 4
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 4 ++++++")
+#End If
         ElseIf phase = "perspective" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -7028,6 +7066,10 @@ Friend Class Main_Renamed
             End If
 
             ' Age 5
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 5 ++++++")
+#End If
+
         ElseIf phase = "measurement" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -7039,6 +7081,9 @@ Friend Class Main_Renamed
             cmdCancel.Visible = False
 
             ' Age 6
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 6 ++++++")
+#End If
         ElseIf phase = "classification" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             human_data = color(card)
@@ -7078,6 +7123,9 @@ Friend Class Main_Renamed
             Call resume_dogma()
 
             ' Age 7
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 7 ++++++")
+#End If
         ElseIf phase = "explosives" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -7160,6 +7208,9 @@ Friend Class Main_Renamed
             End If
 
             ' Age 8
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 8 ++++++")
+#End If
         ElseIf phase = "antibiotics" Then
             human_data = human_data - 1
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -7217,6 +7268,9 @@ Friend Class Main_Renamed
             End If
 
             ' Age 9
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 9 ++++++")
+#End If
         ElseIf phase = "composites" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call transfer_card_in_hand(player, active_player, index)
@@ -7303,6 +7357,9 @@ Friend Class Main_Renamed
             If hand(player, 0) = -1 Then Call cmdCancel_Click(cmdCancel, New System.EventArgs())
 
             ' Age 10
+#If VERBOSE Then
+            Call append_simple("In process_hand_click() AGE 10 ++++++")
+#End If
         ElseIf phase = "miniaturization" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -7352,6 +7409,9 @@ Friend Class Main_Renamed
 
 
     Public Sub process_score_pile_click(ByVal index As Short)
+#If VERBOSE Then
+        Call append_simple("In process_score_pile_click() ++++++")
+#End If
         Dim found, player, card, valid, id As Object
         Dim count, j As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -7605,6 +7665,9 @@ Friend Class Main_Renamed
     End Sub
 
     Public Function achieve(ByVal player As Short, ByVal num As Short) As Object
+#If VERBOSE Then
+        Call append_simple("In achieve() ++++++")
+#End If
         ' MsgBox "trying to click " & num
         If num = 0 Then MsgBox("trying to score 0 ")
         'UPGRADE_WARNING: Couldn't resolve default property of object can_achieve(player, num). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'

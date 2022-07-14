@@ -4,9 +4,15 @@ Module AIFunctions
 
     Public game_state(100000, 2000) As Short
     Public game_phase(100000) As String
-    Public game_state_strings(100000) As String
+    Public game_state_strings(100000) As String ' gss = game state strings?
     Public gss_count, gs_count As Object
     Public human_data As Integer
+
+    ' FK Consts added for code readbility
+    Const AGECOUNT As Short = 9 ' FK Ages are 1-10 IRL, code uses 0-9
+    '   Const ICONCOUNT As Short = 6 ' FK Icons are 1-6 IRL Leaf. Castle, Lightbulb, Crown, Factory ,Clock, Code has an extra placeholder X
+    Const COLORCOUNT As Short = 4 ' FK Colors are 5 Yellow, Red, Purple, Blue, Green
+    Const MAXPLAYERS As Short = 3 ' FK 4 players max
 
     ' Game Data
     Public num_players As Short
@@ -38,7 +44,7 @@ Module AIFunctions
     Public scores(4) As Object
     Public scored_this_turn(4) As Object
     Public tucked_this_turn(4) As Short
-    Public vps(4) As Short
+    Public vps(4) As Short ' Victory Points ?
 
     ' Card Data
     Public age(500) As Short
@@ -52,8 +58,6 @@ Module AIFunctions
     Public is_demand(500, 3) As Short
 
     Public test_card As Short
-
-    Const COLORCOUNT As Short = 4 ' FK Colors are 5 Yellow, Red, Purple, Blue, Green
 
 #Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
 
@@ -97,15 +101,16 @@ Module AIFunctions
             Call Main_Renamed.meld_from_hand(player, choices(1))
             'MsgBox "melded"
 #If VERBOSE Then
-            Call Main_Renamed.append_simple("In make_ai_move() AU Doing melded ----")
+            Call Main_Renamed.append_simple("In make_ai_move() AI Doing meld ----")
 #End If
         ElseIf action_choice = 2 Then
             ' choices(1) is the id of the dogma to activate
-#If VERBOSE Then
-            Call Main_Renamed.append_simple("In make_ai_move() AI doing DOGMA is the id ----")
-#End If
+
             'MsgBox "Performing dogma " & title(choices(1))
             'UPGRADE_WARNING: Couldn't resolve default property of object choices(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+#If VERBOSE Then
+            Call Main_Renamed.append(player, "In make_ai_move() Performing dogma " & title(choices(1)))
+#End If
             Call Main_Renamed.perform_dogma_effect(choices(1))
         ElseIf action_choice = 1 Then
             Call Main_Renamed.draw(player)
@@ -132,7 +137,7 @@ Module AIFunctions
             If depth = 0 Then
                 'MsgBox "Going deeper, into depth " & depth + 1
 #If VERBOSE Then
-                Call Main_Renamed.append_simple("In make_ai_move() Going deeper")
+                Call Main_Renamed.append(player, "In make_ai_move() Going deeper, into depth " & depth + 1)
 #End If
 
                 'UPGRADE_WARNING: Couldn't resolve default property of object pick_ai_move(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -149,7 +154,7 @@ Module AIFunctions
             End If
             '    MsgBox "Going to look for another play after doing " & choices(0) & "," & choices(1)
 #If VERBOSE Then
-            Call Main_Renamed.append_simple("In make_ai_move() Going to look for another play after doing...")
+            Call Main_Renamed.append(player, "In make_ai_move() Going to look for another play after doing..." & choices(0) & "," & choices(1))
 #End If
         End If
     End Function
@@ -216,13 +221,18 @@ Module AIFunctions
 
 
         End If
-
         ' Make each move and see which scores best
+#If VERBOSE Then
+        Call Main_Renamed.append_simple("In pick_ai_move() Make each move and see which scores best ++++++")
+#End If
+
         'ai_mode = 1
         'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         max_score = -100000
         ' MsgBox count & " choices are available at depth " & depth & " Game States: " & gs_count
-
+#If VERBOSE Then
+        Call Main_Renamed.append(player, "In pick_ai_move() Make each move and see which scores best ++++++" & count & " choices are available at depth " & depth & " Game States: " & gs_count)
+#End If
         'UPGRADE_WARNING: Couldn't resolve default property of object gs_count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         State = gs_count
         copy_game_state(State)
@@ -237,8 +247,14 @@ Module AIFunctions
             score = make_ai_move(player, choices, depth)
             If depth = 0 Then
                 '    MsgBox "Making move " & i + 1 & " of " & count & " -> " & choices(0) & " , " & choices(1) & " , score=" & score & " at depth " & depth
+#If VERBOSE Then
+                Call Main_Renamed.append_simple("In pick_ai_move() Making move  ++++++")
+#End If
             End If
             'MsgBox "Score at depth " & depth & ": " & score
+#If VERBOSE Then
+            Call Main_Renamed.append(player, "In pick_ai_move() Making move  ++++++ Score at depth " & depth & ": " & score)
+#End If
             'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If score > max_score Then
@@ -256,6 +272,9 @@ Module AIFunctions
         'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         Call flatten2(all_choices, max_index, choices)
         'MsgBox "Choosing choice " & max_index & "(" & choices(0) & "," & choices(1) & ") at depth " & depth & " with score " & max_score
+#If VERBOSE Then
+        Call Main_Renamed.append(player, "In pick_ai_move() Making move  ++++++ Choosing choice " & max_index & "(" & choices(0) & "," & choices(1) & ") at depth " & depth & " with score " & max_score)
+#End If
         'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         'UPGRADE_WARNING: Couldn't resolve default property of object pick_ai_move. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         pick_ai_move = max_score
@@ -268,7 +287,7 @@ Module AIFunctions
         ' If we can play any card from hand, then do it
 
 #If VERBOSE Then
-        Call Main_Renamed.append_simple("In get_all_hand_choices() ++++++")
+        Call Main_Renamed.append_simple("In get_all_hand_choices() If we can play any card from hand, then do it ++++++")
 #End If
         Dim i As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -286,11 +305,11 @@ Module AIFunctions
     Private Function get_all_dogma_choices(ByVal player As Short, ByRef all_choices As Object, ByVal choice_count As Short) As Object
         ' If we can activate any dogma, then do it
 #If VERBOSE Then
-        Call Main_Renamed.append_simple("In get_all_dogma_choice() --------")
+        Call Main_Renamed.append_simple("In get_all_dogma_choice() If we can activate any dogma, then do it --------")
 #End If
 
         Dim i, id As Short
-        For i = 0 To 4
+        For i = 0 To COLORCOUNT
             id = board(player, i, 0)
             If id > -1 Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object all_choices(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -339,7 +358,6 @@ Module AIFunctions
 #End If
 
         Dim n, j, i, k As Short
-        'UPGRADE_NOTE: str was upgraded to str_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         Dim str_Renamed As String
 
         str_Renamed = gss_depth & "|"
@@ -348,6 +366,9 @@ Module AIFunctions
             str_Renamed = str_Renamed & scores(i) & "|"
             str_Renamed = str_Renamed & vps(i) & "|"
             str_Renamed = str_Renamed & winners(i) & "|"
+#If VERBOSE Then
+            Call Main_Renamed.append(0, "In get_game_state_string() ++++++ str_Renamed=" & str_Renamed)
+#End If
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             For j = 0 To size2(hand, i)
                 str_Renamed = str_Renamed & hand(i, j) & "|"
@@ -356,7 +377,7 @@ Module AIFunctions
             For j = 0 To size2(score_pile, i)
                 str_Renamed = str_Renamed & score_pile(i, j) & "|"
             Next j
-            For j = 0 To 4
+            For j = 0 To COLORCOUNT
                 If board(i, j, k) > -1 Then
                     str_Renamed = str_Renamed & splayed(i, j) & "|"
                     'UPGRADE_WARNING: Couldn't resolve default property of object size3(board, i, j). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -368,6 +389,9 @@ Module AIFunctions
         Next i
         'UPGRADE_WARNING: Couldn't resolve default property of object get_game_state_string. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         get_game_state_string = str_Renamed
+#If VERBOSE Then
+        Call Main_Renamed.append(0, "In get_game_state_string() ++++++ FINISHED str_Renamed=" & str_Renamed)
+#End If
     End Function
 
     Public Function save_game() As Object
@@ -567,7 +591,7 @@ jeff:
             n = n + 1
         Next i
 
-        For i = 0 To 9
+        For i = 0 To AGECOUNT
             For j = 0 To 14
                 game_state(Index, n) = deck(i, j)
                 n = n + 1
@@ -633,7 +657,7 @@ jeff:
             Next i
 
             ' Boards
-            For j = 0 To 4
+            For j = 0 To COLORCOUNT
                 'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If game_state(Index, n) = 0 Then splayed(player, j) = ""
                 'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -768,7 +792,7 @@ jeff:
         ' If somehow a course of action has led this player to win the game, give them a jillion points
         Dim num_at_max, max, top_card As Object
         Dim j, i, top_score As Short
-        Dim total As Integer
+        Dim total As Integer 'FK why integer instead of short ... maybe be most shorts should be ints
 
         Call Main_Renamed.update_scores()
         Call Main_Renamed.update_icon_total()
@@ -778,10 +802,16 @@ jeff:
         If winners(player) = 1 Then
             total = total + 1000000 - 100 * gss_depth
             'MsgBox "winning player found: " & player + 1 & " with " & scores(1) & " vs " & scores(2)
+#If VERBOSE Then
+            Call Main_Renamed.append_simple("In score_game_individual() winning player found:")
+#End If
         End If
 
         ' Grant massive points for achievements
         total = total + 10000 * vps(player)
+#If VERBOSE Then
+        Call Main_Renamed.append_simple("In score_game_individual() Grant massive points for achievements")
+#End If
 
         ' Award points for value of top card ( 5 - 500 pts )
         'UPGRADE_WARNING: Couldn't resolve default property of object Main_Renamed.highest_top_card(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -793,7 +823,7 @@ jeff:
         ' Award points for values of other top cards
         ' Award points for splays ( Up = 40, Right = 25, Left = 10)
         ' Award 20 points for each color in play + 1 point for the depth of the pile
-        For i = 0 To 4
+        For i = 0 To COLORCOUNT
             If board(player, i, 0) > -1 Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object size3(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 total = total + 20 + size3(board, player, i) + age(board(player, i, 0))
