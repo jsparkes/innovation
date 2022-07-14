@@ -75,12 +75,16 @@ Module AIFunctions
         action_choice = choices(0)
         If ai_mode = 0 And depth > 0 Then MsgBox("depth got too big")
         'MsgBox "called with depth = " & depth
-
+#If VERBOSE Then
+        Call Main_Renamed.append(player, "In make_ai_move() called with depth = " & depth)
+#End If
         'Open App.Path & "\log.txt" For Append As #1
         'Print #1, "Trying move " & choices(0) & "," & choices(1) & " at level " & depth & " (ai_mode = " & ai_mode & ")  " & gss_count
         'If choices(0) = 2 Then Print #1, title(choices(1))
         'Close #1
-
+#If VERBOSE Then
+        Call Main_Renamed.append(player, "In make_ai_move() Trying move " & choices(0) & "," & choices(1) & " at level " & depth & " (ai_mode = " & ai_mode & ")  " & gss_count)
+#End If
         'MsgBox "Trying move " & choices(0) & "," & choices(1) & " at level " & depth & " (ai_mode = " & ai_mode & ")  " & gss_count
         'If action_choice = 3 Then MsgBox "Choosing " & names(constructs(active_player, choices(1))) & " used: " & construct_used(active_player, choices(1))
 
@@ -88,16 +92,21 @@ Module AIFunctions
         If ai_mode = 0 Then
             actions_remaining = actions_remaining - 1
             'MsgBox "Made a real move " & choices(0) & "," & choices(1) & " actions_remaining = " & actions_remaining
+#If VERBOSE Then
+            Call Main_Renamed.append(player, "In make_ai_move() Made a real move " & choices(0) & "," & choices(1) & " actions_remaining = " & actions_remaining)
+#End If
         End If
 
         If action_choice = 3 Then
             ' choices(1) is which card to play from hand
-#If VERBOSE Then
-            Call Main_Renamed.append_simple("In make_ai_move() choices(1) is which card to play from hand ----")
-#End If
             'MsgBox "option 0, depth=" & depth & ", ai_mode=" & ai_mode
             'MsgBox "trying a meld from ai - " & title(hand(player, choices(1))) & " depth = " & depth
             'UPGRADE_WARNING: Couldn't resolve default property of object choices(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+#If VERBOSE Then
+            Call Main_Renamed.append(player, "In make_ai_move() " & choices(1) & "  is which card to play from hand ----")
+            Call Main_Renamed.append(player, "In make_ai_move() option 0, depth=" & depth & ", ai_mode=" & ai_mode)
+            Call Main_Renamed.append(player, "In make_ai_move() trying a meld from ai - " & title(hand(player, choices(1))) & " depth = " & depth)
+#End If
             Call Main_Renamed.meld_from_hand(player, choices(1))
             'MsgBox "melded"
 #If VERBOSE Then
@@ -396,7 +405,7 @@ Module AIFunctions
 
     Public Function save_game() As Object
 #If VERBOSE Then
-        Call Main_Renamed.append_simple("In save_game() ++++++")
+        Call Main_Renamed.append_simple("In save_game() writing to \save.txt ++++++")
 #End If
 
         Dim i, n As Short
@@ -412,7 +421,7 @@ Module AIFunctions
 
     Public Function load_game() As Object
 #If VERBOSE Then
-        Call Main_Renamed.append_simple("In load_game() ++++++")
+        Call Main_Renamed.append_simple("In load_game() reading from \save.txt ++++++")
 #End If
 
         Dim i As Short
@@ -436,8 +445,8 @@ jeff:
 #If VERBOSE Then
         Call Main_Renamed.append_simple("In copy_game_state() Backup hands, boards etc ----")
 #End If
-        Dim player As Object
-        Dim k, i, j, n As Short
+        ' Dim player As Object
+        Dim k, i, j, player, n As Short
         n = 0
 
         game_state(Index, n) = num_players
@@ -445,76 +454,57 @@ jeff:
 
         ' Back up hands, boards, etc
         For player = 0 To num_players - 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object scores(player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             game_state(Index, n) = scores(player)
             n = n + 1
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             game_state(Index, n) = vps(player)
             n = n + 1
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             game_state(Index, n) = winners(player)
             n = n + 1
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object scored_this_turn(player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             game_state(Index, n) = scored_this_turn(player)
             n = n + 1
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             game_state(Index, n) = tucked_this_turn(player)
             n = n + 1
 
             ' Hand
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             game_state(Index, n) = size2(hand, player)
             n = n + 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             For i = 0 To size2(hand, player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 game_state(Index, n) = hand(player, i)
                 n = n + 1
             Next i
 
             ' Score Pile
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             game_state(Index, n) = size2(score_pile, player)
             n = n + 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             For i = 0 To size2(score_pile, player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 game_state(Index, n) = score_pile(player, i)
                 n = n + 1
             Next i
 
             ' Boards
-            For j = 0 To 4
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+            For j = 0 To COLORCOUNT
                 If splayed(player, j) = "" Then game_state(Index, n) = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If splayed(player, j) = "Left" Then game_state(Index, n) = 1
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If splayed(player, j) = "Right" Then game_state(Index, n) = 2
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If splayed(player, j) = "Up" Then game_state(Index, n) = 3
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If splayed(player, j) = "Down" Then game_state(Index, n) = 4
                 n = n + 1
 
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 'UPGRADE_WARNING: Couldn't resolve default property of object size3(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 game_state(Index, n) = size3(board, player, j)
                 n = n + 1
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 'UPGRADE_WARNING: Couldn't resolve default property of object size3(board, player, j). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For k = 0 To size3(board, player, j)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     game_state(Index, n) = board(player, j, k)
                     n = n + 1
                 Next k
@@ -522,20 +512,21 @@ jeff:
 
             ' Icon Total
             For i = 1 To 6
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 game_state(Index, n) = icon_total(player, i)
                 n = n + 1
             Next i
 
             ' Affected by dogma
             For i = 0 To 2
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 'UPGRADE_WARNING: Couldn't resolve default property of object affected_by_dogma(player, i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 game_state(Index, n) = affected_by_dogma(player, i)
                 n = n + 1
             Next i
         Next player
 
+#If VERBOSE Then
+        Call Main_Renamed.append(0, "In copy_game_state() ++++++ n = " & n)
+#End If
 
         ''''''''''''''''''''''''''
         ' Game Variables
@@ -606,8 +597,8 @@ jeff:
 #If VERBOSE Then
         Call Main_Renamed.append_simple("In restore_game_state() ++++++")
 #End If
-        Dim player As Object
-        Dim j, i, k, n, n0 As Short
+        ' Dim player As Object
+        Dim j, i, k, n, n0, player As Short
         n = 0
 
         num_players = game_state(Index, n)
@@ -615,25 +606,20 @@ jeff:
 
         ' Restore hands, boards, etc
         For player = 0 To num_players - 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object scores(player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             scores(player) = game_state(Index, n)
             n = n + 1
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             vps(player) = game_state(Index, n)
             n = n + 1
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             winners(player) = game_state(Index, n)
             n = n + 1
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object scored_this_turn(player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             scored_this_turn(player) = game_state(Index, n)
             n = n + 1
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             tucked_this_turn(player) = game_state(Index, n)
             n = n + 1
 
@@ -642,7 +628,6 @@ jeff:
 
             n = n + 1
             For i = 0 To n0
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 hand(player, i) = game_state(Index, n)
                 n = n + 1
             Next i
@@ -651,22 +636,16 @@ jeff:
             n0 = game_state(Index, n)
             n = n + 1
             For i = 0 To n0
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 score_pile(player, i) = game_state(Index, n)
                 n = n + 1
             Next i
 
             ' Boards
             For j = 0 To COLORCOUNT
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If game_state(Index, n) = 0 Then splayed(player, j) = ""
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If game_state(Index, n) = 1 Then splayed(player, j) = "Left"
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If game_state(Index, n) = 2 Then splayed(player, j) = "Right"
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If game_state(Index, n) = 3 Then splayed(player, j) = "Up"
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If game_state(Index, n) = 4 Then splayed(player, j) = "Down"
 
                 n = n + 1
@@ -674,7 +653,6 @@ jeff:
                 n0 = game_state(Index, n)
                 n = n + 1
                 For k = 0 To n0
-                    'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     board(player, j, k) = game_state(Index, n)
                     n = n + 1
                 Next k
@@ -682,24 +660,38 @@ jeff:
 
             ' Icon Total
             For i = 1 To 6
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 icon_total(player, i) = game_state(Index, n)
                 n = n + 1
             Next i
 
             ' Affected by dogma
             For i = 0 To 2
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 'UPGRADE_WARNING: Couldn't resolve default property of object affected_by_dogma(player, i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 affected_by_dogma(player, i) = game_state(Index, n)
                 n = n + 1
             Next i
         Next player
 
-
+#If VERBOSE Then
+        Call Main_Renamed.append(0, "In restore_game_state() ++++++ n = " & n)
+#End If
         ''''''''''''''''''''''''''
         ' Game Variables
         '''''''''''''''''''''''''''
+        ' 0 Active Player
+        ' 1 Current Turn
+        ' 2 Actions Remaining
+        ' 3 democracy minimum
+        ' 4 dogma_level
+        ' 5 dogma_player
+        ' 6 solo_dogma_level
+        ' 7 solo_dogma_player
+        ' 8 solo_dogma_id
+        ' 9 dogma_copied
+        ' 10 break_dogma_loop
+        ' 11 dogma_id
+        ' 12 demand_met
+
         active_player = game_state(Index, n)
         n = n + 1
 

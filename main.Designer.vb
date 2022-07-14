@@ -1317,13 +1317,13 @@
         Me.txtLog.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.txtLog.Font = New System.Drawing.Font("Arial", 10.5!)
         Me.txtLog.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtLog.Location = New System.Drawing.Point(1001, 35)
+        Me.txtLog.Location = New System.Drawing.Point(915, 35)
         Me.txtLog.MaxLength = 0
         Me.txtLog.Multiline = True
         Me.txtLog.Name = "txtLog"
         Me.txtLog.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtLog.Size = New System.Drawing.Size(367, 145)
+        Me.txtLog.Size = New System.Drawing.Size(453, 145)
         Me.txtLog.TabIndex = 20
         Me.txtLog.Text = "Text1"
         '
@@ -2109,7 +2109,7 @@
         Me.lblOtherApps.Cursor = System.Windows.Forms.Cursors.Default
         Me.lblOtherApps.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblOtherApps.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.lblOtherApps.Location = New System.Drawing.Point(861, 129)
+        Me.lblOtherApps.Location = New System.Drawing.Point(781, 100)
         Me.lblOtherApps.Name = "lblOtherApps"
         Me.lblOtherApps.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.lblOtherApps.Size = New System.Drawing.Size(145, 25)
