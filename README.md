@@ -100,7 +100,9 @@ This code has been tested under Windows 10/11. No Linux testing has been done.
 
 ### Installation
 
-Newest version is in  [publish/WinINNOVATION-setup.zip](https://github.com/jsparkes/innovation/blob/master/publish/WinINNOVATION-setup.zip)
+The newest installable version is in  [publish/WinINNOVATION-setup.zip](https://github.com/jsparkes/innovation/blob/master/publish/WinINNOVATION-setup.zip)
+
+A debugging version (more verbose in text widnow) is in \bin no zip file....
 
 A copy of the pre-built Windows binary with additional supporting files is in the directory original. Either clone this project
  or just grab the zip file.
