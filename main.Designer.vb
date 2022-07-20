@@ -4605,6 +4605,7 @@
         Me.MaximizeBox = False
         Me.Name = "Main_Renamed"
         Me.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "WinInnovation AI"
         CType(Me.Image1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Image2, System.ComponentModel.ISupportInitialize).EndInit()

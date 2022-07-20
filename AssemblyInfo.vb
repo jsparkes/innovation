@@ -13,7 +13,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyTitle("WinInnovationAI")>
 <Assembly: AssemblyDescription("Play a card game of Innovation against AI opponent(s).")>
 <Assembly: AssemblyCompany("Original Game by Asamadi Games")>
-<Assembly: AssemblyProduct("Windows Innvoation Gme AI")>
+<Assembly: AssemblyProduct("Windows Innvoation Game AI")>
 <Assembly: AssemblyCopyright("Game 2017, Software CC4.0 NA")>
 ' <Assembly: AssemblyTrademark("")>
 <Assembly: AssemblyCulture("")>
