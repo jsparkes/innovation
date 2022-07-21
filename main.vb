@@ -26,10 +26,12 @@ Friend Class Main_Renamed
     ' FK Consts added for code readbility
     ' https://www.dotnetheaven.com/article/vb.net-const-and-read-only-member
     ' was using readonly but switched to const
+
     Const AGECOUNT As Short = 9 ' FK Ages are 1-10 IRL, code uses 0-9
     Const ICONCOUNT As Short = 6 ' FK Icons are 1-6 IRL Leaf. Castle, Lightbulb, Crown, Factory ,Clock, Code has an extra placeholder X
     Const COLORCOUNT As Short = 4 ' FK Colors are 5 Yellow, Red, Purple, Blue, Green
     Const MAXPLAYERS As Short = 3 ' FK 4 players max
+    Const TOTACHIEVE As Short = 13 ' FK 0-8 + 5 special achievements = 13
 
     'Images
     Dim color_images(10) As System.Drawing.Image
@@ -319,6 +321,9 @@ Friend Class Main_Renamed
     End Sub
 
     Private Sub cmdStack_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles cmdStack.Click
+#If VERBOSE Then
+        Call append_simple("In cmdStack_Click() -----------------------------")
+#End If
         Dim index As Short = cmdStack.GetIndex(eventSender)
         Call showArray.load_pictures(0, index, "board")
     End Sub
@@ -593,8 +598,8 @@ Friend Class Main_Renamed
 #End If
         End If
         Dim choices(9) As Object
-        Dim cheat As Object
-        Dim num As Short
+        'Dim cheat As Object
+        Dim cheat, num As Short
         ai_mode = 1
         'UPGRADE_WARNING: Couldn't resolve default property of object gss_count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         gss_count = 0
@@ -613,7 +618,7 @@ Friend Class Main_Renamed
             cheat = 0
             'MsgBox "not cheating " & num & " vs " & 30 + 14 * ai_cheat_level
 #If VERBOSE Then
-            Call append_simple("Not Cheating? ++++++")
+            Call append(0, "perform_AI_action() Not cheating " & num & " vs " & 30 + 14 * ai_cheat_level)
 #End If
             Call fake_data(active_player)
         Else
@@ -762,7 +767,7 @@ Friend Class Main_Renamed
         Dim filename As Object
         Dim str_Renamed As String
 #If VERBOSE Then
-        Call append_simple("In launch_game() ++++++  Read the debug file and update the board state accordingly")
+        Call append_simple("In launch_game() ++++++  Read the debug file and update the board state accordingly /testing.txt")
 #End If
         Dim id, pos As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object filename. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -901,7 +906,7 @@ Friend Class Main_Renamed
         txtLog.Text = ""
 
         ' Unclaim all achievements
-        For i = 0 To 13
+        For i = 0 To TOTACHIEVE
             achievements_scored(i) = 0
             lblAchievement(i).Visible = True
         Next i
@@ -1698,9 +1703,11 @@ Friend Class Main_Renamed
         Call append(player, "In activate_card() ACTIVATING = " & title(id))
 #End If
         Dim card_name As String
-        Dim min, max, card_to_meld, index, card, found, max_index, min_index As Object
+        'Dim min, max, card_to_meld, index, card, found, max_index, min_index As Object
+        Dim min, max, card_to_meld, index, card, found, max_index, min_index As Short
         Dim max_count As Short
-        Dim total, valid, max_score, count As Object
+        'Dim total, valid, max_score, count As Object
+        Dim total, valid, max_score, count As Short
         Dim draw_id, max_index2, i, j As Short
 
 
@@ -1724,73 +1731,62 @@ Friend Class Main_Renamed
         Dim age1 As Object
         Dim age2 As Short
         If card_name = "Agriculture" Then
+#If VERBOSE Then
+            Call append(player, "In activate_card() Agriculture")
+#End If
             If hand(player, 0) > -1 Then
                 If player = 0 And ai_mode <> 1 Then
                     Call show_prompt("agriculture", dogma(id, level - 1), 1)
                 Else
                     ' Return your highest card
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     index = size2(hand, player) - 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     card = hand(player, index)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If card = -1 Then MsgBox("bad card found")
-                    'UPGRADE_WARNING: Couldn't resolve default property of object index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call return_from_hand(player, index)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call draw_and_score(player, age(card) + 1)
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
                 End If
             End If
         ElseIf card_name = "Archery" Then
+#If VERBOSE Then
+            Call append(player, "In activate_card() Archery")
+#End If
             Call draw_num(player, 1)
             If player = 0 And ai_mode <> 1 Then
                 Call show_prompt("archery", dogma(id, level - 1), 0)
             Else
                 ' Return your highest card
                 'UPGRADE_WARNING: Couldn't resolve default property of object get_highest_card_in_hand(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 index = get_highest_card_in_hand(player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If index > -1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call transfer_card_in_hand(player, active_player, index)
                 End If
             End If
         ElseIf card_name = "City States" Then
             If icon_total(player, 2) > 3 Then
                 ' Find the castle with the lowest value
-                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min = 11
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min_index = -1
                 For i = 0 To 4
                     'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, i, 0), 2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If card_has_symbol(board(player, i, 0), 2) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(board(player, i, 0)) < min Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min = age(board(player, i, 0))
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min_index = i
                         End If
                     End If
                 Next i
 
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If min_index > -1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("cityStates", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_card_on_board(player, active_player, min_index)
                         Call draw_num(player, 1)
                     End If
                 End If
-                'UPGRADE_WARNING: Couldn't resolve default property of object demand_met. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 demand_met = 1
             End If
 
@@ -1820,18 +1816,14 @@ Friend Class Main_Renamed
                 End If
             Else
                 For j = 0 To 4
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     found = 0
                     For i = 0 To num_players - 1
                         If i <> player And board(i, j, 0) > -1 Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
                         ElseIf i = player And board(i, j, 0) = -1 Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If found = 0 Then
                         Call draw_and_score(player, 1)
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -1848,49 +1840,34 @@ Friend Class Main_Renamed
                 'Exit Sub
                 ' Try tucking each card in hand and see if any are worth splaying
                 'UPGRADE_WARNING: Couldn't resolve default property of object score_game_individual(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 original_score = score_game_individual(player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_score = original_score - 1
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For j = 0 To size2(hand, player) - 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object valid. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     valid = 0
                     For i = 0 To 4
                         If board(player, i, 0) > -1 Then
                             If color(board(player, i, 0)) = color(hand(player, j)) Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object valid. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 valid = 1
                             End If
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object valid. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If valid = 1 Then
                         Call save(player)
                         draw_id = hand(player, j)
                         Call tuck_from_hand(player, j)
                         Call splay(player, color(draw_id), "Left")
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > max_score Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max_score = current_score
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max_index = j
                         End If
                     End If
                 Next j
-                'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If max_score > original_score Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     draw_id = hand(player, max_index)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call tuck_from_hand(player, max_index)
                     Call splay(player, color(draw_id), "Left")
                 End If
@@ -1921,14 +1898,11 @@ Friend Class Main_Renamed
                 If player = 0 And ai_mode = 0 Then
                     Call show_prompt("masonry", dogma(id, level - 1), 1)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object total. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     total = 0
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     count = 0
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 0 To size2(hand, player) - 1
                         'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(hand(player, i), 2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object total. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If card_has_symbol(hand(player, i), 2) Then total = total + 1
                     Next i
                     'alert ("total = " & total & " for player " & player + 1)
@@ -1936,22 +1910,14 @@ Friend Class Main_Renamed
                     For i = size2(hand, player) - 1 To 0 Step -1
                         'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(hand(player, i), 2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If card_has_symbol(hand(player, i), 2) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object total. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If total < 4 Then
                                 Call save(player)
-                                'UPGRADE_WARNING: Couldn't resolve default property of object index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 Call meld_from_hand(player, index)
                                 Call restore(player)
                             End If
-                            'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object total. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If total >= 4 Or current_score > original_score Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 Call meld_from_hand(player, i)
-                                'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 count = count + 1
-                                'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If count = 4 Then Call achieve_special(player, 9, "Monument")
                                 'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If active_player <> player Then dogma_copied = 1
@@ -1964,9 +1930,7 @@ Friend Class Main_Renamed
         ElseIf card_name = "Metalworking" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             count = 0
-            'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             While count = 0
                 'UPGRADE_WARNING: Couldn't resolve default property of object silent. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 silent = 1
@@ -1986,7 +1950,6 @@ Friend Class Main_Renamed
                     silent = 0
                 Else
                     Call append(player, "draws " & title(id))
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     count = 1
                 End If
             End While
@@ -2015,34 +1978,25 @@ Friend Class Main_Renamed
 
             'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = 0
-            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min = 99
-            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min_index = -1
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             For i = 0 To size2(hand, player) - 1
                 'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(hand(player, i), 4). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If card_has_symbol(hand(player, i), 4) Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     found = 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If age(hand(player, i)) < min Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         min = age(hand(player, i))
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         min_index = i
                     End If
                 End If
             Next i
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found = 1 Then
                 If player = 0 And ai_mode = 0 Then
                     Call show_prompt("oars", dogma(id, level - 1), 0)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     id = hand(player, min_index)
                     Call append(active_player, "steals " & title(id) & " from player " & player + 1)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call remove_card_from_hand(player, min_index)
                     Call Push2(score_pile, active_player, id)
                     Call draw_num(player, 1)
@@ -2059,17 +2013,14 @@ Friend Class Main_Renamed
                         Call show_prompt("pottery", dogma(id, level - 1), 1)
                     Else
                         ' Return worst 3 cards
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         count = 0
                         For i = 0 To 2
                             'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If size2(hand, player) > 0 Then
                                 Call return_from_hand(player, 0)
-                                'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 count = count + 1
                             End If
                         Next i
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call draw_and_score(player, count)
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If active_player <> player Then dogma_copied = 1
@@ -2107,8 +2058,6 @@ Friend Class Main_Renamed
                         Next i
                         Call draw_and_meld(player, 3)
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > original_score Then
                             For i = 0 To 2
                                 Call return_from_hand(player, 0)
@@ -2122,29 +2071,22 @@ Friend Class Main_Renamed
                 End If
             Else
                 ' Return a 3 to draw 3 1's
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = -1
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For i = 0 To size2(hand, player) - 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If age(hand(player, i)) = 3 Then found = i
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found > -1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("tools2", dogma(id, level - 1), 1)
                     Else
                         Call save(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call return_from_hand(player, found)
                         Call draw_num(player, 1)
                         Call draw_num(player, 1)
                         Call draw_num(player, 1)
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > original_score Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             Call return_from_hand(player, found)
                             Call draw_num(player, 1)
                             Call draw_num(player, 1)
@@ -2184,8 +2126,6 @@ Friend Class Main_Renamed
                 Call save(player)
                 Call exchange_canal_building(player)
                 Call restore(player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If current_score > original_score Then
                     Call exchange_canal_building(player)
                 End If
@@ -2201,21 +2141,17 @@ Friend Class Main_Renamed
                     Call show_prompt("currency", dogma(id, level - 1), 1)
                 Else
                     ' Return a card from each age
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     count = 0
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = size2(hand, player) - 1 To 0 Step -1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If already_returned(age(hand(player, i))) = 0 Then
                             already_returned(age(hand(player, i))) = 1
                             Call return_from_hand(player, i)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             count = count + 1
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 0 To count - 1
                         Call draw_and_score(player, 2)
                     Next i
@@ -2235,23 +2171,17 @@ Friend Class Main_Renamed
                     End If
                 End If
             Else
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 1
                 For i = 0 To 4
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If board(player, i, 0) = -1 Then found = 0
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     For j = 0 To num_players - 1
                         If player <> j Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
                             For i = 0 To 4
-                                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If board(j, i, 0) = -1 Then found = 0
                             Next i
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If found = 1 Then Exit Sub
                         End If
                     Next j
@@ -2303,8 +2233,6 @@ Friend Class Main_Renamed
                     Call return_from_hand(player, size2(hand, player) - 1)
                     Call draw_and_meld(player, age(id) + 1)
                     Call restore(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If current_score > original_score Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call return_from_hand(player, size2(hand, player) - 1)
@@ -2317,31 +2245,23 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Monotheism" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 For i = 0 To 4
                     already_returned(i) = 0
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     min = 99
                     If board(player, i, 0) > -1 And board(active_player, i, 0) = -1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(board(player, i, 0)) < min Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min_index = i
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min = board(player, i, 0)
                         End If
                         already_returned(i) = 1
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found > 0 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("monotheism", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_board_to_score(player, active_player, min_index)
                         Call draw_and_tuck(player, 1)
                     End If
@@ -2354,18 +2274,15 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Philosophy" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 For i = 0 To 4
                     splay_options(i) = 0
                     'UPGRADE_WARNING: Couldn't resolve default property of object can_splay(player, i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If can_splay(player, i) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
                         splay_options(i) = 1
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     Call perform_best_splay(player, splay_options, "Left")
                 End If
@@ -2390,31 +2307,21 @@ Friend Class Main_Renamed
                     Call show_prompt("roadBuilding1", dogma(id, level - 1), 1)
                 Else
                     ' Meld the 1st card
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max_index = -1
                     'UPGRADE_WARNING: Couldn't resolve default property of object score_game_individual(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max = score_game_individual(player)
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 0 To size2(hand, player) - 1
                         Call save(player)
                         Call meld_from_hand(player, i)
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > max_score Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max_score = current_score
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max_index = i
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If max_index > -1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call meld_from_hand(player, max_index)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_index = -1
                         max_index2 = -1
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -2431,21 +2338,14 @@ Friend Class Main_Renamed
                                         Call transfer_card_on_board(j, player, 4)
                                     End If
                                     Call restore(player)
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     If current_score > max_score Then
-                                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                        'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                         max_score = current_score
-                                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                         max_index = i
                                         max_index2 = j
                                     End If
                                 Next j
                             Next i
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If max_index > -1 Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 Call meld_from_hand(player, max_index)
                                 If max_index2 > -1 And max_index2 <> player Then
                                     Call transfer_card_on_board(player, max_index2, 1)
@@ -2467,7 +2367,6 @@ Friend Class Main_Renamed
         ElseIf card_name = "Alchemy" Then
             If level = 1 Then
                 If icon_total(player, 2) > 2 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     found = 0
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
@@ -2477,7 +2376,6 @@ Friend Class Main_Renamed
                         'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If color_lookup(color(draw_id)) = "Red" Then found = 1
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If found = 1 Then
                         Call append(player, "revealed a Red card, and must return their entire hand")
                         If player = 0 And ai_mode <> 1 Then
@@ -2496,9 +2394,7 @@ Friend Class Main_Renamed
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("alchemy2", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_score = 0
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_index = -1
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = size2(hand, player) - 1 To 0 Step -1
@@ -2510,17 +2406,11 @@ Friend Class Main_Renamed
                                 Call score_from_hand(player, size2(hand, player) - 1)
                             End If
                             Call restore(player)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If current_score > max_score Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_score = current_score
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_index = i
                             End If
                         Next i
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call meld_from_hand(player, max_index)
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If size2(hand, player) > 0 Then
@@ -2532,39 +2422,28 @@ Friend Class Main_Renamed
             End If
 
         ElseIf card_name = "Compass" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = 0
-            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min = 11
-            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min_index = -1
             For i = 0 To 4
                 If board(player, i, 0) > -1 And color_lookup(i) <> "Green" Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, i, 0), 1). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If card_has_symbol(board(player, i, 0), 1) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(board(player, i, 0)) < min Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min = age(board(player, i, 0))
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min_index = i
                         End If
                     End If
                 End If
             Next i
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found = 1 Then
                 If player = 0 And ai_mode <> 1 Then
                     Call show_prompt("compass", dogma(id, level - 1), 0)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call transfer_card_on_board(player, active_player, min_index)
                     'UPGRADE_WARNING: Couldn't resolve default property of object score_game_individual(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max_score = score_game_individual(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max_index = -1
                     For i = 0 To 4
                         If board(active_player, i, 0) > -1 Then
@@ -2572,21 +2451,14 @@ Friend Class Main_Renamed
                                 Call save(player)
                                 Call transfer_card_on_board(active_player, player, i)
                                 Call restore(player)
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If current_score > max_score Then
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max_score = current_score
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max_index = i
                                 End If
                                 Call restore(player)
                             End If
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If max_index > -1 Then Call transfer_card_on_board(active_player, player, max_index)
                 End If
             End If
@@ -2609,8 +2481,6 @@ Friend Class Main_Renamed
                         Call draw_num(player, 2)
                     End If
                     Call restore(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If current_score > original_score Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call return_from_score_pile(player, size2(score_pile, player) - 1)
@@ -2644,33 +2514,24 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Feudalism" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min_index = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min = 99
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For i = 0 To size2(hand, player) - 1
                     'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(hand(player, i), 2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If card_has_symbol(hand(player, i), 2) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(hand(player, i)) < min Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min_index = i
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min = age(hand(player, i))
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("feudalism", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_card_in_hand(player, active_player, min_index)
                     End If
                 End If
@@ -2684,24 +2545,18 @@ Friend Class Main_Renamed
             If level = 1 Then
                 Call exchange_machinery(player)
             Else
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For i = 0 To size2(hand, player) - 1
                     'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(hand(player, i), 2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If card_has_symbol(hand(player, i), 2) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(hand(player, i)) < min Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min_index = i
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min = age(hand(player, i))
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If player <> active_player Then dogma_copied = 1
@@ -2709,7 +2564,6 @@ Friend Class Main_Renamed
                         Call show_prompt("machinery", dogma(id, level - 1), 0)
                         Exit Sub
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call score_from_hand(player, min_index)
                     End If
                 End If
@@ -2760,39 +2614,29 @@ Friend Class Main_Renamed
                 Call draw_and_score(player, 4)
             Else
                 If score_pile(player, 0) > -1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     found = 0
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     min_index = -1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     min = 99
                     For i = num_players - 1 To 0 Step -1
                         'UPGRADE_WARNING: Couldn't resolve default property of object scores(player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         'UPGRADE_WARNING: Couldn't resolve default property of object scores(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If scores(i) < scores(player) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             'UPGRADE_WARNING: Couldn't resolve default property of object scores(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If scores(i) < min Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If (min_index = -1 And player = 0) Or player <> 0 Then
                                     'UPGRADE_WARNING: Couldn't resolve default property of object scores(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     min = scores(i)
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     min_index = i
                                 End If
                             End If
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If found = 1 Then
                         If player = 0 And ai_mode <> 1 Then
                             Call show_prompt("optics", dogma(id, level - 1) & " (choose the card in your score pile first)", 0)
                         Else
                             'alert ("still good" & player & min_index)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             Call transfer_card_from_score(player, min_index, 0)
                         End If
                     End If
@@ -2837,18 +2681,15 @@ Friend Class Main_Renamed
                         End While
                         Call restore(player)
 
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 0
                         For i = 0 To 4
                             If board(player, i, 0) > -1 Then
                                 If Not card_has_symbol(board(player, i, 0), 4) Then
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     found = 1
                                 End If
                             End If
                         Next i
 
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If found = 0 Then
                             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If player <> active_player Then dogma_copied = 1
@@ -2875,8 +2716,6 @@ Friend Class Main_Renamed
                             Call remove_card_from_score_pile(player, 0)
                         End While
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > original_score Then
                             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If player <> active_player Then dogma_copied = 1
@@ -2889,17 +2728,14 @@ Friend Class Main_Renamed
                     End If
                 End If
             Else
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 For i = 0 To 4
                     If board(player, i, 0) > -1 Then
                         If Not card_has_symbol(board(player, i, 0), 4) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 0 Then
                     Call achieve_special(player, 12, "World")
                 End If
@@ -2916,48 +2752,33 @@ Friend Class Main_Renamed
                 If player = 0 And ai_mode <> 1 Then
                     Call show_prompt("anatomy", dogma(id, level - 1), 0)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max = 0
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max_index = -1
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 0 To size2(score_pile, player) - 1
                         Call save(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         min = age(score_pile(player, i))
                         Call return_from_score_pile(player, i)
                         'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 0
                         For j = 0 To 4
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If found = 0 And board(player, j, 0) > -1 Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If age(board(player, j, 0)) = min Then
                                     Call return_from_board(player, j)
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     found = 1
                                 End If
                             End If
                         Next j
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > max Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max = current_score
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max_index = i
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     min = age(score_pile(player, max_index))
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call return_from_score_pile(player, max_index)
                     For j = 0 To 4
                         If board(player, j, 0) > -1 Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(board(player, j, 0)) = min Then
                                 Call return_from_board(player, j)
                                 Exit Sub
@@ -2970,47 +2791,34 @@ Friend Class Main_Renamed
         ElseIf card_name = "Colonialism" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = 0
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             While found = 0
                 'UPGRADE_WARNING: Couldn't resolve default property of object draw_and_tuck(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 draw_id = draw_and_tuck(player, 3)
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If Not card_has_symbol(draw_id, 4) Then found = 1
             End While
 
         ElseIf card_name = "Enterprise" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min = 11
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min_index = -1
                 For i = 0 To 4
-                    'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If board(player, i, 0) > -1 And color_lookup(i) <> "Purple" Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, i, 0), 4). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If card_has_symbol(board(player, i, 0), 4) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(board(player, i, 0)) < min Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min = age(board(player, i, 0))
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min_index = i
                             End If
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("enterprise", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_card_on_board(player, active_player, min_index)
                         Call draw_and_meld(player, 4)
                     End If
@@ -3027,35 +2835,27 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Gunpowder" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 For i = 0 To 4
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     min = 99
                     If board(player, i, 0) > -1 Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, i, 0), 2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If card_has_symbol(board(player, i, 0), 2) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(board(player, i, 0)) < min Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min_index = i
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min = board(player, i, 0)
                             End If
                             already_returned(i) = 1
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found > 0 Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object demand_met. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     demand_met = 1
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("gunpowder", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_board_to_score(player, active_player, min_index)
                     End If
                 End If
@@ -3076,12 +2876,10 @@ Friend Class Main_Renamed
                 For i = 0 To 4
                     splay_options(i) = 0
                     If splayed(player, i) = "Left" And can_splay(player, i) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
                         splay_options(i) = 1
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("invention", dogma(id, level - 1), 1)
@@ -3093,45 +2891,33 @@ Friend Class Main_Renamed
                     End If
                 End If
             Else
-                'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 count = 0
                 For i = 0 To 4
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If splayed(player, i) <> "" Then count = count + 1
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If count = 5 Then
                     Call achieve_special(player, 12, "World")
                 End If
             End If
 
         ElseIf card_name = "Navigation" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = 0
-            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min_index = -1
-            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min = 4
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             For i = 0 To size2(score_pile, player) - 1
                 If age(score_pile(player, i)) = 2 Or age(score_pile(player, i)) = 3 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     found = 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If age(score_pile(player, i)) < min Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         min = age(score_pile(player, i))
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         min_index = i
                     End If
                 End If
             Next i
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found = 1 Then
                 If player = 0 And ai_mode <> 1 Then
                     Call show_prompt("navigation", dogma(id, level - 1), 0)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call transfer_card_from_score(player, active_player, min_index)
                 End If
             End If
@@ -3165,22 +2951,16 @@ Friend Class Main_Renamed
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("printingPress", dogma(id, level - 1), 1)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         count = 0
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If board(player, 2, 0) > -1 Then count = age(board(player, 2, 0))
                         Call save(player)
                         Call return_from_score_pile(player, 0)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call draw_num(player, count + 2)
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > original_score Then
                             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If player <> active_player Then dogma_copied = 1
                             Call return_from_score_pile(player, 0)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             Call draw_num(player, count + 2)
                         End If
                     End If
@@ -3197,15 +2977,11 @@ Friend Class Main_Renamed
                         human_data = Int(icon_total(player, 1) / 2)
                         Call show_prompt("reformation1", dogma(id, level - 1), 1)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max = Int(icon_total(player, 1) / 2)
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If max > size2(hand, player) Then max = size2(hand, player)
                         Call save(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = 1 To max
                             Call tuck_from_hand(player, 0)
                         Next i
@@ -3214,10 +2990,7 @@ Friend Class Main_Renamed
                         'UPGRADE_WARNING: Couldn't resolve default property of object can_splay(player, 2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If can_splay(player, 2) Then splayed(player, 2) = "Right"
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > original_score Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             For i = 1 To max
                                 Call tuck_from_hand(player, 0)
                             Next i
@@ -3242,9 +3015,7 @@ Friend Class Main_Renamed
             If level = 1 Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If player <> active_player Then dogma_copied = 1
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 While found = 0
                     'UPGRADE_WARNING: Couldn't resolve default property of object draw_num(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     draw_id = draw_num(player, 6)
@@ -3252,20 +3023,16 @@ Friend Class Main_Renamed
                         'UPGRADE_WARNING: Couldn't resolve default property of object find_card(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call meld_from_hand(player, find_card(player, draw_id))
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
                     End If
                 End While
             Else
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 1
                 For i = 0 To 4
                     If board(player, i, 0) > -1 And i <> 2 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(board(player, i, 0)) < 6 Then found = 0
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If player <> active_player Then dogma_copied = 1
@@ -3275,34 +3042,25 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Banking" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min = 11
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min_index = -1
                 For i = 0 To 4
                     If board(player, i, 0) > -1 And color_lookup(i) <> "Green" Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, i, 0), 5). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If card_has_symbol(board(player, i, 0), 5) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(board(player, i, 0)) < min Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min = age(board(player, i, 0))
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min_index = i
                             End If
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("banking", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_card_on_board(player, active_player, min_index)
                         Call draw_and_score(player, 5)
                     End If
@@ -3341,9 +3099,7 @@ Friend Class Main_Renamed
                     Call show_prompt("coal3", dogma(id, level - 1), 1)
                 Else
                     'UPGRADE_WARNING: Couldn't resolve default property of object score_game_individual(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max = score_game_individual(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max_index = -1
                     For i = 0 To 4
                         If board(player, i, 0) > -1 Then
@@ -3351,22 +3107,14 @@ Friend Class Main_Renamed
                             Call score_top_card(player, i)
                             If board(player, i, 0) > -1 Then Call score_top_card(player, i)
                             Call restore(player)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If current_score > max Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max = current_score
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_index = i
                             End If
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If max_index > -1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call score_top_card(player, max_index)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If board(player, max_index, 0) > -1 Then Call score_top_card(player, max_index)
                     End If
                 End If
@@ -3379,7 +3127,6 @@ Friend Class Main_Renamed
                 Else
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If player <> active_player Then dogma_copied = 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max = -1
                     For i = -1 To 4
                         Call save(player)
@@ -3395,22 +3142,14 @@ Friend Class Main_Renamed
                             End If
                         End If
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > max Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max = current_score
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max_index = i
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If max_index > -1 Then
                         Call return_from_hand(player, 0)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call splay(player, max_index, "Right")
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         'UPGRADE_WARNING: Couldn't resolve default property of object size3(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call draw_num(player, size3(board, player, max_index))
                     End If
@@ -3418,7 +3157,6 @@ Friend Class Main_Renamed
             End If
 
         ElseIf card_name = "Physics" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = 0
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If active_player <> player Then dogma_copied = 1
@@ -3427,9 +3165,7 @@ Friend Class Main_Renamed
                 draw_id = draw_num(player, 6)
                 colors_found(i) = color(draw_id)
             Next i
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If (colors_found(0) = colors_found(1)) Or (colors_found(0) = colors_found(2)) Or (colors_found(2) = colors_found(1)) Then found = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found = 1 Then
                 Call append(player, "revealed matching colors, and must return their entire hand")
                 If player = 0 And ai_mode <> 1 Then
@@ -3443,34 +3179,25 @@ Friend Class Main_Renamed
             End If
 
         ElseIf card_name = "Societies" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = 0
-            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min = 11
-            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min_index = -1
             For i = 0 To 4
                 If board(player, i, 0) > -1 And color_lookup(i) <> "Purple" Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, i, 0), 3). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If card_has_symbol(board(player, i, 0), 3) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(board(player, i, 0)) < min Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min = age(board(player, i, 0))
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min_index = i
                         End If
                     End If
                 End If
             Next i
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found = 1 Then
                 If player = 0 And ai_mode <> 1 Then
                     Call show_prompt("societies", dogma(id, level - 1), 0)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call transfer_card_on_board(player, active_player, min_index)
                     Call draw_num(player, 5)
                 End If
@@ -3511,61 +3238,45 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "The Pirate Code" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For i = 0 To size2(score_pile, player) - 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If age(score_pile(player, i)) < 5 Then found = found + 1
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found > 2 Then found = 2
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found > 0 Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object demand_met. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     demand_met = 1
                     If player = 0 And ai_mode <> 1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         human_data = found
                         Call show_prompt("pirateCode", dogma(id, level - 1), 0)
                     Else
                         Call transfer_card_from_score(player, active_player, 0)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If found > 1 Then Call transfer_card_from_score(player, active_player, 0)
                     End If
                 End If
             Else
                 'UPGRADE_WARNING: Couldn't resolve default property of object demand_met. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If demand_met = 0 Then Exit Sub
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min_index = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min = 9
                 For i = 0 To 4
                     If board(player, i, 0) > -1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If card_has_symbol(board(player, i, 0), 4) And age(board(player, i, 0)) < min Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min = age(board(player, i, 0))
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min_index = 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found > 0 Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
                     If player = 0 And ai_mode <> 1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         human_data = min
                         Call show_prompt("pirateCode2", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call score_top_card(player, min_index)
                     End If
                 End If
@@ -3603,8 +3314,6 @@ Friend Class Main_Renamed
                         End If
                     Next i
                     Call restore(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If current_score > original_score Then
                         Call draw_and_tuck(player, 6)
                         For i = 0 To 4
@@ -3628,49 +3337,33 @@ Friend Class Main_Renamed
                 If player = 0 And ai_mode <> 1 Then
                     Call show_prompt("classification", dogma(id, level - 1), 0)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max = 0
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max_index = -1
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 0 To size2(hand, player) - 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = color(hand(player, i))
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If already_returned(found) = 0 Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             already_returned(found) = 1
                             Call save(player)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             Call collect_all_cards(player, found)
                             'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             For j = size2(hand, player) - 1 To 0 Step -1
-                                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If color(hand(player, j)) = found Then
                                     Call meld_from_hand(player, j)
                                 End If
                             Next j
                             Call restore(player)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If current_score > max Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max = current_score
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_index = i
                                 'alert ("found a max score at " & max_index)
                             End If
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     found = color(hand(player, max_index))
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call collect_all_cards(player, found)
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For j = size2(hand, player) - 1 To 0 Step -1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If color(hand(player, j)) = found Then
                             Call meld_from_hand(player, j)
                         End If
@@ -3692,8 +3385,6 @@ Friend Class Main_Renamed
                         Next i
                         Call draw_and_score(player, 8)
                         Call restore(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If current_score > original_score Then
                             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If active_player <> player Then dogma_copied = 1
@@ -3726,31 +3417,25 @@ Friend Class Main_Renamed
         ElseIf card_name = "Encyclopedia" Then
             If score_pile(player, 0) > -1 Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = age(score_pile(player, size2(score_pile, player) - 1))
                 If player = 0 And ai_mode <> 1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     human_data = max
                     Call show_prompt("encyclopedia", dogma(id, level - 1), 1)
                 Else
                     Call save(player)
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = size2(score_pile, player) - 1 To 0 Step -1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(score_pile(player, i)) = max Then
                             Call meld(player, score_pile(player, i))
                             Call remove_card_from_score_pile(player, i)
                         End If
                     Next i
                     Call restore(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If current_score > original_score Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If active_player <> player Then dogma_copied = 1
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = size2(score_pile, player) - 1 To 0 Step -1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(score_pile(player, i)) = max Then
                                 Call meld(player, score_pile(player, i))
                                 Call remove_card_from_score_pile(player, i)
@@ -3766,9 +3451,7 @@ Friend Class Main_Renamed
                 If icon_total(player, 5) > 1 Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     count = Int(icon_total(player, 5) / 2)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 1 To count
                         Call draw_and_tuck(player, 6)
                     Next i
@@ -3807,16 +3490,13 @@ Friend Class Main_Renamed
                 If score_pile(player, 0) > -1 Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object demand_met. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     demand_met = 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     min = age(score_pile(player, 0))
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     human_data = min
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("vaccination", dogma(id, level - 1), 0)
                     Else
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = size2(score_pile, player) - 1 To 0 Step -1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(score_pile(player, i)) = min Then
                                 'Call alert("returning " & i & " " & title(score_pile(player, i)))
                                 Call return_from_score_pile(player, i)
@@ -3843,8 +3523,6 @@ Friend Class Main_Renamed
                 Call save(player)
                 Call exchange_bicycle(player)
                 Call restore(player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If current_score > original_score Then
                     Call exchange_bicycle(player)
                 End If
@@ -3853,35 +3531,27 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Combustion" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = size2(score_pile, player)
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found > 2 Then found = 2
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found > 0 Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object demand_met. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 demand_met = 1
                 If player = 0 And ai_mode <> 1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     human_data = found
                     Call show_prompt("combustion", dogma(id, level - 1), 0)
                 Else
                     Call transfer_card_from_score(player, active_player, 0)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If found > 1 Then Call transfer_card_from_score(player, active_player, 0)
                 End If
             End If
 
         ElseIf card_name = "Electricity" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = 0
             For i = 0 To 4
                 If board(player, i, 0) > -1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If Not card_has_symbol(board(player, i, 0), 5) Then found = found + 1
                 End If
             Next i
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found > 0 Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If active_player <> player Then dogma_copied = 1
@@ -3889,7 +3559,6 @@ Friend Class Main_Renamed
                     For i = 0 To 4
                         already_returned(i) = 0
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     human_data = found
                     Call show_prompt("electricity", dogma(id, level - 1), 0)
                 Else
@@ -3900,7 +3569,6 @@ Friend Class Main_Renamed
                             End If
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 1 To found
                         Call draw_num(player, 8)
                     Next i
@@ -3924,15 +3592,11 @@ Friend Class Main_Renamed
                 Call draw_and_score(player, 8)
                 Call return_from_score_pile(player, 0)
                 Call restore(player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = current_score
                 Call save(player)
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 Call draw_num(player, age(score_pile(player, size2(score_pile, player) - 1)) + 1)
                 Call restore(player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If current_score > max Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call draw_num(player, age(score_pile(player, size2(score_pile, player) - 1)) + 1)
@@ -3944,18 +3608,13 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Explosives" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = size2(hand, player)
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found > 3 Then found = 3
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found > 0 Then
                 If player = 0 And ai_mode <> 1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     human_data = found
                     Call show_prompt("explosives", dogma(id, level - 1), 0)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 1 To found
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_card_in_hand(player, active_player, size2(hand, player) - 1)
@@ -3975,22 +3634,18 @@ Friend Class Main_Renamed
                     Call show_prompt("lighting", dogma(id, level - 1), 1)
                 Else
                     ' Return a card from each age
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     count = 0
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = size2(hand, player) - 1 To 0 Step -1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If already_returned(age(hand(player, i))) = 0 And count < 3 And age(hand(player, i)) < 9 Then
                             already_returned(age(hand(player, i))) = 1
                             Call tuck_from_hand(player, i)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             count = count + 1
                             If hand(player, 0) > -1 Then i = -1
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 0 To count - 1
                         Call draw_and_score(player, 7)
                     Next i
@@ -3999,29 +3654,19 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Publications" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_index = -1
                 max_index2 = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = 0
                 For i = 0 To 4
                     'UPGRADE_WARNING: Couldn't resolve default property of object size3(board, player, i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If size3(board, player, i) > 1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
                         'UPGRADE_WARNING: Couldn't resolve default property of object size3(board, player, i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For j = 1 To size3(board, player, i) - 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             count = age(board(player, i, j)) - age(board(player, i, 0))
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If count > max Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max = count
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_index = i
                                 max_index2 = j
                                 'alert ("Found a max at " & i & j)
@@ -4029,21 +3674,14 @@ Friend Class Main_Renamed
                         Next j
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found > 0 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("publications", dogma(id, level - 1), 1)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     ElseIf max_index > -1 Then
                         ' Put the largest card in the pile on top
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         count = board(player, max_index, 0)
                         'alert ("Setting top of board to " & max_index & max_index2 & title(board(player, max_index, max_index2)))
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         board(player, max_index, 0) = board(player, max_index, max_index2)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         board(player, max_index, max_index2) = count
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If active_player <> player Then dogma_copied = 1
@@ -4078,17 +3716,14 @@ Friend Class Main_Renamed
                     Next i
                 End If
             Else
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 For i = 0 To 4
                     splay_options(i) = 0
                     If splayed(player, i) = "Right" And can_splay(player, i) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
                         splay_options(i) = 1
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     Call perform_best_splay(player, splay_options, "Up")
                 End If
@@ -4097,16 +3732,12 @@ Friend Class Main_Renamed
         ElseIf card_name = "Refrigeration" Then
             If level = 1 Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 count = Int(size2(hand, player) / 2)
-                'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If count > 0 Then
                     If player = 0 And ai_mode <> 1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         human_data = count
                         Call show_prompt("refrigeration", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = 1 To count
                             Call return_from_hand(player, 0)
                         Next i
@@ -4176,22 +3807,18 @@ Friend Class Main_Renamed
                     Call show_prompt("antibiotics", dogma(id, level - 1), 1)
                 Else
                     ' Return a card from each age
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     count = 0
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = size2(hand, player) - 1 To 0 Step -1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If already_returned(age(hand(player, i))) = 0 And count < 3 Then
                             already_returned(age(hand(player, i))) = 1
                             Call return_from_hand(player, i)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             count = count + 1
                             If hand(player, 0) > -1 Then i = -1
                         End If
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 0 To count - 1
                         Call draw_num(player, 8)
                         Call draw_num(player, 8)
@@ -4201,34 +3828,25 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Corporations" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min = 11
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min_index = -1
                 For i = 0 To 4
                     If board(player, i, 0) > -1 And color_lookup(i) <> "Green" Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, i, 0), 5). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If card_has_symbol(board(player, i, 0), 5) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(board(player, i, 0)) < min Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min = age(board(player, i, 0))
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min_index = i
                             End If
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("corporations", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_board_to_score(player, active_player, min_index)
                         Call draw_and_meld(player, 8)
                     End If
@@ -4280,12 +3898,8 @@ Friend Class Main_Renamed
                         Call show_prompt("massMedia", dogma(id, level - 1), 1)
                     Else
                         'UPGRADE_WARNING: Couldn't resolve default property of object score_game(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_score = score_game(player)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max = max_score
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_index = -1
                         phase = "massMedia"
                         For i = 1 To 10
@@ -4294,25 +3908,17 @@ Friend Class Main_Renamed
                             'MsgBox "returning from score " & i
                             Call return_from_all_score_piles(i)
                             'UPGRADE_WARNING: Couldn't resolve default property of object score_game(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max_score = score_game(player)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If max_score > max Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max = max_score
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_index = i
                             End If
                             Call restore(player)
                         Next i
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If max_index > -1 Then
                             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If active_player <> player Then dogma_copied = 1
                             Call return_from_hand(player, 0)
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             Call return_from_all_score_piles(max_index)
                         End If
 
@@ -4325,38 +3931,28 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Mobility" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_index = -1
                 max_index2 = -1
                 For i = 0 To 4
                     If board(player, i, 0) > -1 And color_lookup(i) <> "Red" Then
                         If Not card_has_symbol(board(player, i, 0), 5) Then
                             'If player = 1 Then MsgBox "inspecting " & i
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(board(player, i, 0)) > max Then
                                 'If player = 1 Then MsgBox "max " & i
-                                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 found = found + 1
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max = age(board(player, i, 0))
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_index2 = max_index
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_index = i
                             ElseIf max_index2 > -1 Then
                                 'If player = 1 Then MsgBox "max2 upgrade" & i
                                 If age(board(player, i, 0)) > age(board(player, max_index2, 0)) Then
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     found = found + 1
                                     max_index2 = i
                                 End If
                             ElseIf max_index2 = -1 Then
                                 'If player = 1 Then MsgBox "max2 " & i
-                                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 found = found + 1
                                 max_index2 = i
                             Else
@@ -4365,19 +3961,15 @@ Friend Class Main_Renamed
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found > 0 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If found > 2 Then found = 2
                     If player = 0 And ai_mode <> 1 Then
                         For i = 0 To 4
                             already_returned(i) = 0
                         Next i
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         human_data = found
                         Call show_prompt("mobility", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_board_to_score(player, active_player, max_index)
                         If max_index2 > -1 Then Call transfer_board_to_score(player, active_player, max_index2)
                         Call draw_num(player, 8)
@@ -4419,42 +4011,30 @@ Friend Class Main_Renamed
             End If
 
         ElseIf card_name = "Skyscrapers" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             found = 0
-            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min = 11
-            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             min_index = -1
             For i = 0 To 4
                 If board(player, i, 0) > -1 And color_lookup(i) <> "Yellow" Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, i, 0), 6). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If card_has_symbol(board(player, i, 0), 6) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(board(player, i, 0)) < min Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min = age(board(player, i, 0))
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             min_index = i
                         End If
                     End If
                 End If
             Next i
-            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If found = 1 Then
                 If player = 0 And ai_mode <> 1 Then
                     human_data = 0
                     Call show_prompt("skyscrapers", dogma(id, level - 1), 0)
                 Else
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call transfer_card_on_board(player, active_player, min_index)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If board(player, min_index, 0) > -1 Then Call score_top_card(player, min_index)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     'UPGRADE_WARNING: Couldn't resolve default property of object size3(board, player, min_index). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = size3(board, player, min_index) - 1 To 0 Step -1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call return_from_board(player, min_index)
                     Next i
                 End If
@@ -4466,19 +4046,14 @@ Friend Class Main_Renamed
                 Call show_prompt("socialism", dogma(id, level - 1), 1)
             Else
                 Call save(player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For i = size2(hand, player) - 1 To 0 Step -1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If color_lookup(color(hand(player, 0))) = "Purple" Then found = 1
                     Call tuck_from_hand(player, 0)
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 Then Call steal_lowest_cards(player)
                 Call restore(player)
-                'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If current_score > original_score Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
@@ -4486,7 +4061,6 @@ Friend Class Main_Renamed
                     For i = size2(hand, player) - 1 To 0 Step -1
                         Call tuck_from_hand(player, 0)
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If found = 1 Then Call steal_lowest_cards(player)
                 End If
             End If
@@ -4538,7 +4112,7 @@ Friend Class Main_Renamed
             Else
                 'UPGRADE_WARNING: Couldn't resolve default property of object size3(board, player, 4). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If size3(board, player, 4) > 9 Then
-                    Call end_game_generic(player, "Player " & player + 1 & " has 10 or mGreen cards howing, and wons the game via Collaboration!")
+                    Call end_game_generic(player, "Player " & player + 1 & " has 10 or mGreen cards howing, and wins the game via Collaboration!")
                 End If
             End If
 
@@ -4623,33 +4197,24 @@ Friend Class Main_Renamed
                     Call show_prompt("fission", dogma(id, level - 1), 0)
                 Else
                     ' Find the max top card to return
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max_index = -1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     max = -1
                     For i = 0 To num_players - 1
                         For j = 0 To 4
                             If i <> player And board(i, j, 0) <> -1 Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If age(board(i, j, 0)) > max Then
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max = age(board(i, j, 0))
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max_index = i
                                     max_index2 = j
                                 End If
                             End If
                         Next j
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If max_index = -1 Then
                         For j = 0 To 4
                             If board(player, j, 0) <> -1 And j <> 1 Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If age(board(player, j, 0)) > max Then
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max = age(board(player, j, 0))
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max_index = player
                                     max_index2 = j
                                 End If
@@ -4657,11 +4222,9 @@ Friend Class Main_Renamed
                         Next j
                     End If
 
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If max_index > -1 Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If active_player <> player Then dogma_copied = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call return_from_board(max_index, max_index2)
                     End If
                 End If
@@ -4720,39 +4283,30 @@ Friend Class Main_Renamed
         ElseIf card_name = "Services" Then
             If score_pile(player, 0) > -1 Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = age(score_pile(player, size2(score_pile, player) - 1))
                 'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For i = size2(score_pile, player) - 1 To 0 Step -1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If age(score_pile(player, i)) = max Then
                         Call transfer_score_to_other_hand(player, active_player, i)
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_index = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = -1
                 For i = 0 To 4
                     If board(active_player, i, 0) > -1 Then
                         If Not card_has_symbol(board(active_player, i, 0), 1) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(board(active_player, i, 0)) > max Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max_index = i
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 max = age(board(active_player, i, 0))
                             End If
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If max_index > -1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("services", dogma(id, level - 1), 0)
                     Else
                         'MsgBox active_player + 1 & " to " & player + 1 & " index=" & max_index
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_board_to_hand(active_player, player, max_index)
                     End If
                 End If
@@ -4769,50 +4323,33 @@ Friend Class Main_Renamed
                         For i = 0 To 4
                             already_returned(i) = 0
                         Next i
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max = 0
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_index = -1
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = 0 To size2(hand, player) - 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             found = color(hand(player, i))
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If already_returned(found) = 0 Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 already_returned(found) = 1
                                 Call save(player)
                                 For j = 0 To num_players - 1
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     If j <> player And board(j, found, 0) > -1 Then
-                                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                         Call transfer_board_to_hand(j, player, found)
                                     End If
                                 Next j
                                 Call restore(player)
                                 'MsgBox "Considering " & color_lookup(found) & " for player " & player + 1 & " score=" & current_score
 
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If current_score > max Then
                                     'MsgBox "Choosing " & color_lookup(found) & " for player " & player + 1
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max = current_score
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max_index = i
                                 End If
                             End If
                         Next i
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = color(hand(player, max_index))
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call append(player, " reveals a " & color_lookup(found) & " card")
                         For j = 0 To num_players - 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If j <> player And board(j, found, 0) > -1 Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 Call transfer_board_to_hand(j, player, found)
                             End If
                         Next j
@@ -4832,28 +4369,21 @@ Friend Class Main_Renamed
                 Else
                     ' Try to tuck everything
                     'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     count = size2(hand, player)
                     Call save(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = count - 1 To 0 Step -1
                         Call tuck_from_hand(player, i)
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     For i = 1 To count
                         Call draw_and_score(player, 1)
                     Next i
                     Call restore(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If current_score > max_score Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If active_player <> player Then dogma_copied = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = count - 1 To 0 Step -1
                             Call tuck_from_hand(player, i)
                         Next i
-                        'UPGRADE_WARNING: Couldn't resolve default property of object count. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = 1 To count
                             Call draw_and_score(player, 1)
                         Next i
@@ -4874,12 +4404,10 @@ Friend Class Main_Renamed
                 'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If active_player <> player Then dogma_copied = 1
             Else
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 For i = 0 To num_players - 1
                     For j = 0 To 4
                         If board(i, j, 0) > -1 Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If title(board(i, j, 0)) = "Robotics" Then found = 1
                         End If
                     Next j
@@ -4887,7 +4415,6 @@ Friend Class Main_Renamed
                 For i = 0 To num_players - 1
                     For j = 0 To 4
                         If board(i, j, 0) > -1 Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If title(board(i, j, 0)) = "Software" And found = 1 Then
                                 Call end_game_ai()
                             End If
@@ -4898,63 +4425,46 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Bioengineering" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_index = -1
                 For i = 0 To num_players - 1
                     For j = 0 To 4
                         If board(i, j, 0) > -1 And i <> player Then
                             'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(i, j, 0), 1). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If card_has_symbol(board(i, j, 0), 1) Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 If age(board(i, j, 0)) > max Then
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max_index = i
                                     max_index2 = j
-                                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                     max = age(board(i, j, 0))
                                 End If
                             End If
                         End If
                     Next j
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If max_index > -1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("bioengineering", dogma(id, level - 1), 0)
                     Else
                         'MsgBox active_player + 1 & " to " & player + 1 & " index=" & max_index
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call transfer_board_to_score(max_index, player, max_index2)
                     End If
                 End If
             Else
                 max_count = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_index = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 For i = 0 To num_players - 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If icon_total(i, 1) < 3 Then found = 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If icon_total(i, 1) > max Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max = icon_total(i, 1)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_index = i
                         max_count = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     ElseIf icon_total(i, 1) = max Then
                         max_count = max_count + 1
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 1 And max_count = 1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call end_game_generic(max_index, "Player " & max_index + 1 & " has the most leaf symbols and wins the game via Bioengineering.")
                 End If
             End If
@@ -4974,30 +4484,23 @@ Friend Class Main_Renamed
 
         ElseIf card_name = "Globalization" Then
             If level = 1 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min_index = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 min = 11
                 For j = 0 To 4
                     If board(player, j, 0) > -1 Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object card_has_symbol(board(player, j, 0), 1). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If card_has_symbol(board(player, j, 0), 1) Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If age(board(player, j, 0)) < min Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min = age(board(player, j, 0))
-                                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 min_index = j
                             End If
                         End If
                     End If
                 Next j
-                'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If min_index > -1 Then
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("globalization", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call return_from_board(player, min_index)
                     End If
                 End If
@@ -5007,37 +4510,27 @@ Friend Class Main_Renamed
                 If active_player <> player Then dogma_copied = 1
 
                 max_count = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_index = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = 0
                 For i = 0 To num_players - 1
                     If icon_total(i, 1) > icon_total(i, 5) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         found = 1
                         'MsgBox "found it for " & i + 1 & " " & icon_total(i, 1) & " >" & icon_total(i, 5)
 
                     End If
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     'UPGRADE_WARNING: Couldn't resolve default property of object scores(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If scores(i) > max Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object scores(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max = scores(i)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_index = i
                         max_count = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         'UPGRADE_WARNING: Couldn't resolve default property of object scores(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     ElseIf scores(i) = max Then
                         max_count = max_count + 1
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If found = 0 And max_count = 1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call end_game_generic(max_index, "Player " & max_index + 1 & " has the most points and wins the game via Globalization.")
                 End If
             End If
@@ -5051,13 +4544,10 @@ Friend Class Main_Renamed
                     If age(hand(player, size2(hand, player) - 1)) = 10 And score_pile(player, 0) > -1 Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If active_player <> player Then dogma_copied = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object min_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call return_from_hand(player, min_index)
                         'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         For i = 0 To size2(score_pile, player) - 1
-                            'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             If already_returned(age(score_pile(player, i))) = 0 Then
-                                'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                                 already_returned(age(score_pile(player, i))) = 1
                                 Call draw_num(player, 10)
                             End If
@@ -5078,53 +4568,39 @@ Friend Class Main_Renamed
         ElseIf card_name = "Self Service" Then
             If level = 1 Then
                 ' Find the max top card to activate
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_index = -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = -1
                 For i = 0 To 3
                     If board(player, i, 0) <> -1 Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If age(board(player, i, 0)) > max Then
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max = age(board(player, i, 0))
-                            'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                             max_index = i
                         End If
                     End If
                 Next i
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If max_index > -1 Then
                     'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If active_player <> player Then dogma_copied = 1
                     If player = 0 And ai_mode <> 1 Then
                         Call show_prompt("selfService", dogma(id, level - 1), 0)
                     Else
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call perform_solo_dogma_effects(player, board(player, max_index, 0))
                     End If
                 End If
             Else
                 max_count = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max = 0
-                'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 max_index = -1
                 For i = 0 To num_players - 1
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If vps(i) > max Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max = vps(i)
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         max_index = i
                         max_count = 1
-                        'UPGRADE_WARNING: Couldn't resolve default property of object max. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     ElseIf vps(i) = max Then
                         max_count = max_count + 1
                     End If
                 Next i
                 If max_count = 1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call end_game_generic(max_index, "Player " & max_index + 1 & " has the most achievements and wins the game via Self Service.")
                 End If
             End If
@@ -5152,8 +4628,6 @@ Friend Class Main_Renamed
                         Call score_from_hand(player, 0)
                     Next i
                     Call restore(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object original_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If current_score > original_score Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         If active_player <> player Then dogma_copied = 1
@@ -5174,9 +4648,7 @@ Friend Class Main_Renamed
                 If active_player <> player Then dogma_copied = 1
                 Call draw_and_score(player, 10)
             Else
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 found = Int(icon_total(player, 6) / 2)
-                'UPGRADE_WARNING: Couldn't resolve default property of object found. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 For i = 1 To found
                     Call draw_and_meld(player, 10)
                 Next i
@@ -5185,7 +4657,6 @@ Friend Class Main_Renamed
 
     End Sub
 
-    'UPGRADE_NOTE: str was upgraded to str_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
     Private Sub show_prompt(ByRef which_phase As String, ByRef str_Renamed As String, ByRef allow_cancel As Short)
         If ai_mode = 1 Then MsgBox("Shouldn't be showing this!")
         'MsgBox "Showing " & which_phase
@@ -5664,7 +5135,7 @@ Friend Class Main_Renamed
         Next i
 
         ' Update achievement list
-        For i = 0 To 13
+        For i = 0 To TOTACHIEVE
             lblAchievement(i).Visible = False
             If achievements_scored(i) = 0 Then lblAchievement(i).Visible = True
         Next i
@@ -5734,13 +5205,12 @@ Friend Class Main_Renamed
         ' If current_turn > 1 Then MsgBox "check 1"
 
         ' Update the icons based on the top cards
-        For j = 1 To 6 ' icon type
+        For j = 1 To ICONCOUNT ' icon type 
             'max = 0
             'For i = 0 To num_players - 1
             '    If icon_total(i, j) > max Then max = icon_total(i, j)
             'Next i
             For i = 0 To num_players - 1
-                'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 id = i + (j - 1) * 4
                 lblIcon(id).ForeColor = System.Drawing.Color.Black
                 lblIcon(id).Font = VB6.FontChangeBold(lblIcon(id).Font, False)
@@ -5996,7 +5466,7 @@ Friend Class Main_Renamed
         num_cards = i
         'MsgBox(Str(i) + " cards loaded")
 #If VERBOSE Then
-        Call append_simple("In initial_card_data() 105 cards loaded -------") 'This isnt echoing... ???
+        Call append_simple("In initial_card_data() 105 cards loaded -------") 'FK This isnt echoing... ???
 #End If
         'When functioning 105 are loaded
 
@@ -6015,7 +5485,7 @@ Friend Class Main_Renamed
 
     Private Sub initialize_images()
 #If VERBOSE Then
-        Call append_simple("In initialize_images() -----------------------------") 'This isnt echoing... ???
+        Call append_simple("In initialize_images() -----------------------------") 'FK This isnt echoing... ???
 #End If
         title_image = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/title.jpg")
         achievement_images(0) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/achieve1.jpg")
@@ -6769,19 +6239,14 @@ Friend Class Main_Renamed
 
         ElseIf phase = "agriculture" Then
 
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call return_from_hand(player, index)
-            'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call draw_and_score(player, age(card) + 1)
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If active_player <> player Then dogma_copied = 1
             Call resume_dogma()
         ElseIf phase = "archery" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object is_highest_card_in_hand(0, index). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If is_highest_card_in_hand(0, index) Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 Call transfer_card_in_hand(player, active_player, index)
                 Call resume_dogma()
             End If
@@ -6789,10 +6254,7 @@ Friend Class Main_Renamed
             'UPGRADE_WARNING: Couldn't resolve default property of object valid. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             valid = 0
             For i = 0 To 4
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If board(player, i, 0) > -1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If color(board(player, i, 0)) = color(card) Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object valid. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         valid = 1

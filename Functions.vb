@@ -1,5 +1,6 @@
 Option Strict Off
 Option Explicit On
+#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
 Module ArrayFunctions
     Public arr(4, 5, 100) As Short
     Public Sub InsertArrayItem(ByRef arr As Object, ByVal index As Integer, ByVal newValue As Object)
@@ -311,18 +312,14 @@ Module ArrayFunctions
         Dim new_array(500) As Object
         Dim picked(500) As Object
         Randomize()
-        Dim arr_size, i As Object
-        Dim r As Short
+        'Dim arr_size, i As Object
+        Dim arr_size, i, r As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object size(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-        'UPGRADE_WARNING: Couldn't resolve default property of object arr_size. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         arr_size = size(arr)
-        'UPGRADE_WARNING: Couldn't resolve default property of object arr_size. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         For i = 0 To arr_size - 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object arr_size. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             r = Int(arr_size * Rnd())
             'UPGRADE_WARNING: Couldn't resolve default property of object picked(r). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             While (picked(r) = 1)
-                'UPGRADE_WARNING: Couldn't resolve default property of object arr_size. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 r = Int(arr_size * Rnd())
             End While
             'UPGRADE_WARNING: Couldn't resolve default property of object picked(r). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -332,16 +329,17 @@ Module ArrayFunctions
             new_array(r) = arr(i)
         Next i
 
-        'UPGRADE_WARNING: Couldn't resolve default property of object arr_size. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         For i = 0 To arr_size - 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object new_array(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object arr(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             arr(i) = new_array(i)
         Next i
-        'UPGRADE_WARNING: Couldn't resolve default property of object arr_size. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         'UPGRADE_WARNING: Couldn't resolve default property of object new_array(arr_size). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         new_array(arr_size) = -1
+#If VERBOSE Then
+        Call Main_Renamed.append_simple("In randomize_array() ++++++")
+        Call print_array(new_array, "Shuffled")
+#End If
         'Call print_array(new_array, "Shuffled")
     End Function
 

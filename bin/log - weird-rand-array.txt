@@ -1,0 +1,11 @@
+﻿In start_new_game() ++++++ Choose the number of players
+In initialize_game() ++++++
+In randomize_array() ++++++
+In randomize_array() ++++++
+In randomize_array() ++++++
+In randomize_array() ++++++
+In randomize_array() ++++++
+In randomize_array() ++++++
+In randomize_array() ++++++
+In randomize_array() ++++++
+In randomize_array() ++++++

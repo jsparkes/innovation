@@ -7,7 +7,7 @@ draw_num() -----------------------------
 Player 2 drew a 1.
 draw_num() -----------------------------
 Player 2 drew a 1.
-In launch_game() ++++++  Read the debug file and update the board state accordingly
+In launch_game() ++++++  Read the debug file and update the board state accordingly /testing.txt
  
 In launch_game() ./testing.txt ++++++ NOT FOUND
 In launch_game() set_debug_values() DISABLED 
@@ -16,40 +16,273 @@ In process_hand_click() Initial Meld ++++++
 Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
 In remove_card_from_hand------------------
 In meld() melding------------------
-Player 1 melds Clothing.
+Player 1 melds City States.
 In check_for_achievements() -----------------------------
 Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
 In remove_card_from_hand------------------
 In meld() melding------------------
-Player 2 melds Oars.
+Player 2 melds Sailing.
 In check_for_achievements() -----------------------------
 Player 1 is the starting player.
 In process_handclick() ----------
 In play_game() -----------------------------
 In ready_for_action() ++++++
-Player 1 activates the first effect of Clothing.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
-Player 1 In activate_card() ACTIVATING = Clothing.
-Player 1 In activate_card() AGE 1.
-In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
-Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = Draw and score a 1 for each color present on your board not present on any other player’s board..
-Player 1 activates the second effect of Clothing.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 2.
-Player 1 In activate_card() ACTIVATING = Clothing.
-Player 1 In activate_card() AGE 1.
-Player 1 drew and scored a 1.
-In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
-Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+draw_num() -----------------------------
+Player 1 drew a 1.
+Player 1 In cmdDraw_Click() ++++ pre actions remaining: 1.
 In play_game() -----------------------------
 In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 11 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,11 at level 0 (ai_mode = 0)  gss_count = 14.
+Player 2 In make_ai_move() Made a real move 2,11 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Sailing.
+Player 2 activates the first effect of Sailing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Sailing.
+Player 1 In activate_card() AGE 1.
+Player 1 drew and melded Masonry.
+Player 2 In activate_card() ACTIVATING = Sailing.
+Player 2 In activate_card() AGE 1.
+Player 2 drew and melded Domestication.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 1.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() ++++++
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
 Player 1 In perform_AI_action() picked 1 and 0 ai_mode = 0.
 In make_ai_move() ++++++
 Player 2 In make_ai_move() called with depth = 0.
-Player 2 In make_ai_move() Trying move 1,0 at level 0 (ai_mode = 0)  gss_count = 10.
-Player 2 In make_ai_move() Made a real move 1,0 actions_remaining = 1.
+Player 2 In make_ai_move() Trying move 1,0 at level 0 (ai_mode = 0)  gss_count = 26.
+Player 2 In make_ai_move() Made a real move 1,0 actions_remaining = 0.
 draw_num() -----------------------------
 Player 2 drew a 1.
 In make_ai_move() AI doing DRAW ----
 Player 1 In perform_AI_action() Made move 1 ai_mode = 0.
+In process_hand_click() ++++++
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 76.
+Player 1 Exiting copy_game_state() ++++++ n = 254.
+In ready_for_action() ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Metalworking.
+In check_for_achievements() -----------------------------
+In play_game() -----------------------------
+In ready_for_action() ++++++
+In process_hand_click() AGE 1 ++++++
+Player 1 activates the first effect of Metalworking.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Metalworking.
+Player 1 In activate_card() AGE 1.
+Player 1 draws and scores Archery.
+Player 1 draws and scores The Wheel.
+Player 1 draws and scores Mysticism.
+Player 1 draws Pottery.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 5 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,5 at level 0 (ai_mode = 0)  gss_count = 32.
+Player 2 In make_ai_move() Made a real move 2,5 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Domestication.
+Player 2 activates the first effect of Domestication.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Domestication.
+Player 1 In activate_card() AGE 1.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 1.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Pottery.
+In check_for_achievements() -----------------------------
+draw_num() -----------------------------
+Player 1 drew a 1.
+In resume_dogma() -----------------------------
+Player 1 In resume_dogma() -----changing player from 0 to 1.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Domestication.
+Player 2 In activate_card() AGE 1.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Clothing.
+In check_for_achievements() -----------------------------
+draw_num() -----------------------------
+Player 2 drew a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 2.
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 5 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,5 at level 0 (ai_mode = 0)  gss_count = 49.
+Player 2 In make_ai_move() Made a real move 2,5 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma Domestication.
+Player 2 activates the first effect of Domestication.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Domestication.
+Player 1 In activate_card() AGE 1.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Agriculture.
+In check_for_achievements() -----------------------------
+draw_num() -----------------------------
+Player 1 drew a 2.
+In resume_dogma() -----------------------------
+Player 1 In resume_dogma() -----changing player from 0 to 1.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Domestication.
+Player 2 In activate_card() AGE 1.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Code of Laws.
+In check_for_achievements() -----------------------------
+draw_num() -----------------------------
+Player 2 drew a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 2.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 86.
+Player 1 Exiting copy_game_state() ++++++ n = 264.
+In ready_for_action() ++++++
+draw_num() -----------------------------
+Player 1 drew a 2.
+Player 1 In cmdDraw_Click() ++++ pre actions remaining: 2.
+In play_game() -----------------------------
+In ready_for_action() ++++++
+Player 1 activates the first effect of Agriculture.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Agriculture.
+Player 1 In activate_card() AGE 1.
+Player 1 In activate_card() Agriculture.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 2.
+Player 1 drew and scored a 3.
+In resume_dogma() -----------------------------
+Player 1 In resume_dogma() -----changing player from 2 to 3.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 3 Activating level 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 4 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,4 at level 0 (ai_mode = 0)  gss_count = 71.
+Player 2 In make_ai_move() Made a real move 2,4 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Code of Laws.
+Player 2 activates the first effect of Code of Laws.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Code of Laws.
+Player 2 In activate_card() AGE 1.
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 0.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 5.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 27.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 49.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 72.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 240.
+Player 1 In score_game_individual()  total value after hand scoring = 258.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 0.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 5.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 27.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 49.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 72.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 240.
+Player 1 In score_game_individual()  total value after hand scoring = 258.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In remove_card_from_hand------------------
+Player 2 tucks a Yellow card from hand.
+In check_for_achievements() -----------------------------
+Player 2 splays Yellow Left.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 3 and 2 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 3,2 at level 0 (ai_mode = 0)  gss_count = 52.
+Player 2 In make_ai_move() Made a real move 3,2 actions_remaining = 0.
+Player 2 In make_ai_move() 2  is the card to play from hand ----.
+Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
+Player 2 In make_ai_move() trying a meld from ai - Construction depth = 0.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 2.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Construction.
+In check_for_achievements() -----------------------------
+In make_ai_move() AI Doing meld ----
+Player 1 In perform_AI_action() Made move 3 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 87.
+Player 1 Exiting copy_game_state() ++++++ n = 265.
+In ready_for_action() ++++++
+Player 1 In achieve() +++trying to click 1.
+Player 1 In can_achieve() +++ HEY U CAN ACHIEVE!.
+Player 1 has claimed the -1- achievement.
+In play_game() -----------------------------
+In ready_for_action() ++++++

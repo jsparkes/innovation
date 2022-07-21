@@ -210,7 +210,7 @@ Module AIFunctions
         count = 0
         If count = 0 Then
 #If VERBOSE Then
-            Call Main_Renamed.append_simple("In pick_ai_move() Add the choice to achieve")
+            Call Main_Renamed.append_simple("In pick_ai_move() Add the choice to ACHIEVE")
 #End If
             'Add the choice to achieve
             For i = 1 To 9
@@ -225,7 +225,7 @@ Module AIFunctions
 
             'Add the choice to draw
 #If VERBOSE Then
-            Call Main_Renamed.append_simple("In pick_ai_move() Add the choice to draw")
+            Call Main_Renamed.append_simple("In pick_ai_move() Add the choice to DRAW")
 #End If
             all_choices(count, 0) = 1
             count = count + 1
@@ -284,7 +284,7 @@ Module AIFunctions
                 max_index = i
                 'MsgBox "new max score: " & max_score
 #If VERBOSE Then
-                Call Main_Renamed.append(player, "In pick_ai_move() new max score: " & max_score)
+                Call Main_Renamed.append(player, "In pick_ai_move() new max score = " & max_score)
 #End If
             End If
             restore_game_state(State)
@@ -293,7 +293,7 @@ Module AIFunctions
         Call flatten2(all_choices, max_index, choices)
         'MsgBox "Choosing choice " & max_index & "(" & choices(0) & "," & choices(1) & ") at depth " & depth & " with score " & max_score
 #If VERBOSE Then
-        Call Main_Renamed.append(player, "In pick_ai_move() Making move  ++++++ Choosing choice " & max_index & "(" & choices(0) & "," & choices(1) & ") at depth " & depth & " with score " & max_score)
+        Call Main_Renamed.append(player, "In pick_ai_move() Making move  ++++++ Choosing choice max_index = " & max_index & "( choices(0) = " & choices(0) & ", choices(1) =" & choices(1) & ") at depth = " & depth & " with max_score = " & max_score)
 #End If
         'UPGRADE_WARNING: Couldn't resolve default property of object pick_ai_move. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         pick_ai_move = max_score
@@ -401,7 +401,7 @@ Module AIFunctions
             str_Renamed = str_Renamed & vps(i) & "|"
             str_Renamed = str_Renamed & winners(i) & "|"
 #If VERBOSE Then
-            Call Main_Renamed.append(0, "In get_game_state_string() ++++++ str_Renamed=" & str_Renamed)
+            Call Main_Renamed.append(0, "In get_game_state_string() ++++++ str_Renamed = " & str_Renamed)
 #End If
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             For j = 0 To size2(hand, i)
@@ -424,7 +424,7 @@ Module AIFunctions
         'UPGRADE_WARNING: Couldn't resolve default property of object get_game_state_string. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         get_game_state_string = str_Renamed
 #If VERBOSE Then
-        Call Main_Renamed.append(0, "In get_game_state_string() ++++++ FINISHED str_Renamed=" & str_Renamed)
+        Call Main_Renamed.append(0, "In get_game_state_string() ++++++ FINISHED str_Renamed = " & str_Renamed)
 #End If
     End Function
 
@@ -536,7 +536,7 @@ jeff:
             Next j
 
             ' Icon Total
-            For i = 1 To 6
+            For i = 1 To ICONCOUNT
                 game_state(Index, n) = icon_total(player, i)
                 n = n + 1
             Next i
@@ -618,7 +618,7 @@ jeff:
         'UPGRADE_WARNING: Couldn't resolve default property of object copy_game_state. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
 #If VERBOSE Then
         Call Main_Renamed.append(0, "Exiting copy_game_state() ++++++ n = " & n)
-        ' shouldn't n be set back to zero here? n=0
+        'FK shouldn't n be set back to zero here? n=0
 #End If
         copy_game_state = n
     End Function
@@ -689,7 +689,7 @@ jeff:
             Next j
 
             ' Icon Total
-            For i = 1 To 6
+            For i = 1 To ICONCOUNT
                 icon_total(player, i) = game_state(Index, n)
                 n = n + 1
             Next i
@@ -773,7 +773,7 @@ jeff:
             n = n + 1
         Next i
 
-        For i = 0 To 9
+        For i = 0 To AGECOUNT
             For j = 0 To 14
                 deck(i, j) = game_state(Index, n)
                 n = n + 1
@@ -837,19 +837,20 @@ jeff:
         ' Grant massive points for achievements
         total = total + 10000 * vps(player)
 #If VERBOSE Then
-        Call Main_Renamed.append(0, "In score_game_individual() Grant massive points for achievements" & total)
+        Call Main_Renamed.append(player, "In score_game_individual() Grant massive points for achievements total = " & total)
 #End If
 
         ' Award points for value of top card ( 5 - 500 pts )
         'UPGRADE_WARNING: Couldn't resolve default property of object Main_Renamed.highest_top_card(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         top_card = Main_Renamed.highest_top_card(player)
         total = total + 5 * top_card ^ 2
-
+#If VERBOSE Then
+        Call Main_Renamed.append(0, "In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = " & total)
+#End If
         ' Award points for values of other top cards
         ' Award points for splays ( Up = 40, Right = 25, Left = 10)
         ' Award 20 points for each color in play + 1 point for the depth of the pile
 #If VERBOSE Then
-        Call Main_Renamed.append(0, "In score_game_individual() ward points for value of top card ( 5 - 500 pts )" & total)
         Call Main_Renamed.append_simple("Award points for values of other top cards")
         Call Main_Renamed.append_simple("Award points for splays ( Up = 40, Right = 25, Left = 10)")
         Call Main_Renamed.append_simple("Award 20 points for each color in play + 1 point for the depth of the pile")
@@ -861,13 +862,17 @@ jeff:
                 If splayed(player, i) = "Up" Then total = total + 40
                 If splayed(player, i) = "Right" Then total = total + 25
                 If splayed(player, i) = "Left" Then total = total + 10
+#If VERBOSE Then
+
+                Call Main_Renamed.append(player, "Award points for splays ( Up = 40, Right = 25, Left = 10) now total = " & total)
+#End If
             End If
         Next i
 
         ' Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon
-        For j = 1 To 6 ' icon type
+        For j = 1 To ICONCOUNT ' icon type
 #If VERBOSE Then
-            Call Main_Renamed.append(0, "In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon" & j)
+            Call Main_Renamed.append(0, "In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = " & j)
 #End If
             max = 0
             num_at_max = 1
@@ -883,7 +888,7 @@ jeff:
             If icon_total(i, j) = max And num_at_max > 1 Then total = total + 50
         Next j
 #If VERBOSE Then
-        Call Main_Renamed.append(0, "In score_game_individual() total after icon scoring = " & total)
+        Call Main_Renamed.append(0, "In score_game_individual() after icon scoring total = " & total)
 #End If
         ' Award points equal to the total value of hand
         'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
