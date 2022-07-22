@@ -286,7 +286,6 @@ Module ArrayFunctions
                         'UPGRADE_WARNING: Couldn't resolve default property of object arr(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         arr(k + 1) = arr(k)
                     Next k
-                    'UPGRADE_WARNING: Couldn't resolve default property of object temp. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     'UPGRADE_WARNING: Couldn't resolve default property of object arr(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     arr(j) = temp
                 End If
@@ -336,7 +335,7 @@ Module ArrayFunctions
         Next i
         'UPGRADE_WARNING: Couldn't resolve default property of object new_array(arr_size). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         new_array(arr_size) = -1
-#If VERBOSE Then
+#If VERBOSE2 Then
         Call Main_Renamed.append_simple("In randomize_array() ++++++")
         Call print_array(new_array, "Shuffled")
 #End If
@@ -351,15 +350,13 @@ Module ArrayFunctions
     End Sub
 
     Public Sub print_array(ByRef arr As Object, ByVal msg As String)
-        Dim i As Object
-        Dim j As Short
+        'Dim i As Object
+        Dim i, j As Short
         'UPGRADE_NOTE: str was upgraded to str_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         Dim str_Renamed As String
         str_Renamed = msg & Chr(13)
         'UPGRADE_WARNING: Couldn't resolve default property of object size(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-        'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         i = size(arr)
-        'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         For j = 0 To i - 1
             'UPGRADE_WARNING: Couldn't resolve default property of object arr(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             str_Renamed = str_Renamed & j & ") " & arr(j) & Chr(13)
@@ -367,9 +364,10 @@ Module ArrayFunctions
         MsgBox(str_Renamed)
     End Sub
 
-    Public Sub print_array2(ByRef arr As Object, ByVal index As Short, ByVal msg As String)
-        Dim temp_arr(500) As Object
-        Call flatten(arr, index, temp_arr)
-        Call print_array(temp_arr, msg)
-    End Sub
+    ' FK not being called by anybody
+    ' Public Sub print_array2(ByRef arr As Object, ByVal index As Short, ByVal msg As String)
+    'Dim temp_arr(500) As Object
+    'Call flatten(arr, index, temp_arr)
+    'Call print_array(temp_arr, msg)
+    'End Sub
 End Module

@@ -1,4 +1,11 @@
-﻿In launch_game() ++++++
+﻿Text1In Main_Load() -----------------------------
+In initialize_card_data() -----------------------------
+In initialize_card_data() found file .\Innovation.txt -------
+In initial_card_data() 105 cards loaded -------
+In initialize_images() -----------------------------
+In initialize_game() ++++++
+In start_new_game() ++++++ Choose the number of players
+In launch_game() ++++++
 draw_num() -----------------------------
 Player 1 drew a 1.
 draw_num() -----------------------------
@@ -9,268 +16,131 @@ draw_num() -----------------------------
 Player 2 drew a 1.
 In launch_game() ++++++  Read the debug file and update the board state accordingly /testing.txt
  
-In launch_game() ./testing.txt ++++++ NOT FOUND
+In launch_game() /testing.txt ++++++ NOT FOUND
 In launch_game() set_debug_values() DISABLED 
 In process_hand_click() ++++++
 In process_hand_click() Initial Meld ++++++
-Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+Player 1 In meld_from_hand() ----Trying to meld 0 card 1.
 In remove_card_from_hand------------------
 In meld() melding------------------
-Player 1 melds City States.
+Player 1 melds Metalworking.
 In check_for_achievements() -----------------------------
 Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
 In remove_card_from_hand------------------
 In meld() melding------------------
-Player 2 melds Sailing.
+Player 2 melds Oars.
 In check_for_achievements() -----------------------------
 Player 1 is the starting player.
 In process_handclick() ----------
 In play_game() -----------------------------
 In ready_for_action() ++++++
-draw_num() -----------------------------
-Player 1 drew a 1.
-Player 1 In cmdDraw_Click() ++++ pre actions remaining: 1.
-In play_game() -----------------------------
-In play_game?() -----------------------------
-Player 1 In perform_AI_action() picked 2 and 11 ai_mode = 0.
-In make_ai_move() ++++++
-Player 2 In make_ai_move() called with depth = 0.
-Player 2 In make_ai_move() Trying move 2,11 at level 0 (ai_mode = 0)  gss_count = 14.
-Player 2 In make_ai_move() Made a real move 2,11 actions_remaining = 1.
-Player 2 In make_ai_move() Performing dogma Sailing.
-Player 2 activates the first effect of Sailing.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
-Player 1 In activate_card() ACTIVATING = Sailing.
-Player 1 In activate_card() AGE 1.
-Player 1 drew and melded Masonry.
-Player 2 In activate_card() ACTIVATING = Sailing.
-Player 2 In activate_card() AGE 1.
-Player 2 drew and melded Domestication.
-In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
-Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
-Dogma effect was shared.
-draw_num() -----------------------------
-Player 2 drew a 1.
-Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
-In process_hand_click() ++++++
-In play_game() -----------------------------
-In perform_AI_action() -----------------------------
-Player 1 In perform_AI_action() picked 1 and 0 ai_mode = 0.
-In make_ai_move() ++++++
-Player 2 In make_ai_move() called with depth = 0.
-Player 2 In make_ai_move() Trying move 1,0 at level 0 (ai_mode = 0)  gss_count = 26.
-Player 2 In make_ai_move() Made a real move 1,0 actions_remaining = 0.
-draw_num() -----------------------------
-Player 2 drew a 1.
-In make_ai_move() AI doing DRAW ----
-Player 1 In perform_AI_action() Made move 1 ai_mode = 0.
-In process_hand_click() ++++++
-In play_game() -----------------------------
-In play_game?() -----------------------------
-In save_game() writing to \save.txt ++++++
-In copy_game_state() Backup hands, boards etc ----
-Player 1 In copy_game_state() ++++++ n = 76.
-Player 1 Exiting copy_game_state() ++++++ n = 254.
-In ready_for_action() ++++++
-In process_hand_click() ++++++
-Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
-In remove_card_from_hand------------------
-In meld() melding------------------
-Player 1 melds Metalworking.
-In check_for_achievements() -----------------------------
-In play_game() -----------------------------
-In ready_for_action() ++++++
-In process_hand_click() AGE 1 ++++++
 Player 1 activates the first effect of Metalworking.
 In perform_dogma_effect_by_level() -----------------------------
 Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
 Player 1 In activate_card() ACTIVATING = Metalworking.
 Player 1 In activate_card() AGE 1.
-Player 1 draws and scores Archery.
-Player 1 draws and scores The Wheel.
-Player 1 draws and scores Mysticism.
-Player 1 draws Pottery.
+Player 1 draws Agriculture.
 In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
 Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
 In play_game() -----------------------------
 In play_game?() -----------------------------
-Player 1 In perform_AI_action() picked 2 and 5 ai_mode = 0.
+Player 1 In perform_AI_action() picked 3 and 0 ai_mode = 0.
 In make_ai_move() ++++++
 Player 2 In make_ai_move() called with depth = 0.
-Player 2 In make_ai_move() Trying move 2,5 at level 0 (ai_mode = 0)  gss_count = 32.
-Player 2 In make_ai_move() Made a real move 2,5 actions_remaining = 1.
-Player 2 In make_ai_move() Performing dogma Domestication.
-Player 2 activates the first effect of Domestication.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
-Player 1 In activate_card() ACTIVATING = Domestication.
-Player 1 In activate_card() AGE 1.
-Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
-In process_hand_click() ++++++
-Player 1 In meld_from_hand() ----Trying to meld 0 card 1.
-In remove_card_from_hand------------------
-In meld() melding------------------
-Player 1 melds Pottery.
-In check_for_achievements() -----------------------------
-draw_num() -----------------------------
-Player 1 drew a 1.
-In resume_dogma() -----------------------------
-Player 1 In resume_dogma() -----changing player from 0 to 1.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
-Player 2 In activate_card() ACTIVATING = Domestication.
-Player 2 In activate_card() AGE 1.
+Player 2 In make_ai_move() Trying move 3,0 at level 0 (ai_mode = 0)  gss_count = 15.
+Player 2 In make_ai_move() Made a real move 3,0 actions_remaining = 1.
+Player 2 In make_ai_move() 0  is the card to play from hand ----.
+Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
+Player 2 In make_ai_move() trying a meld from ai - The Wheel depth = 0.
 Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
 In remove_card_from_hand------------------
 In meld() melding------------------
-Player 2 melds Clothing.
+Player 2 melds The Wheel.
 In check_for_achievements() -----------------------------
-draw_num() -----------------------------
-Player 2 drew a 2.
-In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
-Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
-Dogma effect was shared.
-draw_num() -----------------------------
-Player 2 drew a 2.
+In make_ai_move() AI Doing meld ----
+Player 1 In perform_AI_action() Made move 3 ai_mode = 0.
 In play_game() -----------------------------
 In perform_AI_action() -----------------------------
-Player 1 In perform_AI_action() picked 2 and 5 ai_mode = 0.
+Player 1 In perform_AI_action() picked 2 and 12 ai_mode = 0.
 In make_ai_move() ++++++
 Player 2 In make_ai_move() called with depth = 0.
-Player 2 In make_ai_move() Trying move 2,5 at level 0 (ai_mode = 0)  gss_count = 49.
-Player 2 In make_ai_move() Made a real move 2,5 actions_remaining = 0.
-Player 2 In make_ai_move() Performing dogma Domestication.
-Player 2 activates the first effect of Domestication.
+Player 2 In make_ai_move() Trying move 2,12 at level 0 (ai_mode = 0)  gss_count = 14.
+Player 2 In make_ai_move() Made a real move 2,12 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma The Wheel.
+Player 2 activates the first effect of The Wheel.
 In perform_dogma_effect_by_level() -----------------------------
 Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
-Player 1 In activate_card() ACTIVATING = Domestication.
-Player 1 In activate_card() AGE 1.
-Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
-In process_hand_click() ++++++
-Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
-In remove_card_from_hand------------------
-In meld() melding------------------
-Player 1 melds Agriculture.
-In check_for_achievements() -----------------------------
-draw_num() -----------------------------
-Player 1 drew a 2.
-In resume_dogma() -----------------------------
-Player 1 In resume_dogma() -----changing player from 0 to 1.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
-Player 2 In activate_card() ACTIVATING = Domestication.
+Player 2 In activate_card() ACTIVATING = The Wheel.
 Player 2 In activate_card() AGE 1.
-Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
-In remove_card_from_hand------------------
-In meld() melding------------------
-Player 2 melds Code of Laws.
-In check_for_achievements() -----------------------------
 draw_num() -----------------------------
-Player 2 drew a 2.
+Player 2 drew a 1.
+draw_num() -----------------------------
+Player 2 drew a 1.
 In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
 Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
-Dogma effect was shared.
-draw_num() -----------------------------
-Player 2 drew a 2.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
 In play_game() -----------------------------
 In play_game?() -----------------------------
 In save_game() writing to \save.txt ++++++
 In copy_game_state() Backup hands, boards etc ----
-Player 1 In copy_game_state() ++++++ n = 86.
-Player 1 Exiting copy_game_state() ++++++ n = 264.
+Player 1 In copy_game_state() ++++++ n = 74.
+Player 1 Exiting copy_game_state() ++++++ n = 252.
 In ready_for_action() ++++++
 draw_num() -----------------------------
-Player 1 drew a 2.
+Player 1 drew a 1.
 Player 1 In cmdDraw_Click() ++++ pre actions remaining: 2.
 In play_game() -----------------------------
 In ready_for_action() ++++++
-Player 1 activates the first effect of Agriculture.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
-Player 1 In activate_card() ACTIVATING = Agriculture.
-Player 1 In activate_card() AGE 1.
-Player 1 In activate_card() Agriculture.
 In process_hand_click() ++++++
-In remove_card_from_hand------------------
-Player 1 returned a 2.
-Player 1 drew and scored a 3.
-In resume_dogma() -----------------------------
-Player 1 In resume_dogma() -----changing player from 2 to 3.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 3 Activating level 1.
-In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
-Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
-In play_game() -----------------------------
-In play_game?() -----------------------------
-Player 1 In perform_AI_action() picked 2 and 4 ai_mode = 0.
-In make_ai_move() ++++++
-Player 2 In make_ai_move() called with depth = 0.
-Player 2 In make_ai_move() Trying move 2,4 at level 0 (ai_mode = 0)  gss_count = 71.
-Player 2 In make_ai_move() Made a real move 2,4 actions_remaining = 1.
-Player 2 In make_ai_move() Performing dogma Code of Laws.
-Player 2 activates the first effect of Code of Laws.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
-Player 2 In activate_card() ACTIVATING = Code of Laws.
-Player 2 In activate_card() AGE 1.
-In score_game_individual() ++++++
-Player 2 In score_game_individual() Grant massive points for achievements total = 0.
-Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 5.
-Award points for values of other top cards
-Award points for splays ( Up = 40, Right = 25, Left = 10)
-Award 20 points for each color in play + 1 point for the depth of the pile
-Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 27.
-Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 49.
-Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 72.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
-Player 1 In score_game_individual() after icon scoring total = 240.
-Player 1 In score_game_individual()  total value after hand scoring = 258.
-In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
-In score_game_individual() ++++++
-Player 2 In score_game_individual() Grant massive points for achievements total = 0.
-Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 5.
-Award points for values of other top cards
-Award points for splays ( Up = 40, Right = 25, Left = 10)
-Award 20 points for each color in play + 1 point for the depth of the pile
-Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 27.
-Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 49.
-Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 72.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
-Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
-Player 1 In score_game_individual() after icon scoring total = 240.
-Player 1 In score_game_individual()  total value after hand scoring = 258.
-In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
-In remove_card_from_hand------------------
-Player 2 tucks a Yellow card from hand.
-In check_for_achievements() -----------------------------
-Player 2 splays Yellow Left.
-In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
-Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
-Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
-In play_game() -----------------------------
-In perform_AI_action() -----------------------------
-Player 1 In perform_AI_action() picked 3 and 2 ai_mode = 0.
-In make_ai_move() ++++++
-Player 2 In make_ai_move() called with depth = 0.
-Player 2 In make_ai_move() Trying move 3,2 at level 0 (ai_mode = 0)  gss_count = 52.
-Player 2 In make_ai_move() Made a real move 3,2 actions_remaining = 0.
-Player 2 In make_ai_move() 2  is the card to play from hand ----.
-Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
-Player 2 In make_ai_move() trying a meld from ai - Construction depth = 0.
-Player 1 In meld_from_hand() ----Trying to meld 1 card 2.
+Player 1 In meld_from_hand() ----Trying to meld 0 card 2.
 In remove_card_from_hand------------------
 In meld() melding------------------
-Player 2 melds Construction.
+Player 1 melds Mysticism.
+In check_for_achievements() -----------------------------
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 12 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,12 at level 0 (ai_mode = 0)  gss_count = 31.
+Player 2 In make_ai_move() Made a real move 2,12 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma The Wheel.
+Player 2 activates the first effect of The Wheel.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = The Wheel.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 1.
+draw_num() -----------------------------
+Player 1 drew a 1.
+Player 2 In activate_card() ACTIVATING = The Wheel.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 1.
+draw_num() -----------------------------
+Player 2 drew a 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 1.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() AGE 1 ++++++
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 3 and 3 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 3,3 at level 0 (ai_mode = 0)  gss_count = 59.
+Player 2 In make_ai_move() Made a real move 3,3 actions_remaining = 0.
+Player 2 In make_ai_move() 3  is the card to play from hand ----.
+Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
+Player 2 In make_ai_move() trying a meld from ai - Tools depth = 0.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 3.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Tools.
 In check_for_achievements() -----------------------------
 In make_ai_move() AI Doing meld ----
 Player 1 In perform_AI_action() Made move 3 ai_mode = 0.
@@ -278,11 +148,1699 @@ In play_game() -----------------------------
 In play_game?() -----------------------------
 In save_game() writing to \save.txt ++++++
 In copy_game_state() Backup hands, boards etc ----
-Player 1 In copy_game_state() ++++++ n = 87.
-Player 1 Exiting copy_game_state() ++++++ n = 265.
+Player 1 In copy_game_state() ++++++ n = 80.
+Player 1 Exiting copy_game_state() ++++++ n = 258.
+In ready_for_action() ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 2.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Clothing.
+In check_for_achievements() -----------------------------
+In play_game() -----------------------------
+In ready_for_action() ++++++
+In process_hand_click() AGE 1 ++++++
+Player 1 activates the first effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Clothing.
+Player 1 In activate_card() AGE 1.
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Agriculture.
+In check_for_achievements() -----------------------------
+In resume_dogma() -----------------------------
+Player 1 In resume_dogma() -----changing player from 2 to 3.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 3 Activating level 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = Draw and score a 1 for each color present on your board not present on any other player’s board..
+Player 1 activates the second effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 2.
+Player 1 In activate_card() ACTIVATING = Clothing.
+Player 1 In activate_card() AGE 1.
+Player 1 drew and scored a 1.
+Player 1 drew and scored a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 3 and 1 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 3,1 at level 0 (ai_mode = 0)  gss_count = 59.
+Player 2 In make_ai_move() Made a real move 3,1 actions_remaining = 1.
+Player 2 In make_ai_move() 1  is the card to play from hand ----.
+Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
+Player 2 In make_ai_move() trying a meld from ai - Domestication depth = 0.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 1.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Domestication.
+In check_for_achievements() -----------------------------
+In make_ai_move() AI Doing meld ----
+Player 1 In perform_AI_action() Made move 3 ai_mode = 0.
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 12 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,12 at level 0 (ai_mode = 0)  gss_count = 48.
+Player 2 In make_ai_move() Made a real move 2,12 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma The Wheel.
+Player 2 activates the first effect of The Wheel.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = The Wheel.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 2.
+draw_num() -----------------------------
+Player 2 drew a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 84.
+Player 1 Exiting copy_game_state() ++++++ n = 262.
+In ready_for_action() ++++++
+Player 1 activates the first effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Clothing.
+Player 1 In activate_card() AGE 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = Draw and score a 1 for each color present on your board not present on any other player’s board..
+Player 1 activates the second effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 2.
+Player 1 In activate_card() ACTIVATING = Clothing.
+Player 1 In activate_card() AGE 1.
+Player 1 drew and scored a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
 In ready_for_action() ++++++
 Player 1 In achieve() +++trying to click 1.
 Player 1 In can_achieve() +++ HEY U CAN ACHIEVE!.
 Player 1 has claimed the -1- achievement.
 In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 12 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,12 at level 0 (ai_mode = 0)  gss_count = 73.
+Player 2 In make_ai_move() Made a real move 2,12 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma The Wheel.
+Player 2 activates the first effect of The Wheel.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = The Wheel.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 2.
+draw_num() -----------------------------
+Player 2 drew a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 12 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,12 at level 0 (ai_mode = 0)  gss_count = 101.
+Player 2 In make_ai_move() Made a real move 2,12 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma The Wheel.
+Player 2 activates the first effect of The Wheel.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = The Wheel.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 2.
+draw_num() -----------------------------
+Player 2 drew a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 89.
+Player 1 Exiting copy_game_state() ++++++ n = 267.
 In ready_for_action() ++++++
+Player 1 activates the first effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Clothing.
+Player 1 In activate_card() AGE 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = Draw and score a 1 for each color present on your board not present on any other player’s board..
+Player 1 activates the second effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 2.
+Player 1 In activate_card() ACTIVATING = Clothing.
+Player 1 In activate_card() AGE 1.
+Player 1 drew and scored a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In ready_for_action() ++++++
+Player 1 activates the first effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Clothing.
+Player 1 In activate_card() AGE 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = Draw and score a 1 for each color present on your board not present on any other player’s board..
+Player 1 activates the second effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 2.
+Player 1 In activate_card() ACTIVATING = Clothing.
+Player 1 In activate_card() AGE 1.
+Player 1 drew and scored a 3.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 3 and 1 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 3,1 at level 0 (ai_mode = 0)  gss_count = 156.
+Player 2 In make_ai_move() Made a real move 3,1 actions_remaining = 1.
+Player 2 In make_ai_move() 1  is the card to play from hand ----.
+Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
+Player 2 In make_ai_move() trying a meld from ai - Masonry depth = 0.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 1.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Masonry.
+In check_for_achievements() -----------------------------
+In make_ai_move() AI Doing meld ----
+Player 1 In perform_AI_action() Made move 3 ai_mode = 0.
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 6 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,6 at level 0 (ai_mode = 0)  gss_count = 125.
+Player 2 In make_ai_move() Made a real move 2,6 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma Masonry.
+Player 2 activates the first effect of Masonry.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Masonry.
+Player 2 In activate_card() AGE 1.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 7.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Road Building.
+In check_for_achievements() -----------------------------
+Player 1 In meld_from_hand() ----Trying to meld 1 card 5.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Mapmaking.
+In check_for_achievements() -----------------------------
+Player 1 In meld_from_hand() ----Trying to meld 1 card 4.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Fermenting.
+In check_for_achievements() -----------------------------
+Player 1 In meld_from_hand() ----Trying to meld 1 card 2.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Construction.
+In check_for_achievements() -----------------------------
+Player 1 In load_picture()Player 2 claimed the 'Monument' achievement..
+Player 2 claimed the 'Monument' achievement.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Archery.
+In check_for_achievements() -----------------------------
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 91.
+Player 1 Exiting copy_game_state() ++++++ n = 269.
+In ready_for_action() ++++++
+draw_num() -----------------------------
+Player 1 drew a 3.
+Player 1 In cmdDraw_Click() ++++ pre actions remaining: 2.
+In play_game() -----------------------------
+In ready_for_action() ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 2.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Compass.
+In check_for_achievements() -----------------------------
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 1 and 0 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 1,0 at level 0 (ai_mode = 0)  gss_count = 37.
+Player 2 In make_ai_move() Made a real move 1,0 actions_remaining = 1.
+draw_num() -----------------------------
+Player 2 drew a 3.
+In make_ai_move() AI doing DRAW ----
+Player 1 In perform_AI_action() Made move 1 ai_mode = 0.
+In process_hand_click() AGE 1 ++++++
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 13 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,13 at level 0 (ai_mode = 0)  gss_count = 52.
+Player 2 In make_ai_move() Made a real move 2,13 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma Tools.
+Player 2 activates the first effect of Tools.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Tools.
+Player 2 In activate_card() AGE 1.
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10020.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10045.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10070.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10092.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10116.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10240.
+Player 1 In score_game_individual()  total value after hand scoring = 10256.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In remove_card_from_hand------------------
+Player 2 returned a 1.
+In remove_card_from_hand------------------
+Player 2 returned a 2.
+In remove_card_from_hand------------------
+Player 2 returned a 2.
+Player 2 drew and melded Feudalism.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = You may return a 3 from your hand. If you do, draw three 1..
+Player 2 activates the second effect of Tools.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 2.
+Player 2 In activate_card() ACTIVATING = Tools.
+Player 2 In activate_card() AGE 1.
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10045.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10070.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10095.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10119.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10141.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10165.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10295.
+Player 1 In score_game_individual()  total value after hand scoring = 10301.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In remove_card_from_hand------------------
+Player 2 returned a 3.
+draw_num() -----------------------------
+Player 2 drew a 1.
+draw_num() -----------------------------
+Player 2 drew a 2.
+draw_num() -----------------------------
+Player 2 drew a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 93.
+Player 1 Exiting copy_game_state() ++++++ n = 271.
+In ready_for_action() ++++++
+Player 1 In achieve() +++trying to click 2.
+Player 1 In can_achieve() +++ HEY U CAN ACHIEVE!.
+Player 1 has claimed the -2- achievement.
+In play_game() -----------------------------
+In ready_for_action() ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds City States.
+In check_for_achievements() -----------------------------
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 19 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,19 at level 0 (ai_mode = 0)  gss_count = 43.
+Player 2 In make_ai_move() Made a real move 2,19 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Fermenting.
+Player 2 activates the first effect of Fermenting.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Fermenting.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 3.
+draw_num() -----------------------------
+Player 1 drew a 3.
+Player 2 In activate_card() ACTIVATING = Fermenting.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 3.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 3.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() AGE 1 ++++++
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 19 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,19 at level 0 (ai_mode = 0)  gss_count = 93.
+Player 2 In make_ai_move() Made a real move 2,19 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma Fermenting.
+Player 2 activates the first effect of Fermenting.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Fermenting.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 3.
+draw_num() -----------------------------
+Player 1 drew a 3.
+Player 2 In activate_card() ACTIVATING = Fermenting.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 4.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 4.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 101.
+Player 1 Exiting copy_game_state() ++++++ n = 279.
+In ready_for_action() ++++++
+Player 1 activates the first effect of City States.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 2 In activate_card() ACTIVATING = City States.
+Player 2 In activate_card() AGE 1.
+Player 2 transfers Archery from his board to player 1's board.
+In check_for_achievements() -----------------------------
+draw_num() -----------------------------
+Player 2 drew a 4.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In ready_for_action() ++++++
+Player 1 activates the first effect of City States.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 2 In activate_card() ACTIVATING = City States.
+Player 2 In activate_card() AGE 1.
+Player 2 transfers Tools from his board to player 1's board.
+In check_for_achievements() -----------------------------
+draw_num() -----------------------------
+Player 2 drew a 4.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 3 and 8 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 3,8 at level 0 (ai_mode = 0)  gss_count = 163.
+Player 2 In make_ai_move() Made a real move 3,8 actions_remaining = 1.
+Player 2 In make_ai_move() 8  is the card to play from hand ----.
+Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
+Player 2 In make_ai_move() trying a meld from ai - Reformation depth = 0.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 8.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Reformation.
+In check_for_achievements() -----------------------------
+In make_ai_move() AI Doing meld ----
+Player 1 In perform_AI_action() Made move 3 ai_mode = 0.
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 44 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,44 at level 0 (ai_mode = 0)  gss_count = 123.
+Player 2 In make_ai_move() Made a real move 2,44 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma Reformation.
+Player 2 activates the first effect of Reformation.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Reformation.
+Player 2 In activate_card() AGE 1.
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10105.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10156.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10180.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10304.
+Player 1 In score_game_individual()  total value after hand scoring = 10350.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In remove_card_from_hand------------------
+Player 2 tucks a Blue card from hand.
+In remove_card_from_hand------------------
+Player 2 tucks a Green card from hand.
+Player 2 In activate_card() AGE 5.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = You may splay your yellow or purple cards right..
+Player 2 activates the second effect of Reformation.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 2.
+Player 2 In activate_card() ACTIVATING = Reformation.
+Player 2 In activate_card() AGE 1.
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10105.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10156.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10178.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10333.
+Player 1 In score_game_individual()  total value after hand scoring = 10373.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10105.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10156.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10178.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10333.
+Player 1 In score_game_individual()  total value after hand scoring = 10373.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10105.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10156.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10178.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10333.
+Player 1 In score_game_individual()  total value after hand scoring = 10373.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In check_for_achievements() -----------------------------
+Player 2 splays Yellow Right.
+Player 2 In activate_card() AGE 5.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 103.
+Player 1 Exiting copy_game_state() ++++++ n = 281.
+In ready_for_action() ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 4.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Optics.
+In check_for_achievements() -----------------------------
+In play_game() -----------------------------
+In ready_for_action() ++++++
+In process_hand_click() AGE 1 ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 1.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Alchemy.
+In check_for_achievements() -----------------------------
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 19 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,19 at level 0 (ai_mode = 0)  gss_count = 102.
+Player 2 In make_ai_move() Made a real move 2,19 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Fermenting.
+Player 2 activates the first effect of Fermenting.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Fermenting.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 4.
+draw_num() -----------------------------
+Player 1 drew a 4.
+Player 2 In activate_card() ACTIVATING = Fermenting.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 4.
+draw_num() -----------------------------
+Player 2 drew a 4.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 4.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() AGE 1 ++++++
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 19 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,19 at level 0 (ai_mode = 0)  gss_count = 172.
+Player 2 In make_ai_move() Made a real move 2,19 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma Fermenting.
+Player 2 activates the first effect of Fermenting.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Fermenting.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 5.
+draw_num() -----------------------------
+Player 1 drew a 5.
+Player 2 In activate_card() ACTIVATING = Fermenting.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 5.
+draw_num() -----------------------------
+Player 2 drew a 5.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 5.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 113.
+Player 1 Exiting copy_game_state() ++++++ n = 291.
+In ready_for_action() ++++++
+Player 1 activates the first effect of Alchemy.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Alchemy.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 5.
+draw_num() -----------------------------
+Player 2 drew a 5.
+Player 1 In activate_card() ACTIVATING = Alchemy.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 5.
+Player 1 revealed a Red card, and must return their entire hand.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 1.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 3.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 3.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 4.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 4.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 5.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 5.
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+Player 1 returned a 5.
+In resume_dogma() -----------------------------
+Player 1 In resume_dogma() -----changing player from 2 to 3.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 3 Activating level 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = Meld a card from your hand, then score a card from your hand..
+Player 1 activates the second effect of Alchemy.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 2.
+Player 2 In activate_card() ACTIVATING = Alchemy.
+Player 2 In activate_card() AGE 1.
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10080.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10130.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10155.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10181.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10203.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10228.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10364.
+Player 1 In score_game_individual()  total value after hand scoring = 10478.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+Player 1 In meld_from_hand() ----Trying to meld 1 card 13.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Statistics.
+In check_for_achievements() -----------------------------
+In remove_card_from_hand------------------
+score() -----------------------------
+Player 2 scored a 5.
+Player 1 In activate_card() ACTIVATING = Alchemy.
+Player 1 In activate_card() AGE 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 1 drew a 3.
+In play_game() -----------------------------
+In ready_for_action() ++++++
+Player 1 activates the first effect of Alchemy.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Alchemy.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 4.
+draw_num() -----------------------------
+Player 2 drew a 4.
+Player 1 In activate_card() ACTIVATING = Alchemy.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 5.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = Meld a card from your hand, then score a card from your hand..
+Player 1 activates the second effect of Alchemy.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 2.
+Player 2 In activate_card() ACTIVATING = Alchemy.
+Player 2 In activate_card() AGE 1.
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10204.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10230.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10252.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10277.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10417.
+Player 1 In score_game_individual()  total value after hand scoring = 10527.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+Player 1 In meld_from_hand() ----Trying to meld 1 card 10.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Printing Press.
+In check_for_achievements() -----------------------------
+In remove_card_from_hand------------------
+score() -----------------------------
+Player 2 scored a 5.
+Player 1 In activate_card() ACTIVATING = Alchemy.
+Player 1 In activate_card() AGE 1.
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Machinery.
+In check_for_achievements() -----------------------------
+In process_hand_click() ++++++
+In remove_card_from_hand------------------
+score() -----------------------------
+Player 1 scored a 5.
+In resume_dogma() -----------------------------
+Player 1 In resume_dogma() -----changing player from 2 to 3.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 3 Activating level 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 1 drew a 3.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 3 and 2 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 3,2 at level 0 (ai_mode = 0)  gss_count = 199.
+Player 2 In make_ai_move() Made a real move 3,2 actions_remaining = 1.
+Player 2 In make_ai_move() 2  is the card to play from hand ----.
+Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
+Player 2 In make_ai_move() trying a meld from ai - Engineering depth = 0.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 2.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Engineering.
+In check_for_achievements() -----------------------------
+In make_ai_move() AI Doing meld ----
+Player 1 In perform_AI_action() Made move 3 ai_mode = 0.
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 28 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,28 at level 0 (ai_mode = 0)  gss_count = 185.
+Player 2 In make_ai_move() Made a real move 2,28 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma Engineering.
+Player 2 activates the first effect of Engineering.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Engineering.
+Player 1 In activate_card() AGE 1.
+Player 1 transfers Machinery from his board to player 2's score pile.
+In check_for_achievements() -----------------------------
+Player 1 transfers City States from his board to player 2's score pile.
+In check_for_achievements() -----------------------------
+Player 1 transfers Alchemy from his board to player 2's score pile.
+In check_for_achievements() -----------------------------
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = You may splay your red cards left..
+Player 2 activates the second effect of Engineering.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 2.
+Player 2 In activate_card() ACTIVATING = Engineering.
+Player 2 In activate_card() AGE 1.
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10206.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10232.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10258.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10283.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10423.
+Player 1 In score_game_individual()  total value after hand scoring = 10509.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10206.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10232.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10258.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10283.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10423.
+Player 1 In score_game_individual()  total value after hand scoring = 10509.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In check_for_achievements() -----------------------------
+Player 2 splays Red Left.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 113.
+Player 1 Exiting copy_game_state() ++++++ n = 291.
+In ready_for_action() ++++++
+Player 1 In achieve() +++trying to click 3.
+Player 1 In can_achieve() +++ HEY U CAN ACHIEVE!.
+Player 1 has claimed the -3- achievement.
+In play_game() -----------------------------
+In ready_for_action() ++++++
+Player 1 activates the first effect of Compass.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Compass.
+Player 2 In activate_card() AGE 1.
+Player 2 transfers Reformation from his board to player 1's board.
+In check_for_achievements() -----------------------------
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10216.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10240.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10266.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10291.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10437.
+Player 1 In score_game_individual()  total value after hand scoring = 10523.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10216.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10240.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10266.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10291.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10437.
+Player 1 In score_game_individual()  total value after hand scoring = 10523.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10216.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10240.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10266.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10291.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10437.
+Player 1 In score_game_individual()  total value after hand scoring = 10523.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In restore_game_state() ++++++
+Player 1 In restore_game_state() ++++++ n = 113.
+In restore_game_state() ++++++ Game restored
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10216.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10240.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10266.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10291.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10437.
+Player 1 In score_game_individual()  total value after hand scoring = 10523.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In score_game_individual() ++++++
+Player 2 In score_game_individual() Grant massive points for achievements total = 10000.
+Player 1 In score_game_individual() Award points for value of top card ( 5 - 500 pts ) total = 10125.
+Award points for values of other top cards
+Award points for splays ( Up = 40, Right = 25, Left = 10)
+Award 20 points for each color in play + 1 point for the depth of the pile
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10179.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10216.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10240.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10266.
+Player 2 Award points for splays ( Up = 40, Right = 25, Left = 10) now total = 10291.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 1.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 2.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 3.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 4.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 5.
+Player 1 In score_game_individual() Award 75 points for each icon you're winning (50 for ties), plus 2 for each extra icon = 6.
+Player 1 In score_game_individual() after icon scoring total = 10437.
+Player 1 In score_game_individual()  total value after hand scoring = 10523.
+In score_game_individual()  Award points for your score pile (only do exponents for scores that are close to your top card)
+In restore_game_state() ++++++
+Player 1 In restore_game_state() ++++++ n = 113.
+In restore_game_state() ++++++ Game restored
+Player 1 transfers Optics from his board to player 2's board.
+In check_for_achievements() -----------------------------
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 32 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,32 at level 0 (ai_mode = 0)  gss_count = 160.
+Player 2 In make_ai_move() Made a real move 2,32 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Optics.
+Player 2 activates the first effect of Optics.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Optics.
+Player 2 In activate_card() AGE 1.
+Player 2 drew and melded Banking.
+Player 2 drew and scored a 5.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 0 and 4 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 0,4 at level 0 (ai_mode = 0)  gss_count = 172.
+Player 2 In make_ai_move() Made a real move 0,4 actions_remaining = 0.
+Player 1 In achieve() +++trying to click 4.
+Player 2 In can_achieve() +++ HEY U CAN ACHIEVE!.
+Player 2 has claimed the -4- achievement.
+Player 1 In perform_AI_action() Made move 0 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 115.
+Player 1 Exiting copy_game_state() ++++++ n = 293.
+In ready_for_action() ++++++
+draw_num() -----------------------------
+Player 1 drew a 5.
+Player 1 In cmdDraw_Click() ++++ pre actions remaining: 2.
+In play_game() -----------------------------
+In ready_for_action() ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 1.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Coal.
+In check_for_achievements() -----------------------------
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 32 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,32 at level 0 (ai_mode = 0)  gss_count = 160.
+Player 2 In make_ai_move() Made a real move 2,32 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Optics.
+Player 2 activates the first effect of Optics.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Optics.
+Player 2 In activate_card() AGE 1.
+Player 2 drew and melded Encyclopedia.
+Player 2 drew and scored a 6.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() AGE 1 ++++++
+In play_game() -----------------------------
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 0 and 5 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 0,5 at level 0 (ai_mode = 0)  gss_count = 158.
+Player 2 In make_ai_move() Made a real move 0,5 actions_remaining = 0.
+Player 1 In achieve() +++trying to click 5.
+Player 2 In can_achieve() +++ HEY U CAN ACHIEVE!.
+Player 2 has claimed the -5- achievement.
+Player 1 In perform_AI_action() Made move 0 ai_mode = 0.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 118.
+Player 1 Exiting copy_game_state() ++++++ n = 296.
+In ready_for_action() ++++++
+Player 1 activates the first effect of Coal.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Coal.
+Player 1 In activate_card() AGE 1.
+Player 1 drew and tucked Vaccination.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = You may splay your red cards right..
+Player 1 activates the second effect of Coal.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 2.
+Player 1 In activate_card() ACTIVATING = Coal.
+Player 1 In activate_card() AGE 1.
+In process_board_click()------------------
+In check_for_achievements() -----------------------------
+Player 1 splays Red Right.
+In resume_dogma() -----------------------------
+Player 1 In resume_dogma() -----changing player from 2 to 3.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 3 Activating level 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = You may score any one of your top cards. If you do, also score the card beneath it..
+Player 1 activates the third effect of Coal.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 1 Activating level 3.
+Player 1 In activate_card() ACTIVATING = Coal.
+Player 1 In activate_card() AGE 1.
+In cmdCancel_Click() -----------------------------
+In resume_dogma() -----------------------------
+Player 1 In resume_dogma() -----changing player from 2 to 3.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 3 Activating level 3.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 1 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+In play_game() -----------------------------
+In ready_for_action() ++++++
+draw_num() -----------------------------
+Player 1 drew a 6.
+Player 1 In cmdDraw_Click() ++++ pre actions remaining: 1.
+In play_game() -----------------------------
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 46 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,46 at level 0 (ai_mode = 0)  gss_count = 161.
+Player 2 In make_ai_move() Made a real move 2,46 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Banking.
+Player 2 activates the first effect of Banking.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Banking.
+Player 1 In activate_card() AGE 1.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.

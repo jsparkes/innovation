@@ -12,7 +12,8 @@ Friend Class Main_Renamed
     Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
 
 
-    Dim current_score, original_score As Object
+    'Dim current_score, original_score As Object
+    Dim current_score, original_score As Integer
     Dim original_ai_mode As Short
     Dim already_returned(40) As Short
     Dim found(110) As Object
@@ -61,6 +62,22 @@ Friend Class Main_Renamed
         Dim frmAbout As New AboutBox
         frmAbout.ShowDialog(Me)
         'ShowAbout()
+    End Sub
+    Private Sub Main_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
+#If VERBOSE Then
+        Call append_simple("In Main_Load() -----------------------------")
+#End If
+        alert_found = 0
+        num_players = 4
+        Call initialize_card_data()
+        Call initialize_images()
+
+        Call initialize_game()
+
+        Call start_new_game()
+
+
+        Call update_display()
     End Sub
     Private Sub set_debug_values()
 #If VERBOSE Then
@@ -146,7 +163,7 @@ Friend Class Main_Renamed
 
             'MsgBox "comparing -" & title(i) & "- to -" & str & "-"
 #If VERBOSE Then
-            Call append(0, "In get_id_by_name() ------ comparing -" & title(i) & "- to -" & str_Renamed & "-")
+            Call append(0, "In get_id_by_name() ------ comparing - " & title(i) & " - to - " & str_Renamed & " - ")
 #End If
             If title(i) = str_Renamed Then
                 'UPGRADE_WARNING: Couldn't resolve default property of object get_id_by_name. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -282,22 +299,15 @@ Friend Class Main_Renamed
             human_data = human_data - 1
             cmdOddball(index).Visible = False
             If human_data = 0 Then
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 'UPGRADE_WARNING: Couldn't resolve default property of object draw_num(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 id = draw_num(player, 9)
-                'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If cmdOddball(color(id)).Visible = False Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     'UPGRADE_WARNING: Couldn't resolve default property of object find_card(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call meld_from_hand(player, find_card(player, id))
                     For i = 0 To 4
                         cmdOddball(i).Visible = False
                     Next i
-                    'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     human_data = color(id)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object id. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     Call show_prompt("empiricism2", "You may splay " & color_lookup(color(id)) & " Up.", 2)
                 Else
                     For i = 0 To 4
@@ -332,99 +342,70 @@ Friend Class Main_Renamed
 #If VERBOSE Then
         Call append_simple("In cmdYes_Click() -----------------------------")
 #End If
-        Dim player As Object
-        Dim i As Short
-        'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
+        'Dim player As Object
+        Dim i, player As Short
         player = 0
         If phase = "codeOfLawsA" Then
             Call splay(0, human_data, "Left")
         ElseIf phase = "canalBuilding" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call exchange_canal_building(player)
         ElseIf phase = "engineering" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 1) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 1, "Left")
         ElseIf phase = "feudalism" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 0) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 0, "Left")
         ElseIf phase = "machinery1" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 1) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 1, "Left")
         ElseIf phase = "paper" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 4) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 4, "Left")
         ElseIf phase = "enterprise" Or phase = "banking2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 4) And active_player <> player Then dogma_copied = 1
             'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 4, "Right")
         ElseIf phase = "printingPress2" Or phase = "chemistry" Or phase = "atomicTheory" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 3) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 3, "Right")
         ElseIf phase = "reformation" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 0) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 0, "Right")
         ElseIf phase = "coal2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 1) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 1, "Right")
         ElseIf phase = "statistics2" Or phase = "canning2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 0) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 0, "Right")
         ElseIf phase = "canning" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call draw_and_tuck(player, 6)
             For i = 0 To 4
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 If board(player, i, 0) > -1 Then
-                    'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If Not card_has_symbol(board(player, i, 0), 5) Then
-                        'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         Call score_top_card(player, i)
                     End If
                 End If
             Next i
         ElseIf phase = "emancipation2" Or phase = "industrialization2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 1) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 1, "Right")
         ElseIf phase = "metricSystem2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 4) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 4, "Right")
         ElseIf phase = "bicycle" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call exchange_bicycle(player)
         ElseIf phase = "evolution" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call draw_and_score(player, 8)
             lblPrompt.Text = "Choose a card in your score pile to return."
             phase = "evolution2"
@@ -432,28 +413,20 @@ Friend Class Main_Renamed
             cmdYes.Visible = False
             Exit Sub
         ElseIf phase = "publications2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 0) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 0, "Up")
         ElseIf phase = "empiricism2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, human_data) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, human_data, "Up")
         ElseIf phase = "flight2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 1) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 1, "Up")
         ElseIf phase = "massMedia2" Or phase = "satellites2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 2) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 2, "Up")
         ElseIf phase = "collaboration" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object find_card(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -463,32 +436,23 @@ Friend Class Main_Renamed
             'UPGRADE_WARNING: Couldn't resolve default property of object find_card(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call meld_from_hand(active_player, find_card(active_player, already_returned(0)))
         ElseIf phase = "computers" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 1) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 1, "Up")
         ElseIf phase = "specialization2" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 0) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 0, "Up")
         ElseIf phase = "stemCells" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             For i = size2(hand, player) - 1 To 0 Step -1
-                'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                 Call score_from_hand(player, 0)
             Next i
         ElseIf phase = "theInternet" Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             If can_splay(player, 4) And active_player <> player Then dogma_copied = 1
-            'UPGRADE_WARNING: Couldn't resolve default property of object player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call splay(player, 4, "Up")
         End If
 
@@ -529,18 +493,7 @@ Friend Class Main_Renamed
         Call resume_dogma()
     End Sub
 
-    Private Sub Main_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-#If VERBOSE Then
-        Call append_simple("In Main_Load() -----------------------------")
-#End If
-        alert_found = 0
-        num_players = 4
-        Call initialize_card_data()
-        Call initialize_images()
-        Call initialize_game()
-        Call start_new_game()
-        Call update_display()
-    End Sub
+
 
     Public Sub play_game()
 #If VERBOSE Then
@@ -610,11 +563,9 @@ Friend Class Main_Renamed
         Call append_simple("perform_AI_action() looking to pick a move ----")
 #End If
         ' Fake data depending on cheat level
-        'UPGRADE_WARNING: Couldn't resolve default property of object cheat. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         cheat = 1
         num = Int(100 * Rnd())
         If num >= (30 + 14 * ai_cheat_level) Then
-            'UPGRADE_WARNING: Couldn't resolve default property of object cheat. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             cheat = 0
             'MsgBox "not cheating " & num & " vs " & 30 + 14 * ai_cheat_level
 #If VERBOSE Then
@@ -636,7 +587,6 @@ Friend Class Main_Renamed
         Call append(0, "In perform_AI_action() picked " & choices(0) & " and " & choices(1) & " ai_mode = " & ai_mode)
 #End If
         ' Unfake data
-        'UPGRADE_WARNING: Couldn't resolve default property of object cheat. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If cheat = 0 Then
             Call unfake_data(active_player)
         End If
@@ -710,7 +660,8 @@ Friend Class Main_Renamed
 
 
     Private Sub launch_game(ByRef players As Object)
-        Call initialize_game()
+        ' FK below is an extra initialize game?? nope removing first one
+        ' Call initialize_game()
 #If VERBOSE Then
         Call append_simple("In launch_game() ++++++")
 #End If
@@ -778,7 +729,7 @@ Friend Class Main_Renamed
             'UPGRADE_WARNING: Couldn't resolve default property of object filename. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             FileOpen(1, filename, OpenMode.Input)
 #If VERBOSE Then
-            Call append_simple("In BROKEN launch_game() found ./testing.txt ++++++")
+            Call append_simple("In BROKEN launch_game() found /testing.txt ++++++")
 #End If
             While Not EOF(1)
                 Input(1, str_Renamed)
@@ -819,7 +770,7 @@ Friend Class Main_Renamed
         Else
             Call append_simple(" ") ' FK not sure if this required don't want blank endif ifdef isn't there?
 #If VERBOSE Then
-            Call append_simple("In launch_game() ./testing.txt ++++++ NOT FOUND")
+            Call append_simple("In launch_game() /testing.txt ++++++ NOT FOUND")
 #End If
 
         End If
@@ -892,6 +843,7 @@ Friend Class Main_Renamed
         Next i
 
         ' Create new decks and shuffle them
+        ' FK Why 11 decks? is he using 0 as an index??
         For i = 0 To 10
             deck(i, 0) = -1
         Next i
@@ -899,11 +851,12 @@ Friend Class Main_Renamed
         For i = num_cards - 1 To 0 Step -1
             Call Push2(deck, age(i) - 1, i)
         Next i
-        For i = 0 To 9
+        For i = 0 To AGECOUNT
             Call randomize_array2(deck, i)
         Next i
 
-        txtLog.Text = ""
+        ' FK not sure what line is doing below but it "empties" textbox1 ????
+        ' txtLog.Text = ""
 
         ' Unclaim all achievements
         For i = 0 To TOTACHIEVE
@@ -919,8 +872,8 @@ Friend Class Main_Renamed
 #If VERBOSE Then
         Call append_simple("In fake_data() ++++++")
 #End If
-        'FK converted
-        '        Dim j, i, r As Object
+        ' FK converted
+        ' Dim j, i, r As Object
         Dim j, i, r, yes As Short
 
         ' Fake the decks
@@ -956,7 +909,6 @@ Friend Class Main_Renamed
 
         ' UnFake the decks
         For i = 0 To AGECOUNT
-            'UPGRADE_WARNING: Couldn't resolve default property of object i. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             Call copy_array2(fake_deck, deck, i)
         Next i
 
@@ -1182,7 +1134,8 @@ Friend Class Main_Renamed
 
     Private Function get_highest_card_in_hand(ByVal player As Short) As Object
         ' Dim i, max As Object
-        Dim i, max, max_index As Short
+        Dim i, max_index As Short
+        Dim max As Integer
         max = -1
         max_index = -1
         'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -1198,7 +1151,8 @@ Friend Class Main_Renamed
 
     Private Function get_highest_card_in_score_pile(ByVal player As Short) As Object
         'Dim i, max As Object
-        Dim i, max, max_index As Short
+        Dim i, max_index As Short
+        Dim max As Integer
         max = -1
         max_index = -1
         'UPGRADE_WARNING: Couldn't resolve default property of object size2(score_pile, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -1246,7 +1200,8 @@ Friend Class Main_Renamed
 
     Private Function get_lowest_card_in_hand(ByVal player As Short) As Object
         ' Dim i, max As Object
-        Dim i, max, max_index As Short
+        Dim i, max_index As Short
+        Dim max As Integer
         max = 11
         max_index = -1
         'UPGRADE_WARNING: Couldn't resolve default property of object size2(hand, player). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -1367,7 +1322,8 @@ Friend Class Main_Renamed
     End Function
 
     Private Function perform_best_splay(ByVal player As Short, ByRef splay_options As Object, ByVal direction As String) As Object
-        Dim max_score, max_index As Object
+        'Dim max_score, max_index As Object
+        Dim max_score, max_index As Integer
         Dim found, i As Short
 
         If player = 0 And ai_mode = 0 Then
@@ -1388,9 +1344,7 @@ Friend Class Main_Renamed
 
 
         'UPGRADE_WARNING: Couldn't resolve default property of object score_game_individual(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-        'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         max_score = score_game_individual(player)
-        'UPGRADE_WARNING: Couldn't resolve default property of object max_index. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         max_index = -1
         For i = 0 To 4
             'UPGRADE_WARNING: Couldn't resolve default property of object splay_options(i). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -1400,8 +1354,6 @@ Friend Class Main_Renamed
                     Call save(player)
                     Call splay(player, i, direction)
                     Call restore(player)
-                    'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
-                    'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                     If current_score > max_score Then
                         'UPGRADE_WARNING: Couldn't resolve default property of object current_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
                         'UPGRADE_WARNING: Couldn't resolve default property of object max_score. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -1704,12 +1656,12 @@ Friend Class Main_Renamed
 #End If
         Dim card_name As String
         'Dim min, max, card_to_meld, index, card, found, max_index, min_index As Object
-        Dim min, max, card_to_meld, index, card, found, max_index, min_index As Short
+        Dim min, card_to_meld, index, card, found, min_index As Short
         Dim max_count As Short
         'Dim total, valid, max_score, count As Object
-        Dim total, valid, max_score, count As Short
+        Dim total, valid, count As Short
         Dim draw_id, max_index2, i, j As Short
-
+        Dim max, max_index, max_score As Integer
 
         card_name = title(id)
         human_data = 0
