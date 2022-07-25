@@ -612,6 +612,9 @@
         Me.imgLarge = New System.Windows.Forms.PictureBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RestartNewGameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -1325,7 +1328,6 @@
         Me.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtLog.Size = New System.Drawing.Size(453, 145)
         Me.txtLog.TabIndex = 20
-        Me.txtLog.Text = "Text1"
         '
         'lblCheatLevel
         '
@@ -3452,12 +3454,12 @@
         '
         Me.lblPrompt.BackColor = System.Drawing.SystemColors.Control
         Me.lblPrompt.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblPrompt.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPrompt.Font = New System.Drawing.Font("Arial", 12.5!, System.Drawing.FontStyle.Bold)
         Me.lblPrompt.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPrompt.Location = New System.Drawing.Point(405, 35)
+        Me.lblPrompt.Location = New System.Drawing.Point(385, 20)
         Me.lblPrompt.Name = "lblPrompt"
         Me.lblPrompt.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblPrompt.Size = New System.Drawing.Size(449, 89)
+        Me.lblPrompt.Size = New System.Drawing.Size(498, 89)
         Me.lblPrompt.TabIndex = 18
         Me.lblPrompt.Text = "Please choose an action.  To Archieve, click on the unclaimed achievement you wou" &
     "ld like to claim."
@@ -3760,12 +3762,12 @@
         '
         Me.lblGoals.BackColor = System.Drawing.SystemColors.Control
         Me.lblGoals.Cursor = System.Windows.Forms.Cursors.Default
-        Me.lblGoals.Font = New System.Drawing.Font("Arial", 10.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblGoals.Font = New System.Drawing.Font("Arial", 13.5!, System.Drawing.FontStyle.Bold)
         Me.lblGoals.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblGoals.Location = New System.Drawing.Point(32, 449)
+        Me.lblGoals.Location = New System.Drawing.Point(14, 449)
         Me.lblGoals.Name = "lblGoals"
         Me.lblGoals.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.lblGoals.Size = New System.Drawing.Size(191, 18)
+        Me.lblGoals.Size = New System.Drawing.Size(241, 25)
         Me.lblGoals.TabIndex = 0
         Me.lblGoals.Text = "Achievements Remaining"
         '
@@ -4304,15 +4306,33 @@
         '
         'FileToolStripMenuItem
         '
-        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadGameToolStripMenuItem, Me.SaveGameToolStripMenuItem, Me.RestartNewGameToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
+        'LoadGameToolStripMenuItem
+        '
+        Me.LoadGameToolStripMenuItem.Name = "LoadGameToolStripMenuItem"
+        Me.LoadGameToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.LoadGameToolStripMenuItem.Text = "Load Game"
+        '
+        'SaveGameToolStripMenuItem
+        '
+        Me.SaveGameToolStripMenuItem.Name = "SaveGameToolStripMenuItem"
+        Me.SaveGameToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.SaveGameToolStripMenuItem.Text = "Save Game"
+        '
+        'RestartNewGameToolStripMenuItem
+        '
+        Me.RestartNewGameToolStripMenuItem.Name = "RestartNewGameToolStripMenuItem"
+        Me.RestartNewGameToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.RestartNewGameToolStripMenuItem.Text = "Restart/New Game"
+        '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(93, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
@@ -4557,7 +4577,6 @@
         Me.Controls.Add(Me._lblAchievement_2)
         Me.Controls.Add(Me._lblAchievement_1)
         Me.Controls.Add(Me._lblAchievement_0)
-        Me.Controls.Add(Me.lblGoals)
         Me.Controls.Add(Me._imgBoard_3)
         Me.Controls.Add(Me._imgBoard_2)
         Me.Controls.Add(Me._imgBoard_1)
@@ -4594,6 +4613,7 @@
         Me.Controls.Add(Me.lblHighestTop)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.lblGoals)
         Me.Controls.Add(Me.ShapeContainer1)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.Font = New System.Drawing.Font("Arial", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -4733,5 +4753,8 @@
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LineShape1 As PowerPacks.LineShape
     Friend WithEvents AboutToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents LoadGameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveGameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents RestartNewGameToolStripMenuItem As ToolStripMenuItem
 #End Region
 End Class

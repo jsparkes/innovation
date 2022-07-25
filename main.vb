@@ -2,7 +2,10 @@ Option Strict Off
 Option Explicit On
 Imports VB = Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.PowerPacks
+Imports Microsoft.VisualBasic.Compatibility 'FK doesn't seem to do anything, but documenting anyway
 Imports System.Collections.Generic
+
+
 
 #Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
 #Const VERBOSE2 = False ' For too 2 much info tmi
@@ -10,7 +13,6 @@ Imports System.Collections.Generic
 Friend Class Main_Renamed
     Inherits System.Windows.Forms.Form
     Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" (ByVal hwnd As Integer, ByVal lpOperation As String, ByVal lpFile As String, ByVal lpParameters As String, ByVal lpDirectory As String, ByVal nShowCmd As Integer) As Integer
-
 
     'Dim current_score, original_score As Object
     Dim current_score, original_score As Integer
@@ -48,7 +50,27 @@ Friend Class Main_Renamed
         {"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
         {"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
     }
+    ''''''''''''''''''''''''
+    ''' <summary>
+    ''' Menu Handlers
+    ''' </summary>
+    ''''''''''''''''''''''''
 
+    ' File-->Load menu
+    Private Sub LoadGameToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadGameToolStripMenuItem.Click
+
+    End Sub
+
+    ' File-->Save menu
+    Private Sub SaveGameToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveGameToolStripMenuItem.Click
+        save_game()
+    End Sub
+
+    ' File-->RestartNewGame menu
+    Private Sub RestartNewGameToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RestartNewGameToolStripMenuItem.Click
+        ' fk nope Main_Load()
+        Application.Restart()
+    End Sub
     ' File-->exit menu
     Private Sub MenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
@@ -63,6 +85,12 @@ Friend Class Main_Renamed
         frmAbout.ShowDialog(Me)
         'ShowAbout()
     End Sub
+
+    ''''''''''''''''''''''''
+    ''' <summary>
+    ''' Main Form "handler"
+    ''' </summary>
+    ''''''''''''''''''''''''
     Private Sub Main_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 #If VERBOSE Then
         Call append_simple("In Main_Load() -----------------------------")
@@ -78,6 +106,42 @@ Friend Class Main_Renamed
 
 
         Call update_display()
+    End Sub
+
+    ''''''''''''''''''''''''
+    ''' <summary>
+    ''' Main keybord keys "handler"
+    ''' Implemented keys:
+    ''' c - Continue
+    ''' n - new game
+    ''' r - restart game
+    ''' </summary>
+    ''''''''''''''''''''''''
+    Private Sub Main_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
+#If VERBOSE Then
+        Call append_simple("In Main_KeyDown +++ ")
+#End If
+        Dim KeyCode As Short = eventArgs.KeyCode
+        Dim Shift As Short = eventArgs.KeyData \ &H10000
+        If KeyCode = System.Windows.Forms.Keys.R Then
+            Call load_game()
+            Call ready_for_action()
+
+            ' Clear some random buttons
+            cmd2Players.Visible = False
+            cmd3Players.Visible = False
+            cmd4Players.Visible = False
+            cmbCheatLevel.Visible = False
+            lblCheatLevel.Visible = False
+            lblOtherApps.Visible = False
+            imgLarge.SendToBack()
+            Line1.BringToFront()
+        ElseIf KeyCode = System.Windows.Forms.Keys.N Then
+            phase = "new_game"
+            Call start_new_game()
+        ElseIf KeyCode = System.Windows.Forms.Keys.C Then
+            Call cmdNext_Click(cmdNext, New System.EventArgs())
+        End If
     End Sub
     Private Sub set_debug_values()
 #If VERBOSE Then
@@ -115,8 +179,6 @@ Friend Class Main_Renamed
         'UPGRADE_WARNING: Couldn't resolve default property of object get_id_by_name(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         Call meld(0, get_id_by_name("Coal"))
         'Call meld(0, get_id_by_name("Software"))
-
-
 
         ' Meld the card we are testing
         'Call meld(0, test_card)
@@ -7412,31 +7474,13 @@ Friend Class Main_Renamed
 
     End Sub
 
+    Private Sub txtLog_TextChanged(sender As Object, e As EventArgs) Handles txtLog.TextChanged
+
+    End Sub
+
     Private Sub _lblAchievement_13_Click(sender As Object, e As EventArgs) Handles _lblAchievement_13.Click
 
     End Sub
 
-    Private Sub Main_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
-        Dim KeyCode As Short = eventArgs.KeyCode
-        Dim Shift As Short = eventArgs.KeyData \ &H10000
-        If KeyCode = System.Windows.Forms.Keys.R Then
-            Call load_game()
-            Call ready_for_action()
 
-            ' Clear some random buttons
-            cmd2Players.Visible = False
-            cmd3Players.Visible = False
-            cmd4Players.Visible = False
-            cmbCheatLevel.Visible = False
-            lblCheatLevel.Visible = False
-            lblOtherApps.Visible = False
-            imgLarge.SendToBack()
-            Line1.BringToFront()
-        ElseIf KeyCode = System.Windows.Forms.Keys.N Then
-            phase = "new_game"
-            Call start_new_game()
-        ElseIf KeyCode = System.Windows.Forms.Keys.C Then
-            Call cmdNext_Click(cmdNext, New System.EventArgs())
-        End If
-    End Sub
 End Class
