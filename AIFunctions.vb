@@ -391,7 +391,7 @@ Module AIFunctions
         Call Main_Renamed.append_simple("In get_game_state_string() ++++++")
 #End If
 
-        Dim n, j, i, k As Short
+        Dim j, i, k As Short
         Dim str_Renamed As String
 
         str_Renamed = gss_depth & "|"

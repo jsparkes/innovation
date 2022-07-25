@@ -6,9 +6,23 @@ Imports Microsoft.VisualBasic.Compatibility 'FK doesn't seem to do anything, but
 Imports System.Collections.Generic
 
 
+' Compiler/Build directives
+
+#Disable Warning IDE1006 'Inherited code with variable names this suppresses: These words must begin with upper case characters
+#Disable Warning IDE0054 'Inherited code with assignments (60) this suppresses: Use compound assignment x += 5 vs x = x + 5
+#Disable Warning IDE0044 'Make field readonly warning messages are suppressed
+#Disable Warning BC40000 'VB compatibility warning messages are suppressed
+
+' Conditional compile directives
 
 #Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
 #Const VERBOSE2 = False ' For too 2 much info tmi
+
+''''''''''''''''''''''''
+'
+' Main_Renamed - THe main code "container"
+'
+''''''''''''''''''''''''
 
 Friend Class Main_Renamed
     Inherits System.Windows.Forms.Form
@@ -50,10 +64,11 @@ Friend Class Main_Renamed
         {"Blue", System.Drawing.Color.FromArgb(132, 173, 217)},
         {"Green", System.Drawing.Color.FromArgb(129, 187, 126)}
     }
+
     ''''''''''''''''''''''''
-    ''' <summary>
-    ''' Menu Handlers
-    ''' </summary>
+    '
+    ' Menu Handlers
+    '
     ''''''''''''''''''''''''
 
     ' File-->Load menu
@@ -79,6 +94,10 @@ Friend Class Main_Renamed
     Private Sub AboutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem.Click
         'ShowHelp()
     End Sub
+    ' Help-->Shortcuts menu
+    Private Sub ShortCutsToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShortCutsToolStripMenuItem.Click
+        'ShowShortcuts()
+    End Sub
     ' Help-->About menu
     Private Sub MenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AboutToolStripMenuItem1.Click
         Dim frmAbout As New AboutBox
@@ -87,9 +106,9 @@ Friend Class Main_Renamed
     End Sub
 
     ''''''''''''''''''''''''
-    ''' <summary>
-    ''' Main Form "handler"
-    ''' </summary>
+    '
+    ' Main Form "handler"
+    '
     ''''''''''''''''''''''''
     Private Sub Main_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
 #If VERBOSE Then
@@ -99,23 +118,20 @@ Friend Class Main_Renamed
         num_players = 4
         Call initialize_card_data()
         Call initialize_images()
-
         Call initialize_game()
-
         Call start_new_game()
-
-
         Call update_display()
     End Sub
 
     ''''''''''''''''''''''''
-    ''' <summary>
-    ''' Main keybord keys "handler"
-    ''' Implemented keys:
-    ''' c - Continue
-    ''' n - new game
-    ''' r - restart game
-    ''' </summary>
+    '
+    ' Main keybord keys "handler"
+    ' Implemented keys:
+    ' c - Continue
+    ' n - new game
+    ' r - restart game
+    ' x - exit
+    '
     ''''''''''''''''''''''''
     Private Sub Main_KeyDown(ByVal eventSender As System.Object, ByVal eventArgs As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
 #If VERBOSE Then
@@ -139,10 +155,17 @@ Friend Class Main_Renamed
         ElseIf KeyCode = System.Windows.Forms.Keys.N Then
             phase = "new_game"
             Call start_new_game()
+        ElseIf KeyCode = System.Windows.Forms.Keys.X Then
+            Me.Close()
         ElseIf KeyCode = System.Windows.Forms.Keys.C Then
             Call cmdNext_Click(cmdNext, New System.EventArgs())
         End If
     End Sub
+    ''''''''''''''''''''''''
+    '
+    ' debugging handler - not functioning 
+    '
+    ''''''''''''''''''''''''
     Private Sub set_debug_values()
 #If VERBOSE Then
         Call append_simple("In set_debug_values() ++++++")
@@ -213,9 +236,6 @@ Friend Class Main_Renamed
         Call Push2(hand, 1, get_id_by_name("Oars"))
         Call Push2(hand, 1, get_id_by_name("Oars"))
         Call Push2(hand, 1, get_id_by_name("A.I."))
-
-
-
 
     End Sub
 
@@ -559,7 +579,7 @@ Friend Class Main_Renamed
 
     Public Sub play_game()
 #If VERBOSE Then
-        Call append_simple("In play_game() -----------------------------")
+        Call append(0, "In play_game() -- before phase = " & phase & " ai_mode =  " & ai_mode & " break_dogma_loop = " & break_dogma_loop)
 #End If
         Dim i, gss_count As Short
         'MsgBox "before" & phase & " " & ai_mode & " " & break_dogma_loop
@@ -1711,6 +1731,12 @@ Friend Class Main_Renamed
         Call restore_game_state(0)
         ai_mode = original_ai_mode
     End Sub
+
+    ''''''''''''''''''''''''
+    '
+    ' activate_card - This is where most of the card logic is defined
+    '
+    ''''''''''''''''''''''''
 
     Private Sub activate_card(ByVal player As Short, ByVal id As Short, ByVal level As Short)
 #If VERBOSE Then
@@ -5856,7 +5882,7 @@ Friend Class Main_Renamed
         Call append_simple("In process_opp_board_click()------------------")
 #End If
         Dim card, clicked_player, player As Object
-        Dim valid As Short
+        ' FK not used Dim valid As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object clicked_player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         clicked_player = Int(index / 5) + 1
         index = index Mod 5
@@ -5908,7 +5934,8 @@ Friend Class Main_Renamed
 #If VERBOSE Then
         Call append_simple("In process_board_click()------------------")
 #End If
-        Dim valid, card, player As Object
+        Dim card, player As Object
+        ' FK not used Dim valid As Short
         Dim found, i As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         card = board(0, index, 0)
@@ -6903,7 +6930,8 @@ Friend Class Main_Renamed
 #If VERBOSE Then
         Call append_simple("In process_score_pile_click() ++++++")
 #End If
-        Dim found, player, card, valid, id As Object
+        Dim player, card, id As Object
+        ' FK not used Dim found,valid As Object
         Dim count, j As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object card. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         card = score_pile(0, index)
@@ -7197,63 +7225,13 @@ Friend Class Main_Renamed
         End If
     End Function
 
-    Private Sub lblOppBoard_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblOppBoard.Click
-        Dim index As Short = lblOppBoard.GetIndex(eventSender)
-        Call process_opp_board_click(index)
-    End Sub
-    Private Sub imgOppBoard_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgOppBoard.Click
-        Dim index As Short = imgOppBoard.GetIndex(eventSender)
-        Call process_opp_board_click(index)
-    End Sub
-    Private Sub imgOppBoardColor_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgOppBoardColor.Click
-        Dim index As Short = imgOppBoardColor.GetIndex(eventSender)
-        Call process_opp_board_click(index)
-    End Sub
 
-    Private Sub lblHand_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblHand.Click
-        Dim index As Short = lblHand.GetIndex(eventSender)
-        Call process_hand_click(index)
-    End Sub
-    Private Sub imgHandIcon_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgHandIcon.Click
-        Dim index As Short = imgHandIcon.GetIndex(eventSender)
-        Call process_hand_click(index)
-    End Sub
-    Private Sub imgHandColor_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgHandColor.Click
-        Dim index As Short = imgHandColor.GetIndex(eventSender)
-        Call process_hand_click(index)
-    End Sub
+    ''''''''''''''''''''''''
+    '
+    ' GUI mouseover Handler Functions
+    '
+    ''''''''''''''''''''''''
 
-    Private Sub lblOppDetail_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblOppDetail.Click
-        Dim index As Short = lblOppDetail.GetIndex(eventSender)
-        Call showArray.load_pictures(Int(index / 5) + 1, index Mod 5, "board")
-    End Sub
-
-    Private Sub lblPlayer_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblPlayer.Click
-        Dim index As Short = lblPlayer.GetIndex(eventSender)
-        Call process_player_click(index)
-    End Sub
-
-    Private Sub lblPlayerDetail_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblPlayerDetail.Click
-        Dim index As Short = lblPlayerDetail.GetIndex(eventSender)
-        Call process_player_click(index + 1)
-    End Sub
-
-    Private Sub lblScoreTitle_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblScoreTitle.Click
-        Dim index As Short = lblScoreTitle.GetIndex(eventSender)
-        Call process_score_pile_click(index)
-    End Sub
-    Private Sub imgScoreIcon_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgScoreIcon.Click
-        Dim index As Short = imgScoreIcon.GetIndex(eventSender)
-        Call process_score_pile_click(index)
-    End Sub
-    Private Sub imgScoreColor_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgScoreColor.Click
-        Dim index As Short = imgScoreColor.GetIndex(eventSender)
-        Call process_score_pile_click(index)
-    End Sub
-
-
-
-    ' Functions for mouseover
     Public Sub imgMouseMove(ByRef img As Object, ByRef Button As Short, ByRef Shift As Short, ByRef X As Single, ByRef Y As Single)
         With img
             'This range check fails on VB.net
@@ -7418,6 +7396,66 @@ Friend Class Main_Renamed
         imgLarge.BringToFront()
         'End If
     End Sub
+
+    ''''''''''''''''''''''''
+    '
+    ' GUI Click Handlers
+    '
+    ''''''''''''''''''''''''
+    Private Sub lblOppBoard_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblOppBoard.Click
+        Dim index As Short = lblOppBoard.GetIndex(eventSender)
+        Call process_opp_board_click(index)
+    End Sub
+    Private Sub imgOppBoard_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgOppBoard.Click
+        Dim index As Short = imgOppBoard.GetIndex(eventSender)
+        Call process_opp_board_click(index)
+    End Sub
+    Private Sub imgOppBoardColor_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgOppBoardColor.Click
+        Dim index As Short = imgOppBoardColor.GetIndex(eventSender)
+        Call process_opp_board_click(index)
+    End Sub
+
+    Private Sub lblHand_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblHand.Click
+        Dim index As Short = lblHand.GetIndex(eventSender)
+        Call process_hand_click(index)
+    End Sub
+    Private Sub imgHandIcon_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgHandIcon.Click
+        Dim index As Short = imgHandIcon.GetIndex(eventSender)
+        Call process_hand_click(index)
+    End Sub
+    Private Sub imgHandColor_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgHandColor.Click
+        Dim index As Short = imgHandColor.GetIndex(eventSender)
+        Call process_hand_click(index)
+    End Sub
+
+    Private Sub lblOppDetail_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblOppDetail.Click
+        Dim index As Short = lblOppDetail.GetIndex(eventSender)
+        Call showArray.load_pictures(Int(index / 5) + 1, index Mod 5, "board")
+    End Sub
+
+    Private Sub lblPlayer_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblPlayer.Click
+        Dim index As Short = lblPlayer.GetIndex(eventSender)
+        Call process_player_click(index)
+    End Sub
+
+    Private Sub lblPlayerDetail_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblPlayerDetail.Click
+        Dim index As Short = lblPlayerDetail.GetIndex(eventSender)
+        Call process_player_click(index + 1)
+    End Sub
+
+    Private Sub lblScoreTitle_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblScoreTitle.Click
+        Dim index As Short = lblScoreTitle.GetIndex(eventSender)
+        Call process_score_pile_click(index)
+    End Sub
+    Private Sub imgScoreIcon_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgScoreIcon.Click
+        Dim index As Short = imgScoreIcon.GetIndex(eventSender)
+        Call process_score_pile_click(index)
+    End Sub
+    Private Sub imgScoreColor_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgScoreColor.Click
+        Dim index As Short = imgScoreColor.GetIndex(eventSender)
+        Call process_score_pile_click(index)
+    End Sub
+
 
 
     Private Sub imgBoard_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles imgBoard.Click

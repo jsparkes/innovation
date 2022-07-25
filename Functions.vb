@@ -1,5 +1,9 @@
 Option Strict Off
 Option Explicit On
+
+#Disable Warning IDE0054 'Inherited code with assignments (60) this suppresses: Use compound assignment x += 5 vs x = x + 5
+#Disable Warning IDE1006 'Disable Naming rule violation: These words must begin with upper case characters:
+
 #Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
 Module ArrayFunctions
     Public arr(4, 5, 100) As Short
@@ -186,7 +190,6 @@ Module ArrayFunctions
 
     Public Function copy_array2(ByRef arr_from As Object, ByRef arr_to As Object, ByVal index As Short) As Object
         Dim i As Integer
-        Dim j As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object size2(arr_from, index). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         For i = 0 To size2(arr_from, index)
             'UPGRADE_WARNING: Couldn't resolve default property of object arr_from(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -197,7 +200,7 @@ Module ArrayFunctions
 
     Public Function copy_array3(ByRef arr_from As Object, ByRef arr_to As Object, ByVal index1 As Short, ByVal index2 As Short) As Object
         Dim i As Integer
-        Dim j As Short
+        ' Not used Dim j As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object size3(arr_from, index1, index2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         For i = 0 To size3(arr_from, index1, index2)
             'UPGRADE_WARNING: Couldn't resolve default property of object arr_from(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'

@@ -1,0 +1,32 @@
+Innovation
+
+Terms:
+Meld = play a card onto top of stack
+Splay = stagger cards of a stack, needs at least 2 cards; if stack is Splayed, new Melds or Tucks continue Splay. 
+Score Pile, card Age = score value. 
+
+Start:
+1 card each from Ages 1 to 9 to be used as Achievements [Automated]
+2 Age 1 cards per player, simultaneously select one to meld, start player is player with card in lowest alphabet. [Automated]
+First player only 1 action in first round (first two players if 4P). 
+
+Turn:
+2 of any action: 
+Draw Action: from stack matching highest Age you have on top cards, next higher stack if exhausted. 
+Meld Action: Play card from hand to board
+Achieve Action: Need to have enough score, AND a top card with matching or higher Age. 
+Dogma Action: Execute all powers of a top card. 
+“I Demand” powers affect opponents with fewer of the featured icon. 
+Normal powers: Opponents with same or more featured icon must use first  if possible (unless is “you may”). If any used, Draw. 
+
+Scoring: Note Special Achievements are claimed instantly without needing action
+
+End:
+Gain a total of 6/5/4 Achievements in a 2/3/4P game, OR  Try to Draw from higher than Age 10 card, OR
+Dogma effect. 
+
+Others: 
+Only when Drawing from supply pile you can Draw next higher card. In other cases you don’t gain card. 
+When exchanging, so do even if one side has no card. 
+Highest/Lowest – refers to Age number. 
+Return – always return to bottom of pile. 

@@ -1,32 +1,36 @@
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> Partial Class showArray
+#Disable Warning IDE1006 'Inherited code with variable names this suppresses: These words must begin with upper case characters
+#Disable Warning IDE0054 'Inherited code with assignments (60) this suppresses: Use compound assignment x += 5 vs x = x + 5
+#Disable Warning IDE0044 'Make field readonly
+#Disable Warning BC40000 'VB compatibility
 #Region "Windows Form Designer generated code "
-	<System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
-		MyBase.New()
-		'This call is required by the Windows Form Designer.
-		InitializeComponent()
-	End Sub
-	'Form overrides dispose to clean up the component list.
-	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
-		If Disposing Then
-			If Not components Is Nothing Then
-				components.Dispose()
-			End If
-		End If
-		MyBase.Dispose(Disposing)
-	End Sub
-	'Required by the Windows Form Designer
-	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents _imgShowIcon_0 As System.Windows.Forms.PictureBox
-	Public WithEvents _lblShowTitle_0 As System.Windows.Forms.Label
-	Public WithEvents _imgShowColor_0 As System.Windows.Forms.PictureBox
-	Public WithEvents imgShowColor As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents imgShowIcon As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
-	Public WithEvents lblShowTitle As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	'NOTE: The following procedure is required by the Windows Form Designer
-	'It can be modified using the Windows Form Designer.
-	'Do not modify it using the code editor.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+    <System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
+        MyBase.New()
+        'This call is required by the Windows Form Designer.
+        InitializeComponent()
+    End Sub
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
+        If Disposing Then
+            If Not components Is Nothing Then
+                components.Dispose()
+            End If
+        End If
+        MyBase.Dispose(Disposing)
+    End Sub
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+    Public ToolTip1 As System.Windows.Forms.ToolTip
+    Public WithEvents _imgShowIcon_0 As System.Windows.Forms.PictureBox
+    Public WithEvents _lblShowTitle_0 As System.Windows.Forms.Label
+    Public WithEvents _imgShowColor_0 As System.Windows.Forms.PictureBox
+    Public WithEvents imgShowColor As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents imgShowIcon As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
+    Public WithEvents lblShowTitle As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(showArray))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)

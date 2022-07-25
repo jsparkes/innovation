@@ -277,7 +277,10 @@
     Public WithEvents Label9 As System.Windows.Forms.Label
     Public WithEvents lblHighestTop As System.Windows.Forms.Label
     Public WithEvents Label4 As System.Windows.Forms.Label
+#Disable Warning BC40000 ' Type or member is obsolete
     Public WithEvents cmdDogma As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
+#Enable Warning BC40000 ' Type or member is obsolete
+#Disable Warning BC40000 ' Type or member is obsolete
     Public WithEvents cmdOddball As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
     Public WithEvents cmdStack As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
     Public WithEvents imgBoard As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray
@@ -619,6 +622,7 @@
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShortCutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.Image1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -4337,7 +4341,7 @@
         '
         'HelpToolStripMenuItem
         '
-        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.AboutToolStripMenuItem1})
+        Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ShortCutsToolStripMenuItem, Me.AboutToolStripMenuItem1})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
         Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.HelpToolStripMenuItem.Text = "Help"
@@ -4345,14 +4349,20 @@
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem.Text = "Rules"
         '
         'AboutToolStripMenuItem1
         '
         Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
-        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(107, 22)
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem1.Text = "About"
+        '
+        'ShortCutsToolStripMenuItem
+        '
+        Me.ShortCutsToolStripMenuItem.Name = "ShortCutsToolStripMenuItem"
+        Me.ShortCutsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ShortCutsToolStripMenuItem.Text = "Short Cuts"
         '
         'Main_Renamed
         '
@@ -4756,5 +4766,6 @@
     Friend WithEvents LoadGameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SaveGameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RestartNewGameToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ShortCutsToolStripMenuItem As ToolStripMenuItem
 #End Region
 End Class
