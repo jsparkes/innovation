@@ -168,7 +168,6 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="innovation_1_TemporaryKey.pfx" />
     <None Include="innovation_TemporaryKey.pfx" />
     <None Include="_UpgradeReport.htm">
       <SubType>Preview</SubType>

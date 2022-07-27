@@ -174,6 +174,7 @@ Module AIFunctions
             Call Main_Renamed.append(player, "In make_ai_move() Going to look for another play after doing choices0/1... " & choices(0) & " , " & choices(1))
 #End If
         End If
+
     End Function
 
 

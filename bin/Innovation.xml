@@ -126,7 +126,7 @@ Innovation
 </member>
 <member name="M:Innovation.AboutBox.ShowSysInfo">
  <summary>
- launch the MSInfo "system information" application (works on XP, 2003, and Vista)
+ launch the MSInfo "system information" application (works on XP, 2003, Vista and WIndows 11 :-) )
  </summary>
 </member>
 <member name="M:Innovation.AboutBox.Populate(System.Windows.Forms.ListView,System.String,System.String)">

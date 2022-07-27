@@ -16,6 +16,7 @@
     End Sub
     'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
+#Disable Warning BC40000 ' Type or member is obsolete
     Public WithEvents cmbCheatLevel As System.Windows.Forms.ComboBox
     Public WithEvents cmdScore As System.Windows.Forms.Button
     Public WithEvents cmbCards As System.Windows.Forms.ComboBox
@@ -277,10 +278,7 @@
     Public WithEvents Label9 As System.Windows.Forms.Label
     Public WithEvents lblHighestTop As System.Windows.Forms.Label
     Public WithEvents Label4 As System.Windows.Forms.Label
-#Disable Warning BC40000 ' Type or member is obsolete
     Public WithEvents cmdDogma As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
-#Enable Warning BC40000 ' Type or member is obsolete
-#Disable Warning BC40000 ' Type or member is obsolete
     Public WithEvents cmdOddball As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
     Public WithEvents cmdStack As Microsoft.VisualBasic.Compatibility.VB6.ButtonArray
     Public WithEvents imgBoard As Microsoft.VisualBasic.Compatibility.VB6.PictureBoxArray

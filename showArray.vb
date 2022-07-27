@@ -69,7 +69,7 @@ Friend Class showArray
             max_size = size2(score_pile, player) - 1
             Me.Tag = 1000
 #If VERBOSE Then
-            Call Main_Renamed.append_simple("In load_pictures() score?")
+            Call Main_Renamed.append_simple("In load_pictures() Piles")
 #End If
         End If
 
@@ -127,6 +127,11 @@ Friend Class showArray
         Dim Index As Short = imgShowIcon.GetIndex(eventSender)
         Call Main_Renamed.imgMouseMove(imgShowIcon(Index), Button, Shift, X, Y)
     End Sub
+    '
+    ' weird VB problem can't add cancel button or the form being full makes a control array that is invalid 
+    ' Private Sub Button1_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles Button1.Click
+    'Me.Dispose()
+    'End Sub
 
     Private Sub lblShowTitle_Click(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles lblShowTitle.Click
         Dim Index As Short = lblShowTitle.GetIndex(eventSender)

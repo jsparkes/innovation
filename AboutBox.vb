@@ -350,7 +350,7 @@ Public Class AboutBox
     End Function
 
     ''' <summary>
-    ''' launch the MSInfo "system information" application (works on XP, 2003, and Vista)
+    ''' launch the MSInfo "system information" application (works on XP, 2003, Vista and WIndows 11 :-) )
     ''' </summary>
     Private Sub ShowSysInfo()
         Dim strSysInfoPath As String = ""

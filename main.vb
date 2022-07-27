@@ -864,7 +864,7 @@ Friend Class Main_Renamed
 
         Call load_picture(hand(0, 0))
 
-        'Call set_debug_values()
+        Call set_debug_values()
 #If VERBOSE Then
         Call append_simple("In launch_game() set_debug_values() DISABLED ")
         ' this call below was being used all the time but not much was being done

@@ -124,7 +124,7 @@
   <data name="_imgShowIcon_0.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEsAAABLCAIAAAC3LO29AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAD1VJREFUeF7Nm3mMFUUXxQcXloEgiALGBcEIo6KOcUFBgYCYMC4giI7ooMa4MWpc
+        wAAADsABataJCQAAD1VJREFUeF7Nm3mMFUUXxQcXloEgiALGBcEIo6KOcUFBgYCYMC4giI7ooMa4MWpc
         cImKkggBRCQaFYkaMmKiGMElLgOK4gbjlohoRhRxC1FAkc19+37vnZ5D2e919/BFfJ4/Krerbt17z61b
         1dWPoeyvBPzxxx+0f+ahRwlhq07JSdAo7S+//HL11Vd36NDhmGOOaWhoUCf4/fffQzXaovBQbk4gS0hB
         IkMQ2kqH0pGE3377jRZ6LVq02HHHHcvKyuC5Zs0ajQqykGJHkSgdIN1jiDSGtoJdZBFWJ4JzD/Jaafj1
@@ -198,10 +198,13 @@
   <metadata name="lblShowTitle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>337, 17</value>
   </metadata>
+  <metadata name="imgShowColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>105, 17</value>
+  </metadata>
   <data name="_imgShowColor_0.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABIAAAAKICAIAAACHSRZaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAFM1JREFUeF7t3c+LXfd5x/Hv/TXjmZFmRjElBMmJEiipLEVxGgiB7roo/dsKDVi2
+        wAAADsABataJCQAAFM1JREFUeF7t3c+LXfd5x/Hv/TXjmZFmRjElBMmJEiipLEVxGgiB7roo/dsKDVi2
         XClgVZqRFbrpIptAm1Sp3UUJcZxAKMbGi2IjBgn/D3m+33NGGpFmkS4+m3k9vPTcc8+9c2f95pw7aq2t
         y6LvZTdWW7W2GKbn87ExxhhjjDHGmHkWbblq61XfpwE1xVR/vqxnVVlTWs2v9qM5uSZnXhivvThvjDHG
         GGOMMeblWfSrWb21ej9ND8tl10/2MJsD7PmrLz0ZB8/PD/3HzjDGGGOMMcYYM6YnU7+XcKqnOaLaZpjO
@@ -295,6 +298,9 @@
   </data>
   <metadata name="imgShowColor.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>105, 17</value>
+  </metadata>
+  <metadata name="lblShowTitle.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>337, 17</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
