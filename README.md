@@ -100,7 +100,7 @@ This code has been tested under Windows 10/11. No Linux testing has been done.
 
 ### Installation
 
-The newest installable version is in  [publish/WinINNOVATION-setup.zip](https://github.com/jsparkes/innovation/blob/master/publish/WinINNOVATION-setup.zip)
+The newest installable version is in  [bin/WinInnovationAI-V1.0.zip](https://github.com/frankk74/innovation/blob/master/bin/WinInnovationAI-V1.0.zip)
 
 A debugging version (more verbose in text widnow) is in \bin no zip file....
 
