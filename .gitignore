@@ -5,5 +5,7 @@ obj
 *.log
 *.user
 *.orig
+log.txt
+save.txt
 packages/
 _UpgradeReport_Files
