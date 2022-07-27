@@ -6,17 +6,17 @@ Imports Microsoft.VisualBasic.Compatibility 'FK doesn't seem to do anything, but
 Imports System.Collections.Generic
 
 
+' Conditional compile directives
+
+#Const VERBOSE = False ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+#Const VERBOSE2 = False ' For too 2 much info tmi
+
 ' Compiler/Build directives
 
 #Disable Warning IDE1006 'Inherited code with variable names this suppresses: These words must begin with upper case characters
 #Disable Warning IDE0054 'Inherited code with assignments (60) this suppresses: Use compound assignment x += 5 vs x = x + 5
 #Disable Warning IDE0044 'Make field readonly warning messages are suppressed
 #Disable Warning BC40000 'VB compatibility warning messages are suppressed
-
-' Conditional compile directives
-
-#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
-#Const VERBOSE2 = False ' For too 2 much info tmi
 
 ''''''''''''''''''''''''
 '

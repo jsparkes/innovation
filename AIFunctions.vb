@@ -1,5 +1,15 @@
 Option Strict Off
 Option Explicit On
+
+' Conditional compile directives
+
+#Const VERBOSE = False ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+
+' Compiler/Build directives
+
+#Disable Warning IDE1006 'Inherited code with variable names this suppresses: These words must begin with upper case characters
+#Disable Warning IDE0054 'Inherited code with assignments (60) this suppresses: Use compound assignment x += 5 vs x = x + 5
+
 Module AIFunctions
 
     Public game_state(100000, 2000) As Short
@@ -61,8 +71,6 @@ Module AIFunctions
     Public is_demand(500, 3) As Short
 
     Public test_card As Short
-
-#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
 
     Public Function make_ai_move(ByVal player As Short, ByVal choices As Object, ByVal depth As Short) As Object
 #If VERBOSE Then
