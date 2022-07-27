@@ -3,4 +3,6 @@ obj
 .vs/
 *.suo
 *.log
+*.user
+packages/
 _UpgradeReport_Files
