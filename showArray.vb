@@ -1,9 +1,16 @@
-Option Strict Off
-Option Explicit On
+﻿'
+' 
+' showArray.vb This code is licenced under "Creative Commons Attribution Non Commercial 4.0 International"
+' See: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+'
+' This file implements showing card arrays for WinInnovation on the showArray winform
 
 ' Conditional compile directives
 
-#Const VERBOSE = False ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+
+Option Strict Off
+Option Explicit On
 
 ' Compiler/Build directives
 

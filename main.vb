@@ -1,15 +1,22 @@
+﻿'
+' 
+' main.vb This code is licenced under "Creative Commons Attribution Non Commercial 4.0 International"
+' See: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+'
+' This file is the main code for WinInnovation on the main.vb[Design] winform
+
+' Conditional compile directives
+
+#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+#Const VERBOSE2 = False ' For too 2 much info tmi
+
 Option Strict Off
 Option Explicit On
+
 Imports VB = Microsoft.VisualBasic
 Imports Microsoft.VisualBasic.PowerPacks
 Imports Microsoft.VisualBasic.Compatibility 'FK doesn't seem to do anything, but documenting anyway
 Imports System.Collections.Generic
-
-
-' Conditional compile directives
-
-#Const VERBOSE = False ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
-#Const VERBOSE2 = False ' For too 2 much info tmi
 
 ' Compiler/Build directives
 
