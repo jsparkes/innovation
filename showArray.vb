@@ -1,13 +1,17 @@
 Option Strict Off
 Option Explicit On
-Friend Class showArray
+
+' Conditional compile directives
+
+#Const VERBOSE = False ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+
+' Compiler/Build directives
 
 #Disable Warning IDE1006 'Inherited code with variable names this suppresses: These words must begin with upper case characters
 #Disable Warning IDE0054 'Inherited code with assignments (60) this suppresses: Use compound assignment x += 5 vs x = x + 5
 #Disable Warning BC40000 'VB compatibility
 
-#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
-
+Friend Class showArray
 
     Inherits System.Windows.Forms.Form
 

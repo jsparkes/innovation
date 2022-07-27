@@ -1,91 +1,53 @@
-﻿In Main_Load() -----------------------------
-In initialize_card_data() -----------------------------
-In initialize_card_data() found file .\Innovation.txt -------
-In initial_card_data() 105 cards loaded -------
-In initialize_images() -----------------------------
-In initialize_game() ++++++
-In start_new_game() ++++++ Choose the number of players
-In launch_game() ++++++
-draw_num() -----------------------------
+﻿Player 1 drew a 1.
 Player 1 drew a 1.
-draw_num() -----------------------------
-Player 1 drew a 1.
-draw_num() -----------------------------
 Player 2 drew a 1.
-draw_num() -----------------------------
 Player 2 drew a 1.
-In launch_game() ++++++  Read the debug file and update the board state accordingly /testing.txt
-In BROKEN launch_game() found /testing.txt ++++++
-In set_debug_values() ++++++
-In launch_game() set_debug_values() DISABLED 
-In load_pictures() 
-In load_pictures() Piles
-In initialize_images() initialize the hand images
-In process_hand_click() ++++++
-In process_hand_click() Initial Meld ++++++
-Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
-In remove_card_from_hand------------------
-In meld() melding------------------
-Player 1 melds Clothing.
-In check_for_achievements() -----------------------------
-Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
-In remove_card_from_hand------------------
-In meld() melding------------------
-Player 2 melds Domestication.
-In check_for_achievements() -----------------------------
-Player 1 is the starting player.
+ 
+Player 1 melds Code of Laws.
+Player 2 melds Clothing.
+Player 2 is the starting player.
 In process_handclick() ----------
-Player 1 In play_game() -- before phase = done with initial meld ai_mode =  0 break_dogma_loop = 0.
-In ready_for_action() ++++++
-In process_hand_click() ++++++
-Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
-In remove_card_from_hand------------------
-In meld() melding------------------
-Player 1 melds The Wheel.
-In check_for_achievements() -----------------------------
-Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
-In play_game?() -----------------------------
-Player 1 In perform_AI_action() picked 2 and 5 ai_mode = 0.
-In make_ai_move() ++++++
-Player 2 In make_ai_move() called with depth = 0.
-Player 2 In make_ai_move() Trying move 2,5 at level 0 (ai_mode = 0)  gss_count = 14.
-Player 2 In make_ai_move() Made a real move 2,5 actions_remaining = 1.
-Player 2 In make_ai_move() Performing dogma Domestication.
-Player 2 activates the first effect of Domestication.
-In perform_dogma_effect_by_level() -----------------------------
-Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
-Player 1 In activate_card() ACTIVATING = Domestication.
-Player 1 In activate_card() AGE 1.
-draw_num() -----------------------------
+-----------------------------
+Player 2 activates the first effect of Clothing.
+Player 2 melds Domestication.
+Player 2 activates the second effect of Clothing.
+Player 2 drew and scored a 1.
+Player 2 drew and scored a 1.
+-----------------------------
+Player 1 melds Mysticism.
+Player 1 activates the first effect of Mysticism.
 Player 1 drew a 1.
-Player 2 In activate_card() ACTIVATING = Domestication.
-Player 2 In activate_card() AGE 1.
-Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
-In remove_card_from_hand------------------
-In meld() melding------------------
-Player 2 melds Tools.
-In check_for_achievements() -----------------------------
-draw_num() -----------------------------
-Player 2 drew a 1.
-In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
-Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+-----------------------------
+Player 2 activates the first effect of Clothing.
+Player 2 activates the second effect of Clothing.
+Player 2 drew and scored a 1.
+Player 2 drew and scored a 1.
+-----------------------------
+Player 2 activates the first effect of Clothing.
+Player 2 activates the second effect of Clothing.
+Player 2 drew and scored a 1.
+Player 2 drew and scored a 1.
+-----------------------------
+Player 1 melds The Wheel.
+Player 1 activates the first effect of The Wheel.
+Player 1 drew a 1.
+Player 1 drew a 1.
+-----------------------------
+Player 2 has claimed the -1- achievement.
+-----------------------------
+Player 2 activates the first effect of Clothing.
+Player 2 activates the second effect of Clothing.
+Player 2 drew and scored a 1.
+-----------------------------
+Player 1 melds Agriculture.
+Player 1 activates the first effect of Agriculture.
+Player 1 returned a 1.
+Player 1 drew and scored a 2.
+-----------------------------
+Player 2 activates the first effect of Domestication.
+Player 1 drew a 1.
+Player 2 drew a 2.
 Dogma effect was shared.
-draw_num() -----------------------------
-Player 2 drew a 1.
-Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
-In process_hand_click() AGE 1 ++++++
-In cmdStack_Click() -----------------------------
-In load_pictures() 
-In load_pictures() board
-In load_pictures() 
-In load_pictures() board
-In load_pictures() 
-In load_pictures() board
-In process_click() 
-In process_click() 
-In process_click() 
-In process_click() 
-In process_click() 
-In process_board_click()------------------
-In load_pictures() 
-In load_pictures() board
+Player 2 drew a 2.
+-----------------------------
+Player 2 activates the first effect of Domestication.
