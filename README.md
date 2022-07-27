@@ -33,7 +33,7 @@
 <h3 align="center">Innovation Card Game AI</h3>
 
   <p align="center">
-    The goal of the project is to update the Program "Innovation AI" written by Jeff Till (2014) to be available on more recent platforms.
+    <a href="https://boardgamegeek.com/boardgame/63888/innovation">Innovation</a> is a card game created by <a href="https://boardgamegeek.com/boardgamedesigner/6001/carl-chudyk">Carl Chudyk</a>  and Published by <a href="https://asmadigames.com/">Asmadi Games</a>. Without which this would not have been possible. This project updates the Program "Innovation AI" written by Jeff Till (2014) to be available on more recent platforms.
     <br />
     <a href="https://github.com/jsparkes/innovation"><strong>Explore the docs »</strong></a>
     <br />
