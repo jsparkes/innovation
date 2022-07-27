@@ -113,6 +113,7 @@
         Me.Location = New System.Drawing.Point(4, 30)
         Me.Name = "showArray"
         Me.Text = "Stack of Cards - Window needs to STay"
+        Me.TopMost = True
         CType(Me._imgShowIcon_0, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me._imgShowColor_0, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.imgShowColor, System.ComponentModel.ISupportInitialize).EndInit()
