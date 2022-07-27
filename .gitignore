@@ -4,5 +4,6 @@ obj
 *.suo
 *.log
 *.user
+*.orig
 packages/
 _UpgradeReport_Files
