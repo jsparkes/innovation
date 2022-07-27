@@ -8,7 +8,6 @@ Friend Class showArray
 
 #Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
 
-
     Inherits System.Windows.Forms.Form
 
     Private Sub showArray_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
@@ -18,10 +17,6 @@ Friend Class showArray
 
     Private Sub initialize_images()
         ' initialize the hand images
-
-#If VERBOSE Then
-        Call Main_Renamed.append_simple("In initialize_images() initialize the hand images")
-#End If
         Dim i As Short
         For i = 0 To 40
             If i > imgShowIcon.UBound Then
@@ -51,19 +46,13 @@ Friend Class showArray
     End Sub
 
     Public Sub load_pictures(ByVal player As Short, ByVal Index As Short, ByVal kind As String)
-#If VERBOSE Then
-        Call Main_Renamed.append_simple("In load_pictures() ")
-#End If
-        'Dim id As Object
-        Dim i, id, max_size As Short
+        Dim i, id As Object
+        Dim max_size As Short
 
         If kind = "board" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object size3(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             max_size = size3(board, player, Index) - 1
             Me.Tag = Index
-#If VERBOSE Then
-            Call Main_Renamed.append_simple("In load_pictures() board")
-#End If
         Else
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             max_size = size2(score_pile, player) - 1
@@ -148,9 +137,6 @@ Friend Class showArray
 
 
     Private Sub process_click(ByVal Index As Short)
-#If VERBOSE Then
-        Call Main_Renamed.append_simple("In process_click() ")
-#End If
         If phase = "publications" Then
             imgShowIcon(Index).Visible = False
             imgShowColor(Index).Visible = False
