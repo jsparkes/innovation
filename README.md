@@ -26,7 +26,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/jsparkes/innovation">
+  <a href="https://github.com/frankk74/innovation">
     <img src="images/icon.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -35,12 +35,12 @@
   <p align="center">
     <a href="https://boardgamegeek.com/boardgame/63888/innovation">Innovation</a> is a card game created by <a href="https://boardgamegeek.com/boardgamedesigner/6001/carl-chudyk">Carl Chudyk</a>  and Published by <a href="https://asmadigames.com/">Asmadi Games</a>. Without which this would not have been possible. This project updates the Program "Innovation AI" written by Jeff Till (2014) to be available on more recent platforms.
     <br />
-    <a href="https://github.com/jsparkes/innovation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/frankk74/innovation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jsparkes/innovation/issues">Report Bug</a>
+    <a href="https://github.com/frankk74/innovation/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jsparkes/innovation/issues">Request Feature</a>
+    <a href="https://github.com/frankk74/innovation/issues">Request Feature</a>
   </p>
 </div>
 
@@ -115,7 +115,7 @@ A copy of the oiginal pre-built Windows binary with additional supporting files 
 
 - [ ] Eliminate/remove VS 2008 code conversion errors - 99% Completed
 - [ ] 2 remaining conversion issues, agriculture card rendering and View Stack not working
-- [ ] Enhancments
+- [ ] Enhancements
     - [ ] AI dumbing down
     - [ ] Option to recommend a move
 
@@ -171,7 +171,11 @@ Jeff Sparkes- [@jeff_sparkes](https://twitter.com/jeff_sparkes) - jsparkes@gmail
 
 Frank Kannemann - frankk74@gmail.com
 
-Project Link: [https://github.com/jsparkes/innovation](https://github.com/jsparkes/innovation)
+Project Links: 
+
+
+[https://github.com/jsparkes/innovation](https://github.com/jsparkes/innovation)
+[https://github.com/frankk74/innovation](https://github.com/frankk74/innovation)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
