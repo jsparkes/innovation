@@ -119,7 +119,7 @@ A copy of the oiginal pre-built Windows binary with additional supporting files 
     - [ ] AI dumbing down
     - [ ] Option to recommend a move
 
-See the [open issues](https://github.com/jsparkes/innovation/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/frankk74/innovation/issues) for a full list of proposed features (and known issues).
 
 There is also a discussion thread over on BGG: https://boardgamegeek.com/thread/2906571/re-announcement-wininnovation-ai-v10-play-innovati
 
