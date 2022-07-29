@@ -173,12 +173,10 @@ Frank Kannemann - frankk74@gmail.com
 
 Project Links: 
 
-[https://github.com/jsparkes/innovation]https://github.com/jsparkes/innovation
-[https://github.com/frankk74/innovation]https://github.com/frankk74/innovation
+[Jeff's]https://github.com/jsparkes/innovation
+[Frank's]https://github.com/frankk74/innovation
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -191,8 +189,6 @@ Project Links:
 * [About box](https://www.codeproject.com/Articles/7390/About-The-About-Box)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
