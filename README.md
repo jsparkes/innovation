@@ -126,7 +126,7 @@ There is also a discussion thread over on BGG: https://boardgamegeek.com/thread/
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
-## Contributing - Bug/Enhsncement reports
+## Contributing - Bug/Enhancement reports
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
