@@ -173,8 +173,9 @@ Frank Kannemann - frankk74@gmail.com
 
 Project Links: 
 
-[Jeff's]https://github.com/jsparkes/innovation
-[Frank's]https://github.com/frankk74/innovation
+Jeff's https://github.com/jsparkes/innovation
+
+Frank's https://github.com/frankk74/innovation
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
