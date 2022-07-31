@@ -103,7 +103,7 @@
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(289, 581)
-        Me.ControlBox = False
+        Me.ControlBox = True
         Me.Controls.Add(Me._imgShowIcon_0)
         Me.Controls.Add(Me._lblShowTitle_0)
         Me.Controls.Add(Me._imgShowColor_0)
