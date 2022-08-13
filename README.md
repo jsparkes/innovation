@@ -100,7 +100,7 @@ This code has been tested under Windows 10/11. No Linux testing has been done.
 
 ### Installation
 
-The newest installable version is in  [bin/WinInnovationAI-V1.0.zip](https://github.com/frankk74/innovation/blob/master/bin/WinInnovationAI-V1.01.zip)
+The newest installable version is in  [bin/WinInnovationAI-V1.01.zip](https://github.com/frankk74/innovation/blob/master/bin/WinInnovationAI-V1.01.zip)
 
 A debugging version (more verbose in text window) [bin-debugging/WinInnovationAI-V1.0-debug.zip](https://github.com/frankk74/innovation/raw/master/bin-debug/WinInnovationAI-V1.0-debug.zip)
 
