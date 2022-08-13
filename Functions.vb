@@ -1,10 +1,20 @@
+﻿'
+' 
+' Functions.vb This code is licenced under "Creative Commons Attribution Non Commercial 4.0 International"
+' See: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+'
+'
+
+' Conditional compile directives
+
+#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+
 Option Strict Off
 Option Explicit On
 
 #Disable Warning IDE0054 'Inherited code with assignments (60) this suppresses: Use compound assignment x += 5 vs x = x + 5
 #Disable Warning IDE1006 'Disable Naming rule violation: These words must begin with upper case characters:
 
-#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
 Module ArrayFunctions
     Public arr(4, 5, 100) As Short
     Public Sub InsertArrayItem(ByRef arr As Object, ByVal index As Integer, ByVal newValue As Object)

@@ -1,12 +1,26 @@
+﻿'
+' 
+' showArray.vb This code is licenced under "Creative Commons Attribution Non Commercial 4.0 International"
+' See: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+'
+' This file implements showing card arrays for WinInnovation on the showArray winform
+
+' Conditional compile directives
+
+#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+
 Option Strict Off
 Option Explicit On
-Friend Class showArray
+
+' Compiler/Build directives
 
 #Disable Warning IDE1006 'Inherited code with variable names this suppresses: These words must begin with upper case characters
 #Disable Warning IDE0054 'Inherited code with assignments (60) this suppresses: Use compound assignment x += 5 vs x = x + 5
 #Disable Warning BC40000 'VB compatibility
 
+Friend Class showArray
 #Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+
 
     Inherits System.Windows.Forms.Form
 

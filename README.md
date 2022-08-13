@@ -26,21 +26,21 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/jsparkes/innovation">
+  <a href="https://github.com/frankk74/innovation">
     <img src="images/icon.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Innovation Card Game AI</h3>
 
   <p align="center">
-    The goal of the project is to update the Program "Innovation AI" written by Jeff Till (2014) to be available on more recent platforms.
+    <a href="https://boardgamegeek.com/boardgame/63888/innovation">Innovation</a> is a card game created by <a href="https://boardgamegeek.com/boardgamedesigner/6001/carl-chudyk">Carl Chudyk</a>  and Published by <a href="https://asmadigames.com/">Asmadi Games</a>. Without which this would not have been possible. This project updates the Program "Innovation AI" written by Jeff Till (2014) to be available on more recent platforms.
     <br />
-    <a href="https://github.com/jsparkes/innovation"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/frankk74/innovation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/jsparkes/innovation/issues">Report Bug</a>
+    <a href="https://github.com/frankk74/innovation/issues">Report Bug</a>
     ·
-    <a href="https://github.com/jsparkes/innovation/issues">Request Feature</a>
+    <a href="https://github.com/frankk74/innovation/issues">Request Feature</a>
   </p>
 </div>
 
@@ -100,11 +100,11 @@ This code has been tested under Windows 10/11. No Linux testing has been done.
 
 ### Installation
 
-The newest installable version is in  [publish/WinINNOVATION-setup.zip](https://github.com/jsparkes/innovation/blob/master/publish/WinINNOVATION-setup.zip)
+The newest installable version is in  [bin/WinInnovationAI-V1.0.zip](https://github.com/frankk74/innovation/blob/master/bin/WinInnovationAI-V1.0.zip)
 
-A debugging version (more verbose in text widnow) is in \bin no zip file....
+A debugging version (more verbose in text window) [bin-debugging/WinInnovationAI-V1.0-debug.zip](https://github.com/frankk74/innovation/raw/master/bin-debug/WinInnovationAI-V1.0-debug.zip)
 
-A copy of the pre-built Windows binary with additional supporting files is in the directory original. Either clone this project
+A copy of the oiginal pre-built Windows binary with additional supporting files is in the directory original. Either clone this project
  or just grab the zip file.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -113,19 +113,26 @@ A copy of the pre-built Windows binary with additional supporting files is in th
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Eliminate/remove VS 2008 code conversion errors
-- [ ] Fix any obvious upgrade issues
-- [ ] Feature 3
-    - [ ] Nested Feature
+- [ ] Eliminate/remove VS 2008 code conversion errors - 99% Completed
+- [ ] 2 remaining conversion issues, agriculture card rendering and View Stack not working
+- [ ] Enhancements
+    - [ ] AI dumbing down
+    - [ ] Option to recommend a move
 
-See the [open issues](https://github.com/jsparkes/innovation/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/frankk74/innovation/issues) for a full list of proposed features (and known issues).
+
+There is also a discussion thread over on BGG: https://boardgamegeek.com/thread/2906571/re-announcement-wininnovation-ai-v10-play-innovati
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
-## Contributing
+## Contributing - Bug/Enhancement reports
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+Please submit an issue with a log.txt from a debugging verison (if possible) and details such as screen shots.
+
+## Contributing - Code
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
@@ -137,8 +144,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
@@ -166,11 +171,13 @@ Jeff Sparkes- [@jeff_sparkes](https://twitter.com/jeff_sparkes) - jsparkes@gmail
 
 Frank Kannemann - frankk74@gmail.com
 
-Project Link: [https://github.com/jsparkes/innovation](https://github.com/jsparkes/innovation)
+Project Links: 
+
+Jeff's https://github.com/jsparkes/innovation
+
+Frank's https://github.com/frankk74/innovation
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -183,8 +190,6 @@ Project Link: [https://github.com/jsparkes/innovation](https://github.com/jspark
 * [About box](https://www.codeproject.com/Articles/7390/About-The-About-Box)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

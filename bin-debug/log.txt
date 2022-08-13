@@ -1,0 +1,10 @@
+﻿In Main_Load() -----------------------------
+In initialize_card_data() -----------------------------
+In initialize_card_data() found file .\Innovation.txt -------
+In initial_card_data() 105 cards loaded -------
+In initialize_images() -----------------------------
+In initialize_game() ++++++
+In start_new_game() ++++++ Choose the number of players
+In load_pictures() 
+In load_pictures() Piles
+In initialize_images() initialize the hand images
