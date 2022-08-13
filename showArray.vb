@@ -19,8 +19,6 @@ Option Explicit On
 #Disable Warning BC40000 'VB compatibility
 
 Friend Class showArray
-#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
-
 
     Inherits System.Windows.Forms.Form
 
