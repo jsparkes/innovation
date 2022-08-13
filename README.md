@@ -102,7 +102,7 @@ This code has been tested under Windows 10/11. No Linux testing has been done.
 
 The newest installable version is in  [bin/WinInnovationAI-V1.01.zip](https://github.com/frankk74/innovation/blob/master/bin/WinInnovationAI-V1.01.zip)
 
-A debugging version (more verbose in text window) [bin-debugging/WinInnovationAI-V1.0-debug.zip](https://github.com/frankk74/innovation/raw/master/bin-debug/WinInnovationAI-V1.0-debug.zip)
+A debugging version (more verbose in text window) [bin-debug/WinInnovationAI-V1.01-debug.zip](https://github.com/frankk74/innovation/raw/master/bin-debug/WinInnovationAI-V1.01-debug.zip)
 
 A copy of the oiginal pre-built Windows binary with additional supporting files is in the directory original. Either clone this project
  or just grab the zip file.
