@@ -19,6 +19,8 @@ Option Explicit On
 #Disable Warning BC40000 'VB compatibility
 
 Friend Class showArray
+#Const VERBOSE = True ' FK adding debugging Frame work via c compiler like if defs should be DEBUG but not sure about interference
+
 
     Inherits System.Windows.Forms.Form
 
@@ -29,11 +31,12 @@ Friend Class showArray
 
     Private Sub initialize_images()
         ' initialize the hand images
-
-#If VERBOSE Then
-        Call Main_Renamed.append_simple("In initialize_images() initialize the hand images")
-#End If
         Dim i As Short
+        Static Dim initialized As Boolean = False
+
+        If initialized Then
+            Return
+        End If
         For i = 0 To 40
             If i > imgShowIcon.UBound Then
                 lblShowTitle.Load(i)
@@ -59,22 +62,21 @@ Friend Class showArray
             imgShowIcon(i).Tag = -1
             lblShowTitle(i).Tag = -1
         Next i
+
+        initialized = True
+
     End Sub
 
     Public Sub load_pictures(ByVal player As Short, ByVal Index As Short, ByVal kind As String)
-#If VERBOSE Then
-        Call Main_Renamed.append_simple("In load_pictures() ")
-#End If
-        'Dim id As Object
-        Dim i, id, max_size As Short
+        Dim i, id As Object
+        Dim max_size As Short
+
+        initialize_images()
 
         If kind = "board" Then
             'UPGRADE_WARNING: Couldn't resolve default property of object size3(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             max_size = size3(board, player, Index) - 1
             Me.Tag = Index
-#If VERBOSE Then
-            Call Main_Renamed.append_simple("In load_pictures() board")
-#End If
         Else
             'UPGRADE_WARNING: Couldn't resolve default property of object size2(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             max_size = size2(score_pile, player) - 1
@@ -94,15 +96,21 @@ Friend Class showArray
             lblShowTitle(i).Text = age(id) & "-" & title(id)
             lblShowTitle(i).Tag = id
             lblShowTitle(i).Visible = True
+            lblShowTitle(i).BackColor = Main_Renamed.background_colors(color_lookup(color(id)))
 
             Call Main_Renamed.set_icon_image(imgShowIcon(i), id, dogma_icon(id))
             Call Main_Renamed.set_color_image(imgShowColor(i), id, color(id))
         Next i
 
+        Me.Controls.Clear()
+
         For i = 0 To max_size
             imgShowIcon(i).Visible = True
-            imgShowColor(i).Visible = True
+            'imgShowColor(i).Visible = True
             lblShowTitle(i).Visible = True
+            Me.Controls.Add(imgShowIcon(i))
+            Me.Controls.Add(imgShowColor(i))
+            Me.Controls.Add(lblShowTitle(i))
         Next i
         For i = max_size + 1 To imgShowIcon.UBound
             imgShowIcon(i).Visible = False
@@ -159,9 +167,6 @@ Friend Class showArray
 
 
     Private Sub process_click(ByVal Index As Short)
-#If VERBOSE Then
-        Call Main_Renamed.append_simple("In process_click() ")
-#End If
         If phase = "publications" Then
             imgShowIcon(Index).Visible = False
             imgShowColor(Index).Visible = False

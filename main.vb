@@ -64,7 +64,7 @@ Friend Class Main_Renamed
     Dim title_image As System.Drawing.Image
 
     'Background colors
-    Dim background_colors = New Dictionary(Of String, Color) From {
+    Public Dim background_colors = New Dictionary(Of String, Color) From {
         {"Yellow", System.Drawing.Color.FromArgb(227, 224, 145)},
         {"Red", System.Drawing.Color.FromArgb(216, 146, 144)},
         {"Purple", System.Drawing.Color.FromArgb(161, 117, 180)},
