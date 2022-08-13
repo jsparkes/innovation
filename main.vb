@@ -6272,7 +6272,9 @@ Friend Class Main_Renamed
             actions_remaining = 1
             'UPGRADE_WARNING: Couldn't resolve default property of object min_player. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             active_player = min_player
+#If VERBOSE Then
             Call append_simple("In process_handclick() ----------")
+#End If
             phase = "done with initial meld"
             Call play_game()
         ElseIf phase = "waiting for action" And current_turn <> 0 And cmdNext.Visible = False Then

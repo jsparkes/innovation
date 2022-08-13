@@ -5,6 +5,202 @@ In initial_card_data() 105 cards loaded -------
 In initialize_images() -----------------------------
 In initialize_game() ++++++
 In start_new_game() ++++++ Choose the number of players
-In load_pictures() 
-In load_pictures() Piles
-In initialize_images() initialize the hand images
+In launch_game() ++++++
+draw_num() -----------------------------
+Player 1 drew a 1.
+draw_num() -----------------------------
+Player 1 drew a 1.
+draw_num() -----------------------------
+Player 2 drew a 1.
+draw_num() -----------------------------
+Player 2 drew a 1.
+In launch_game() ++++++  Read the debug file and update the board state accordingly /testing.txt
+ 
+In launch_game() /testing.txt ++++++ NOT FOUND
+In set_debug_values() ++++++
+In launch_game() set_debug_values() DISABLED 
+In process_hand_click() ++++++
+In process_hand_click() Initial Meld ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Archery.
+In check_for_achievements() -----------------------------
+Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Mysticism.
+In check_for_achievements() -----------------------------
+Player 1 is the starting player.
+In process_handclick() ----------
+Player 1 In play_game() -- before phase = done with initial meld ai_mode =  0 break_dogma_loop = 0.
+In ready_for_action() ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Masonry.
+In check_for_achievements() -----------------------------
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 8 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,8 at level 0 (ai_mode = 0)  gss_count = 14.
+Player 2 In make_ai_move() Made a real move 2,8 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Mysticism.
+Player 2 activates the first effect of Mysticism.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Mysticism.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 1.
+Player 1 In meld_from_hand() ----Trying to meld 0 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Metalworking.
+In check_for_achievements() -----------------------------
+draw_num() -----------------------------
+Player 1 drew a 1.
+Player 2 In activate_card() ACTIVATING = Mysticism.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 1.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() AGE 1 ++++++
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 3 and 1 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 3,1 at level 0 (ai_mode = 0)  gss_count = 24.
+Player 2 In make_ai_move() Made a real move 3,1 actions_remaining = 0.
+Player 2 In make_ai_move() 1  is the card to play from hand ----.
+Player 2 In make_ai_move() option 0 - Achieve, depth= 0, ai_mode= 0.
+Player 2 In make_ai_move() trying a meld from ai - The Wheel depth = 0.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 1.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds The Wheel.
+In check_for_achievements() -----------------------------
+In make_ai_move() AI Doing meld ----
+Player 1 In perform_AI_action() Made move 3 ai_mode = 0.
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 75.
+Player 1 Exiting copy_game_state() ++++++ n = 253.
+In ready_for_action() ++++++
+draw_num() -----------------------------
+Player 1 drew a 1.
+Player 1 In cmdDraw_Click() ++++ pre actions remaining: 2.
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In ready_for_action() ++++++
+draw_num() -----------------------------
+Player 1 drew a 1.
+Player 1 In cmdDraw_Click() ++++ pre actions remaining: 1.
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 8 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,8 at level 0 (ai_mode = 0)  gss_count = 33.
+Player 2 In make_ai_move() Made a real move 2,8 actions_remaining = 1.
+Player 2 In make_ai_move() Performing dogma Mysticism.
+Player 2 activates the first effect of Mysticism.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 1 In activate_card() ACTIVATING = Mysticism.
+Player 1 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 1 drew a 1.
+Player 2 In activate_card() ACTIVATING = Mysticism.
+Player 2 In activate_card() AGE 1.
+draw_num() -----------------------------
+Player 2 drew a 1.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 0.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Clothing.
+In check_for_achievements() -----------------------------
+draw_num() -----------------------------
+Player 2 drew a 1.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Dogma effect was shared.
+draw_num() -----------------------------
+Player 2 drew a 1.
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In perform_AI_action() -----------------------------
+Player 1 In perform_AI_action() picked 2 and 3 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 2,3 at level 0 (ai_mode = 0)  gss_count = 44.
+Player 2 In make_ai_move() Made a real move 2,3 actions_remaining = 0.
+Player 2 In make_ai_move() Performing dogma Clothing.
+Player 2 activates the first effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 1.
+Player 2 In activate_card() ACTIVATING = Clothing.
+Player 2 In activate_card() AGE 1.
+Player 1 In meld_from_hand() ----Trying to meld 1 card 3.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 2 melds Tools.
+In check_for_achievements() -----------------------------
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = Draw and score a 1 for each color present on your board not present on any other player’s board..
+Player 2 activates the second effect of Clothing.
+In perform_dogma_effect_by_level() -----------------------------
+Player 1 In perform_dogma_effect_by_level() ----Dogma player: 0 Activating level 2.
+Player 2 In activate_card() ACTIVATING = Clothing.
+Player 2 In activate_card() AGE 1.
+Player 2 drew and scored a 2.
+Player 2 drew and scored a 2.
+Player 2 drew and scored a 2.
+In perform_dogma_effect_by_level() ---If there is another dogma effect, call that now
+Player 2 In perform_dogma_effect_by_level() ---Reached end of loop.  Next value = .
+Player 1 In perform_AI_action() Made move 2 ai_mode = 0.
+In process_hand_click() ++++++
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In play_game?() -----------------------------
+In save_game() writing to \save.txt ++++++
+In copy_game_state() Backup hands, boards etc ----
+Player 1 In copy_game_state() ++++++ n = 84.
+Player 1 Exiting copy_game_state() ++++++ n = 262.
+In ready_for_action() ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 3.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds Writing.
+In check_for_achievements() -----------------------------
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In ready_for_action() ++++++
+In process_hand_click() AGE 1 ++++++
+In process_hand_click() ++++++
+Player 1 In meld_from_hand() ----Trying to meld 0 card 1.
+In remove_card_from_hand------------------
+In meld() melding------------------
+Player 1 melds City States.
+In check_for_achievements() -----------------------------
+Player 1 In play_game() -- before phase = waiting for action ai_mode =  0 break_dogma_loop = 0.
+In play_game?() -----------------------------
+Player 1 In perform_AI_action() picked 0 and 1 ai_mode = 0.
+In make_ai_move() ++++++
+Player 2 In make_ai_move() called with depth = 0.
+Player 2 In make_ai_move() Trying move 0,1 at level 0 (ai_mode = 0)  gss_count = 61.
+Player 2 In make_ai_move() Made a real move 0,1 actions_remaining = 1.
+Player 1 In achieve() +++trying to click 1.
+Player 2 In can_achieve() +++ HEY U CAN ACHIEVE!.
+Player 2 has claimed the -1- achievement.
+Player 1 In perform_AI_action() Made move 0 ai_mode = 0.
+In process_hand_click() AGE 1 ++++++
