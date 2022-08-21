@@ -448,7 +448,7 @@ Module AIFunctions
 #End If
     End Function
 
-    Public Function save_game() As Object
+    Public Sub save_game()
 #If VERBOSE Then
         Call Main_Renamed.append_simple("In save_game() writing to \save.txt ++++++")
 #End If
@@ -462,7 +462,7 @@ Module AIFunctions
         Next i
 
         FileClose(1)
-    End Function
+    End Sub
 
     Public Function load_game() As Object
 #If VERBOSE Then

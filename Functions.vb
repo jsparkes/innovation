@@ -188,7 +188,7 @@ Module ArrayFunctions
         Next i
     End Sub
 
-    Public Function copy_array(ByRef arr_from As Object, ByRef arr_to As Object) As Object
+    Public Sub copy_array(ByRef arr_from As Object, ByRef arr_to As Object)
         Dim i As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object size(arr_from). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         For i = 0 To size(arr_from)
@@ -196,9 +196,9 @@ Module ArrayFunctions
             'UPGRADE_WARNING: Couldn't resolve default property of object arr_to(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             arr_to(i) = arr_from(i)
         Next i
-    End Function
+    End Sub
 
-    Public Function copy_array2(ByRef arr_from As Object, ByRef arr_to As Object, ByVal index As Short) As Object
+    Public Sub copy_array2(ByRef arr_from As Object, ByRef arr_to As Object, ByVal index As Short)
         Dim i As Integer
         'UPGRADE_WARNING: Couldn't resolve default property of object size2(arr_from, index). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         For i = 0 To size2(arr_from, index)
@@ -206,9 +206,9 @@ Module ArrayFunctions
             'UPGRADE_WARNING: Couldn't resolve default property of object arr_to(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             arr_to(index, i) = arr_from(index, i)
         Next i
-    End Function
+    End Sub
 
-    Public Function copy_array3(ByRef arr_from As Object, ByRef arr_to As Object, ByVal index1 As Short, ByVal index2 As Short) As Object
+    Public Sub copy_array3(ByRef arr_from As Object, ByRef arr_to As Object, ByVal index1 As Short, ByVal index2 As Short)
         Dim i As Integer
         ' Not used Dim j As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object size3(arr_from, index1, index2). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -217,7 +217,7 @@ Module ArrayFunctions
             'UPGRADE_WARNING: Couldn't resolve default property of object arr_to(). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
             arr_to(index1, index2, i) = arr_from(index1, index2, i)
         Next i
-    End Function
+    End Sub
 
     Public Function size(ByRef arr As Object) As Object
         Dim i As Short
@@ -260,7 +260,7 @@ Module ArrayFunctions
         size3 = i
     End Function
 
-    Public Function sort(ByRef arr As Object) As Object
+    Public Sub sort(ByRef arr As Object)
         ' Dim k, i, j, temp As Object
         Dim k, i, j, temp, v As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object size(arr). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -281,9 +281,9 @@ Module ArrayFunctions
                 End If
             Next j
         Next i
-    End Function
+    End Sub
 
-    Public Function rsort(ByRef arr As Object) As Object
+    Public Sub rsort(ByRef arr As Object)
         ' Dim k, i, j, temp As Object
         Dim k, i, j, temp, value As Short
         'UPGRADE_WARNING: Couldn't resolve default property of object size(arr). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
@@ -304,7 +304,7 @@ Module ArrayFunctions
                 End If
             Next j
         Next i
-    End Function
+    End Sub
 
     Public Sub sort2(ByRef arr As Object, ByVal index As Short)
         Dim temp_arr(500) As Object
@@ -320,7 +320,7 @@ Module ArrayFunctions
         Call rebuild(arr, index, temp_arr)
     End Sub
 
-    Public Function randomize_array(ByRef arr As Object) As Object
+    Public Sub randomize_array(ByRef arr As Object)
         Dim new_array(500) As Object
         Dim picked(500) As Object
         Randomize()
@@ -353,7 +353,7 @@ Module ArrayFunctions
         Call print_array(new_array, "Shuffled")
 #End If
         'Call print_array(new_array, "Shuffled")
-    End Function
+    End Sub
 
     Public Sub randomize_array2(ByRef arr As Object, ByVal index As Short)
         Dim temp_arr(500) As Object

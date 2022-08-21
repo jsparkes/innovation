@@ -805,7 +805,7 @@ Friend Class Main_Renamed
         ' Read the debug file and update the board state accordingly
         'UPGRADE_NOTE: str was upgraded to str_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
         Dim filename As Object
-        Dim str_Renamed As String
+        Dim str_Renamed = ""
 #If VERBOSE Then
         Call append_simple("In launch_game() ++++++  Read the debug file and update the board state accordingly /testing.txt")
 #End If
@@ -1620,8 +1620,10 @@ Friend Class Main_Renamed
 
     Private Sub exchange_canal_building(ByVal player As Short)
         Dim temp(40) As Object
-        Dim count, high_in_hand As Object
+        Dim count As Object
+        Dim high_in_hand = -1
         Dim high_in_score, i As Short
+
         'UPGRADE_WARNING: Couldn't resolve default property of object dogma_copied. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If active_player <> player Then dogma_copied = 1
 
@@ -1770,7 +1772,6 @@ Friend Class Main_Renamed
         '''''''''''''''''''''''''''''''''''''''''''''''''''''
         ' Age 1
         '''''''''''''''''''''''''''''''''''''''''''''''''''''
-        '''
 #If VERBOSE Then
         Call append(player, "In activate_card() AGE 1")
 #End If
@@ -5735,7 +5736,7 @@ Friend Class Main_Renamed
 
 
     Private Sub end_game_10(ByRef player As Object)
-        If winner_found Then Exit Sub
+        If winner_found() Then Exit Sub
 
         Dim min As Object
         Dim i, winner_count As Short
@@ -5780,7 +5781,7 @@ Friend Class Main_Renamed
     End Sub
 
     Private Sub end_game_points()
-        If winner_found Then Exit Sub
+        If winner_found() Then Exit Sub
 
         Dim i As Short
         For i = 0 To num_players - 1
@@ -5796,7 +5797,7 @@ Friend Class Main_Renamed
 
     'UPGRADE_NOTE: str was upgraded to str_Renamed. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="A9E4979A-37FA-4718-9994-97DD76ED70A7"'
     Private Sub end_game_generic(ByVal player As Short, ByVal str_Renamed As String)
-        If winner_found Then Exit Sub
+        If winner_found() Then Exit Sub
 
         winners(player) = 1
         If ai_mode = 0 Then
@@ -5806,11 +5807,11 @@ Friend Class Main_Renamed
     End Sub
 
     Private Sub end_game_ai()
-        If winner_found Then Exit Sub
+        If winner_found() Then Exit Sub
 
         Dim min As Object
         Dim i, winner_count As Short
-        Dim winner_str As String
+        Dim winner_str As String = ""
         winner_count = 0
         'UPGRADE_WARNING: Couldn't resolve default property of object scores(0). Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         'UPGRADE_WARNING: Couldn't resolve default property of object min. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
