@@ -619,8 +619,8 @@
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShortCutsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.Image1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Image3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -853,7 +853,7 @@
         Me.cmbCheatLevel.Location = New System.Drawing.Point(504, 96)
         Me.cmbCheatLevel.Name = "cmbCheatLevel"
         Me.cmbCheatLevel.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbCheatLevel.Size = New System.Drawing.Size(176, 22)
+        Me.cmbCheatLevel.Size = New System.Drawing.Size(176, 26)
         Me.cmbCheatLevel.TabIndex = 170
         '
         'cmdScore
@@ -880,7 +880,7 @@
         Me.cmbCards.Location = New System.Drawing.Point(82, 397)
         Me.cmbCards.Name = "cmbCards"
         Me.cmbCards.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.cmbCards.Size = New System.Drawing.Size(176, 22)
+        Me.cmbCards.Size = New System.Drawing.Size(176, 26)
         Me.cmbCards.Sorted = True
         Me.cmbCards.TabIndex = 168
         '
@@ -3477,6 +3477,7 @@
         Me.lblRules.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.lblRules.Size = New System.Drawing.Size(298, 57)
         Me.lblRules.TabIndex = 17
+        Me.lblRules.Tag = -1
         Me.lblRules.Text = resources.GetString("lblRules.Text")
         '
         'imgDogmaSymbol
@@ -3489,6 +3490,7 @@
         Me.imgDogmaSymbol.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgDogmaSymbol.TabIndex = 218
         Me.imgDogmaSymbol.TabStop = False
+        Me.imgDogmaSymbol.Tag = "-1"
         '
         'lblDogmaSymbol
         '
@@ -3527,6 +3529,7 @@
         Me._imgLargeIcon_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgLargeIcon_3.TabIndex = 219
         Me._imgLargeIcon_3.TabStop = False
+        Me._imgLargeIcon_3.Tag = "-1"
         '
         '_imgLargeIcon_2
         '
@@ -3539,6 +3542,7 @@
         Me._imgLargeIcon_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgLargeIcon_2.TabIndex = 220
         Me._imgLargeIcon_2.TabStop = False
+        Me._imgLargeIcon_2.Tag = "-1"
         '
         '_imgLargeIcon_1
         '
@@ -3551,6 +3555,7 @@
         Me._imgLargeIcon_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgLargeIcon_1.TabIndex = 221
         Me._imgLargeIcon_1.TabStop = False
+        Me._imgLargeIcon_1.Tag = "-1"
         '
         '_imgLargeIcon_0
         '
@@ -3563,6 +3568,7 @@
         Me._imgLargeIcon_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgLargeIcon_0.TabIndex = 222
         Me._imgLargeIcon_0.TabStop = False
+        Me._imgLargeIcon_0.Tag = "-1"
         '
         '_lblAchievement_13
         '
@@ -4296,13 +4302,16 @@
         Me.imgLarge.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.imgLarge.TabIndex = 223
         Me.imgLarge.TabStop = False
+        Me.imgLarge.Tag = -1
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HelpToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1380, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1380, 33)
         Me.MenuStrip1.TabIndex = 253
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -4310,61 +4319,61 @@
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LoadGameToolStripMenuItem, Me.SaveGameToolStripMenuItem, Me.RestartNewGameToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(54, 29)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'LoadGameToolStripMenuItem
         '
         Me.LoadGameToolStripMenuItem.Name = "LoadGameToolStripMenuItem"
-        Me.LoadGameToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.LoadGameToolStripMenuItem.Size = New System.Drawing.Size(261, 34)
         Me.LoadGameToolStripMenuItem.Text = "Load Game"
         '
         'SaveGameToolStripMenuItem
         '
         Me.SaveGameToolStripMenuItem.Name = "SaveGameToolStripMenuItem"
-        Me.SaveGameToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.SaveGameToolStripMenuItem.Size = New System.Drawing.Size(261, 34)
         Me.SaveGameToolStripMenuItem.Text = "Save Game"
         '
         'RestartNewGameToolStripMenuItem
         '
         Me.RestartNewGameToolStripMenuItem.Name = "RestartNewGameToolStripMenuItem"
-        Me.RestartNewGameToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.RestartNewGameToolStripMenuItem.Size = New System.Drawing.Size(261, 34)
         Me.RestartNewGameToolStripMenuItem.Text = "Restart/New Game"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(261, 34)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'HelpToolStripMenuItem
         '
         Me.HelpToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem, Me.ShortCutsToolStripMenuItem, Me.AboutToolStripMenuItem1})
         Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(65, 29)
         Me.HelpToolStripMenuItem.Text = "Help"
         '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(197, 34)
         Me.AboutToolStripMenuItem.Text = "Rules"
-        '
-        'AboutToolStripMenuItem1
-        '
-        Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
-        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
-        Me.AboutToolStripMenuItem1.Text = "About"
         '
         'ShortCutsToolStripMenuItem
         '
         Me.ShortCutsToolStripMenuItem.Name = "ShortCutsToolStripMenuItem"
-        Me.ShortCutsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ShortCutsToolStripMenuItem.Size = New System.Drawing.Size(197, 34)
         Me.ShortCutsToolStripMenuItem.Text = "Short Cuts"
+        '
+        'AboutToolStripMenuItem1
+        '
+        Me.AboutToolStripMenuItem1.Name = "AboutToolStripMenuItem1"
+        Me.AboutToolStripMenuItem1.Size = New System.Drawing.Size(197, 34)
+        Me.AboutToolStripMenuItem1.Text = "About"
         '
         'Main_Renamed
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSize = True
         Me.BackColor = System.Drawing.SystemColors.Control

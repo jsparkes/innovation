@@ -5560,6 +5560,7 @@ Friend Class Main_Renamed
         Next i
         For i = 0 To ICONCOUNT
             icon_images(i) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/" & icon_lookup(i) & ".jpg")
+            icon_images(i).Tag = -1
         Next i
 
         ' initialize the hand images
