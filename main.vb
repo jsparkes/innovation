@@ -4896,6 +4896,9 @@ Friend Class Main_Renamed
 #If VERBOSE2 Then ' too much info
         Call append_simple("In set_icon_image() -----------------------------")
 #End If
+        If image.Tag = Nothing Then
+            image.Tag = -1
+        End If
         If ai_mode <> 0 Then Exit Sub
         'UPGRADE_WARNING: Couldn't resolve default property of object image.Tag. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="6A50421D-15FE-4896-8A1B-2EC21E9037B2"'
         If image.Tag <> id Then
@@ -5351,6 +5354,7 @@ Friend Class Main_Renamed
                 cmdDogma(i).Visible = False
                 cmdStack(i).Visible = False
                 imgBoardDogma(i).Visible = False
+                imgBoardDogma(i).Tag = -1
                 imgBoard(i).Visible = False
                 For j = 0 To 3
                     ' MsgBox ("Hiding " & i & " + " & j)
@@ -5557,6 +5561,7 @@ Friend Class Main_Renamed
         For i = 0 To COLORCOUNT
             ' MsgBox App.Path & "/images/" & color_lookup(i) & ".jpg"
             color_images(i) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/" & color_lookup(i) & ".jpg")
+            color_images(i).Tag = -1
         Next i
         For i = 0 To ICONCOUNT
             icon_images(i) = System.Drawing.Image.FromFile(My.Application.Info.DirectoryPath & "/images/" & icon_lookup(i) & ".jpg")

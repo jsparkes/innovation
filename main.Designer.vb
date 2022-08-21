@@ -3030,6 +3030,7 @@
         Me._imgIconSmall_12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_12.TabIndex = 197
         Me._imgIconSmall_12.TabStop = False
+        Me._imgIconSmall_12.Tag = -1
         '
         '_imgIconSmall_13
         '
@@ -3042,6 +3043,7 @@
         Me._imgIconSmall_13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_13.TabIndex = 198
         Me._imgIconSmall_13.TabStop = False
+        Me._imgIconSmall_13.Tag = -1
         '
         '_imgIconSmall_14
         '
@@ -3054,6 +3056,7 @@
         Me._imgIconSmall_14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_14.TabIndex = 199
         Me._imgIconSmall_14.TabStop = False
+        Me._imgIconSmall_14.Tag = -1
         '
         '_imgIconSmall_15
         '
@@ -3066,6 +3069,7 @@
         Me._imgIconSmall_15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_15.TabIndex = 200
         Me._imgIconSmall_15.TabStop = False
+        Me._imgIconSmall_15.Tag = -1
         '
         '_lblBoardTitle_3
         '
@@ -3132,6 +3136,7 @@
         Me._imgIconSmall_8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_8.TabIndex = 202
         Me._imgIconSmall_8.TabStop = False
+        Me._imgIconSmall_8.Tag = -1
         '
         '_imgIconSmall_9
         '
@@ -3144,6 +3149,7 @@
         Me._imgIconSmall_9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_9.TabIndex = 203
         Me._imgIconSmall_9.TabStop = False
+        Me._imgIconSmall_9.Tag = -1
         '
         '_imgIconSmall_10
         '
@@ -3156,6 +3162,7 @@
         Me._imgIconSmall_10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_10.TabIndex = 204
         Me._imgIconSmall_10.TabStop = False
+        Me._imgIconSmall_10.Tag = -1
         '
         '_imgIconSmall_11
         '
@@ -3168,6 +3175,7 @@
         Me._imgIconSmall_11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_11.TabIndex = 205
         Me._imgIconSmall_11.TabStop = False
+        Me._imgIconSmall_11.Tag = -1
         '
         '_lblBoardTitle_2
         '
@@ -3234,6 +3242,7 @@
         Me._imgIconSmall_4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_4.TabIndex = 207
         Me._imgIconSmall_4.TabStop = False
+        Me._imgIconSmall_4.Tag = -1
         '
         '_imgIconSmall_5
         '
@@ -3246,6 +3255,7 @@
         Me._imgIconSmall_5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_5.TabIndex = 208
         Me._imgIconSmall_5.TabStop = False
+        Me._imgIconSmall_5.Tag = -1
         '
         '_imgIconSmall_6
         '
@@ -3258,6 +3268,7 @@
         Me._imgIconSmall_6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_6.TabIndex = 209
         Me._imgIconSmall_6.TabStop = False
+        Me._imgIconSmall_6.Tag = -1
         '
         '_imgIconSmall_7
         '
@@ -3270,6 +3281,7 @@
         Me._imgIconSmall_7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_7.TabIndex = 210
         Me._imgIconSmall_7.TabStop = False
+        Me._imgIconSmall_7.Tag = -1
         '
         '_lblBoardTitle_1
         '
@@ -3390,6 +3402,7 @@
         Me._imgIconSmall_3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_3.TabIndex = 213
         Me._imgIconSmall_3.TabStop = False
+        Me._imgIconSmall_3.Tag = -1
         '
         '_imgIconSmall_2
         '
@@ -3402,6 +3415,7 @@
         Me._imgIconSmall_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_2.TabIndex = 214
         Me._imgIconSmall_2.TabStop = False
+        Me._imgIconSmall_2.Tag = -1
         '
         '_imgIconSmall_1
         '
@@ -3414,6 +3428,7 @@
         Me._imgIconSmall_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_1.TabIndex = 215
         Me._imgIconSmall_1.TabStop = False
+        Me._imgIconSmall_1.Tag = -1
         '
         '_imgIconSmall_0
         '
@@ -3426,6 +3441,7 @@
         Me._imgIconSmall_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_0.TabIndex = 216
         Me._imgIconSmall_0.TabStop = False
+        Me._imgIconSmall_0.Tag = -1
         '
         '_imgBoard_0
         '
@@ -3826,6 +3842,7 @@
         Me._imgIconSmall_16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_16.TabIndex = 227
         Me._imgIconSmall_16.TabStop = False
+        Me._imgIconSmall_16.Tag = -1
         '
         '_imgIconSmall_17
         '
@@ -3838,6 +3855,7 @@
         Me._imgIconSmall_17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_17.TabIndex = 228
         Me._imgIconSmall_17.TabStop = False
+        Me._imgIconSmall_17.Tag = -1
         '
         '_imgIconSmall_18
         '
@@ -3850,6 +3868,7 @@
         Me._imgIconSmall_18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_18.TabIndex = 229
         Me._imgIconSmall_18.TabStop = False
+        Me._imgIconSmall_18.Tag = -1
         '
         '_imgIconSmall_19
         '
@@ -3862,6 +3881,7 @@
         Me._imgIconSmall_19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me._imgIconSmall_19.TabIndex = 230
         Me._imgIconSmall_19.TabStop = False
+        Me._imgIconSmall_19.Tag = -1
         '
         '_lblBoardTitle_4
         '
