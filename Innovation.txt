@@ -9,7 +9,7 @@ ID	Age	Color	Title	Top	Left	Middle	Right	Hexagon (info only)	Dogma Icon	Dogma Co
 7	1	Yellow	Masonry	Castle	x	Castle	Castle	Bricks	Castle	"You may meld any number of cards from your hand, each with a [Castle]. If you melded four or more cards, claim the Monument achievement."		
 8	1	Red	Metalworking	Castle	Castle	x	Castle	Spear and shield	Castle	"Draw and reveal a 1. If it has a [Castle], score it and repeat this dogma effect. Otherwise, keep it."		
 9	1	Purple	Mysticism	x	Castle	Castle	Castle	Crescent moon	Castle	"Draw a 1. If it is the same color as any card on your board, meld it and draw a 1."		
-10	1	Red	Oars	Castle	Crown	x	Castle	Oars	Castle	"I demand you transfer a card with a [Crown] from your hand to my score pile! If you do, draw a 1."	"If no cards were transferred due to this demand, draw a 1."	
+10	1	Red	Oars	Castle	Crown	x	Castle	Oars	Castle	"I demand you transfer a card with a [Crown] from your hand to my score pile! If you do, draw a 1."	"If no cards were transferred due to this demand, draw a 1." "If you do, draw a 1 and repeat this dogma effect!"
 11	1	Blue	Pottery	x	Leaf	Leaf	Leaf	Pot	Leaf	"You may return up to three cards from your hand. If you returned any cards, draw and score a card of value equal to the number of cards you returned."	Draw a 1.	
 12	1	Green	Sailing	Crown	Crown	x	Leaf	Boat	Crown	Draw and meld a 1.		
 13	1	Green	The Wheel	x	Castle	Castle	Castle	Wheel	Castle	Draw two 1.		
