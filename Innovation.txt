@@ -9,7 +9,7 @@ ID	Age	Color	Title	Top	Left	Middle	Right	Hexagon (info only)	Dogma Icon	Dogma Co
 7	1	Yellow	Masonry	Castle	x	Castle	Castle	Bricks	Castle	"You may meld any number of cards from your hand, each with a [Castle]. If you melded four or more cards, claim the Monument achievement."		
 8	1	Red	Metalworking	Castle	Castle	x	Castle	Spear and shield	Castle	"Draw and reveal a 1. If it has a [Castle], score it and repeat this dogma effect. Otherwise, keep it."		
 9	1	Purple	Mysticism	x	Castle	Castle	Castle	Crescent moon	Castle	"Draw a 1. If it is the same color as any card on your board, meld it and draw a 1."		
-10	1	Red	Oars	Castle	Crown	x	Castle	Oars	Castle	"I demand you transfer a card with a [Crown] from your hand to my score pile! If you do, draw a 1."	"If no cards were transferred due to this demand, draw a 1." "If you do, draw a 1 and repeat this dogma effect!"
+10	1	Red	Oars	Castle	Crown	x	Castle	Oars	Castle	"I demand you transfer a card with a [Crown] from your hand to my score pile! If you do, draw a 1."	"If no cards were transferred due to this demand, draw a 1."	
 11	1	Blue	Pottery	x	Leaf	Leaf	Leaf	Pot	Leaf	"You may return up to three cards from your hand. If you returned any cards, draw and score a card of value equal to the number of cards you returned."	Draw a 1.	
 12	1	Green	Sailing	Crown	Crown	x	Leaf	Boat	Crown	Draw and meld a 1.		
 13	1	Green	The Wheel	x	Castle	Castle	Castle	Wheel	Castle	Draw two 1.		
@@ -45,8 +45,7 @@ ID	Age	Color	Title	Top	Left	Middle	Right	Hexagon (info only)	Dogma Icon	Dogma Co
 43	4	Yellow	Perspective	x	Lightbulb	Lightbulb	Leaf	Man inspecting ship on horizon	Lightbulb	"You may return a card from your hand. If you do, score a card from your hand for every two [LIghtbulb] icons on your board."		
 44	4	Blue	Printing Press	x	Lightbulb	Lightbulb	Crown	Press	Lightbulb	"You may return a card from your score pile. If you do, draw a card of value two higher than the top purple card on your board."	You may splay your blue cards right.	
 45	4	Purple	Reformation	Leaf	Leaf	x	Leaf	Cathedral	Leaf	You may tuck a card from your hand for every two [Leaf] icons on your board.	You may splay your yellow or purple cards right.	
-46	5	Purple	Astronomy	Crown	Lightbulb	Lightbulb	x	Observatory	Lightbulb	"Draw and reveal a 6. If the card is green or blue, meld it and repeat this dogma effect."	"If all non-purple top cards on your board are value 6 or higher, claim the Universe
-achievement."	
+46	5	Purple	Astronomy	Crown	Lightbulb	Lightbulb	x	Observatory	Lightbulb	"Draw and reveal a 6. If the card is green or blue, meld it and repeat this dogma effect."	"If all non-purple top cards on your board are value 6 or higher, claim the Universe achievement."	
 47	5	Green	Banking	Factory	Crown	x	Crown	Two piles of notes and a coin	Crown	"I demand you transfer a top non-green card with a [Factory] from your board to my board! If you do, draw and score a 5."	You may splay your green cards right.	
 48	5	Blue	Chemistry	Factory	Lightbulb	Factory	x	Erlenmeyer flask full of liquid	Factory	You may splay your blue cards right.	Draw and score a card of value one higher than the highest top card on your board and then return a card from your score pile.	
 49	5	Red	Coal	Factory	Factory	Factory	x	Lumps of coal or a fossil	Factory	Draw and tuck a 5.	You may splay your red cards right.	"You may score any one of your top cards. If you do, also score the card beneath it."
